@@ -9,7 +9,7 @@ type InvoicePaymentMethodSpecificOutput struct {
 	PaymentProductID *int32        `json:"paymentProductId,omitempty"`
 }
 
-// NewInvoicePaymentMethodSpecificOutput constructs a new InvoicePaymentMethodSpecificOutput
+// NewInvoicePaymentMethodSpecificOutput constructs a new InvoicePaymentMethodSpecificOutput instance
 func NewInvoicePaymentMethodSpecificOutput() *InvoicePaymentMethodSpecificOutput {
 	return &InvoicePaymentMethodSpecificOutput{}
 }

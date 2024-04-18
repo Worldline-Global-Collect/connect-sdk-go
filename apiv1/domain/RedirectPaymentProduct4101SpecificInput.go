@@ -10,7 +10,7 @@ type RedirectPaymentProduct4101SpecificInput struct {
 	VirtualPaymentAddress *string `json:"virtualPaymentAddress,omitempty"`
 }
 
-// NewRedirectPaymentProduct4101SpecificInput constructs a new RedirectPaymentProduct4101SpecificInput
+// NewRedirectPaymentProduct4101SpecificInput constructs a new RedirectPaymentProduct4101SpecificInput instance
 func NewRedirectPaymentProduct4101SpecificInput() *RedirectPaymentProduct4101SpecificInput {
 	return &RedirectPaymentProduct4101SpecificInput{}
 }

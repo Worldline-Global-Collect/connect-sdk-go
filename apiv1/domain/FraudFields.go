@@ -37,7 +37,7 @@ type FraudFields struct {
 	Website                        *string                     `json:"website,omitempty"`
 }
 
-// NewFraudFields constructs a new FraudFields
+// NewFraudFields constructs a new FraudFields instance
 func NewFraudFields() *FraudFields {
 	return &FraudFields{}
 }

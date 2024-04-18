@@ -9,7 +9,7 @@ type CreateHostedMandateManagementRequest struct {
 	HostedMandateManagementSpecificInput *HostedMandateManagementSpecificInput `json:"hostedMandateManagementSpecificInput,omitempty"`
 }
 
-// NewCreateHostedMandateManagementRequest constructs a new CreateHostedMandateManagementRequest
+// NewCreateHostedMandateManagementRequest constructs a new CreateHostedMandateManagementRequest instance
 func NewCreateHostedMandateManagementRequest() *CreateHostedMandateManagementRequest {
 	return &CreateHostedMandateManagementRequest{}
 }

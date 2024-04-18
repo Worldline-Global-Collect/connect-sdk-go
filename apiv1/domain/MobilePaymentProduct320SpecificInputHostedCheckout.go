@@ -10,7 +10,7 @@ type MobilePaymentProduct320SpecificInputHostedCheckout struct {
 	ThreeDSecure   *GPayThreeDSecure `json:"threeDSecure,omitempty"`
 }
 
-// NewMobilePaymentProduct320SpecificInputHostedCheckout constructs a new MobilePaymentProduct320SpecificInputHostedCheckout
+// NewMobilePaymentProduct320SpecificInputHostedCheckout constructs a new MobilePaymentProduct320SpecificInputHostedCheckout instance
 func NewMobilePaymentProduct320SpecificInputHostedCheckout() *MobilePaymentProduct320SpecificInputHostedCheckout {
 	return &MobilePaymentProduct320SpecificInputHostedCheckout{}
 }

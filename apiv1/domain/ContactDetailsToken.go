@@ -9,7 +9,7 @@ type ContactDetailsToken struct {
 	EmailMessageType *string `json:"emailMessageType,omitempty"`
 }
 
-// NewContactDetailsToken constructs a new ContactDetailsToken
+// NewContactDetailsToken constructs a new ContactDetailsToken instance
 func NewContactDetailsToken() *ContactDetailsToken {
 	return &ContactDetailsToken{}
 }

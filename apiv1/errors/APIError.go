@@ -19,9 +19,9 @@ type APIError interface {
 	// ResponseBody gets the raw response body that was returned by the Worldline Global Collect platform.
 	ResponseBody() string
 
-	// ErrorID gets the error identifier received from the Worldline Global Collect platform if available.
+	// ErrorID gets the errorId received from the Worldline Global Collect platform if available.
 	ErrorID() string
 
-	// Errors gets the error list received from the Worldline Global Collect platform if available. Never nil.
+	// Errors gets the errors received from the Worldline Global Collect platform if available. Never nil.
 	Errors() []domain.APIError
 }

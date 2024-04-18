@@ -13,7 +13,7 @@ type PaymentCreationOutput struct {
 	TokenizationSucceeded *bool   `json:"tokenizationSucceeded,omitempty"`
 }
 
-// NewPaymentCreationOutput constructs a new PaymentCreationOutput
+// NewPaymentCreationOutput constructs a new PaymentCreationOutput instance
 func NewPaymentCreationOutput() *PaymentCreationOutput {
 	return &PaymentCreationOutput{}
 }

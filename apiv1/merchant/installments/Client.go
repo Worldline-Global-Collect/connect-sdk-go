@@ -16,18 +16,19 @@ type Client struct {
 }
 
 // GetInstallmentsInfo represents the resource /{merchantId}/installments/getInstallmentsInfo - Get installment information
+//
 // Documentation can be found at https://apireference.connect.worldline-solutions.com/s2sapi/v1/en_US/go/installments/getInstallmentsInfo.html
 //
 // Can return any of the following errors:
-// * ValidationError if the request was not correct and couldn't be processed (HTTP status code 400)
-// * AuthorizationError if the request was not allowed (HTTP status code 403)
-// * IdempotenceError if an idempotent request caused a conflict (HTTP status code 409)
-// * ReferenceError if an object was attempted to be referenced that doesn't exist or has been removed,
-// or there was a conflict (HTTP status code 404, 409 or 410)
-// * PlatformError if something went wrong at the Worldline Global Collect platform,
-// the Worldline Global Collect platform was unable to process a message from a downstream partner/acquirer,
-// or the service that you're trying to reach is temporary unavailable (HTTP status code 500, 502 or 503)
-// * APIError if the Worldline Global Collect platform returned any other error
+//   * IdempotenceError if an idempotent request caused a conflict (HTTP status code 409)
+//   * ValidationError if the request was not correct and couldn't be processed (HTTP status code 400)
+//   * AuthorizationError if the request was not allowed (HTTP status code 403)
+//   * ReferenceError if an object was attempted to be referenced that doesn't exist or has been removed,
+//     or there was a conflict (HTTP status code 404, 409 or 410)
+//   * PlatformError if something went wrong at the Worldline Global Collect platform,
+//     the Worldline Global Collect platform was unable to process a message from a downstream partner/acquirer,
+//     or the service that you're trying to reach is temporary unavailable (HTTP status code 500, 502 or 503)
+//   * APIError if the Worldline Global Collect platform returned any other error
 func (c *Client) GetInstallmentsInfo(body domain.GetInstallmentRequest, context *communicator.CallContext) (domain.InstallmentOptionsResponse, error) {
 	var resultObject domain.InstallmentOptionsResponse
 
@@ -64,9 +65,9 @@ func (c *Client) GetInstallmentsInfo(body domain.GetInstallmentRequest, context 
 	return resultObject, nil
 }
 
-// NewClient constructs a Installments Client
+// NewClient constructs a new Installments client
 //
-// parent is the *communicator.APIResource on top of which we want to build the new Installments Client
+// parent is the communicator.APIResource on top of which we want to build the new Installments client
 func NewClient(parent *communicator.APIResource, pathContext map[string]string) (*Client, error) {
 	apiResource, err := communicator.NewAPIResourceWithParent(parent, pathContext)
 	if err != nil {

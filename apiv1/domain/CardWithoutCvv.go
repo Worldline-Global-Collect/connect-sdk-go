@@ -11,7 +11,7 @@ type CardWithoutCvv struct {
 	IssueNumber    *string `json:"issueNumber,omitempty"`
 }
 
-// NewCardWithoutCvv constructs a new CardWithoutCvv
+// NewCardWithoutCvv constructs a new CardWithoutCvv instance
 func NewCardWithoutCvv() *CardWithoutCvv {
 	return &CardWithoutCvv{}
 }

@@ -9,7 +9,7 @@ type PaymentProduct320SpecificData struct {
 	Networks *[]string `json:"networks,omitempty"`
 }
 
-// NewPaymentProduct320SpecificData constructs a new PaymentProduct320SpecificData
+// NewPaymentProduct320SpecificData constructs a new PaymentProduct320SpecificData instance
 func NewPaymentProduct320SpecificData() *PaymentProduct320SpecificData {
 	return &PaymentProduct320SpecificData{}
 }

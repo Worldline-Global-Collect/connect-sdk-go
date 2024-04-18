@@ -13,7 +13,7 @@ type AccountFundingRecipient struct {
 	PartialPan        *string  `json:"partialPan,omitempty"`
 }
 
-// NewAccountFundingRecipient constructs a new AccountFundingRecipient
+// NewAccountFundingRecipient constructs a new AccountFundingRecipient instance
 func NewAccountFundingRecipient() *AccountFundingRecipient {
 	return &AccountFundingRecipient{}
 }

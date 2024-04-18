@@ -10,6 +10,7 @@ import (
 )
 
 // ConvertAmountParams represents query parameters for Convert amount
+//
 // Documentation can be found at https://apireference.connect.worldline-solutions.com/s2sapi/v1/en_US/go/services/convertAmount.html
 type ConvertAmountParams struct {
 	Source *string
@@ -37,7 +38,7 @@ func (params *ConvertAmountParams) ToRequestParameters() communication.RequestPa
 	return reqParams
 }
 
-// NewConvertAmountParams constructs an instance of ConvertAmountParams
+// NewConvertAmountParams constructs a new ConvertAmountParams instance
 func NewConvertAmountParams() *ConvertAmountParams {
 	return &ConvertAmountParams{}
 }

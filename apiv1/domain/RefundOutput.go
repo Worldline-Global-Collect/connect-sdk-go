@@ -17,7 +17,7 @@ type RefundOutput struct {
 	References                         *PaymentReferences                  `json:"references,omitempty"`
 }
 
-// NewRefundOutput constructs a new RefundOutput
+// NewRefundOutput constructs a new RefundOutput instance
 func NewRefundOutput() *RefundOutput {
 	return &RefundOutput{}
 }

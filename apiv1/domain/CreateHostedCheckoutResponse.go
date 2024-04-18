@@ -12,7 +12,7 @@ type CreateHostedCheckoutResponse struct {
 	PartialRedirectURL *string   `json:"partialRedirectUrl,omitempty"`
 }
 
-// NewCreateHostedCheckoutResponse constructs a new CreateHostedCheckoutResponse
+// NewCreateHostedCheckoutResponse constructs a new CreateHostedCheckoutResponse instance
 func NewCreateHostedCheckoutResponse() *CreateHostedCheckoutResponse {
 	return &CreateHostedCheckoutResponse{}
 }

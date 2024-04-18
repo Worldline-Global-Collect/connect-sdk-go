@@ -11,7 +11,7 @@ type ResultDoRiskAssessment struct {
 	ValidationBankAccountOutput       *ValidationBankAccountOutput       `json:"validationBankAccountOutput,omitempty"`
 }
 
-// NewResultDoRiskAssessment constructs a new ResultDoRiskAssessment
+// NewResultDoRiskAssessment constructs a new ResultDoRiskAssessment instance
 func NewResultDoRiskAssessment() *ResultDoRiskAssessment {
 	return &ResultDoRiskAssessment{}
 }

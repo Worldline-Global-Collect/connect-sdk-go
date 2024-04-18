@@ -11,7 +11,7 @@ type RefundEWalletMethodSpecificOutput struct {
 	TotalAmountRefunded             *int64                                 `json:"totalAmountRefunded,omitempty"`
 }
 
-// NewRefundEWalletMethodSpecificOutput constructs a new RefundEWalletMethodSpecificOutput
+// NewRefundEWalletMethodSpecificOutput constructs a new RefundEWalletMethodSpecificOutput instance
 func NewRefundEWalletMethodSpecificOutput() *RefundEWalletMethodSpecificOutput {
 	return &RefundEWalletMethodSpecificOutput{}
 }

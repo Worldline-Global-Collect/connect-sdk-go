@@ -8,7 +8,7 @@ type ConvertAmount struct {
 	ConvertedAmount *int64 `json:"convertedAmount,omitempty"`
 }
 
-// NewConvertAmount constructs a new ConvertAmount
+// NewConvertAmount constructs a new ConvertAmount instance
 func NewConvertAmount() *ConvertAmount {
 	return &ConvertAmount{}
 }

@@ -17,7 +17,7 @@ type Order struct {
 	ShoppingCart    *ShoppingCart         `json:"shoppingCart,omitempty"`
 }
 
-// NewOrder constructs a new Order
+// NewOrder constructs a new Order instance
 func NewOrder() *Order {
 	return &Order{}
 }

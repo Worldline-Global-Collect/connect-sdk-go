@@ -21,8 +21,8 @@ type Helper struct {
 // Unmarshal unmarshalls the given body and validates it using the requestHeaders
 //
 // Can return any of the following errors:
-// validation.SignatureValidationError if the body could not be validated successfully
-// validation.APIVersionMismatchError if the resulting event has an API version that this version of the SDK does not support
+//   * validation.SignatureValidationError if the body could not be validated successfully
+//   * validation.APIVersionMismatchError if the resulting event has an API version that this version of the SDK does not support
 func (h Helper) Unmarshal(body string, requestHeaders []communication.Header) (*domain.WebhooksEvent, error) {
 	err := h.signatureValidator.Validate(body, requestHeaders)
 	if err != nil {
@@ -54,7 +54,7 @@ func (h Helper) SecretKeyStore() validation.SecretKeyStore {
 	return h.signatureValidator.SecretKeyStore()
 }
 
-// NewHelper creates a Helper with the given marshaller and secretKeyStore
+// NewHelper creates a new Helper with the given marshaller and secretKeyStore
 func NewHelper(marshaller json.Marshaller, secretKeyStore validation.SecretKeyStore) (*Helper, error) {
 	if marshaller == nil {
 		return nil, errors.New("nil marshaller")

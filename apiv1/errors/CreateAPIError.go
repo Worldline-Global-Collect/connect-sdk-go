@@ -30,6 +30,7 @@ func CreateAPIError(statusCode int, responseBody string, errorObject interface{}
 			if response.Errors != nil {
 				errors = *response.Errors
 			}
+
 			break
 		}
 	case *domain.PayoutErrorResponse:
@@ -108,11 +109,17 @@ func CreateAPIError(statusCode int, responseBody string, errorObject interface{}
 			return NewReferenceError(statusCode, responseBody, errorID, errors)
 		}
 	case http.StatusInternalServerError:
-		fallthrough
+		{
+			return NewPlatformError(statusCode, responseBody, errorID, errors)
+		}
 	case http.StatusBadGateway:
-		fallthrough
+		{
+			return NewPlatformError(statusCode, responseBody, errorID, errors)
+		}
 	case http.StatusServiceUnavailable:
-		fallthrough
+		{
+			return NewPlatformError(statusCode, responseBody, errorID, errors)
+		}
 	default:
 		{
 			return NewPlatformError(statusCode, responseBody, errorID, errors)
@@ -120,8 +127,10 @@ func CreateAPIError(statusCode int, responseBody string, errorObject interface{}
 	}
 }
 
-func isIdempotenceError(errors []domain.APIError, context *communicator.CallContext) (ok bool) {
-	ok = context != nil && len(context.GetIdempotenceKey()) != 0 && len(errors) == 1 && errors[0].Code != nil && *errors[0].Code == "1409"
-
-	return
+func isIdempotenceError(errors []domain.APIError, context *communicator.CallContext) bool {
+	return context != nil &&
+		len(context.GetIdempotenceKey()) != 0 &&
+		len(errors) == 1 &&
+		errors[0].Code != nil &&
+		*errors[0].Code == "1409"
 }

@@ -11,7 +11,7 @@ type TrustlyBankAccount struct {
 	PersonIdentificationNumber *string `json:"personIdentificationNumber,omitempty"`
 }
 
-// NewTrustlyBankAccount constructs a new TrustlyBankAccount
+// NewTrustlyBankAccount constructs a new TrustlyBankAccount instance
 func NewTrustlyBankAccount() *TrustlyBankAccount {
 	return &TrustlyBankAccount{}
 }

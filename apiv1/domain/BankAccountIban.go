@@ -9,7 +9,7 @@ type BankAccountIban struct {
 	Iban              *string `json:"iban,omitempty"`
 }
 
-// NewBankAccountIban constructs a new BankAccountIban
+// NewBankAccountIban constructs a new BankAccountIban instance
 func NewBankAccountIban() *BankAccountIban {
 	return &BankAccountIban{}
 }

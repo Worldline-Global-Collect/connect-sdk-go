@@ -8,7 +8,7 @@ type CancelPaymentCardPaymentMethodSpecificOutput struct {
 	VoidResponseID *string `json:"voidResponseId,omitempty"`
 }
 
-// NewCancelPaymentCardPaymentMethodSpecificOutput constructs a new CancelPaymentCardPaymentMethodSpecificOutput
+// NewCancelPaymentCardPaymentMethodSpecificOutput constructs a new CancelPaymentCardPaymentMethodSpecificOutput instance
 func NewCancelPaymentCardPaymentMethodSpecificOutput() *CancelPaymentCardPaymentMethodSpecificOutput {
 	return &CancelPaymentCardPaymentMethodSpecificOutput{}
 }

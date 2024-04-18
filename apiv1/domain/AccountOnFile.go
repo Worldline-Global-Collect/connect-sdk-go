@@ -11,7 +11,7 @@ type AccountOnFile struct {
 	PaymentProductID *int32                     `json:"paymentProductId,omitempty"`
 }
 
-// NewAccountOnFile constructs a new AccountOnFile
+// NewAccountOnFile constructs a new AccountOnFile instance
 func NewAccountOnFile() *AccountOnFile {
 	return &AccountOnFile{}
 }

@@ -10,7 +10,7 @@ type FraudResultsRetailDecisions struct {
 	FraudRCF    *string `json:"fraudRCF,omitempty"`
 }
 
-// NewFraudResultsRetailDecisions constructs a new FraudResultsRetailDecisions
+// NewFraudResultsRetailDecisions constructs a new FraudResultsRetailDecisions instance
 func NewFraudResultsRetailDecisions() *FraudResultsRetailDecisions {
 	return &FraudResultsRetailDecisions{}
 }

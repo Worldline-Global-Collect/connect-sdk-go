@@ -116,9 +116,6 @@ func TestIntegratedPayment(t *testing.T) {
 	}
 
 	context := NewCallContext(idempotenceKey)
-	if err != nil {
-		t.Fatal(err)
-	}
 
 	result, err := doCreatePayment(client, request, context)
 	if err != nil {
@@ -135,6 +132,9 @@ func TestIntegratedPayment(t *testing.T) {
 	}
 
 	secondResult, err := doCreatePayment(client, request, context)
+	if err != nil {
+		t.Fatal(err)
+	}
 	if idempotenceKey != context.IdempotenceKey {
 		t.Fatalf("idempotence key mismatch")
 	}

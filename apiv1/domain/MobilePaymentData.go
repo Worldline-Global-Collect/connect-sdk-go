@@ -9,7 +9,7 @@ type MobilePaymentData struct {
 	ExpiryDate *string `json:"expiryDate,omitempty"`
 }
 
-// NewMobilePaymentData constructs a new MobilePaymentData
+// NewMobilePaymentData constructs a new MobilePaymentData instance
 func NewMobilePaymentData() *MobilePaymentData {
 	return &MobilePaymentData{}
 }

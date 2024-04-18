@@ -10,7 +10,7 @@ type RefundCashMethodSpecificOutput struct {
 	TotalAmountRefunded *int64 `json:"totalAmountRefunded,omitempty"`
 }
 
-// NewRefundCashMethodSpecificOutput constructs a new RefundCashMethodSpecificOutput
+// NewRefundCashMethodSpecificOutput constructs a new RefundCashMethodSpecificOutput instance
 func NewRefundCashMethodSpecificOutput() *RefundCashMethodSpecificOutput {
 	return &RefundCashMethodSpecificOutput{}
 }

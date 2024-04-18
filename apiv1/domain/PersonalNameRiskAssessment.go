@@ -10,7 +10,7 @@ type PersonalNameRiskAssessment struct {
 	SurnamePrefix *string `json:"surnamePrefix,omitempty"`
 }
 
-// NewPersonalNameRiskAssessment constructs a new PersonalNameRiskAssessment
+// NewPersonalNameRiskAssessment constructs a new PersonalNameRiskAssessment instance
 func NewPersonalNameRiskAssessment() *PersonalNameRiskAssessment {
 	return &PersonalNameRiskAssessment{}
 }

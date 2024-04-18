@@ -20,7 +20,7 @@ type CreatePaymentRequest struct {
 	SepaDirectDebitPaymentMethodSpecificInput *SepaDirectDebitPaymentMethodSpecificInput    `json:"sepaDirectDebitPaymentMethodSpecificInput,omitempty"`
 }
 
-// NewCreatePaymentRequest constructs a new CreatePaymentRequest
+// NewCreatePaymentRequest constructs a new CreatePaymentRequest instance
 func NewCreatePaymentRequest() *CreatePaymentRequest {
 	return &CreatePaymentRequest{}
 }

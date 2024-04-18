@@ -8,7 +8,7 @@ type RefundsResponse struct {
 	Refunds *[]RefundResult `json:"refunds,omitempty"`
 }
 
-// NewRefundsResponse constructs a new RefundsResponse
+// NewRefundsResponse constructs a new RefundsResponse instance
 func NewRefundsResponse() *RefundsResponse {
 	return &RefundsResponse{}
 }

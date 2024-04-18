@@ -11,7 +11,7 @@ type SepaDirectDebitPaymentProduct771SpecificInputBase struct {
 	MandateReference               *string            `json:"mandateReference,omitempty"`
 }
 
-// NewSepaDirectDebitPaymentProduct771SpecificInputBase constructs a new SepaDirectDebitPaymentProduct771SpecificInputBase
+// NewSepaDirectDebitPaymentProduct771SpecificInputBase constructs a new SepaDirectDebitPaymentProduct771SpecificInputBase instance
 func NewSepaDirectDebitPaymentProduct771SpecificInputBase() *SepaDirectDebitPaymentProduct771SpecificInputBase {
 	return &SepaDirectDebitPaymentProduct771SpecificInputBase{}
 }

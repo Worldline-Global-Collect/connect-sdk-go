@@ -9,7 +9,7 @@ type ErrorResponse struct {
 	Errors  *[]APIError `json:"errors,omitempty"`
 }
 
-// NewErrorResponse constructs a new ErrorResponse
+// NewErrorResponse constructs a new ErrorResponse instance
 func NewErrorResponse() *ErrorResponse {
 	return &ErrorResponse{}
 }

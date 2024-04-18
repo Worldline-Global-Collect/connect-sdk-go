@@ -9,7 +9,7 @@ type CreateMandateResponse struct {
 	MerchantAction *MandateMerchantAction `json:"merchantAction,omitempty"`
 }
 
-// NewCreateMandateResponse constructs a new CreateMandateResponse
+// NewCreateMandateResponse constructs a new CreateMandateResponse instance
 func NewCreateMandateResponse() *CreateMandateResponse {
 	return &CreateMandateResponse{}
 }

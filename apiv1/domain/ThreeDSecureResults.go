@@ -20,7 +20,7 @@ type ThreeDSecureResults struct {
 	Xid                          *string           `json:"xid,omitempty"`
 }
 
-// NewThreeDSecureResults constructs a new ThreeDSecureResults
+// NewThreeDSecureResults constructs a new ThreeDSecureResults instance
 func NewThreeDSecureResults() *ThreeDSecureResults {
 	return &ThreeDSecureResults{}
 }

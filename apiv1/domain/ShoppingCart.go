@@ -13,7 +13,7 @@ type ShoppingCart struct {
 	ReOrderIndicator             *bool              `json:"reOrderIndicator,omitempty"`
 }
 
-// NewShoppingCart constructs a new ShoppingCart
+// NewShoppingCart constructs a new ShoppingCart instance
 func NewShoppingCart() *ShoppingCart {
 	return &ShoppingCart{}
 }

@@ -13,7 +13,7 @@ type PaymentProductGroupResponse struct {
 	ID                       *string                     `json:"id,omitempty"`
 }
 
-// NewPaymentProductGroupResponse constructs a new PaymentProductGroupResponse
+// NewPaymentProductGroupResponse constructs a new PaymentProductGroupResponse instance
 func NewPaymentProductGroupResponse() *PaymentProductGroupResponse {
 	return &PaymentProductGroupResponse{}
 }

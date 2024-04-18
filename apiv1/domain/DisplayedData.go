@@ -10,7 +10,7 @@ type DisplayedData struct {
 	ShowData          *[]KeyValuePair `json:"showData,omitempty"`
 }
 
-// NewDisplayedData constructs a new DisplayedData
+// NewDisplayedData constructs a new DisplayedData instance
 func NewDisplayedData() *DisplayedData {
 	return &DisplayedData{}
 }

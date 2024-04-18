@@ -14,7 +14,7 @@ type PaymentProduct863ThirdPartyData struct {
 	TimeStamp   *string `json:"timeStamp,omitempty"`
 }
 
-// NewPaymentProduct863ThirdPartyData constructs a new PaymentProduct863ThirdPartyData
+// NewPaymentProduct863ThirdPartyData constructs a new PaymentProduct863ThirdPartyData instance
 func NewPaymentProduct863ThirdPartyData() *PaymentProduct863ThirdPartyData {
 	return &PaymentProduct863ThirdPartyData{}
 }

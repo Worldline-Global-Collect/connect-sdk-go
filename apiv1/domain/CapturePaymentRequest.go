@@ -9,7 +9,7 @@ type CapturePaymentRequest struct {
 	IsFinal *bool  `json:"isFinal,omitempty"`
 }
 
-// NewCapturePaymentRequest constructs a new CapturePaymentRequest
+// NewCapturePaymentRequest constructs a new CapturePaymentRequest instance
 func NewCapturePaymentRequest() *CapturePaymentRequest {
 	return &CapturePaymentRequest{}
 }

@@ -10,7 +10,7 @@ type ApproveTokenRequest struct {
 	MandateSigned         *bool   `json:"mandateSigned,omitempty"`
 }
 
-// NewApproveTokenRequest constructs a new ApproveTokenRequest
+// NewApproveTokenRequest constructs a new ApproveTokenRequest instance
 func NewApproveTokenRequest() *ApproveTokenRequest {
 	return &ApproveTokenRequest{}
 }

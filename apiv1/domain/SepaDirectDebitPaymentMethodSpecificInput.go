@@ -16,7 +16,7 @@ type SepaDirectDebitPaymentMethodSpecificInput struct {
 	Tokenize                          *bool                                          `json:"tokenize,omitempty"`
 }
 
-// NewSepaDirectDebitPaymentMethodSpecificInput constructs a new SepaDirectDebitPaymentMethodSpecificInput
+// NewSepaDirectDebitPaymentMethodSpecificInput constructs a new SepaDirectDebitPaymentMethodSpecificInput instance
 func NewSepaDirectDebitPaymentMethodSpecificInput() *SepaDirectDebitPaymentMethodSpecificInput {
 	return &SepaDirectDebitPaymentMethodSpecificInput{}
 }

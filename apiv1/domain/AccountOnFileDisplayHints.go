@@ -9,7 +9,7 @@ type AccountOnFileDisplayHints struct {
 	Logo          *string                 `json:"logo,omitempty"`
 }
 
-// NewAccountOnFileDisplayHints constructs a new AccountOnFileDisplayHints
+// NewAccountOnFileDisplayHints constructs a new AccountOnFileDisplayHints instance
 func NewAccountOnFileDisplayHints() *AccountOnFileDisplayHints {
 	return &AccountOnFileDisplayHints{}
 }

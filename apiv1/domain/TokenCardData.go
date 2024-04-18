@@ -10,7 +10,7 @@ type TokenCardData struct {
 	ProviderReference    *string         `json:"providerReference,omitempty"`
 }
 
-// NewTokenCardData constructs a new TokenCardData
+// NewTokenCardData constructs a new TokenCardData instance
 func NewTokenCardData() *TokenCardData {
 	return &TokenCardData{}
 }

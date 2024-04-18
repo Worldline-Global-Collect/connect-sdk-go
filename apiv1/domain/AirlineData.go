@@ -33,7 +33,7 @@ type AirlineData struct {
 	TravelAgencyName     *string             `json:"travelAgencyName,omitempty"`
 }
 
-// NewAirlineData constructs a new AirlineData
+// NewAirlineData constructs a new AirlineData instance
 func NewAirlineData() *AirlineData {
 	return &AirlineData{}
 }

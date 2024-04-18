@@ -12,7 +12,7 @@ type RefundRequest struct {
 	RefundReferences              *RefundReferences              `json:"refundReferences,omitempty"`
 }
 
-// NewRefundRequest constructs a new RefundRequest
+// NewRefundRequest constructs a new RefundRequest instance
 func NewRefundRequest() *RefundRequest {
 	return &RefundRequest{}
 }

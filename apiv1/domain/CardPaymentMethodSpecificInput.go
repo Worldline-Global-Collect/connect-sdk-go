@@ -35,7 +35,7 @@ type CardPaymentMethodSpecificInput struct {
 	UnscheduledCardOnFileSequenceIndicator *string                               `json:"unscheduledCardOnFileSequenceIndicator,omitempty"`
 }
 
-// NewCardPaymentMethodSpecificInput constructs a new CardPaymentMethodSpecificInput
+// NewCardPaymentMethodSpecificInput constructs a new CardPaymentMethodSpecificInput instance
 func NewCardPaymentMethodSpecificInput() *CardPaymentMethodSpecificInput {
 	return &CardPaymentMethodSpecificInput{}
 }

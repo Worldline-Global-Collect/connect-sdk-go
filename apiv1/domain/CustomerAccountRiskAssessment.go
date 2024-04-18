@@ -9,7 +9,7 @@ type CustomerAccountRiskAssessment struct {
 	HasPassword          *bool `json:"hasPassword,omitempty"`
 }
 
-// NewCustomerAccountRiskAssessment constructs a new CustomerAccountRiskAssessment
+// NewCustomerAccountRiskAssessment constructs a new CustomerAccountRiskAssessment instance
 func NewCustomerAccountRiskAssessment() *CustomerAccountRiskAssessment {
 	return &CustomerAccountRiskAssessment{}
 }

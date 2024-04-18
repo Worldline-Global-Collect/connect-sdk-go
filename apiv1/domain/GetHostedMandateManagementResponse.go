@@ -9,7 +9,7 @@ type GetHostedMandateManagementResponse struct {
 	Status  *string          `json:"status,omitempty"`
 }
 
-// NewGetHostedMandateManagementResponse constructs a new GetHostedMandateManagementResponse
+// NewGetHostedMandateManagementResponse constructs a new GetHostedMandateManagementResponse instance
 func NewGetHostedMandateManagementResponse() *GetHostedMandateManagementResponse {
 	return &GetHostedMandateManagementResponse{}
 }

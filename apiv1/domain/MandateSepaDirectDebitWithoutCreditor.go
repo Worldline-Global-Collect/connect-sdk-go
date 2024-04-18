@@ -13,7 +13,7 @@ type MandateSepaDirectDebitWithoutCreditor struct {
 	PreNotification            *string          `json:"preNotification,omitempty"`
 }
 
-// NewMandateSepaDirectDebitWithoutCreditor constructs a new MandateSepaDirectDebitWithoutCreditor
+// NewMandateSepaDirectDebitWithoutCreditor constructs a new MandateSepaDirectDebitWithoutCreditor instance
 func NewMandateSepaDirectDebitWithoutCreditor() *MandateSepaDirectDebitWithoutCreditor {
 	return &MandateSepaDirectDebitWithoutCreditor{}
 }

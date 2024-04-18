@@ -16,7 +16,7 @@ type DecryptedPaymentData struct {
 	PaymentMethod  *string `json:"paymentMethod,omitempty"`
 }
 
-// NewDecryptedPaymentData constructs a new DecryptedPaymentData
+// NewDecryptedPaymentData constructs a new DecryptedPaymentData instance
 func NewDecryptedPaymentData() *DecryptedPaymentData {
 	return &DecryptedPaymentData{}
 }

@@ -11,7 +11,7 @@ type RefundCustomer struct {
 	FiscalNumber       *string             `json:"fiscalNumber,omitempty"`
 }
 
-// NewRefundCustomer constructs a new RefundCustomer
+// NewRefundCustomer constructs a new RefundCustomer instance
 func NewRefundCustomer() *RefundCustomer {
 	return &RefundCustomer{}
 }

@@ -12,7 +12,7 @@ type UpdateTokenRequest struct {
 	SepaDirectDebit    *TokenSepaDirectDebitWithoutCreditor `json:"sepaDirectDebit,omitempty"`
 }
 
-// NewUpdateTokenRequest constructs a new UpdateTokenRequest
+// NewUpdateTokenRequest constructs a new UpdateTokenRequest instance
 func NewUpdateTokenRequest() *UpdateTokenRequest {
 	return &UpdateTokenRequest{}
 }

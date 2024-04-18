@@ -8,7 +8,7 @@ type RedirectPaymentProduct816SpecificInput struct {
 	BankAccountIban *BankAccountIban `json:"bankAccountIban,omitempty"`
 }
 
-// NewRedirectPaymentProduct816SpecificInput constructs a new RedirectPaymentProduct816SpecificInput
+// NewRedirectPaymentProduct816SpecificInput constructs a new RedirectPaymentProduct816SpecificInput instance
 func NewRedirectPaymentProduct816SpecificInput() *RedirectPaymentProduct816SpecificInput {
 	return &RedirectPaymentProduct816SpecificInput{}
 }

@@ -14,7 +14,7 @@ type BankTransferPayoutMethodSpecificInput struct {
 	SwiftCode       *string          `json:"swiftCode,omitempty"`
 }
 
-// NewBankTransferPayoutMethodSpecificInput constructs a new BankTransferPayoutMethodSpecificInput
+// NewBankTransferPayoutMethodSpecificInput constructs a new BankTransferPayoutMethodSpecificInput instance
 func NewBankTransferPayoutMethodSpecificInput() *BankTransferPayoutMethodSpecificInput {
 	return &BankTransferPayoutMethodSpecificInput{}
 }

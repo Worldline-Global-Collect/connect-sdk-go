@@ -17,7 +17,7 @@ type PaymentProduct840CustomerAccount struct {
 	Surname               *string `json:"surname,omitempty"`
 }
 
-// NewPaymentProduct840CustomerAccount constructs a new PaymentProduct840CustomerAccount
+// NewPaymentProduct840CustomerAccount constructs a new PaymentProduct840CustomerAccount instance
 func NewPaymentProduct840CustomerAccount() *PaymentProduct840CustomerAccount {
 	return &PaymentProduct840CustomerAccount{}
 }

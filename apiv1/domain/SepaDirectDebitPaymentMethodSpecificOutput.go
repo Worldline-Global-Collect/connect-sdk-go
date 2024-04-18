@@ -11,7 +11,7 @@ type SepaDirectDebitPaymentMethodSpecificOutput struct {
 	Token                           *string                          `json:"token,omitempty"`
 }
 
-// NewSepaDirectDebitPaymentMethodSpecificOutput constructs a new SepaDirectDebitPaymentMethodSpecificOutput
+// NewSepaDirectDebitPaymentMethodSpecificOutput constructs a new SepaDirectDebitPaymentMethodSpecificOutput instance
 func NewSepaDirectDebitPaymentMethodSpecificOutput() *SepaDirectDebitPaymentMethodSpecificOutput {
 	return &SepaDirectDebitPaymentMethodSpecificOutput{}
 }

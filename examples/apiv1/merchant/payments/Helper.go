@@ -23,6 +23,6 @@ func handleDeclinedRefund(refundResult *domain.RefundResult) {
 	// handle the result here
 }
 
-func handleAPIErrors(errors []domain.APIError) {
-	// handle the errors here
+func handleErrorResponse(errorID string, errors []domain.APIError) {
+	// handle the error response here
 }

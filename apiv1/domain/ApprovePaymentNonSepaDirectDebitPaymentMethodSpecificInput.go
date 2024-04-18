@@ -9,7 +9,7 @@ type ApprovePaymentNonSepaDirectDebitPaymentMethodSpecificInput struct {
 	Token       *string `json:"token,omitempty"`
 }
 
-// NewApprovePaymentNonSepaDirectDebitPaymentMethodSpecificInput constructs a new ApprovePaymentNonSepaDirectDebitPaymentMethodSpecificInput
+// NewApprovePaymentNonSepaDirectDebitPaymentMethodSpecificInput constructs a new ApprovePaymentNonSepaDirectDebitPaymentMethodSpecificInput instance
 func NewApprovePaymentNonSepaDirectDebitPaymentMethodSpecificInput() *ApprovePaymentNonSepaDirectDebitPaymentMethodSpecificInput {
 	return &ApprovePaymentNonSepaDirectDebitPaymentMethodSpecificInput{}
 }

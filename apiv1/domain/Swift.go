@@ -17,7 +17,7 @@ type Swift struct {
 	Services      *string `json:"services,omitempty"`
 }
 
-// NewSwift constructs a new Swift
+// NewSwift constructs a new Swift instance
 func NewSwift() *Swift {
 	return &Swift{}
 }

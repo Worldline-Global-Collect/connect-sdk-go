@@ -9,7 +9,7 @@ type SepaDirectDebitPaymentMethodSpecificInputBase struct {
 	PaymentProductID               *int32                                             `json:"paymentProductId,omitempty"`
 }
 
-// NewSepaDirectDebitPaymentMethodSpecificInputBase constructs a new SepaDirectDebitPaymentMethodSpecificInputBase
+// NewSepaDirectDebitPaymentMethodSpecificInputBase constructs a new SepaDirectDebitPaymentMethodSpecificInputBase instance
 func NewSepaDirectDebitPaymentMethodSpecificInputBase() *SepaDirectDebitPaymentMethodSpecificInputBase {
 	return &SepaDirectDebitPaymentMethodSpecificInputBase{}
 }

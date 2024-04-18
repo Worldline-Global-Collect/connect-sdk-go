@@ -11,7 +11,7 @@ type BankDetailsResponse struct {
 	Swift           *Swift           `json:"swift,omitempty"`
 }
 
-// NewBankDetailsResponse constructs a new BankDetailsResponse
+// NewBankDetailsResponse constructs a new BankDetailsResponse instance
 func NewBankDetailsResponse() *BankDetailsResponse {
 	return &BankDetailsResponse{}
 }

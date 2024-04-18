@@ -10,7 +10,7 @@ type CardEssentials struct {
 	ExpiryDate     *string `json:"expiryDate,omitempty"`
 }
 
-// NewCardEssentials constructs a new CardEssentials
+// NewCardEssentials constructs a new CardEssentials instance
 func NewCardEssentials() *CardEssentials {
 	return &CardEssentials{}
 }

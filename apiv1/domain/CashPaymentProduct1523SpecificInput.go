@@ -8,7 +8,7 @@ type CashPaymentProduct1523SpecificInput struct {
 	ReturnURL *string `json:"returnUrl,omitempty"`
 }
 
-// NewCashPaymentProduct1523SpecificInput constructs a new CashPaymentProduct1523SpecificInput
+// NewCashPaymentProduct1523SpecificInput constructs a new CashPaymentProduct1523SpecificInput instance
 func NewCashPaymentProduct1523SpecificInput() *CashPaymentProduct1523SpecificInput {
 	return &CashPaymentProduct1523SpecificInput{}
 }

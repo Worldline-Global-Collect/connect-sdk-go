@@ -19,57 +19,57 @@ type ReferenceError struct {
 }
 
 // Message returns the error message
-func (re ReferenceError) Message() string {
-	return re.errorMessage
+func (e ReferenceError) Message() string {
+	return e.errorMessage
 }
 
 // StatusCode returns the status code
-func (re ReferenceError) StatusCode() int {
-	return re.statusCode
+func (e ReferenceError) StatusCode() int {
+	return e.statusCode
 }
 
 // ResponseBody returns the response body
-func (re ReferenceError) ResponseBody() string {
-	return re.responseBody
+func (e ReferenceError) ResponseBody() string {
+	return e.responseBody
 }
 
-// ErrorID returns the error id
-func (re ReferenceError) ErrorID() string {
-	return re.errorID
+// ErrorID implements the APIError interface
+func (e ReferenceError) ErrorID() string {
+	return e.errorID
 }
 
-// Errors returns a slice of underlying errors
-func (re ReferenceError) Errors() []domain.APIError {
+// Errors implements the APIError interface
+func (e ReferenceError) Errors() []domain.APIError {
 	// Return a clone instead of the original slice - immutability insurance
-	return append([]domain.APIError{}, re.errors...)
+	return append([]domain.APIError{}, e.errors...)
 }
 
 // String implements the Stringer interface
 // Format: 'errorMessage; statusCode=; responseBody='
-func (re ReferenceError) String() string {
-	list := re.errorMessage
+func (e ReferenceError) String() string {
+	list := e.errorMessage
 
-	if re.statusCode > 0 {
-		list = list + "; statusCode=" + strconv.Itoa(re.statusCode)
+	if e.statusCode > 0 {
+		list = list + "; statusCode=" + strconv.Itoa(e.statusCode)
 	}
-	if len(re.responseBody) != 0 {
-		list = list + "; responseBody='" + re.responseBody + "'"
+	if len(e.responseBody) != 0 {
+		list = list + "; responseBody='" + e.responseBody + "'"
 	}
 
 	return list
 }
 
 // Error implements the error interface
-func (re ReferenceError) Error() string {
-	return re.String()
+func (e ReferenceError) Error() string {
+	return e.String()
 }
 
-// NewReferenceError creates a ReferenceError with the given statusCode, responseBody, errorID and errors
+// NewReferenceError creates a new ReferenceError with the given statusCode, responseBody and response fields
 func NewReferenceError(statusCode int, responseBody, errorID string, errors []domain.APIError) (*ReferenceError, error) {
-	return &ReferenceError{"the Worldline Global Collect platform returned an incorrect request error response", statusCode, responseBody, errorID, errors}, nil
+	return &ReferenceError{"the Worldline Global Collect platform returned a reference error response", statusCode, responseBody, errorID, errors}, nil
 }
 
-// NewReferenceErrorVerbose creates a ReferenceError with the given message, statusCode, responseBody, errorID and errors
+// NewReferenceErrorVerbose creates a new ReferenceError with the given message, statusCode and response fields
 func NewReferenceErrorVerbose(message string, statusCode int, responseBody, errorID string, errors []domain.APIError) (*ReferenceError, error) {
 	return &ReferenceError{message, statusCode, responseBody, errorID, errors}, nil
 }

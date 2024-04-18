@@ -12,7 +12,7 @@ type ValidationBankAccountOutput struct {
 	ReformattedBranchCode    *string                       `json:"reformattedBranchCode,omitempty"`
 }
 
-// NewValidationBankAccountOutput constructs a new ValidationBankAccountOutput
+// NewValidationBankAccountOutput constructs a new ValidationBankAccountOutput instance
 func NewValidationBankAccountOutput() *ValidationBankAccountOutput {
 	return &ValidationBankAccountOutput{}
 }

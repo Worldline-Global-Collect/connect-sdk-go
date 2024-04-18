@@ -8,7 +8,7 @@ type RefundPaymentProduct840SpecificOutput struct {
 	CustomerAccount *RefundPaymentProduct840CustomerAccount `json:"customerAccount,omitempty"`
 }
 
-// NewRefundPaymentProduct840SpecificOutput constructs a new RefundPaymentProduct840SpecificOutput
+// NewRefundPaymentProduct840SpecificOutput constructs a new RefundPaymentProduct840SpecificOutput instance
 func NewRefundPaymentProduct840SpecificOutput() *RefundPaymentProduct840SpecificOutput {
 	return &RefundPaymentProduct840SpecificOutput{}
 }

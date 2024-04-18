@@ -9,7 +9,7 @@ type AmountOfMoney struct {
 	CurrencyCode *string `json:"currencyCode,omitempty"`
 }
 
-// NewAmountOfMoney constructs a new AmountOfMoney
+// NewAmountOfMoney constructs a new AmountOfMoney instance
 func NewAmountOfMoney() *AmountOfMoney {
 	return &AmountOfMoney{}
 }

@@ -10,7 +10,7 @@ type CaptureStatusOutput struct {
 	StatusCode        *int32          `json:"statusCode,omitempty"`
 }
 
-// NewCaptureStatusOutput constructs a new CaptureStatusOutput
+// NewCaptureStatusOutput constructs a new CaptureStatusOutput instance
 func NewCaptureStatusOutput() *CaptureStatusOutput {
 	return &CaptureStatusOutput{}
 }

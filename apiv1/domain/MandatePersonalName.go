@@ -9,7 +9,7 @@ type MandatePersonalName struct {
 	Surname   *string `json:"surname,omitempty"`
 }
 
-// NewMandatePersonalName constructs a new MandatePersonalName
+// NewMandatePersonalName constructs a new MandatePersonalName instance
 func NewMandatePersonalName() *MandatePersonalName {
 	return &MandatePersonalName{}
 }

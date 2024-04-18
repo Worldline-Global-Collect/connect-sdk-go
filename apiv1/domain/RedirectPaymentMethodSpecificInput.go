@@ -25,7 +25,7 @@ type RedirectPaymentMethodSpecificInput struct {
 	Tokenize                          *bool                                    `json:"tokenize,omitempty"`
 }
 
-// NewRedirectPaymentMethodSpecificInput constructs a new RedirectPaymentMethodSpecificInput
+// NewRedirectPaymentMethodSpecificInput constructs a new RedirectPaymentMethodSpecificInput instance
 func NewRedirectPaymentMethodSpecificInput() *RedirectPaymentMethodSpecificInput {
 	return &RedirectPaymentMethodSpecificInput{}
 }

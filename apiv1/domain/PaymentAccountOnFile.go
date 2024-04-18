@@ -9,7 +9,7 @@ type PaymentAccountOnFile struct {
 	NumberOfCardOnFileCreationAttemptsLast24Hours *int32  `json:"numberOfCardOnFileCreationAttemptsLast24Hours,omitempty"`
 }
 
-// NewPaymentAccountOnFile constructs a new PaymentAccountOnFile
+// NewPaymentAccountOnFile constructs a new PaymentAccountOnFile instance
 func NewPaymentAccountOnFile() *PaymentAccountOnFile {
 	return &PaymentAccountOnFile{}
 }

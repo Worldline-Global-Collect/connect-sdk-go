@@ -11,7 +11,7 @@ type DirectoryEntry struct {
 	IssuerName   *string   `json:"issuerName,omitempty"`
 }
 
-// NewDirectoryEntry constructs a new DirectoryEntry
+// NewDirectoryEntry constructs a new DirectoryEntry instance
 func NewDirectoryEntry() *DirectoryEntry {
 	return &DirectoryEntry{}
 }

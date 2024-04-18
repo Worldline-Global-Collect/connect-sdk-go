@@ -16,7 +16,7 @@ type DisputeOutput struct {
 	ResponseMessage *string                `json:"responseMessage,omitempty"`
 }
 
-// NewDisputeOutput constructs a new DisputeOutput
+// NewDisputeOutput constructs a new DisputeOutput instance
 func NewDisputeOutput() *DisputeOutput {
 	return &DisputeOutput{}
 }

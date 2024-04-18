@@ -14,7 +14,7 @@ type MerchantAction struct {
 	ThirdPartyData                        *ThirdPartyData                        `json:"thirdPartyData,omitempty"`
 }
 
-// NewMerchantAction constructs a new MerchantAction
+// NewMerchantAction constructs a new MerchantAction instance
 func NewMerchantAction() *MerchantAction {
 	return &MerchantAction{}
 }

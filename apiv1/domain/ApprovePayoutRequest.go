@@ -8,7 +8,7 @@ type ApprovePayoutRequest struct {
 	DatePayout *string `json:"datePayout,omitempty"`
 }
 
-// NewApprovePayoutRequest constructs a new ApprovePayoutRequest
+// NewApprovePayoutRequest constructs a new ApprovePayoutRequest instance
 func NewApprovePayoutRequest() *ApprovePayoutRequest {
 	return &ApprovePayoutRequest{}
 }

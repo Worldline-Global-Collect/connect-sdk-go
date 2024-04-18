@@ -10,7 +10,7 @@ type ExemptionOutput struct {
 	ExemptionRequest         *string `json:"exemptionRequest,omitempty"`
 }
 
-// NewExemptionOutput constructs a new ExemptionOutput
+// NewExemptionOutput constructs a new ExemptionOutput instance
 func NewExemptionOutput() *ExemptionOutput {
 	return &ExemptionOutput{}
 }

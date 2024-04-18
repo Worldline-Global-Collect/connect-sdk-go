@@ -11,7 +11,7 @@ type HostedFile struct {
 	ID       *string `json:"id,omitempty"`
 }
 
-// NewHostedFile constructs a new HostedFile
+// NewHostedFile constructs a new HostedFile instance
 func NewHostedFile() *HostedFile {
 	return &HostedFile{}
 }

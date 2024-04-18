@@ -10,7 +10,7 @@ type CustomerPaymentActivity struct {
 	NumberOfPurchasesLast6Months       *int32 `json:"numberOfPurchasesLast6Months,omitempty"`
 }
 
-// NewCustomerPaymentActivity constructs a new CustomerPaymentActivity
+// NewCustomerPaymentActivity constructs a new CustomerPaymentActivity instance
 func NewCustomerPaymentActivity() *CustomerPaymentActivity {
 	return &CustomerPaymentActivity{}
 }

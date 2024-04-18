@@ -8,7 +8,7 @@ type BoletoBancarioRequirednessValidator struct {
 	FiscalNumberLength *int32 `json:"fiscalNumberLength,omitempty"`
 }
 
-// NewBoletoBancarioRequirednessValidator constructs a new BoletoBancarioRequirednessValidator
+// NewBoletoBancarioRequirednessValidator constructs a new BoletoBancarioRequirednessValidator instance
 func NewBoletoBancarioRequirednessValidator() *BoletoBancarioRequirednessValidator {
 	return &BoletoBancarioRequirednessValidator{}
 }

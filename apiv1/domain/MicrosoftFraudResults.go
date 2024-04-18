@@ -14,7 +14,7 @@ type MicrosoftFraudResults struct {
 	UserDeviceType    *string `json:"userDeviceType,omitempty"`
 }
 
-// NewMicrosoftFraudResults constructs a new MicrosoftFraudResults
+// NewMicrosoftFraudResults constructs a new MicrosoftFraudResults instance
 func NewMicrosoftFraudResults() *MicrosoftFraudResults {
 	return &MicrosoftFraudResults{}
 }

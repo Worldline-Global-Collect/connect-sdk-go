@@ -9,7 +9,7 @@ type AdditionalOrderInputAirlineData struct {
 	LodgingData *LodgingData `json:"lodgingData,omitempty"`
 }
 
-// NewAdditionalOrderInputAirlineData constructs a new AdditionalOrderInputAirlineData
+// NewAdditionalOrderInputAirlineData constructs a new AdditionalOrderInputAirlineData instance
 func NewAdditionalOrderInputAirlineData() *AdditionalOrderInputAirlineData {
 	return &AdditionalOrderInputAirlineData{}
 }

@@ -11,7 +11,7 @@ type RedirectPaymentProduct840SpecificInput struct {
 	IsShortcut               *bool   `json:"isShortcut,omitempty"`
 }
 
-// NewRedirectPaymentProduct840SpecificInput constructs a new RedirectPaymentProduct840SpecificInput
+// NewRedirectPaymentProduct840SpecificInput constructs a new RedirectPaymentProduct840SpecificInput instance
 func NewRedirectPaymentProduct840SpecificInput() *RedirectPaymentProduct840SpecificInput {
 	return &RedirectPaymentProduct840SpecificInput{}
 }

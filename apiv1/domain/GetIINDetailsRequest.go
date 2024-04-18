@@ -9,7 +9,7 @@ type GetIINDetailsRequest struct {
 	PaymentContext *PaymentContext `json:"paymentContext,omitempty"`
 }
 
-// NewGetIINDetailsRequest constructs a new GetIINDetailsRequest
+// NewGetIINDetailsRequest constructs a new GetIINDetailsRequest instance
 func NewGetIINDetailsRequest() *GetIINDetailsRequest {
 	return &GetIINDetailsRequest{}
 }

@@ -15,7 +15,7 @@ type MobilePaymentMethodSpecificInput struct {
 	SkipFraudService               *bool                                 `json:"skipFraudService,omitempty"`
 }
 
-// NewMobilePaymentMethodSpecificInput constructs a new MobilePaymentMethodSpecificInput
+// NewMobilePaymentMethodSpecificInput constructs a new MobilePaymentMethodSpecificInput instance
 func NewMobilePaymentMethodSpecificInput() *MobilePaymentMethodSpecificInput {
 	return &MobilePaymentMethodSpecificInput{}
 }

@@ -14,7 +14,7 @@ type SdkDataInput struct {
 	SdkTransactionID      *string              `json:"sdkTransactionId,omitempty"`
 }
 
-// NewSdkDataInput constructs a new SdkDataInput
+// NewSdkDataInput constructs a new SdkDataInput instance
 func NewSdkDataInput() *SdkDataInput {
 	return &SdkDataInput{}
 }

@@ -19,57 +19,57 @@ type ValidationError struct {
 }
 
 // Message returns the error message
-func (ve ValidationError) Message() string {
-	return ve.errorMessage
+func (e ValidationError) Message() string {
+	return e.errorMessage
 }
 
 // StatusCode returns the status code
-func (ve ValidationError) StatusCode() int {
-	return ve.statusCode
+func (e ValidationError) StatusCode() int {
+	return e.statusCode
 }
 
 // ResponseBody returns the response body
-func (ve ValidationError) ResponseBody() string {
-	return ve.responseBody
+func (e ValidationError) ResponseBody() string {
+	return e.responseBody
 }
 
-// ErrorID returns the error id
-func (ve ValidationError) ErrorID() string {
-	return ve.errorID
+// ErrorID implements the APIError interface
+func (e ValidationError) ErrorID() string {
+	return e.errorID
 }
 
-// Errors returns a slice of underlying errors
-func (ve ValidationError) Errors() []domain.APIError {
+// Errors implements the APIError interface
+func (e ValidationError) Errors() []domain.APIError {
 	// Return a clone instead of the original slice - immutability insurance
-	return append([]domain.APIError{}, ve.errors...)
+	return append([]domain.APIError{}, e.errors...)
 }
 
 // String implements the Stringer interface
 // Format: 'errorMessage; statusCode=; responseBody='
-func (ve ValidationError) String() string {
-	list := ve.errorMessage
+func (e ValidationError) String() string {
+	list := e.errorMessage
 
-	if ve.statusCode > 0 {
-		list = list + "; statusCode=" + strconv.Itoa(ve.statusCode)
+	if e.statusCode > 0 {
+		list = list + "; statusCode=" + strconv.Itoa(e.statusCode)
 	}
-	if len(ve.responseBody) != 0 {
-		list = list + "; responseBody='" + ve.responseBody + "'"
+	if len(e.responseBody) != 0 {
+		list = list + "; responseBody='" + e.responseBody + "'"
 	}
 
 	return list
 }
 
 // Error implements the error interface
-func (ve ValidationError) Error() string {
-	return ve.String()
+func (e ValidationError) Error() string {
+	return e.String()
 }
 
-// NewValidationError creates a ValidationError with the given statusCode, responseBody, errorID and errors
+// NewValidationError creates a new ValidationError with the given statusCode, responseBody and response fields
 func NewValidationError(statusCode int, responseBody, errorID string, errors []domain.APIError) (*ValidationError, error) {
 	return &ValidationError{"the Worldline Global Collect platform returned an incorrect request error response", statusCode, responseBody, errorID, errors}, nil
 }
 
-// NewValidationErrorVerbose creates a ValidationError with the given message, statusCode, responseBody, errorID and errors
+// NewValidationErrorVerbose creates a new ValidationError with the given message, statusCode and response fields
 func NewValidationErrorVerbose(message string, statusCode int, responseBody, errorID string, errors []domain.APIError) (*ValidationError, error) {
 	return &ValidationError{message, statusCode, responseBody, errorID, errors}, nil
 }

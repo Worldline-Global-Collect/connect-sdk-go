@@ -9,7 +9,7 @@ type GiftCardPurchase struct {
 	NumberOfGiftCards *int32         `json:"numberOfGiftCards,omitempty"`
 }
 
-// NewGiftCardPurchase constructs a new GiftCardPurchase
+// NewGiftCardPurchase constructs a new GiftCardPurchase instance
 func NewGiftCardPurchase() *GiftCardPurchase {
 	return &GiftCardPurchase{}
 }

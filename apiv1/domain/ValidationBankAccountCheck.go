@@ -10,7 +10,7 @@ type ValidationBankAccountCheck struct {
 	Result      *string `json:"result,omitempty"`
 }
 
-// NewValidationBankAccountCheck constructs a new ValidationBankAccountCheck
+// NewValidationBankAccountCheck constructs a new ValidationBankAccountCheck instance
 func NewValidationBankAccountCheck() *ValidationBankAccountCheck {
 	return &ValidationBankAccountCheck{}
 }

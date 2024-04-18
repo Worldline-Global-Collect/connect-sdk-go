@@ -13,7 +13,7 @@ type ContactDetails struct {
 	WorkPhoneNumber   *string `json:"workPhoneNumber,omitempty"`
 }
 
-// NewContactDetails constructs a new ContactDetails
+// NewContactDetails constructs a new ContactDetails instance
 func NewContactDetails() *ContactDetails {
 	return &ContactDetails{}
 }

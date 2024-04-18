@@ -8,7 +8,7 @@ type RegularExpressionValidator struct {
 	RegularExpression *string `json:"regularExpression,omitempty"`
 }
 
-// NewRegularExpressionValidator constructs a new RegularExpressionValidator
+// NewRegularExpressionValidator constructs a new RegularExpressionValidator instance
 func NewRegularExpressionValidator() *RegularExpressionValidator {
 	return &RegularExpressionValidator{}
 }

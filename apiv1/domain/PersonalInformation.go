@@ -11,7 +11,7 @@ type PersonalInformation struct {
 	Name           *PersonalName           `json:"name,omitempty"`
 }
 
-// NewPersonalInformation constructs a new PersonalInformation
+// NewPersonalInformation constructs a new PersonalInformation instance
 func NewPersonalInformation() *PersonalInformation {
 	return &PersonalInformation{}
 }

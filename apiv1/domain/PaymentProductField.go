@@ -12,7 +12,7 @@ type PaymentProductField struct {
 	UsedForLookup    *bool                                `json:"usedForLookup,omitempty"`
 }
 
-// NewPaymentProductField constructs a new PaymentProductField
+// NewPaymentProductField constructs a new PaymentProductField instance
 func NewPaymentProductField() *PaymentProductField {
 	return &PaymentProductField{}
 }

@@ -12,7 +12,7 @@ type LineItemInvoiceData struct {
 	PricePerItem       *int64  `json:"pricePerItem,omitempty"`
 }
 
-// NewLineItemInvoiceData constructs a new LineItemInvoiceData
+// NewLineItemInvoiceData constructs a new LineItemInvoiceData instance
 func NewLineItemInvoiceData() *LineItemInvoiceData {
 	return &LineItemInvoiceData{}
 }

@@ -9,7 +9,7 @@ type SessionRequest struct {
 	Tokens                *[]string                           `json:"tokens,omitempty"`
 }
 
-// NewSessionRequest constructs a new SessionRequest
+// NewSessionRequest constructs a new SessionRequest instance
 func NewSessionRequest() *SessionRequest {
 	return &SessionRequest{}
 }

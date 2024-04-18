@@ -15,7 +15,7 @@ type Address struct {
 	Zip            *string `json:"zip,omitempty"`
 }
 
-// NewAddress constructs a new Address
+// NewAddress constructs a new Address instance
 func NewAddress() *Address {
 	return &Address{}
 }

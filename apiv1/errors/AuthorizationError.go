@@ -19,57 +19,57 @@ type AuthorizationError struct {
 }
 
 // Message returns the error message
-func (ae AuthorizationError) Message() string {
-	return ae.errorMessage
+func (e AuthorizationError) Message() string {
+	return e.errorMessage
 }
 
 // StatusCode returns the status code
-func (ae AuthorizationError) StatusCode() int {
-	return ae.statusCode
+func (e AuthorizationError) StatusCode() int {
+	return e.statusCode
 }
 
 // ResponseBody returns the response body
-func (ae AuthorizationError) ResponseBody() string {
-	return ae.responseBody
+func (e AuthorizationError) ResponseBody() string {
+	return e.responseBody
 }
 
-// ErrorID returns the error id
-func (ae AuthorizationError) ErrorID() string {
-	return ae.errorID
+// ErrorID implements the APIError interface
+func (e AuthorizationError) ErrorID() string {
+	return e.errorID
 }
 
-// Errors returns a slice of underlying errors
-func (ae AuthorizationError) Errors() []domain.APIError {
+// Errors implements the APIError interface
+func (e AuthorizationError) Errors() []domain.APIError {
 	// Return a clone instead of the original slice - immutability insurance
-	return append([]domain.APIError{}, ae.errors...)
+	return append([]domain.APIError{}, e.errors...)
 }
 
 // String implements the Stringer interface
 // Format: 'errorMessage; statusCode=; responseBody='
-func (ae AuthorizationError) String() (list string) {
-	list = ae.errorMessage
+func (e AuthorizationError) String() string {
+	list := e.errorMessage
 
-	if ae.statusCode > 0 {
-		list = list + "; statusCode=" + strconv.Itoa(ae.statusCode)
+	if e.statusCode > 0 {
+		list = list + "; statusCode=" + strconv.Itoa(e.statusCode)
 	}
-	if len(ae.responseBody) != 0 {
-		list = list + "; responseBody='" + ae.responseBody + "'"
+	if len(e.responseBody) != 0 {
+		list = list + "; responseBody='" + e.responseBody + "'"
 	}
 
-	return
+	return list
 }
 
 // Error implements the error interface
-func (ae AuthorizationError) Error() string {
-	return ae.String()
+func (e AuthorizationError) Error() string {
+	return e.String()
 }
 
-// NewAuthorizationError creates an AuthorizationError with the given statusCode, responseBody, errorID and errors
+// NewAuthorizationError creates a new AuthorizationError with the given statusCode, responseBody and response fields
 func NewAuthorizationError(statusCode int, responseBody, errorID string, errors []domain.APIError) (*AuthorizationError, error) {
-	return &AuthorizationError{"the Worldline Global Collect platform returned an incorrect request error response", statusCode, responseBody, errorID, errors}, nil
+	return &AuthorizationError{"the Worldline Global Collect platform returned an authorization error response", statusCode, responseBody, errorID, errors}, nil
 }
 
-// NewAuthorizationErrorVerbose creates an AuthorizationError with the given message, statusCode, responseBody, errorID and errors
+// NewAuthorizationErrorVerbose creates a new AuthorizationError with the given message, statusCode and response fields
 func NewAuthorizationErrorVerbose(message string, statusCode int, responseBody, errorID string, errors []domain.APIError) (*AuthorizationError, error) {
 	return &AuthorizationError{message, statusCode, responseBody, errorID, errors}, nil
 }

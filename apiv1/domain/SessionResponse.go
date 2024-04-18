@@ -13,7 +13,7 @@ type SessionResponse struct {
 	Region          *string   `json:"region,omitempty"`
 }
 
-// NewSessionResponse constructs a new SessionResponse
+// NewSessionResponse constructs a new SessionResponse instance
 func NewSessionResponse() *SessionResponse {
 	return &SessionResponse{}
 }

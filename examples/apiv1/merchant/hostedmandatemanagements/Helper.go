@@ -3,9 +3,7 @@
 
 package examples
 
-import (
-	"github.com/Worldline-Global-Collect/connect-sdk-go"
-)
+import "github.com/Worldline-Global-Collect/connect-sdk-go"
 
 func getClient() (*connectsdk.Client, error) {
 	apiKeyID := "someKey"

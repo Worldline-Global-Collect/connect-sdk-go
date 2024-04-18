@@ -13,7 +13,7 @@ type MandateResponse struct {
 	UniqueMandateReference *string          `json:"uniqueMandateReference,omitempty"`
 }
 
-// NewMandateResponse constructs a new MandateResponse
+// NewMandateResponse constructs a new MandateResponse instance
 func NewMandateResponse() *MandateResponse {
 	return &MandateResponse{}
 }

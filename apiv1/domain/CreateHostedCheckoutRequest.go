@@ -18,7 +18,7 @@ type CreateHostedCheckoutRequest struct {
 	SepaDirectDebitPaymentMethodSpecificInput *SepaDirectDebitPaymentMethodSpecificInputBase  `json:"sepaDirectDebitPaymentMethodSpecificInput,omitempty"`
 }
 
-// NewCreateHostedCheckoutRequest constructs a new CreateHostedCheckoutRequest
+// NewCreateHostedCheckoutRequest constructs a new CreateHostedCheckoutRequest instance
 func NewCreateHostedCheckoutRequest() *CreateHostedCheckoutRequest {
 	return &CreateHostedCheckoutRequest{}
 }

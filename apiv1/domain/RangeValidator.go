@@ -9,7 +9,7 @@ type RangeValidator struct {
 	MinValue *int32 `json:"minValue,omitempty"`
 }
 
-// NewRangeValidator constructs a new RangeValidator
+// NewRangeValidator constructs a new RangeValidator instance
 func NewRangeValidator() *RangeValidator {
 	return &RangeValidator{}
 }

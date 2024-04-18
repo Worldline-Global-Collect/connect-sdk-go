@@ -14,7 +14,7 @@ type BankAccountBban struct {
 	CountryCode       *string `json:"countryCode,omitempty"`
 }
 
-// NewBankAccountBban constructs a new BankAccountBban
+// NewBankAccountBban constructs a new BankAccountBban instance
 func NewBankAccountBban() *BankAccountBban {
 	return &BankAccountBban{}
 }

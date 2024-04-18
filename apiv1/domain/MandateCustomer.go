@@ -12,7 +12,7 @@ type MandateCustomer struct {
 	PersonalInformation *MandatePersonalInformation `json:"personalInformation,omitempty"`
 }
 
-// NewMandateCustomer constructs a new MandateCustomer
+// NewMandateCustomer constructs a new MandateCustomer instance
 func NewMandateCustomer() *MandateCustomer {
 	return &MandateCustomer{}
 }

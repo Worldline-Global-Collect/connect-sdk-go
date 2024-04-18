@@ -11,7 +11,7 @@ type MobileThreeDSecureChallengeParameters struct {
 	ThreeDServerTransactionID *string `json:"threeDServerTransactionId,omitempty"`
 }
 
-// NewMobileThreeDSecureChallengeParameters constructs a new MobileThreeDSecureChallengeParameters
+// NewMobileThreeDSecureChallengeParameters constructs a new MobileThreeDSecureChallengeParameters instance
 func NewMobileThreeDSecureChallengeParameters() *MobileThreeDSecureChallengeParameters {
 	return &MobileThreeDSecureChallengeParameters{}
 }

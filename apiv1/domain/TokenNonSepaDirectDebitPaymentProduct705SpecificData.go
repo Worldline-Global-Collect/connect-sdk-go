@@ -9,7 +9,7 @@ type TokenNonSepaDirectDebitPaymentProduct705SpecificData struct {
 	BankAccountBban *BankAccountBban `json:"bankAccountBban,omitempty"`
 }
 
-// NewTokenNonSepaDirectDebitPaymentProduct705SpecificData constructs a new TokenNonSepaDirectDebitPaymentProduct705SpecificData
+// NewTokenNonSepaDirectDebitPaymentProduct705SpecificData constructs a new TokenNonSepaDirectDebitPaymentProduct705SpecificData instance
 func NewTokenNonSepaDirectDebitPaymentProduct705SpecificData() *TokenNonSepaDirectDebitPaymentProduct705SpecificData {
 	return &TokenNonSepaDirectDebitPaymentProduct705SpecificData{}
 }

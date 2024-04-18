@@ -10,7 +10,7 @@ type CompletePaymentRequest struct {
 	Order                          *Order                                         `json:"order,omitempty"`
 }
 
-// NewCompletePaymentRequest constructs a new CompletePaymentRequest
+// NewCompletePaymentRequest constructs a new CompletePaymentRequest instance
 func NewCompletePaymentRequest() *CompletePaymentRequest {
 	return &CompletePaymentRequest{}
 }

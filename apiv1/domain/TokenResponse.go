@@ -14,7 +14,7 @@ type TokenResponse struct {
 	SepaDirectDebit    *TokenSepaDirectDebit    `json:"sepaDirectDebit,omitempty"`
 }
 
-// NewTokenResponse constructs a new TokenResponse
+// NewTokenResponse constructs a new TokenResponse instance
 func NewTokenResponse() *TokenResponse {
 	return &TokenResponse{}
 }

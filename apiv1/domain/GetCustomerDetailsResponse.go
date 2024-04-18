@@ -17,7 +17,7 @@ type GetCustomerDetailsResponse struct {
 	Zip          *string `json:"zip,omitempty"`
 }
 
-// NewGetCustomerDetailsResponse constructs a new GetCustomerDetailsResponse
+// NewGetCustomerDetailsResponse constructs a new GetCustomerDetailsResponse instance
 func NewGetCustomerDetailsResponse() *GetCustomerDetailsResponse {
 	return &GetCustomerDetailsResponse{}
 }

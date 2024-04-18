@@ -14,7 +14,7 @@ type OrderStatusOutput struct {
 	StatusCodeChangeDateTime *string         `json:"statusCodeChangeDateTime,omitempty"`
 }
 
-// NewOrderStatusOutput constructs a new OrderStatusOutput
+// NewOrderStatusOutput constructs a new OrderStatusOutput instance
 func NewOrderStatusOutput() *OrderStatusOutput {
 	return &OrderStatusOutput{}
 }

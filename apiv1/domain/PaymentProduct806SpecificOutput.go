@@ -9,7 +9,7 @@ type PaymentProduct806SpecificOutput struct {
 	CustomerAccount *TrustlyBankAccount `json:"customerAccount,omitempty"`
 }
 
-// NewPaymentProduct806SpecificOutput constructs a new PaymentProduct806SpecificOutput
+// NewPaymentProduct806SpecificOutput constructs a new PaymentProduct806SpecificOutput instance
 func NewPaymentProduct806SpecificOutput() *PaymentProduct806SpecificOutput {
 	return &PaymentProduct806SpecificOutput{}
 }

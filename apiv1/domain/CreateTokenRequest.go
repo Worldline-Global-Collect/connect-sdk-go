@@ -13,7 +13,7 @@ type CreateTokenRequest struct {
 	SepaDirectDebit        *TokenSepaDirectDebitWithoutCreditor `json:"sepaDirectDebit,omitempty"`
 }
 
-// NewCreateTokenRequest constructs a new CreateTokenRequest
+// NewCreateTokenRequest constructs a new CreateTokenRequest instance
 func NewCreateTokenRequest() *CreateTokenRequest {
 	return &CreateTokenRequest{}
 }

@@ -10,7 +10,7 @@ type CardRecurrenceDetails struct {
 	RecurringPaymentSequenceIndicator *string `json:"recurringPaymentSequenceIndicator,omitempty"`
 }
 
-// NewCardRecurrenceDetails constructs a new CardRecurrenceDetails
+// NewCardRecurrenceDetails constructs a new CardRecurrenceDetails instance
 func NewCardRecurrenceDetails() *CardRecurrenceDetails {
 	return &CardRecurrenceDetails{}
 }

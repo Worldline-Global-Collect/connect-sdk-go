@@ -22,7 +22,7 @@ type PaymentOutput struct {
 	SepaDirectDebitPaymentMethodSpecificOutput *SepaDirectDebitPaymentMethodSpecificOutput    `json:"sepaDirectDebitPaymentMethodSpecificOutput,omitempty"`
 }
 
-// NewPaymentOutput constructs a new PaymentOutput
+// NewPaymentOutput constructs a new PaymentOutput instance
 func NewPaymentOutput() *PaymentOutput {
 	return &PaymentOutput{}
 }

@@ -13,7 +13,7 @@ type Card struct {
 	PartialPin     *string `json:"partialPin,omitempty"`
 }
 
-// NewCard constructs a new Card
+// NewCard constructs a new Card instance
 func NewCard() *Card {
 	return &Card{}
 }

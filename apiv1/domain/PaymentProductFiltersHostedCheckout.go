@@ -10,7 +10,7 @@ type PaymentProductFiltersHostedCheckout struct {
 	TokensOnly *bool                 `json:"tokensOnly,omitempty"`
 }
 
-// NewPaymentProductFiltersHostedCheckout constructs a new PaymentProductFiltersHostedCheckout
+// NewPaymentProductFiltersHostedCheckout constructs a new PaymentProductFiltersHostedCheckout instance
 func NewPaymentProductFiltersHostedCheckout() *PaymentProductFiltersHostedCheckout {
 	return &PaymentProductFiltersHostedCheckout{}
 }

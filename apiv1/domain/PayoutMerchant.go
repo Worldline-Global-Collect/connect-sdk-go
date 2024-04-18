@@ -8,7 +8,7 @@ type PayoutMerchant struct {
 	ConfigurationID *string `json:"configurationId,omitempty"`
 }
 
-// NewPayoutMerchant constructs a new PayoutMerchant
+// NewPayoutMerchant constructs a new PayoutMerchant instance
 func NewPayoutMerchant() *PayoutMerchant {
 	return &PayoutMerchant{}
 }

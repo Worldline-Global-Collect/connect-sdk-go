@@ -9,7 +9,7 @@ type RecurringPaymentsData struct {
 	TrialInformation  *TrialInformation `json:"trialInformation,omitempty"`
 }
 
-// NewRecurringPaymentsData constructs a new RecurringPaymentsData
+// NewRecurringPaymentsData constructs a new RecurringPaymentsData instance
 func NewRecurringPaymentsData() *RecurringPaymentsData {
 	return &RecurringPaymentsData{}
 }

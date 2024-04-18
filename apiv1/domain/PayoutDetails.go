@@ -10,7 +10,7 @@ type PayoutDetails struct {
 	References    *PayoutReferences `json:"references,omitempty"`
 }
 
-// NewPayoutDetails constructs a new PayoutDetails
+// NewPayoutDetails constructs a new PayoutDetails instance
 func NewPayoutDetails() *PayoutDetails {
 	return &PayoutDetails{}
 }

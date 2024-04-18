@@ -9,7 +9,7 @@ type AmountBreakdown struct {
 	Type   *string `json:"type,omitempty"`
 }
 
-// NewAmountBreakdown constructs a new AmountBreakdown
+// NewAmountBreakdown constructs a new AmountBreakdown instance
 func NewAmountBreakdown() *AmountBreakdown {
 	return &AmountBreakdown{}
 }

@@ -18,7 +18,7 @@ type Creditor struct {
 	Zip                   *string `json:"zip,omitempty"`
 }
 
-// NewCreditor constructs a new Creditor
+// NewCreditor constructs a new Creditor instance
 func NewCreditor() *Creditor {
 	return &Creditor{}
 }

@@ -9,7 +9,7 @@ type GetCustomerDetailsRequest struct {
 	Values      *[]KeyValuePair `json:"values,omitempty"`
 }
 
-// NewGetCustomerDetailsRequest constructs a new GetCustomerDetailsRequest
+// NewGetCustomerDetailsRequest constructs a new GetCustomerDetailsRequest instance
 func NewGetCustomerDetailsRequest() *GetCustomerDetailsRequest {
 	return &GetCustomerDetailsRequest{}
 }

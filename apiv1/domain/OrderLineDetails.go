@@ -19,7 +19,7 @@ type OrderLineDetails struct {
 	Unit                    *string `json:"unit,omitempty"`
 }
 
-// NewOrderLineDetails constructs a new OrderLineDetails
+// NewOrderLineDetails constructs a new OrderLineDetails instance
 func NewOrderLineDetails() *OrderLineDetails {
 	return &OrderLineDetails{}
 }

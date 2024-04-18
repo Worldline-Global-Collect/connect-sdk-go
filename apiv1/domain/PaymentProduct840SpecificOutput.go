@@ -11,7 +11,7 @@ type PaymentProduct840SpecificOutput struct {
 	ProtectionEligibility *ProtectionEligibility            `json:"protectionEligibility,omitempty"`
 }
 
-// NewPaymentProduct840SpecificOutput constructs a new PaymentProduct840SpecificOutput
+// NewPaymentProduct840SpecificOutput constructs a new PaymentProduct840SpecificOutput instance
 func NewPaymentProduct840SpecificOutput() *PaymentProduct840SpecificOutput {
 	return &PaymentProduct840SpecificOutput{}
 }

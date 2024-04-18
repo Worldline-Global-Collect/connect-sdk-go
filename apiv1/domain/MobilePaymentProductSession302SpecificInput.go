@@ -10,7 +10,7 @@ type MobilePaymentProductSession302SpecificInput struct {
 	ValidationURL *string `json:"validationUrl,omitempty"`
 }
 
-// NewMobilePaymentProductSession302SpecificInput constructs a new MobilePaymentProductSession302SpecificInput
+// NewMobilePaymentProductSession302SpecificInput constructs a new MobilePaymentProductSession302SpecificInput instance
 func NewMobilePaymentProductSession302SpecificInput() *MobilePaymentProductSession302SpecificInput {
 	return &MobilePaymentProductSession302SpecificInput{}
 }

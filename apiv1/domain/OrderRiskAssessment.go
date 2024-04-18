@@ -11,7 +11,7 @@ type OrderRiskAssessment struct {
 	Shipping        *ShippingRiskAssessment          `json:"shipping,omitempty"`
 }
 
-// NewOrderRiskAssessment constructs a new OrderRiskAssessment
+// NewOrderRiskAssessment constructs a new OrderRiskAssessment instance
 func NewOrderRiskAssessment() *OrderRiskAssessment {
 	return &OrderRiskAssessment{}
 }

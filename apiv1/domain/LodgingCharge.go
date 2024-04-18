@@ -10,7 +10,7 @@ type LodgingCharge struct {
 	ChargeType               *string `json:"chargeType,omitempty"`
 }
 
-// NewLodgingCharge constructs a new LodgingCharge
+// NewLodgingCharge constructs a new LodgingCharge instance
 func NewLodgingCharge() *LodgingCharge {
 	return &LodgingCharge{}
 }

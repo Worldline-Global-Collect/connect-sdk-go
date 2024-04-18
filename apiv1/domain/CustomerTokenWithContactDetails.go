@@ -14,7 +14,7 @@ type CustomerTokenWithContactDetails struct {
 	VatNumber           *string                   `json:"vatNumber,omitempty"`
 }
 
-// NewCustomerTokenWithContactDetails constructs a new CustomerTokenWithContactDetails
+// NewCustomerTokenWithContactDetails constructs a new CustomerTokenWithContactDetails instance
 func NewCustomerTokenWithContactDetails() *CustomerTokenWithContactDetails {
 	return &CustomerTokenWithContactDetails{}
 }

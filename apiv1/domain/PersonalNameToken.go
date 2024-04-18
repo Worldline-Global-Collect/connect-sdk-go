@@ -10,7 +10,7 @@ type PersonalNameToken struct {
 	SurnamePrefix *string `json:"surnamePrefix,omitempty"`
 }
 
-// NewPersonalNameToken constructs a new PersonalNameToken
+// NewPersonalNameToken constructs a new PersonalNameToken instance
 func NewPersonalNameToken() *PersonalNameToken {
 	return &PersonalNameToken{}
 }

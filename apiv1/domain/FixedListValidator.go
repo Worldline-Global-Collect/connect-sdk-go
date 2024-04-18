@@ -8,7 +8,7 @@ type FixedListValidator struct {
 	AllowedValues *[]string `json:"allowedValues,omitempty"`
 }
 
-// NewFixedListValidator constructs a new FixedListValidator
+// NewFixedListValidator constructs a new FixedListValidator instance
 func NewFixedListValidator() *FixedListValidator {
 	return &FixedListValidator{}
 }

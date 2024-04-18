@@ -13,7 +13,7 @@ type MobilePaymentMethodSpecificOutput struct {
 	ThreeDSecureResults *ThreeDSecureResults `json:"threeDSecureResults,omitempty"`
 }
 
-// NewMobilePaymentMethodSpecificOutput constructs a new MobilePaymentMethodSpecificOutput
+// NewMobilePaymentMethodSpecificOutput constructs a new MobilePaymentMethodSpecificOutput instance
 func NewMobilePaymentMethodSpecificOutput() *MobilePaymentMethodSpecificOutput {
 	return &MobilePaymentMethodSpecificOutput{}
 }

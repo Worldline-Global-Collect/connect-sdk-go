@@ -10,6 +10,7 @@ import (
 )
 
 // NetworksParams represents query parameters for Get payment product networks
+//
 // Documentation can be found at https://apireference.connect.worldline-solutions.com/s2sapi/v1/en_US/go/products/networks.html
 type NetworksParams struct {
 	CountryCode  *string
@@ -42,7 +43,7 @@ func (params *NetworksParams) ToRequestParameters() communication.RequestParams 
 	return reqParams
 }
 
-// NewNetworksParams constructs an instance of NetworksParams
+// NewNetworksParams constructs a new NetworksParams instance
 func NewNetworksParams() *NetworksParams {
 	return &NetworksParams{}
 }

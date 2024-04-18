@@ -19,7 +19,7 @@ type CustomerAccount struct {
 	PaymentActivity               *CustomerPaymentActivity       `json:"paymentActivity,omitempty"`
 }
 
-// NewCustomerAccount constructs a new CustomerAccount
+// NewCustomerAccount constructs a new CustomerAccount instance
 func NewCustomerAccount() *CustomerAccount {
 	return &CustomerAccount{}
 }

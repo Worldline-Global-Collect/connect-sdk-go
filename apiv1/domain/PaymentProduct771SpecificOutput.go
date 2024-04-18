@@ -8,7 +8,7 @@ type PaymentProduct771SpecificOutput struct {
 	MandateReference *string `json:"mandateReference,omitempty"`
 }
 
-// NewPaymentProduct771SpecificOutput constructs a new PaymentProduct771SpecificOutput
+// NewPaymentProduct771SpecificOutput constructs a new PaymentProduct771SpecificOutput instance
 func NewPaymentProduct771SpecificOutput() *PaymentProduct771SpecificOutput {
 	return &PaymentProduct771SpecificOutput{}
 }

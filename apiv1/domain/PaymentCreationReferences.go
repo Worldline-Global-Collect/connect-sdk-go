@@ -9,7 +9,7 @@ type PaymentCreationReferences struct {
 	ExternalReference   *string `json:"externalReference,omitempty"`
 }
 
-// NewPaymentCreationReferences constructs a new PaymentCreationReferences
+// NewPaymentCreationReferences constructs a new PaymentCreationReferences instance
 func NewPaymentCreationReferences() *PaymentCreationReferences {
 	return &PaymentCreationReferences{}
 }

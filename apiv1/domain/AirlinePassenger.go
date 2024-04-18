@@ -11,7 +11,7 @@ type AirlinePassenger struct {
 	Title         *string `json:"title,omitempty"`
 }
 
-// NewAirlinePassenger constructs a new AirlinePassenger
+// NewAirlinePassenger constructs a new AirlinePassenger instance
 func NewAirlinePassenger() *AirlinePassenger {
 	return &AirlinePassenger{}
 }

@@ -11,7 +11,7 @@ type AccountOnFileAttribute struct {
 	Value           *string `json:"value,omitempty"`
 }
 
-// NewAccountOnFileAttribute constructs a new AccountOnFileAttribute
+// NewAccountOnFileAttribute constructs a new AccountOnFileAttribute instance
 func NewAccountOnFileAttribute() *AccountOnFileAttribute {
 	return &AccountOnFileAttribute{}
 }

@@ -12,7 +12,7 @@ type PayoutCustomer struct {
 	Name               *PersonalName       `json:"name,omitempty"`
 }
 
-// NewPayoutCustomer constructs a new PayoutCustomer
+// NewPayoutCustomer constructs a new PayoutCustomer instance
 func NewPayoutCustomer() *PayoutCustomer {
 	return &PayoutCustomer{}
 }

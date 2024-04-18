@@ -9,7 +9,7 @@ type PaymentProductFiltersClientSession struct {
 	RestrictTo *PaymentProductFilter `json:"restrictTo,omitempty"`
 }
 
-// NewPaymentProductFiltersClientSession constructs a new PaymentProductFiltersClientSession
+// NewPaymentProductFiltersClientSession constructs a new PaymentProductFiltersClientSession instance
 func NewPaymentProductFiltersClientSession() *PaymentProductFiltersClientSession {
 	return &PaymentProductFiltersClientSession{}
 }

@@ -8,7 +8,7 @@ type Directory struct {
 	Entries *[]DirectoryEntry `json:"entries,omitempty"`
 }
 
-// NewDirectory constructs a new Directory
+// NewDirectory constructs a new Directory instance
 func NewDirectory() *Directory {
 	return &Directory{}
 }

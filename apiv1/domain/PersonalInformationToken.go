@@ -8,7 +8,7 @@ type PersonalInformationToken struct {
 	Name *PersonalNameToken `json:"name,omitempty"`
 }
 
-// NewPersonalInformationToken constructs a new PersonalInformationToken
+// NewPersonalInformationToken constructs a new PersonalInformationToken instance
 func NewPersonalInformationToken() *PersonalInformationToken {
 	return &PersonalInformationToken{}
 }

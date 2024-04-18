@@ -9,7 +9,7 @@ type ProtectionEligibility struct {
 	Type        *string `json:"type,omitempty"`
 }
 
-// NewProtectionEligibility constructs a new ProtectionEligibility
+// NewProtectionEligibility constructs a new ProtectionEligibility instance
 func NewProtectionEligibility() *ProtectionEligibility {
 	return &ProtectionEligibility{}
 }

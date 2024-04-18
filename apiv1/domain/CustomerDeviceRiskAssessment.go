@@ -9,7 +9,7 @@ type CustomerDeviceRiskAssessment struct {
 	DeviceFingerprintTransactionID *string `json:"deviceFingerprintTransactionId,omitempty"`
 }
 
-// NewCustomerDeviceRiskAssessment constructs a new CustomerDeviceRiskAssessment
+// NewCustomerDeviceRiskAssessment constructs a new CustomerDeviceRiskAssessment instance
 func NewCustomerDeviceRiskAssessment() *CustomerDeviceRiskAssessment {
 	return &CustomerDeviceRiskAssessment{}
 }

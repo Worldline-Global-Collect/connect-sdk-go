@@ -9,7 +9,7 @@ type RedirectPaymentProduct863SpecificInput struct {
 	OpenID          *string `json:"openId,omitempty"`
 }
 
-// NewRedirectPaymentProduct863SpecificInput constructs a new RedirectPaymentProduct863SpecificInput
+// NewRedirectPaymentProduct863SpecificInput constructs a new RedirectPaymentProduct863SpecificInput instance
 func NewRedirectPaymentProduct863SpecificInput() *RedirectPaymentProduct863SpecificInput {
 	return &RedirectPaymentProduct863SpecificInput{}
 }

@@ -11,7 +11,7 @@ type OrderInvoiceData struct {
 	TextQualifiers *[]string `json:"textQualifiers,omitempty"`
 }
 
-// NewOrderInvoiceData constructs a new OrderInvoiceData
+// NewOrderInvoiceData constructs a new OrderInvoiceData instance
 func NewOrderInvoiceData() *OrderInvoiceData {
 	return &OrderInvoiceData{}
 }

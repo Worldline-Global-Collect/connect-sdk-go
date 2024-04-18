@@ -14,7 +14,7 @@ type CreateMandateBase struct {
 	UniqueMandateReference *string          `json:"uniqueMandateReference,omitempty"`
 }
 
-// NewCreateMandateBase constructs a new CreateMandateBase
+// NewCreateMandateBase constructs a new CreateMandateBase instance
 func NewCreateMandateBase() *CreateMandateBase {
 	return &CreateMandateBase{}
 }

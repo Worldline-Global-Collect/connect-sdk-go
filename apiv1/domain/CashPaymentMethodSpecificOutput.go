@@ -9,7 +9,7 @@ type CashPaymentMethodSpecificOutput struct {
 	PaymentProductID *int32        `json:"paymentProductId,omitempty"`
 }
 
-// NewCashPaymentMethodSpecificOutput constructs a new CashPaymentMethodSpecificOutput
+// NewCashPaymentMethodSpecificOutput constructs a new CashPaymentMethodSpecificOutput instance
 func NewCashPaymentMethodSpecificOutput() *CashPaymentMethodSpecificOutput {
 	return &CashPaymentMethodSpecificOutput{}
 }

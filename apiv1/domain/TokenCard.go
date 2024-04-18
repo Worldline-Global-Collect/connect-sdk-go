@@ -10,7 +10,7 @@ type TokenCard struct {
 	Data     *TokenCardData `json:"data,omitempty"`
 }
 
-// NewTokenCard constructs a new TokenCard
+// NewTokenCard constructs a new TokenCard instance
 func NewTokenCard() *TokenCard {
 	return &TokenCard{}
 }

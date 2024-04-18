@@ -11,7 +11,7 @@ type PaymentContext struct {
 	IsRecurring    *bool          `json:"isRecurring,omitempty"`
 }
 
-// NewPaymentContext constructs a new PaymentContext
+// NewPaymentContext constructs a new PaymentContext instance
 func NewPaymentContext() *PaymentContext {
 	return &PaymentContext{}
 }

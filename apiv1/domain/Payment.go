@@ -12,7 +12,7 @@ type Payment struct {
 	StatusOutput                 *PaymentStatusOutput          `json:"statusOutput,omitempty"`
 }
 
-// NewPayment constructs a new Payment
+// NewPayment constructs a new Payment instance
 func NewPayment() *Payment {
 	return &Payment{}
 }

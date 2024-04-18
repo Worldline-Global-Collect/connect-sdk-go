@@ -11,7 +11,7 @@ type RefundResponse struct {
 	StatusOutput *OrderStatusOutput `json:"statusOutput,omitempty"`
 }
 
-// NewRefundResponse constructs a new RefundResponse
+// NewRefundResponse constructs a new RefundResponse instance
 func NewRefundResponse() *RefundResponse {
 	return &RefundResponse{}
 }

@@ -11,7 +11,7 @@ type PayoutResponse struct {
 	StatusOutput *OrderStatusOutput `json:"statusOutput,omitempty"`
 }
 
-// NewPayoutResponse constructs a new PayoutResponse
+// NewPayoutResponse constructs a new PayoutResponse instance
 func NewPayoutResponse() *PayoutResponse {
 	return &PayoutResponse{}
 }

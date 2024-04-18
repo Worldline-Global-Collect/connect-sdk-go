@@ -17,7 +17,7 @@ type RedirectPaymentMethodSpecificOutput struct {
 	Token                            *string                           `json:"token,omitempty"`
 }
 
-// NewRedirectPaymentMethodSpecificOutput constructs a new RedirectPaymentMethodSpecificOutput
+// NewRedirectPaymentMethodSpecificOutput constructs a new RedirectPaymentMethodSpecificOutput instance
 func NewRedirectPaymentMethodSpecificOutput() *RedirectPaymentMethodSpecificOutput {
 	return &RedirectPaymentMethodSpecificOutput{}
 }

@@ -10,7 +10,7 @@ type ShippingRiskAssessment struct {
 	TrackingNumber *string          `json:"trackingNumber,omitempty"`
 }
 
-// NewShippingRiskAssessment constructs a new ShippingRiskAssessment
+// NewShippingRiskAssessment constructs a new ShippingRiskAssessment instance
 func NewShippingRiskAssessment() *ShippingRiskAssessment {
 	return &ShippingRiskAssessment{}
 }

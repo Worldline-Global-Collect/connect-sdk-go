@@ -12,7 +12,7 @@ type CreateDisputeRequest struct {
 	RequestMessage *string        `json:"requestMessage,omitempty"`
 }
 
-// NewCreateDisputeRequest constructs a new CreateDisputeRequest
+// NewCreateDisputeRequest constructs a new CreateDisputeRequest instance
 func NewCreateDisputeRequest() *CreateDisputeRequest {
 	return &CreateDisputeRequest{}
 }

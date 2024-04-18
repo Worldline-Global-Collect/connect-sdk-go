@@ -8,7 +8,7 @@ type DeviceFingerprintRequest struct {
 	CollectorCallback *string `json:"collectorCallback,omitempty"`
 }
 
-// NewDeviceFingerprintRequest constructs a new DeviceFingerprintRequest
+// NewDeviceFingerprintRequest constructs a new DeviceFingerprintRequest instance
 func NewDeviceFingerprintRequest() *DeviceFingerprintRequest {
 	return &DeviceFingerprintRequest{}
 }

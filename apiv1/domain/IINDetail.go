@@ -9,7 +9,7 @@ type IINDetail struct {
 	PaymentProductID   *int32 `json:"paymentProductId,omitempty"`
 }
 
-// NewIINDetail constructs a new IINDetail
+// NewIINDetail constructs a new IINDetail instance
 func NewIINDetail() *IINDetail {
 	return &IINDetail{}
 }

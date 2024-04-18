@@ -15,7 +15,7 @@ type LineItemLevel3InterchangeInformation struct {
 	Unit            *string `json:"unit,omitempty"`
 }
 
-// NewLineItemLevel3InterchangeInformation constructs a new LineItemLevel3InterchangeInformation
+// NewLineItemLevel3InterchangeInformation constructs a new LineItemLevel3InterchangeInformation instance
 func NewLineItemLevel3InterchangeInformation() *LineItemLevel3InterchangeInformation {
 	return &LineItemLevel3InterchangeInformation{}
 }

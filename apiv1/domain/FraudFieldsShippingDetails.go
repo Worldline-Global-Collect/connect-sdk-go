@@ -15,7 +15,7 @@ type FraudFieldsShippingDetails struct {
 	MethodType    *int32  `json:"methodType,omitempty"`
 }
 
-// NewFraudFieldsShippingDetails constructs a new FraudFieldsShippingDetails
+// NewFraudFieldsShippingDetails constructs a new FraudFieldsShippingDetails instance
 func NewFraudFieldsShippingDetails() *FraudFieldsShippingDetails {
 	return &FraudFieldsShippingDetails{}
 }

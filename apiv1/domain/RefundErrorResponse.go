@@ -10,7 +10,7 @@ type RefundErrorResponse struct {
 	RefundResult *RefundResult `json:"refundResult,omitempty"`
 }
 
-// NewRefundErrorResponse constructs a new RefundErrorResponse
+// NewRefundErrorResponse constructs a new RefundErrorResponse instance
 func NewRefundErrorResponse() *RefundErrorResponse {
 	return &RefundErrorResponse{}
 }

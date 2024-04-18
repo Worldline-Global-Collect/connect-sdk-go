@@ -9,7 +9,7 @@ type BankTransferPaymentMethodSpecificInput struct {
 	PaymentProductID    *int32  `json:"paymentProductId,omitempty"`
 }
 
-// NewBankTransferPaymentMethodSpecificInput constructs a new BankTransferPaymentMethodSpecificInput
+// NewBankTransferPaymentMethodSpecificInput constructs a new BankTransferPaymentMethodSpecificInput instance
 func NewBankTransferPaymentMethodSpecificInput() *BankTransferPaymentMethodSpecificInput {
 	return &BankTransferPaymentMethodSpecificInput{}
 }

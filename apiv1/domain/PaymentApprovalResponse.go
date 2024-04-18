@@ -12,7 +12,7 @@ type PaymentApprovalResponse struct {
 	PaymentMethodSpecificOutput       *ApprovePaymentCardPaymentMethodSpecificOutput   `json:"paymentMethodSpecificOutput,omitempty"`
 }
 
-// NewPaymentApprovalResponse constructs a new PaymentApprovalResponse
+// NewPaymentApprovalResponse constructs a new PaymentApprovalResponse instance
 func NewPaymentApprovalResponse() *PaymentApprovalResponse {
 	return &PaymentApprovalResponse{}
 }

@@ -10,7 +10,7 @@ type RefundPaymentProduct840CustomerAccount struct {
 	PayerID               *string `json:"payerId,omitempty"`
 }
 
-// NewRefundPaymentProduct840CustomerAccount constructs a new RefundPaymentProduct840CustomerAccount
+// NewRefundPaymentProduct840CustomerAccount constructs a new RefundPaymentProduct840CustomerAccount instance
 func NewRefundPaymentProduct840CustomerAccount() *RefundPaymentProduct840CustomerAccount {
 	return &RefundPaymentProduct840CustomerAccount{}
 }

@@ -10,6 +10,7 @@ import (
 )
 
 // FindParams represents query parameters for Find refunds
+//
 // Documentation can be found at https://apireference.connect.worldline-solutions.com/s2sapi/v1/en_US/go/refunds/find.html
 type FindParams struct {
 	HostedCheckoutID  *string
@@ -47,7 +48,7 @@ func (params *FindParams) ToRequestParameters() communication.RequestParams {
 	return reqParams
 }
 
-// NewFindParams constructs an instance of FindParams
+// NewFindParams constructs a new FindParams instance
 func NewFindParams() *FindParams {
 	return &FindParams{}
 }

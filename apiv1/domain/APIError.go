@@ -14,7 +14,7 @@ type APIError struct {
 	RequestID      *string `json:"requestId,omitempty"`
 }
 
-// NewAPIError constructs a new APIError
+// NewAPIError constructs a new APIError instance
 func NewAPIError() *APIError {
 	return &APIError{}
 }

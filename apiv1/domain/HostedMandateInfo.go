@@ -13,7 +13,7 @@ type HostedMandateInfo struct {
 	UniqueMandateReference *string          `json:"uniqueMandateReference,omitempty"`
 }
 
-// NewHostedMandateInfo constructs a new HostedMandateInfo
+// NewHostedMandateInfo constructs a new HostedMandateInfo instance
 func NewHostedMandateInfo() *HostedMandateInfo {
 	return &HostedMandateInfo{}
 }

@@ -10,7 +10,7 @@ type MandateApproval struct {
 	MandateSigned         *bool   `json:"mandateSigned,omitempty"`
 }
 
-// NewMandateApproval constructs a new MandateApproval
+// NewMandateApproval constructs a new MandateApproval instance
 func NewMandateApproval() *MandateApproval {
 	return &MandateApproval{}
 }

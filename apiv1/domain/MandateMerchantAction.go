@@ -9,7 +9,7 @@ type MandateMerchantAction struct {
 	RedirectData *MandateRedirectData `json:"redirectData,omitempty"`
 }
 
-// NewMandateMerchantAction constructs a new MandateMerchantAction
+// NewMandateMerchantAction constructs a new MandateMerchantAction instance
 func NewMandateMerchantAction() *MandateMerchantAction {
 	return &MandateMerchantAction{}
 }

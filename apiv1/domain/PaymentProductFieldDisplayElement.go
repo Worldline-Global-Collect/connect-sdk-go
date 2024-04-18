@@ -11,7 +11,7 @@ type PaymentProductFieldDisplayElement struct {
 	Value *string `json:"value,omitempty"`
 }
 
-// NewPaymentProductFieldDisplayElement constructs a new PaymentProductFieldDisplayElement
+// NewPaymentProductFieldDisplayElement constructs a new PaymentProductFieldDisplayElement instance
 func NewPaymentProductFieldDisplayElement() *PaymentProductFieldDisplayElement {
 	return &PaymentProductFieldDisplayElement{}
 }

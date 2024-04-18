@@ -9,7 +9,7 @@ type OrderOutput struct {
 	References    *PaymentReferences `json:"references,omitempty"`
 }
 
-// NewOrderOutput constructs a new OrderOutput
+// NewOrderOutput constructs a new OrderOutput instance
 func NewOrderOutput() *OrderOutput {
 	return &OrderOutput{}
 }

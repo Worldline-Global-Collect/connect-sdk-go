@@ -8,7 +8,7 @@ type TokenEWalletData struct {
 	BillingAgreementID *string `json:"billingAgreementId,omitempty"`
 }
 
-// NewTokenEWalletData constructs a new TokenEWalletData
+// NewTokenEWalletData constructs a new TokenEWalletData instance
 func NewTokenEWalletData() *TokenEWalletData {
 	return &TokenEWalletData{}
 }

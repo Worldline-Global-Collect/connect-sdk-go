@@ -10,7 +10,7 @@ type RedirectPaymentProduct809SpecificInput struct {
 	IssuerID         *string `json:"issuerId,omitempty"`
 }
 
-// NewRedirectPaymentProduct809SpecificInput constructs a new RedirectPaymentProduct809SpecificInput
+// NewRedirectPaymentProduct809SpecificInput constructs a new RedirectPaymentProduct809SpecificInput instance
 func NewRedirectPaymentProduct809SpecificInput() *RedirectPaymentProduct809SpecificInput {
 	return &RedirectPaymentProduct809SpecificInput{}
 }

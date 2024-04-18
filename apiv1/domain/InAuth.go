@@ -12,7 +12,7 @@ type InAuth struct {
 	TrueIPAddressCountry *string `json:"trueIpAddressCountry,omitempty"`
 }
 
-// NewInAuth constructs a new InAuth
+// NewInAuth constructs a new InAuth instance
 func NewInAuth() *InAuth {
 	return &InAuth{}
 }

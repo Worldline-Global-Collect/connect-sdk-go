@@ -8,7 +8,7 @@ type TestConnection struct {
 	Result *string `json:"result,omitempty"`
 }
 
-// NewTestConnection constructs a new TestConnection
+// NewTestConnection constructs a new TestConnection instance
 func NewTestConnection() *TestConnection {
 	return &TestConnection{}
 }

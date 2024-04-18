@@ -8,7 +8,7 @@ type SdkDataOutput struct {
 	SdkTransactionID *string `json:"sdkTransactionId,omitempty"`
 }
 
-// NewSdkDataOutput constructs a new SdkDataOutput
+// NewSdkDataOutput constructs a new SdkDataOutput instance
 func NewSdkDataOutput() *SdkDataOutput {
 	return &SdkDataOutput{}
 }

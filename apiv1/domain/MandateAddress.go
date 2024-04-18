@@ -12,7 +12,7 @@ type MandateAddress struct {
 	Zip         *string `json:"zip,omitempty"`
 }
 
-// NewMandateAddress constructs a new MandateAddress
+// NewMandateAddress constructs a new MandateAddress instance
 func NewMandateAddress() *MandateAddress {
 	return &MandateAddress{}
 }

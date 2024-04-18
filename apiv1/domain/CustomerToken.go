@@ -13,7 +13,7 @@ type CustomerToken struct {
 	VatNumber           *string                   `json:"vatNumber,omitempty"`
 }
 
-// NewCustomerToken constructs a new CustomerToken
+// NewCustomerToken constructs a new CustomerToken instance
 func NewCustomerToken() *CustomerToken {
 	return &CustomerToken{}
 }

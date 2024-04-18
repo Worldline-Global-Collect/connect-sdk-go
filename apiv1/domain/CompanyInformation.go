@@ -9,7 +9,7 @@ type CompanyInformation struct {
 	VatNumber *string `json:"vatNumber,omitempty"`
 }
 
-// NewCompanyInformation constructs a new CompanyInformation
+// NewCompanyInformation constructs a new CompanyInformation instance
 func NewCompanyInformation() *CompanyInformation {
 	return &CompanyInformation{}
 }

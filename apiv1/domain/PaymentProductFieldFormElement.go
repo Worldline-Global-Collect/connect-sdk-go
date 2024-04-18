@@ -9,7 +9,7 @@ type PaymentProductFieldFormElement struct {
 	ValueMapping *[]ValueMappingElement `json:"valueMapping,omitempty"`
 }
 
-// NewPaymentProductFieldFormElement constructs a new PaymentProductFieldFormElement
+// NewPaymentProductFieldFormElement constructs a new PaymentProductFieldFormElement instance
 func NewPaymentProductFieldFormElement() *PaymentProductFieldFormElement {
 	return &PaymentProductFieldFormElement{}
 }

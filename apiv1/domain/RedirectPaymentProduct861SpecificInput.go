@@ -8,7 +8,7 @@ type RedirectPaymentProduct861SpecificInput struct {
 	MobileDevice *bool `json:"mobileDevice,omitempty"`
 }
 
-// NewRedirectPaymentProduct861SpecificInput constructs a new RedirectPaymentProduct861SpecificInput
+// NewRedirectPaymentProduct861SpecificInput constructs a new RedirectPaymentProduct861SpecificInput instance
 func NewRedirectPaymentProduct861SpecificInput() *RedirectPaymentProduct861SpecificInput {
 	return &RedirectPaymentProduct861SpecificInput{}
 }

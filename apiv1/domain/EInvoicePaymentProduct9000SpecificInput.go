@@ -9,7 +9,7 @@ type EInvoicePaymentProduct9000SpecificInput struct {
 	InstallmentID   *string          `json:"installmentId,omitempty"`
 }
 
-// NewEInvoicePaymentProduct9000SpecificInput constructs a new EInvoicePaymentProduct9000SpecificInput
+// NewEInvoicePaymentProduct9000SpecificInput constructs a new EInvoicePaymentProduct9000SpecificInput instance
 func NewEInvoicePaymentProduct9000SpecificInput() *EInvoicePaymentProduct9000SpecificInput {
 	return &EInvoicePaymentProduct9000SpecificInput{}
 }

@@ -33,7 +33,7 @@ func (h *HelperBuilder) Build() (*Helper, error) {
 	return NewHelper(h.Marshaller, h.SecretKeyStore)
 }
 
-// NewHelperBuilder creates a HelperBuilder object
+// NewHelperBuilder creates a new HelperBuilder object
 func NewHelperBuilder() *HelperBuilder {
 	return &HelperBuilder{}
 }

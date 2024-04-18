@@ -11,7 +11,7 @@ type ApprovePaymentRequest struct {
 	SepaDirectDebitPaymentMethodSpecificInput *ApprovePaymentSepaDirectDebitPaymentMethodSpecificInput    `json:"sepaDirectDebitPaymentMethodSpecificInput,omitempty"`
 }
 
-// NewApprovePaymentRequest constructs a new ApprovePaymentRequest
+// NewApprovePaymentRequest constructs a new ApprovePaymentRequest instance
 func NewApprovePaymentRequest() *ApprovePaymentRequest {
 	return &ApprovePaymentRequest{}
 }

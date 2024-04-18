@@ -8,7 +8,7 @@ type ApproveRefundRequest struct {
 	Amount *int64 `json:"amount,omitempty"`
 }
 
-// NewApproveRefundRequest constructs a new ApproveRefundRequest
+// NewApproveRefundRequest constructs a new ApproveRefundRequest instance
 func NewApproveRefundRequest() *ApproveRefundRequest {
 	return &ApproveRefundRequest{}
 }

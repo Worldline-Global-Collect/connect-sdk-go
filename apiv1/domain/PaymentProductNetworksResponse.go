@@ -8,7 +8,7 @@ type PaymentProductNetworksResponse struct {
 	Networks *[]string `json:"networks,omitempty"`
 }
 
-// NewPaymentProductNetworksResponse constructs a new PaymentProductNetworksResponse
+// NewPaymentProductNetworksResponse constructs a new PaymentProductNetworksResponse instance
 func NewPaymentProductNetworksResponse() *PaymentProductNetworksResponse {
 	return &PaymentProductNetworksResponse{}
 }

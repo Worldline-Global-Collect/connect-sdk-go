@@ -17,7 +17,7 @@ type PaymentProductFieldDisplayHints struct {
 	Tooltip            *PaymentProductFieldTooltip     `json:"tooltip,omitempty"`
 }
 
-// NewPaymentProductFieldDisplayHints constructs a new PaymentProductFieldDisplayHints
+// NewPaymentProductFieldDisplayHints constructs a new PaymentProductFieldDisplayHints instance
 func NewPaymentProductFieldDisplayHints() *PaymentProductFieldDisplayHints {
 	return &PaymentProductFieldDisplayHints{}
 }

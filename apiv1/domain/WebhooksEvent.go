@@ -17,7 +17,7 @@ type WebhooksEvent struct {
 	Type       *string          `json:"type,omitempty"`
 }
 
-// NewWebhooksEvent constructs a new WebhooksEvent
+// NewWebhooksEvent constructs a new WebhooksEvent instance
 func NewWebhooksEvent() *WebhooksEvent {
 	return &WebhooksEvent{}
 }

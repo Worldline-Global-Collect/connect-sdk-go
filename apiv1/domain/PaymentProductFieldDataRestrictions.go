@@ -9,7 +9,7 @@ type PaymentProductFieldDataRestrictions struct {
 	Validators *PaymentProductFieldValidators `json:"validators,omitempty"`
 }
 
-// NewPaymentProductFieldDataRestrictions constructs a new PaymentProductFieldDataRestrictions
+// NewPaymentProductFieldDataRestrictions constructs a new PaymentProductFieldDataRestrictions instance
 func NewPaymentProductFieldDataRestrictions() *PaymentProductFieldDataRestrictions {
 	return &PaymentProductFieldDataRestrictions{}
 }

@@ -10,7 +10,7 @@ type PaymentProductDisplayHints struct {
 	Logo         *string `json:"logo,omitempty"`
 }
 
-// NewPaymentProductDisplayHints constructs a new PaymentProductDisplayHints
+// NewPaymentProductDisplayHints constructs a new PaymentProductDisplayHints instance
 func NewPaymentProductDisplayHints() *PaymentProductDisplayHints {
 	return &PaymentProductDisplayHints{}
 }

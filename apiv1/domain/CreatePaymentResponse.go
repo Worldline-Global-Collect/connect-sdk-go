@@ -10,7 +10,7 @@ type CreatePaymentResponse struct {
 	Payment        *Payment               `json:"payment,omitempty"`
 }
 
-// NewCreatePaymentResponse constructs a new CreatePaymentResponse
+// NewCreatePaymentResponse constructs a new CreatePaymentResponse instance
 func NewCreatePaymentResponse() *CreatePaymentResponse {
 	return &CreatePaymentResponse{}
 }

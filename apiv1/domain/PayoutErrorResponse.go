@@ -10,7 +10,7 @@ type PayoutErrorResponse struct {
 	PayoutResult *PayoutResult `json:"payoutResult,omitempty"`
 }
 
-// NewPayoutErrorResponse constructs a new PayoutErrorResponse
+// NewPayoutErrorResponse constructs a new PayoutErrorResponse instance
 func NewPayoutErrorResponse() *PayoutErrorResponse {
 	return &PayoutErrorResponse{}
 }

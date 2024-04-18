@@ -8,7 +8,7 @@ type PaymentProducts struct {
 	PaymentProducts *[]PaymentProduct `json:"paymentProducts,omitempty"`
 }
 
-// NewPaymentProducts constructs a new PaymentProducts
+// NewPaymentProducts constructs a new PaymentProducts instance
 func NewPaymentProducts() *PaymentProducts {
 	return &PaymentProducts{}
 }

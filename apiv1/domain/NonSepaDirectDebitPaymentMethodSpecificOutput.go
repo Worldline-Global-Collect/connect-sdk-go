@@ -9,7 +9,7 @@ type NonSepaDirectDebitPaymentMethodSpecificOutput struct {
 	PaymentProductID *int32        `json:"paymentProductId,omitempty"`
 }
 
-// NewNonSepaDirectDebitPaymentMethodSpecificOutput constructs a new NonSepaDirectDebitPaymentMethodSpecificOutput
+// NewNonSepaDirectDebitPaymentMethodSpecificOutput constructs a new NonSepaDirectDebitPaymentMethodSpecificOutput instance
 func NewNonSepaDirectDebitPaymentMethodSpecificOutput() *NonSepaDirectDebitPaymentMethodSpecificOutput {
 	return &NonSepaDirectDebitPaymentMethodSpecificOutput{}
 }

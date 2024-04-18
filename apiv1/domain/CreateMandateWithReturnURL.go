@@ -15,7 +15,7 @@ type CreateMandateWithReturnURL struct {
 	UniqueMandateReference *string          `json:"uniqueMandateReference,omitempty"`
 }
 
-// NewCreateMandateWithReturnURL constructs a new CreateMandateWithReturnURL
+// NewCreateMandateWithReturnURL constructs a new CreateMandateWithReturnURL instance
 func NewCreateMandateWithReturnURL() *CreateMandateWithReturnURL {
 	return &CreateMandateWithReturnURL{}
 }

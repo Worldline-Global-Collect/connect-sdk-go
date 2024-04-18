@@ -8,7 +8,7 @@ type PaymentProduct863SpecificData struct {
 	IntegrationTypes *[]string `json:"integrationTypes,omitempty"`
 }
 
-// NewPaymentProduct863SpecificData constructs a new PaymentProduct863SpecificData
+// NewPaymentProduct863SpecificData constructs a new PaymentProduct863SpecificData instance
 func NewPaymentProduct863SpecificData() *PaymentProduct863SpecificData {
 	return &PaymentProduct863SpecificData{}
 }

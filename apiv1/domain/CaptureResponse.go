@@ -11,7 +11,7 @@ type CaptureResponse struct {
 	StatusOutput  *CaptureStatusOutput `json:"statusOutput,omitempty"`
 }
 
-// NewCaptureResponse constructs a new CaptureResponse
+// NewCaptureResponse constructs a new CaptureResponse instance
 func NewCaptureResponse() *CaptureResponse {
 	return &CaptureResponse{}
 }

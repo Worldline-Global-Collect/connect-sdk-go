@@ -9,7 +9,7 @@ type DeviceFingerprintResponse struct {
 	HTML                           *string `json:"html,omitempty"`
 }
 
-// NewDeviceFingerprintResponse constructs a new DeviceFingerprintResponse
+// NewDeviceFingerprintResponse constructs a new DeviceFingerprintResponse instance
 func NewDeviceFingerprintResponse() *DeviceFingerprintResponse {
 	return &DeviceFingerprintResponse{}
 }

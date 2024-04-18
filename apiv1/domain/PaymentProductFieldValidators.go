@@ -18,7 +18,7 @@ type PaymentProductFieldValidators struct {
 	TermsAndConditions         *EmptyValidator                      `json:"termsAndConditions,omitempty"`
 }
 
-// NewPaymentProductFieldValidators constructs a new PaymentProductFieldValidators
+// NewPaymentProductFieldValidators constructs a new PaymentProductFieldValidators instance
 func NewPaymentProductFieldValidators() *PaymentProductFieldValidators {
 	return &PaymentProductFieldValidators{}
 }

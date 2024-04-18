@@ -8,7 +8,7 @@ type RefundReferences struct {
 	MerchantReference *string `json:"merchantReference,omitempty"`
 }
 
-// NewRefundReferences constructs a new RefundReferences
+// NewRefundReferences constructs a new RefundReferences instance
 func NewRefundReferences() *RefundReferences {
 	return &RefundReferences{}
 }

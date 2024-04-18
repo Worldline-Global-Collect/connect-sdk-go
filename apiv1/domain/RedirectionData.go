@@ -9,7 +9,7 @@ type RedirectionData struct {
 	Variant   *string `json:"variant,omitempty"`
 }
 
-// NewRedirectionData constructs a new RedirectionData
+// NewRedirectionData constructs a new RedirectionData instance
 func NewRedirectionData() *RedirectionData {
 	return &RedirectionData{}
 }

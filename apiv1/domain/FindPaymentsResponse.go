@@ -11,7 +11,7 @@ type FindPaymentsResponse struct {
 	TotalCount *int32     `json:"totalCount,omitempty"`
 }
 
-// NewFindPaymentsResponse constructs a new FindPaymentsResponse
+// NewFindPaymentsResponse constructs a new FindPaymentsResponse instance
 func NewFindPaymentsResponse() *FindPaymentsResponse {
 	return &FindPaymentsResponse{}
 }

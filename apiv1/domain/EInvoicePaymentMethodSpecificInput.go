@@ -11,7 +11,7 @@ type EInvoicePaymentMethodSpecificInput struct {
 	RequiresApproval                *bool                                    `json:"requiresApproval,omitempty"`
 }
 
-// NewEInvoicePaymentMethodSpecificInput constructs a new EInvoicePaymentMethodSpecificInput
+// NewEInvoicePaymentMethodSpecificInput constructs a new EInvoicePaymentMethodSpecificInput instance
 func NewEInvoicePaymentMethodSpecificInput() *EInvoicePaymentMethodSpecificInput {
 	return &EInvoicePaymentMethodSpecificInput{}
 }

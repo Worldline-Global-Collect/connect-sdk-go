@@ -11,7 +11,7 @@ type CardPayoutMethodSpecificInput struct {
 	Token            *string          `json:"token,omitempty"`
 }
 
-// NewCardPayoutMethodSpecificInput constructs a new CardPayoutMethodSpecificInput
+// NewCardPayoutMethodSpecificInput constructs a new CardPayoutMethodSpecificInput instance
 func NewCardPayoutMethodSpecificInput() *CardPayoutMethodSpecificInput {
 	return &CardPayoutMethodSpecificInput{}
 }

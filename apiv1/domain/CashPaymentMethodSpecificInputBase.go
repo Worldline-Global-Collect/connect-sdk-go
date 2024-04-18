@@ -8,7 +8,7 @@ type CashPaymentMethodSpecificInputBase struct {
 	PaymentProductID *int32 `json:"paymentProductId,omitempty"`
 }
 
-// NewCashPaymentMethodSpecificInputBase constructs a new CashPaymentMethodSpecificInputBase
+// NewCashPaymentMethodSpecificInputBase constructs a new CashPaymentMethodSpecificInputBase instance
 func NewCashPaymentMethodSpecificInputBase() *CashPaymentMethodSpecificInputBase {
 	return &CashPaymentMethodSpecificInputBase{}
 }

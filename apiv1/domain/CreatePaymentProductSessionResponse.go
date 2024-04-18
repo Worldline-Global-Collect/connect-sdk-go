@@ -8,7 +8,7 @@ type CreatePaymentProductSessionResponse struct {
 	PaymentProductSession302SpecificOutput *MobilePaymentProductSession302SpecificOutput `json:"paymentProductSession302SpecificOutput,omitempty"`
 }
 
-// NewCreatePaymentProductSessionResponse constructs a new CreatePaymentProductSessionResponse
+// NewCreatePaymentProductSessionResponse constructs a new CreatePaymentProductSessionResponse instance
 func NewCreatePaymentProductSessionResponse() *CreatePaymentProductSessionResponse {
 	return &CreatePaymentProductSessionResponse{}
 }

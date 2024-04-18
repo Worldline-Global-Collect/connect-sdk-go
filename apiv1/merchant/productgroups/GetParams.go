@@ -10,6 +10,7 @@ import (
 )
 
 // GetParams represents query parameters for Get payment product group
+//
 // Documentation can be found at https://apireference.connect.worldline-solutions.com/s2sapi/v1/en_US/go/productgroups/get.html
 type GetParams struct {
 	CountryCode    *string
@@ -63,7 +64,7 @@ func (params *GetParams) ToRequestParameters() communication.RequestParams {
 	return reqParams
 }
 
-// NewGetParams constructs an instance of GetParams
+// NewGetParams constructs a new GetParams instance
 func NewGetParams() *GetParams {
 	return &GetParams{}
 }

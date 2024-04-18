@@ -17,7 +17,7 @@ type NonSepaDirectDebitPaymentMethodSpecificInput struct {
 	Tokenize                          *bool                                             `json:"tokenize,omitempty"`
 }
 
-// NewNonSepaDirectDebitPaymentMethodSpecificInput constructs a new NonSepaDirectDebitPaymentMethodSpecificInput
+// NewNonSepaDirectDebitPaymentMethodSpecificInput constructs a new NonSepaDirectDebitPaymentMethodSpecificInput instance
 func NewNonSepaDirectDebitPaymentMethodSpecificInput() *NonSepaDirectDebitPaymentMethodSpecificInput {
 	return &NonSepaDirectDebitPaymentMethodSpecificInput{}
 }

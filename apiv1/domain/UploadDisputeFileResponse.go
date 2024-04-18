@@ -9,7 +9,7 @@ type UploadDisputeFileResponse struct {
 	FileID    *string `json:"fileId,omitempty"`
 }
 
-// NewUploadDisputeFileResponse constructs a new UploadDisputeFileResponse
+// NewUploadDisputeFileResponse constructs a new UploadDisputeFileResponse instance
 func NewUploadDisputeFileResponse() *UploadDisputeFileResponse {
 	return &UploadDisputeFileResponse{}
 }

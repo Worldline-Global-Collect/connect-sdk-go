@@ -10,7 +10,7 @@ type PaymentErrorResponse struct {
 	PaymentResult *CreatePaymentResult `json:"paymentResult,omitempty"`
 }
 
-// NewPaymentErrorResponse constructs a new PaymentErrorResponse
+// NewPaymentErrorResponse constructs a new PaymentErrorResponse instance
 func NewPaymentErrorResponse() *PaymentErrorResponse {
 	return &PaymentErrorResponse{}
 }

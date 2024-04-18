@@ -11,7 +11,7 @@ type GetIINDetailsResponse struct {
 	PaymentProductID   *int32       `json:"paymentProductId,omitempty"`
 }
 
-// NewGetIINDetailsResponse constructs a new GetIINDetailsResponse
+// NewGetIINDetailsResponse constructs a new GetIINDetailsResponse instance
 func NewGetIINDetailsResponse() *GetIINDetailsResponse {
 	return &GetIINDetailsResponse{}
 }

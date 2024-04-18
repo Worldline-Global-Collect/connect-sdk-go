@@ -11,7 +11,7 @@ type DeviceRenderOptions struct {
 	SdkUITypes   *[]string `json:"sdkUiTypes,omitempty"`
 }
 
-// NewDeviceRenderOptions constructs a new DeviceRenderOptions
+// NewDeviceRenderOptions constructs a new DeviceRenderOptions instance
 func NewDeviceRenderOptions() *DeviceRenderOptions {
 	return &DeviceRenderOptions{}
 }

@@ -9,7 +9,7 @@ type BankDetailsRequest struct {
 	BankAccountIban *BankAccountIban `json:"bankAccountIban,omitempty"`
 }
 
-// NewBankDetailsRequest constructs a new BankDetailsRequest
+// NewBankDetailsRequest constructs a new BankDetailsRequest instance
 func NewBankDetailsRequest() *BankDetailsRequest {
 	return &BankDetailsRequest{}
 }

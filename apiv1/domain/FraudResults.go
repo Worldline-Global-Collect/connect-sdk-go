@@ -10,7 +10,7 @@ type FraudResults struct {
 	MicrosoftFraudProtection *MicrosoftFraudResults `json:"microsoftFraudProtection,omitempty"`
 }
 
-// NewFraudResults constructs a new FraudResults
+// NewFraudResults constructs a new FraudResults instance
 func NewFraudResults() *FraudResults {
 	return &FraudResults{}
 }

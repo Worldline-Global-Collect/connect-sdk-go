@@ -9,7 +9,7 @@ type LengthValidator struct {
 	MinLength *int32 `json:"minLength,omitempty"`
 }
 
-// NewLengthValidator constructs a new LengthValidator
+// NewLengthValidator constructs a new LengthValidator instance
 func NewLengthValidator() *LengthValidator {
 	return &LengthValidator{}
 }

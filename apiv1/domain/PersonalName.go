@@ -11,7 +11,7 @@ type PersonalName struct {
 	Title         *string `json:"title,omitempty"`
 }
 
-// NewPersonalName constructs a new PersonalName
+// NewPersonalName constructs a new PersonalName instance
 func NewPersonalName() *PersonalName {
 	return &PersonalName{}
 }

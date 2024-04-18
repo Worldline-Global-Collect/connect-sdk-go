@@ -13,7 +13,7 @@ type OrderReferences struct {
 	ProviderMerchantID *string           `json:"providerMerchantId,omitempty"`
 }
 
-// NewOrderReferences constructs a new OrderReferences
+// NewOrderReferences constructs a new OrderReferences instance
 func NewOrderReferences() *OrderReferences {
 	return &OrderReferences{}
 }

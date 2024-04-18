@@ -16,7 +16,7 @@ type LodgingRoom struct {
 	TypeOfRoom                     *string `json:"typeOfRoom,omitempty"`
 }
 
-// NewLodgingRoom constructs a new LodgingRoom
+// NewLodgingRoom constructs a new LodgingRoom instance
 func NewLodgingRoom() *LodgingRoom {
 	return &LodgingRoom{}
 }

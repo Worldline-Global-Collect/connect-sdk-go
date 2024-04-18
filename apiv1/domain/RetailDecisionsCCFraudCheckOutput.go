@@ -10,7 +10,7 @@ type RetailDecisionsCCFraudCheckOutput struct {
 	FraudRCF    *string `json:"fraudRCF,omitempty"`
 }
 
-// NewRetailDecisionsCCFraudCheckOutput constructs a new RetailDecisionsCCFraudCheckOutput
+// NewRetailDecisionsCCFraudCheckOutput constructs a new RetailDecisionsCCFraudCheckOutput instance
 func NewRetailDecisionsCCFraudCheckOutput() *RetailDecisionsCCFraudCheckOutput {
 	return &RetailDecisionsCCFraudCheckOutput{}
 }

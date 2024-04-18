@@ -8,7 +8,7 @@ type ApprovePaymentMobilePaymentMethodSpecificOutput struct {
 	VoidResponseID *string `json:"voidResponseId,omitempty"`
 }
 
-// NewApprovePaymentMobilePaymentMethodSpecificOutput constructs a new ApprovePaymentMobilePaymentMethodSpecificOutput
+// NewApprovePaymentMobilePaymentMethodSpecificOutput constructs a new ApprovePaymentMobilePaymentMethodSpecificOutput instance
 func NewApprovePaymentMobilePaymentMethodSpecificOutput() *ApprovePaymentMobilePaymentMethodSpecificOutput {
 	return &ApprovePaymentMobilePaymentMethodSpecificOutput{}
 }

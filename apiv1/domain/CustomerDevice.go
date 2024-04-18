@@ -15,7 +15,7 @@ type CustomerDevice struct {
 	UserAgent                      *string      `json:"userAgent,omitempty"`
 }
 
-// NewCustomerDevice constructs a new CustomerDevice
+// NewCustomerDevice constructs a new CustomerDevice instance
 func NewCustomerDevice() *CustomerDevice {
 	return &CustomerDevice{}
 }

@@ -19,7 +19,7 @@ type ExternalCardholderAuthenticationData struct {
 	Xid                          *string `json:"xid,omitempty"`
 }
 
-// NewExternalCardholderAuthenticationData constructs a new ExternalCardholderAuthenticationData
+// NewExternalCardholderAuthenticationData constructs a new ExternalCardholderAuthenticationData instance
 func NewExternalCardholderAuthenticationData() *ExternalCardholderAuthenticationData {
 	return &ExternalCardholderAuthenticationData{}
 }

@@ -10,7 +10,7 @@ type OrderApprovePayment struct {
 	References      *OrderReferencesApprovePayment   `json:"references,omitempty"`
 }
 
-// NewOrderApprovePayment constructs a new OrderApprovePayment
+// NewOrderApprovePayment constructs a new OrderApprovePayment instance
 func NewOrderApprovePayment() *OrderApprovePayment {
 	return &OrderApprovePayment{}
 }

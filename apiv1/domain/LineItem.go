@@ -12,7 +12,7 @@ type LineItem struct {
 	OrderLineDetails             *OrderLineDetails                     `json:"orderLineDetails,omitempty"`
 }
 
-// NewLineItem constructs a new LineItem
+// NewLineItem constructs a new LineItem instance
 func NewLineItem() *LineItem {
 	return &LineItem{}
 }

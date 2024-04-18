@@ -9,7 +9,7 @@ type DeviceFingerprintDetails struct {
 	RawDeviceFingerprintOutput *string `json:"rawDeviceFingerprintOutput,omitempty"`
 }
 
-// NewDeviceFingerprintDetails constructs a new DeviceFingerprintDetails
+// NewDeviceFingerprintDetails constructs a new DeviceFingerprintDetails instance
 func NewDeviceFingerprintDetails() *DeviceFingerprintDetails {
 	return &DeviceFingerprintDetails{}
 }

@@ -17,7 +17,7 @@ type BankAccountBbanRefund struct {
 	SwiftCode         *string `json:"swiftCode,omitempty"`
 }
 
-// NewBankAccountBbanRefund constructs a new BankAccountBbanRefund
+// NewBankAccountBbanRefund constructs a new BankAccountBbanRefund instance
 func NewBankAccountBbanRefund() *BankAccountBbanRefund {
 	return &BankAccountBbanRefund{}
 }

@@ -14,7 +14,7 @@ type PaymentReferences struct {
 	ReferenceOrigPayment *string `json:"referenceOrigPayment,omitempty"`
 }
 
-// NewPaymentReferences constructs a new PaymentReferences
+// NewPaymentReferences constructs a new PaymentReferences instance
 func NewPaymentReferences() *PaymentReferences {
 	return &PaymentReferences{}
 }

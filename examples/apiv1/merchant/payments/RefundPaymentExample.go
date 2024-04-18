@@ -70,7 +70,7 @@ func refundPaymentExample() {
 		}
 	case v1Errors.APIError:
 		{
-			handleAPIErrors(realError.Errors())
+			handleErrorResponse(realError.ErrorID(), realError.Errors())
 
 			break
 		}

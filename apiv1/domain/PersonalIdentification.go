@@ -10,7 +10,7 @@ type PersonalIdentification struct {
 	IDValue              *string `json:"idValue,omitempty"`
 }
 
-// NewPersonalIdentification constructs a new PersonalIdentification
+// NewPersonalIdentification constructs a new PersonalIdentification instance
 func NewPersonalIdentification() *PersonalIdentification {
 	return &PersonalIdentification{}
 }

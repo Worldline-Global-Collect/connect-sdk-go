@@ -9,7 +9,7 @@ type PaymentProductFilter struct {
 	Products *[]int32  `json:"products,omitempty"`
 }
 
-// NewPaymentProductFilter constructs a new PaymentProductFilter
+// NewPaymentProductFilter constructs a new PaymentProductFilter instance
 func NewPaymentProductFilter() *PaymentProductFilter {
 	return &PaymentProductFilter{}
 }

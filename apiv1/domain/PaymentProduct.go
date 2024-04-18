@@ -32,7 +32,7 @@ type PaymentProduct struct {
 	UsesRedirectionTo3rdParty     *bool                          `json:"usesRedirectionTo3rdParty,omitempty"`
 }
 
-// NewPaymentProduct constructs a new PaymentProduct
+// NewPaymentProduct constructs a new PaymentProduct instance
 func NewPaymentProduct() *PaymentProduct {
 	return &PaymentProduct{}
 }

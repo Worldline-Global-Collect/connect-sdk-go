@@ -11,7 +11,7 @@ type ValueMappingElement struct {
 	Value           *string                              `json:"value,omitempty"`
 }
 
-// NewValueMappingElement constructs a new ValueMappingElement
+// NewValueMappingElement constructs a new ValueMappingElement instance
 func NewValueMappingElement() *ValueMappingElement {
 	return &ValueMappingElement{}
 }

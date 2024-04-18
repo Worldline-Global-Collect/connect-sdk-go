@@ -10,7 +10,7 @@ type DisputeCreationDetail struct {
 	UserName            *string `json:"userName,omitempty"`
 }
 
-// NewDisputeCreationDetail constructs a new DisputeCreationDetail
+// NewDisputeCreationDetail constructs a new DisputeCreationDetail instance
 func NewDisputeCreationDetail() *DisputeCreationDetail {
 	return &DisputeCreationDetail{}
 }

@@ -11,7 +11,7 @@ type HostedMandateManagementSpecificInput struct {
 	Variant        *string `json:"variant,omitempty"`
 }
 
-// NewHostedMandateManagementSpecificInput constructs a new HostedMandateManagementSpecificInput
+// NewHostedMandateManagementSpecificInput constructs a new HostedMandateManagementSpecificInput instance
 func NewHostedMandateManagementSpecificInput() *HostedMandateManagementSpecificInput {
 	return &HostedMandateManagementSpecificInput{}
 }

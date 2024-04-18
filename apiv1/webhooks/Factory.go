@@ -12,14 +12,14 @@ import (
 type Factory struct {
 }
 
-// NewHelperBuilder creates a HelperBuilder that will use the given secretKeyStore
+// NewHelperBuilder creates a new HelperBuilder that will use the given secretKeyStore
 func (f Factory) NewHelperBuilder(secretKeyStore validation.SecretKeyStore) *HelperBuilder {
 	marshaller := json.DefaultMarshaller()
 
 	return NewHelperBuilder().WithMarshaller(marshaller).WithSecretKeyStore(secretKeyStore)
 }
 
-// NewHelper creates a Helper that will use the given secretKeyStore
+// NewHelper creates a new Helper that will use the given secretKeyStore
 func (f Factory) NewHelper(secretKeyStore validation.SecretKeyStore) (*Helper, error) {
 	helperBuilder := f.NewHelperBuilder(secretKeyStore)
 

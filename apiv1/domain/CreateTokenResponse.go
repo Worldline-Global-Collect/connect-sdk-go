@@ -10,7 +10,7 @@ type CreateTokenResponse struct {
 	Token             *string `json:"token,omitempty"`
 }
 
-// NewCreateTokenResponse constructs a new CreateTokenResponse
+// NewCreateTokenResponse constructs a new CreateTokenResponse instance
 func NewCreateTokenResponse() *CreateTokenResponse {
 	return &CreateTokenResponse{}
 }

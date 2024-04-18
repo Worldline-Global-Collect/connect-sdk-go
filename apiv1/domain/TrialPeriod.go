@@ -9,7 +9,7 @@ type TrialPeriod struct {
 	Interval *string `json:"interval,omitempty"`
 }
 
-// NewTrialPeriod constructs a new TrialPeriod
+// NewTrialPeriod constructs a new TrialPeriod instance
 func NewTrialPeriod() *TrialPeriod {
 	return &TrialPeriod{}
 }

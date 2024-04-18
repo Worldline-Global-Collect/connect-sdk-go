@@ -23,7 +23,7 @@ type Customer struct {
 	VatNumber           *string              `json:"vatNumber,omitempty"`
 }
 
-// NewCustomer constructs a new Customer
+// NewCustomer constructs a new Customer instance
 func NewCustomer() *Customer {
 	return &Customer{}
 }

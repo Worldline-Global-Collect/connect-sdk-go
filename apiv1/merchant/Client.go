@@ -124,9 +124,9 @@ func (c *Client) Files() *files.Client {
 	return client
 }
 
-// NewClient constructs a Merchant Client
+// NewClient constructs a new Merchant client
 //
-// parent is the *communicator.APIResource on top of which we want to build the new Merchant Client
+// parent is the communicator.APIResource on top of which we want to build the new Merchant client
 func NewClient(parent *communicator.APIResource, pathContext map[string]string) (*Client, error) {
 	apiResource, err := communicator.NewAPIResourceWithParent(parent, pathContext)
 	if err != nil {

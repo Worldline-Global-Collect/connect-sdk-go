@@ -7,7 +7,7 @@ package domain
 type EmptyValidator struct {
 }
 
-// NewEmptyValidator constructs a new EmptyValidator
+// NewEmptyValidator constructs a new EmptyValidator instance
 func NewEmptyValidator() *EmptyValidator {
 	return &EmptyValidator{}
 }

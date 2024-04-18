@@ -18,18 +18,19 @@ type Client struct {
 }
 
 // Find represents the resource /{merchantId}/products - Get payment products
+//
 // Documentation can be found at https://apireference.connect.worldline-solutions.com/s2sapi/v1/en_US/go/products/find.html
 //
 // Can return any of the following errors:
-// * ValidationError if the request was not correct and couldn't be processed (HTTP status code 400)
-// * AuthorizationError if the request was not allowed (HTTP status code 403)
-// * IdempotenceError if an idempotent request caused a conflict (HTTP status code 409)
-// * ReferenceError if an object was attempted to be referenced that doesn't exist or has been removed,
-// or there was a conflict (HTTP status code 404, 409 or 410)
-// * PlatformError if something went wrong at the Worldline Global Collect platform,
-// the Worldline Global Collect platform was unable to process a message from a downstream partner/acquirer,
-// or the service that you're trying to reach is temporary unavailable (HTTP status code 500, 502 or 503)
-// * APIError if the Worldline Global Collect platform returned any other error
+//   * IdempotenceError if an idempotent request caused a conflict (HTTP status code 409)
+//   * ValidationError if the request was not correct and couldn't be processed (HTTP status code 400)
+//   * AuthorizationError if the request was not allowed (HTTP status code 403)
+//   * ReferenceError if an object was attempted to be referenced that doesn't exist or has been removed,
+//     or there was a conflict (HTTP status code 404, 409 or 410)
+//   * PlatformError if something went wrong at the Worldline Global Collect platform,
+//     the Worldline Global Collect platform was unable to process a message from a downstream partner/acquirer,
+//     or the service that you're trying to reach is temporary unavailable (HTTP status code 500, 502 or 503)
+//   * APIError if the Worldline Global Collect platform returned any other error
 func (c *Client) Find(query FindParams, context *communicator.CallContext) (domain.PaymentProducts, error) {
 	var resultObject domain.PaymentProducts
 
@@ -67,18 +68,19 @@ func (c *Client) Find(query FindParams, context *communicator.CallContext) (doma
 }
 
 // Get represents the resource /{merchantId}/products/{paymentProductId} - Get payment product
+//
 // Documentation can be found at https://apireference.connect.worldline-solutions.com/s2sapi/v1/en_US/go/products/get.html
 //
 // Can return any of the following errors:
-// * ValidationError if the request was not correct and couldn't be processed (HTTP status code 400)
-// * AuthorizationError if the request was not allowed (HTTP status code 403)
-// * IdempotenceError if an idempotent request caused a conflict (HTTP status code 409)
-// * ReferenceError if an object was attempted to be referenced that doesn't exist or has been removed,
-// or there was a conflict (HTTP status code 404, 409 or 410)
-// * PlatformError if something went wrong at the Worldline Global Collect platform,
-// the Worldline Global Collect platform was unable to process a message from a downstream partner/acquirer,
-// or the service that you're trying to reach is temporary unavailable (HTTP status code 500, 502 or 503)
-// * APIError if the Worldline Global Collect platform returned any other error
+//   * IdempotenceError if an idempotent request caused a conflict (HTTP status code 409)
+//   * ValidationError if the request was not correct and couldn't be processed (HTTP status code 400)
+//   * AuthorizationError if the request was not allowed (HTTP status code 403)
+//   * ReferenceError if an object was attempted to be referenced that doesn't exist or has been removed,
+//     or there was a conflict (HTTP status code 404, 409 or 410)
+//   * PlatformError if something went wrong at the Worldline Global Collect platform,
+//     the Worldline Global Collect platform was unable to process a message from a downstream partner/acquirer,
+//     or the service that you're trying to reach is temporary unavailable (HTTP status code 500, 502 or 503)
+//   * APIError if the Worldline Global Collect platform returned any other error
 func (c *Client) Get(paymentProductID int32, query GetParams, context *communicator.CallContext) (domain.PaymentProductResponse, error) {
 	var resultObject domain.PaymentProductResponse
 
@@ -120,18 +122,19 @@ func (c *Client) Get(paymentProductID int32, query GetParams, context *communica
 }
 
 // Directory represents the resource /{merchantId}/products/{paymentProductId}/directory - Get payment product directory
+//
 // Documentation can be found at https://apireference.connect.worldline-solutions.com/s2sapi/v1/en_US/go/products/directory.html
 //
 // Can return any of the following errors:
-// * ValidationError if the request was not correct and couldn't be processed (HTTP status code 400)
-// * AuthorizationError if the request was not allowed (HTTP status code 403)
-// * IdempotenceError if an idempotent request caused a conflict (HTTP status code 409)
-// * ReferenceError if an object was attempted to be referenced that doesn't exist or has been removed,
-// or there was a conflict (HTTP status code 404, 409 or 410)
-// * PlatformError if something went wrong at the Worldline Global Collect platform,
-// the Worldline Global Collect platform was unable to process a message from a downstream partner/acquirer,
-// or the service that you're trying to reach is temporary unavailable (HTTP status code 500, 502 or 503)
-// * APIError if the Worldline Global Collect platform returned any other error
+//   * IdempotenceError if an idempotent request caused a conflict (HTTP status code 409)
+//   * ValidationError if the request was not correct and couldn't be processed (HTTP status code 400)
+//   * AuthorizationError if the request was not allowed (HTTP status code 403)
+//   * ReferenceError if an object was attempted to be referenced that doesn't exist or has been removed,
+//     or there was a conflict (HTTP status code 404, 409 or 410)
+//   * PlatformError if something went wrong at the Worldline Global Collect platform,
+//     the Worldline Global Collect platform was unable to process a message from a downstream partner/acquirer,
+//     or the service that you're trying to reach is temporary unavailable (HTTP status code 500, 502 or 503)
+//   * APIError if the Worldline Global Collect platform returned any other error
 func (c *Client) Directory(paymentProductID int32, query DirectoryParams, context *communicator.CallContext) (domain.Directory, error) {
 	var resultObject domain.Directory
 
@@ -173,18 +176,19 @@ func (c *Client) Directory(paymentProductID int32, query DirectoryParams, contex
 }
 
 // CustomerDetails represents the resource /{merchantId}/products/{paymentProductId}/customerDetails - Get customer details
+//
 // Documentation can be found at https://apireference.connect.worldline-solutions.com/s2sapi/v1/en_US/go/products/customerDetails.html
 //
 // Can return any of the following errors:
-// * ValidationError if the request was not correct and couldn't be processed (HTTP status code 400)
-// * AuthorizationError if the request was not allowed (HTTP status code 403)
-// * IdempotenceError if an idempotent request caused a conflict (HTTP status code 409)
-// * ReferenceError if an object was attempted to be referenced that doesn't exist or has been removed,
-// or there was a conflict (HTTP status code 404, 409 or 410)
-// * PlatformError if something went wrong at the Worldline Global Collect platform,
-// the Worldline Global Collect platform was unable to process a message from a downstream partner/acquirer,
-// or the service that you're trying to reach is temporary unavailable (HTTP status code 500, 502 or 503)
-// * APIError if the Worldline Global Collect platform returned any other error
+//   * IdempotenceError if an idempotent request caused a conflict (HTTP status code 409)
+//   * ValidationError if the request was not correct and couldn't be processed (HTTP status code 400)
+//   * AuthorizationError if the request was not allowed (HTTP status code 403)
+//   * ReferenceError if an object was attempted to be referenced that doesn't exist or has been removed,
+//     or there was a conflict (HTTP status code 404, 409 or 410)
+//   * PlatformError if something went wrong at the Worldline Global Collect platform,
+//     the Worldline Global Collect platform was unable to process a message from a downstream partner/acquirer,
+//     or the service that you're trying to reach is temporary unavailable (HTTP status code 500, 502 or 503)
+//   * APIError if the Worldline Global Collect platform returned any other error
 func (c *Client) CustomerDetails(paymentProductID int32, body domain.GetCustomerDetailsRequest, context *communicator.CallContext) (domain.GetCustomerDetailsResponse, error) {
 	var resultObject domain.GetCustomerDetailsResponse
 
@@ -226,18 +230,19 @@ func (c *Client) CustomerDetails(paymentProductID int32, body domain.GetCustomer
 }
 
 // DeviceFingerprint represents the resource /{merchantId}/products/{paymentProductId}/deviceFingerprint - Get device fingerprint
+//
 // Documentation can be found at https://apireference.connect.worldline-solutions.com/s2sapi/v1/en_US/go/products/deviceFingerprint.html
 //
 // Can return any of the following errors:
-// * ValidationError if the request was not correct and couldn't be processed (HTTP status code 400)
-// * AuthorizationError if the request was not allowed (HTTP status code 403)
-// * IdempotenceError if an idempotent request caused a conflict (HTTP status code 409)
-// * ReferenceError if an object was attempted to be referenced that doesn't exist or has been removed,
-// or there was a conflict (HTTP status code 404, 409 or 410)
-// * PlatformError if something went wrong at the Worldline Global Collect platform,
-// the Worldline Global Collect platform was unable to process a message from a downstream partner/acquirer,
-// or the service that you're trying to reach is temporary unavailable (HTTP status code 500, 502 or 503)
-// * APIError if the Worldline Global Collect platform returned any other error
+//   * IdempotenceError if an idempotent request caused a conflict (HTTP status code 409)
+//   * ValidationError if the request was not correct and couldn't be processed (HTTP status code 400)
+//   * AuthorizationError if the request was not allowed (HTTP status code 403)
+//   * ReferenceError if an object was attempted to be referenced that doesn't exist or has been removed,
+//     or there was a conflict (HTTP status code 404, 409 or 410)
+//   * PlatformError if something went wrong at the Worldline Global Collect platform,
+//     the Worldline Global Collect platform was unable to process a message from a downstream partner/acquirer,
+//     or the service that you're trying to reach is temporary unavailable (HTTP status code 500, 502 or 503)
+//   * APIError if the Worldline Global Collect platform returned any other error
 func (c *Client) DeviceFingerprint(paymentProductID int32, body domain.DeviceFingerprintRequest, context *communicator.CallContext) (domain.DeviceFingerprintResponse, error) {
 	var resultObject domain.DeviceFingerprintResponse
 
@@ -279,18 +284,19 @@ func (c *Client) DeviceFingerprint(paymentProductID int32, body domain.DeviceFin
 }
 
 // Networks represents the resource /{merchantId}/products/{paymentProductId}/networks - Get payment product networks
+//
 // Documentation can be found at https://apireference.connect.worldline-solutions.com/s2sapi/v1/en_US/go/products/networks.html
 //
 // Can return any of the following errors:
-// * ValidationError if the request was not correct and couldn't be processed (HTTP status code 400)
-// * AuthorizationError if the request was not allowed (HTTP status code 403)
-// * IdempotenceError if an idempotent request caused a conflict (HTTP status code 409)
-// * ReferenceError if an object was attempted to be referenced that doesn't exist or has been removed,
-// or there was a conflict (HTTP status code 404, 409 or 410)
-// * PlatformError if something went wrong at the Worldline Global Collect platform,
-// the Worldline Global Collect platform was unable to process a message from a downstream partner/acquirer,
-// or the service that you're trying to reach is temporary unavailable (HTTP status code 500, 502 or 503)
-// * APIError if the Worldline Global Collect platform returned any other error
+//   * IdempotenceError if an idempotent request caused a conflict (HTTP status code 409)
+//   * ValidationError if the request was not correct and couldn't be processed (HTTP status code 400)
+//   * AuthorizationError if the request was not allowed (HTTP status code 403)
+//   * ReferenceError if an object was attempted to be referenced that doesn't exist or has been removed,
+//     or there was a conflict (HTTP status code 404, 409 or 410)
+//   * PlatformError if something went wrong at the Worldline Global Collect platform,
+//     the Worldline Global Collect platform was unable to process a message from a downstream partner/acquirer,
+//     or the service that you're trying to reach is temporary unavailable (HTTP status code 500, 502 or 503)
+//   * APIError if the Worldline Global Collect platform returned any other error
 func (c *Client) Networks(paymentProductID int32, query NetworksParams, context *communicator.CallContext) (domain.PaymentProductNetworksResponse, error) {
 	var resultObject domain.PaymentProductNetworksResponse
 
@@ -332,18 +338,19 @@ func (c *Client) Networks(paymentProductID int32, query NetworksParams, context 
 }
 
 // Sessions represents the resource /{merchantId}/products/{paymentProductId}/sessions - Create session for payment product
+//
 // Documentation can be found at https://apireference.connect.worldline-solutions.com/s2sapi/v1/en_US/go/products/sessions.html
 //
 // Can return any of the following errors:
-// * ValidationError if the request was not correct and couldn't be processed (HTTP status code 400)
-// * AuthorizationError if the request was not allowed (HTTP status code 403)
-// * IdempotenceError if an idempotent request caused a conflict (HTTP status code 409)
-// * ReferenceError if an object was attempted to be referenced that doesn't exist or has been removed,
-// or there was a conflict (HTTP status code 404, 409 or 410)
-// * PlatformError if something went wrong at the Worldline Global Collect platform,
-// the Worldline Global Collect platform was unable to process a message from a downstream partner/acquirer,
-// or the service that you're trying to reach is temporary unavailable (HTTP status code 500, 502 or 503)
-// * APIError if the Worldline Global Collect platform returned any other error
+//   * IdempotenceError if an idempotent request caused a conflict (HTTP status code 409)
+//   * ValidationError if the request was not correct and couldn't be processed (HTTP status code 400)
+//   * AuthorizationError if the request was not allowed (HTTP status code 403)
+//   * ReferenceError if an object was attempted to be referenced that doesn't exist or has been removed,
+//     or there was a conflict (HTTP status code 404, 409 or 410)
+//   * PlatformError if something went wrong at the Worldline Global Collect platform,
+//     the Worldline Global Collect platform was unable to process a message from a downstream partner/acquirer,
+//     or the service that you're trying to reach is temporary unavailable (HTTP status code 500, 502 or 503)
+//   * APIError if the Worldline Global Collect platform returned any other error
 func (c *Client) Sessions(paymentProductID int32, body domain.CreatePaymentProductSessionRequest, context *communicator.CallContext) (domain.CreatePaymentProductSessionResponse, error) {
 	var resultObject domain.CreatePaymentProductSessionResponse
 
@@ -384,9 +391,9 @@ func (c *Client) Sessions(paymentProductID int32, body domain.CreatePaymentProdu
 	return resultObject, nil
 }
 
-// NewClient constructs a Products Client
+// NewClient constructs a new Products client
 //
-// parent is the *communicator.APIResource on top of which we want to build the new Products Client
+// parent is the communicator.APIResource on top of which we want to build the new Products client
 func NewClient(parent *communicator.APIResource, pathContext map[string]string) (*Client, error) {
 	apiResource, err := communicator.NewAPIResourceWithParent(parent, pathContext)
 	if err != nil {

@@ -8,7 +8,7 @@ type GetPrivacyPolicyResponse struct {
 	HTMLContent *string `json:"htmlContent,omitempty"`
 }
 
-// NewGetPrivacyPolicyResponse constructs a new GetPrivacyPolicyResponse
+// NewGetPrivacyPolicyResponse constructs a new GetPrivacyPolicyResponse instance
 func NewGetPrivacyPolicyResponse() *GetPrivacyPolicyResponse {
 	return &GetPrivacyPolicyResponse{}
 }

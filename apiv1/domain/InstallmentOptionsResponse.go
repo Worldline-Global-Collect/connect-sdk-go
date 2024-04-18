@@ -8,7 +8,7 @@ type InstallmentOptionsResponse struct {
 	InstallmentOptions *[]InstallmentOptions `json:"installmentOptions,omitempty"`
 }
 
-// NewInstallmentOptionsResponse constructs a new InstallmentOptionsResponse
+// NewInstallmentOptionsResponse constructs a new InstallmentOptionsResponse instance
 func NewInstallmentOptionsResponse() *InstallmentOptionsResponse {
 	return &InstallmentOptionsResponse{}
 }

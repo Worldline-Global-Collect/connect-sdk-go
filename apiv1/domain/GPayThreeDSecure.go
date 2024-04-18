@@ -12,7 +12,7 @@ type GPayThreeDSecure struct {
 	SkipAuthentication  *bool            `json:"skipAuthentication,omitempty"`
 }
 
-// NewGPayThreeDSecure constructs a new GPayThreeDSecure
+// NewGPayThreeDSecure constructs a new GPayThreeDSecure instance
 func NewGPayThreeDSecure() *GPayThreeDSecure {
 	return &GPayThreeDSecure{}
 }

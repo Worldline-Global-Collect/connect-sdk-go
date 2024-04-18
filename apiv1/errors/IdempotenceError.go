@@ -22,67 +22,67 @@ type IdempotenceError struct {
 }
 
 // Message returns the error message
-func (ie IdempotenceError) Message() string {
-	return ie.errorMessage
+func (e IdempotenceError) Message() string {
+	return e.errorMessage
 }
 
 // StatusCode returns the status code
-func (ie IdempotenceError) StatusCode() int {
-	return ie.statusCode
+func (e IdempotenceError) StatusCode() int {
+	return e.statusCode
 }
 
 // ResponseBody returns the response body
-func (ie IdempotenceError) ResponseBody() string {
-	return ie.responseBody
+func (e IdempotenceError) ResponseBody() string {
+	return e.responseBody
 }
 
-// ErrorID returns the error id
-func (ie IdempotenceError) ErrorID() string {
-	return ie.errorID
+// ErrorID implements the APIError interface
+func (e IdempotenceError) ErrorID() string {
+	return e.errorID
 }
 
-// Errors returns a slice of underlying errors
-func (ie IdempotenceError) Errors() []domain.APIError {
+// Errors implements the APIError interface
+func (e IdempotenceError) Errors() []domain.APIError {
 	// Return a clone instead of the original slice - immutability insurance
-	return append([]domain.APIError{}, ie.errors...)
+	return append([]domain.APIError{}, e.errors...)
 }
 
 // IdempotenceKey returns the idempotence key used
-func (ie IdempotenceError) IdempotenceKey() string {
-	return ie.idempotenceKey
+func (e IdempotenceError) IdempotenceKey() string {
+	return e.idempotenceKey
 }
 
 // IdempotenceRequestTimestamp returns the timestamp of the request
-func (ie IdempotenceError) IdempotenceRequestTimestamp() *int64 {
-	return ie.idempotenceRequestTimestamp
+func (e IdempotenceError) IdempotenceRequestTimestamp() *int64 {
+	return e.idempotenceRequestTimestamp
 }
 
 // String implements the Stringer interface
 // Format: 'errorMessage; statusCode=; responseBody='
-func (ie IdempotenceError) String() string {
-	list := ie.errorMessage
+func (e IdempotenceError) String() string {
+	list := e.errorMessage
 
-	if ie.statusCode > 0 {
-		list = list + "; statusCode=" + strconv.Itoa(ie.statusCode)
+	if e.statusCode > 0 {
+		list = list + "; statusCode=" + strconv.Itoa(e.statusCode)
 	}
-	if len(ie.responseBody) != 0 {
-		list = list + "; responseBody='" + ie.responseBody + "'"
+	if len(e.responseBody) != 0 {
+		list = list + "; responseBody='" + e.responseBody + "'"
 	}
 
 	return list
 }
 
 // Error implements the error interface
-func (ie IdempotenceError) Error() string {
-	return ie.String()
+func (e IdempotenceError) Error() string {
+	return e.String()
 }
 
-// NewIdempotenceError creates an IdempotenceError with the given idempotenceKey, idempotenceRequestTimestamp, statusCode, responseBody, errorID and errors
+// NewIdempotenceError creates a new IdempotenceError with the given idempotenceKey, idempotenceRequestTimestamp, statusCode, responseBody and response fields
 func NewIdempotenceError(idempotenceKey string, idempotenceRequestTimestamp *int64, statusCode int, responseBody, errorID string, errors []domain.APIError) (*IdempotenceError, error) {
-	return &IdempotenceError{idempotenceKey, idempotenceRequestTimestamp, "the Worldline Global Collect platform returned an incorrect request error response", statusCode, responseBody, errorID, errors}, nil
+	return &IdempotenceError{idempotenceKey, idempotenceRequestTimestamp, "the Worldline Global Collect platform returned a duplicate request error response", statusCode, responseBody, errorID, errors}, nil
 }
 
-// NewIdempotenceErrorVerbose creates an IdempotenceError with the given idempotenceKey, idempotenceRequestTimestamp, message, statusCode, responseBody, errorID and errors
+// NewIdempotenceErrorVerbose creates a new IdempotenceError with the given idempotenceKey, idempotenceRequestTimestamp, message, statusCode, responseBody and response fields
 func NewIdempotenceErrorVerbose(idempotenceKey string, idempotenceRequestTimestamp *int64, message string, statusCode int, responseBody, errorID string, errors []domain.APIError) (*IdempotenceError, error) {
 	return &IdempotenceError{idempotenceKey, idempotenceRequestTimestamp, message, statusCode, responseBody, errorID, errors}, nil
 }

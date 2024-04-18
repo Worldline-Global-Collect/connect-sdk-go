@@ -19,7 +19,7 @@ type AdditionalOrderInput struct {
 	TypeInformation         *OrderTypeInformation    `json:"typeInformation,omitempty"`
 }
 
-// NewAdditionalOrderInput constructs a new AdditionalOrderInput
+// NewAdditionalOrderInput constructs a new AdditionalOrderInput instance
 func NewAdditionalOrderInput() *AdditionalOrderInput {
 	return &AdditionalOrderInput{}
 }

@@ -1258,8 +1258,8 @@ func TestLogErrorOnly(t *testing.T) {
 	requestHeaders := map[string][]string{}
 
 	listener, sl, client, mux, err := createEmptyTimedTestEnvironment(
-		20*time.Millisecond,
-		50*time.Millisecond)
+		100*time.Millisecond,
+		100*time.Millisecond)
 	if err != nil {
 		t.Fatalf("%v: %v", logPrefix, err)
 	}

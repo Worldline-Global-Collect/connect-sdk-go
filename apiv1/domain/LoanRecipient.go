@@ -19,7 +19,7 @@ type LoanRecipient struct {
 	Zip           *string `json:"zip,omitempty"`
 }
 
-// NewLoanRecipient constructs a new LoanRecipient
+// NewLoanRecipient constructs a new LoanRecipient instance
 func NewLoanRecipient() *LoanRecipient {
 	return &LoanRecipient{}
 }

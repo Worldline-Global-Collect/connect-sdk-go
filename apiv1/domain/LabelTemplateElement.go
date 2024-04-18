@@ -9,7 +9,7 @@ type LabelTemplateElement struct {
 	Mask         *string `json:"mask,omitempty"`
 }
 
-// NewLabelTemplateElement constructs a new LabelTemplateElement
+// NewLabelTemplateElement constructs a new LabelTemplateElement instance
 func NewLabelTemplateElement() *LabelTemplateElement {
 	return &LabelTemplateElement{}
 }

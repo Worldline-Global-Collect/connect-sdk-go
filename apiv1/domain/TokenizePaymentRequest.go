@@ -8,7 +8,7 @@ type TokenizePaymentRequest struct {
 	Alias *string `json:"alias,omitempty"`
 }
 
-// NewTokenizePaymentRequest constructs a new TokenizePaymentRequest
+// NewTokenizePaymentRequest constructs a new TokenizePaymentRequest instance
 func NewTokenizePaymentRequest() *TokenizePaymentRequest {
 	return &TokenizePaymentRequest{}
 }

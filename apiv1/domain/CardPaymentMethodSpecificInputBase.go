@@ -27,7 +27,7 @@ type CardPaymentMethodSpecificInputBase struct {
 	UnscheduledCardOnFileSequenceIndicator *string                `json:"unscheduledCardOnFileSequenceIndicator,omitempty"`
 }
 
-// NewCardPaymentMethodSpecificInputBase constructs a new CardPaymentMethodSpecificInputBase
+// NewCardPaymentMethodSpecificInputBase constructs a new CardPaymentMethodSpecificInputBase instance
 func NewCardPaymentMethodSpecificInputBase() *CardPaymentMethodSpecificInputBase {
 	return &CardPaymentMethodSpecificInputBase{}
 }

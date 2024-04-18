@@ -10,7 +10,7 @@ type TokenSepaDirectDebit struct {
 	Mandate  *MandateSepaDirectDebit          `json:"mandate,omitempty"`
 }
 
-// NewTokenSepaDirectDebit constructs a new TokenSepaDirectDebit
+// NewTokenSepaDirectDebit constructs a new TokenSepaDirectDebit instance
 func NewTokenSepaDirectDebit() *TokenSepaDirectDebit {
 	return &TokenSepaDirectDebit{}
 }

@@ -18,7 +18,7 @@ type ThreeDSecure struct {
 	TransactionRiskLevel                 *string                               `json:"transactionRiskLevel,omitempty"`
 }
 
-// NewThreeDSecure constructs a new ThreeDSecure
+// NewThreeDSecure constructs a new ThreeDSecure instance
 func NewThreeDSecure() *ThreeDSecure {
 	return &ThreeDSecure{}
 }

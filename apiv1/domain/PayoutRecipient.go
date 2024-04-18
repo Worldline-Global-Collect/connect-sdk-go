@@ -10,7 +10,7 @@ type PayoutRecipient struct {
 	SurnamePrefix *string `json:"surnamePrefix,omitempty"`
 }
 
-// NewPayoutRecipient constructs a new PayoutRecipient
+// NewPayoutRecipient constructs a new PayoutRecipient instance
 func NewPayoutRecipient() *PayoutRecipient {
 	return &PayoutRecipient{}
 }

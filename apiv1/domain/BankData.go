@@ -11,7 +11,7 @@ type BankData struct {
 	ReformattedBranchCode    *string `json:"reformattedBranchCode,omitempty"`
 }
 
-// NewBankData constructs a new BankData
+// NewBankData constructs a new BankData instance
 func NewBankData() *BankData {
 	return &BankData{}
 }

@@ -12,7 +12,7 @@ type RiskAssessmentCard struct {
 	PaymentProductID *int32                  `json:"paymentProductId,omitempty"`
 }
 
-// NewRiskAssessmentCard constructs a new RiskAssessmentCard
+// NewRiskAssessmentCard constructs a new RiskAssessmentCard instance
 func NewRiskAssessmentCard() *RiskAssessmentCard {
 	return &RiskAssessmentCard{}
 }

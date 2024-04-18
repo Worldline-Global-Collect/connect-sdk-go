@@ -9,7 +9,7 @@ type KeyValuePair struct {
 	Value *string `json:"value,omitempty"`
 }
 
-// NewKeyValuePair constructs a new KeyValuePair
+// NewKeyValuePair constructs a new KeyValuePair instance
 func NewKeyValuePair() *KeyValuePair {
 	return &KeyValuePair{}
 }

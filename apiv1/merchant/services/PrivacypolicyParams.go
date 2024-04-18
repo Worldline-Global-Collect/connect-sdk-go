@@ -10,6 +10,7 @@ import (
 )
 
 // PrivacypolicyParams represents query parameters for Get privacy policy
+//
 // Documentation can be found at https://apireference.connect.worldline-solutions.com/s2sapi/v1/en_US/go/services/privacypolicy.html
 type PrivacypolicyParams struct {
 	Locale           *string
@@ -32,7 +33,7 @@ func (params *PrivacypolicyParams) ToRequestParameters() communication.RequestPa
 	return reqParams
 }
 
-// NewPrivacypolicyParams constructs an instance of PrivacypolicyParams
+// NewPrivacypolicyParams constructs a new PrivacypolicyParams instance
 func NewPrivacypolicyParams() *PrivacypolicyParams {
 	return &PrivacypolicyParams{}
 }

@@ -9,7 +9,7 @@ type Frequency struct {
 	IntervalFrequency *int32  `json:"intervalFrequency,omitempty"`
 }
 
-// NewFrequency constructs a new Frequency
+// NewFrequency constructs a new Frequency instance
 func NewFrequency() *Frequency {
 	return &Frequency{}
 }

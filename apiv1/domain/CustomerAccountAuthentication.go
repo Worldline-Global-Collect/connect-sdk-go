@@ -10,7 +10,7 @@ type CustomerAccountAuthentication struct {
 	UtcTimestamp *string `json:"utcTimestamp,omitempty"`
 }
 
-// NewCustomerAccountAuthentication constructs a new CustomerAccountAuthentication
+// NewCustomerAccountAuthentication constructs a new CustomerAccountAuthentication instance
 func NewCustomerAccountAuthentication() *CustomerAccountAuthentication {
 	return &CustomerAccountAuthentication{}
 }

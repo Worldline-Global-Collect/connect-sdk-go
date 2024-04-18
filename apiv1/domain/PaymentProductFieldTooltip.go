@@ -9,7 +9,7 @@ type PaymentProductFieldTooltip struct {
 	Label *string `json:"label,omitempty"`
 }
 
-// NewPaymentProductFieldTooltip constructs a new PaymentProductFieldTooltip
+// NewPaymentProductFieldTooltip constructs a new PaymentProductFieldTooltip instance
 func NewPaymentProductFieldTooltip() *PaymentProductFieldTooltip {
 	return &PaymentProductFieldTooltip{}
 }

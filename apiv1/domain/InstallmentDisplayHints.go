@@ -10,7 +10,7 @@ type InstallmentDisplayHints struct {
 	Logo         *string `json:"logo,omitempty"`
 }
 
-// NewInstallmentDisplayHints constructs a new InstallmentDisplayHints
+// NewInstallmentDisplayHints constructs a new InstallmentDisplayHints instance
 func NewInstallmentDisplayHints() *InstallmentDisplayHints {
 	return &InstallmentDisplayHints{}
 }

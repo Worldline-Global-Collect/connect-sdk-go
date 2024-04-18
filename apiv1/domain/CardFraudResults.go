@@ -14,7 +14,7 @@ type CardFraudResults struct {
 	RetailDecisions          *FraudResultsRetailDecisions `json:"retailDecisions,omitempty"`
 }
 
-// NewCardFraudResults constructs a new CardFraudResults
+// NewCardFraudResults constructs a new CardFraudResults instance
 func NewCardFraudResults() *CardFraudResults {
 	return &CardFraudResults{}
 }

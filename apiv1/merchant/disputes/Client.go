@@ -16,18 +16,19 @@ type Client struct {
 }
 
 // Get represents the resource /{merchantId}/disputes/{disputeId} - Get dispute
+//
 // Documentation can be found at https://apireference.connect.worldline-solutions.com/s2sapi/v1/en_US/go/disputes/get.html
 //
 // Can return any of the following errors:
-// * ValidationError if the request was not correct and couldn't be processed (HTTP status code 400)
-// * AuthorizationError if the request was not allowed (HTTP status code 403)
-// * IdempotenceError if an idempotent request caused a conflict (HTTP status code 409)
-// * ReferenceError if an object was attempted to be referenced that doesn't exist or has been removed,
-// or there was a conflict (HTTP status code 404, 409 or 410)
-// * PlatformError if something went wrong at the Worldline Global Collect platform,
-// the Worldline Global Collect platform was unable to process a message from a downstream partner/acquirer,
-// or the service that you're trying to reach is temporary unavailable (HTTP status code 500, 502 or 503)
-// * APIError if the Worldline Global Collect platform returned any other error
+//   * IdempotenceError if an idempotent request caused a conflict (HTTP status code 409)
+//   * ValidationError if the request was not correct and couldn't be processed (HTTP status code 400)
+//   * AuthorizationError if the request was not allowed (HTTP status code 403)
+//   * ReferenceError if an object was attempted to be referenced that doesn't exist or has been removed,
+//     or there was a conflict (HTTP status code 404, 409 or 410)
+//   * PlatformError if something went wrong at the Worldline Global Collect platform,
+//     the Worldline Global Collect platform was unable to process a message from a downstream partner/acquirer,
+//     or the service that you're trying to reach is temporary unavailable (HTTP status code 500, 502 or 503)
+//   * APIError if the Worldline Global Collect platform returned any other error
 func (c *Client) Get(disputeID string, context *communicator.CallContext) (domain.DisputeResponse, error) {
 	var resultObject domain.DisputeResponse
 
@@ -69,18 +70,19 @@ func (c *Client) Get(disputeID string, context *communicator.CallContext) (domai
 }
 
 // Submit represents the resource /{merchantId}/disputes/{disputeId}/submit - Submit dispute
+//
 // Documentation can be found at https://apireference.connect.worldline-solutions.com/s2sapi/v1/en_US/go/disputes/submit.html
 //
 // Can return any of the following errors:
-// * ValidationError if the request was not correct and couldn't be processed (HTTP status code 400)
-// * AuthorizationError if the request was not allowed (HTTP status code 403)
-// * IdempotenceError if an idempotent request caused a conflict (HTTP status code 409)
-// * ReferenceError if an object was attempted to be referenced that doesn't exist or has been removed,
-// or there was a conflict (HTTP status code 404, 409 or 410)
-// * PlatformError if something went wrong at the Worldline Global Collect platform,
-// the Worldline Global Collect platform was unable to process a message from a downstream partner/acquirer,
-// or the service that you're trying to reach is temporary unavailable (HTTP status code 500, 502 or 503)
-// * APIError if the Worldline Global Collect platform returned any other error
+//   * IdempotenceError if an idempotent request caused a conflict (HTTP status code 409)
+//   * ValidationError if the request was not correct and couldn't be processed (HTTP status code 400)
+//   * AuthorizationError if the request was not allowed (HTTP status code 403)
+//   * ReferenceError if an object was attempted to be referenced that doesn't exist or has been removed,
+//     or there was a conflict (HTTP status code 404, 409 or 410)
+//   * PlatformError if something went wrong at the Worldline Global Collect platform,
+//     the Worldline Global Collect platform was unable to process a message from a downstream partner/acquirer,
+//     or the service that you're trying to reach is temporary unavailable (HTTP status code 500, 502 or 503)
+//   * APIError if the Worldline Global Collect platform returned any other error
 func (c *Client) Submit(disputeID string, context *communicator.CallContext) (domain.DisputeResponse, error) {
 	var resultObject domain.DisputeResponse
 
@@ -122,18 +124,19 @@ func (c *Client) Submit(disputeID string, context *communicator.CallContext) (do
 }
 
 // Cancel represents the resource /{merchantId}/disputes/{disputeId}/cancel - Cancel dispute
+//
 // Documentation can be found at https://apireference.connect.worldline-solutions.com/s2sapi/v1/en_US/go/disputes/cancel.html
 //
 // Can return any of the following errors:
-// * ValidationError if the request was not correct and couldn't be processed (HTTP status code 400)
-// * AuthorizationError if the request was not allowed (HTTP status code 403)
-// * IdempotenceError if an idempotent request caused a conflict (HTTP status code 409)
-// * ReferenceError if an object was attempted to be referenced that doesn't exist or has been removed,
-// or there was a conflict (HTTP status code 404, 409 or 410)
-// * PlatformError if something went wrong at the Worldline Global Collect platform,
-// the Worldline Global Collect platform was unable to process a message from a downstream partner/acquirer,
-// or the service that you're trying to reach is temporary unavailable (HTTP status code 500, 502 or 503)
-// * APIError if the Worldline Global Collect platform returned any other error
+//   * IdempotenceError if an idempotent request caused a conflict (HTTP status code 409)
+//   * ValidationError if the request was not correct and couldn't be processed (HTTP status code 400)
+//   * AuthorizationError if the request was not allowed (HTTP status code 403)
+//   * ReferenceError if an object was attempted to be referenced that doesn't exist or has been removed,
+//     or there was a conflict (HTTP status code 404, 409 or 410)
+//   * PlatformError if something went wrong at the Worldline Global Collect platform,
+//     the Worldline Global Collect platform was unable to process a message from a downstream partner/acquirer,
+//     or the service that you're trying to reach is temporary unavailable (HTTP status code 500, 502 or 503)
+//   * APIError if the Worldline Global Collect platform returned any other error
 func (c *Client) Cancel(disputeID string, context *communicator.CallContext) (domain.DisputeResponse, error) {
 	var resultObject domain.DisputeResponse
 
@@ -175,18 +178,19 @@ func (c *Client) Cancel(disputeID string, context *communicator.CallContext) (do
 }
 
 // UploadFile represents the resource /{merchantId}/disputes/{disputeId} - Upload File
+//
 // Documentation can be found at https://apireference.connect.worldline-solutions.com/fileserviceapi/v1/en_US/go/disputes/uploadFile.html
 //
 // Can return any of the following errors:
-// * ValidationError if the request was not correct and couldn't be processed (HTTP status code 400)
-// * AuthorizationError if the request was not allowed (HTTP status code 403)
-// * IdempotenceError if an idempotent request caused a conflict (HTTP status code 409)
-// * ReferenceError if an object was attempted to be referenced that doesn't exist or has been removed,
-// or there was a conflict (HTTP status code 404, 409 or 410)
-// * PlatformError if something went wrong at the Worldline Global Collect platform,
-// the Worldline Global Collect platform was unable to process a message from a downstream partner/acquirer,
-// or the service that you're trying to reach is temporary unavailable (HTTP status code 500, 502 or 503)
-// * APIError if the Worldline Global Collect platform returned any other error
+//   * IdempotenceError if an idempotent request caused a conflict (HTTP status code 409)
+//   * ValidationError if the request was not correct and couldn't be processed (HTTP status code 400)
+//   * AuthorizationError if the request was not allowed (HTTP status code 403)
+//   * ReferenceError if an object was attempted to be referenced that doesn't exist or has been removed,
+//     or there was a conflict (HTTP status code 404, 409 or 410)
+//   * PlatformError if something went wrong at the Worldline Global Collect platform,
+//     the Worldline Global Collect platform was unable to process a message from a downstream partner/acquirer,
+//     or the service that you're trying to reach is temporary unavailable (HTTP status code 500, 502 or 503)
+//   * APIError if the Worldline Global Collect platform returned any other error
 func (c *Client) UploadFile(disputeID string, body UploadFileRequest, context *communicator.CallContext) (domain.UploadDisputeFileResponse, error) {
 	var resultObject domain.UploadDisputeFileResponse
 
@@ -227,9 +231,9 @@ func (c *Client) UploadFile(disputeID string, body UploadFileRequest, context *c
 	return resultObject, nil
 }
 
-// NewClient constructs a Disputes Client
+// NewClient constructs a new Disputes client
 //
-// parent is the *communicator.APIResource on top of which we want to build the new Disputes Client
+// parent is the communicator.APIResource on top of which we want to build the new Disputes client
 func NewClient(parent *communicator.APIResource, pathContext map[string]string) (*Client, error) {
 	apiResource, err := communicator.NewAPIResourceWithParent(parent, pathContext)
 	if err != nil {

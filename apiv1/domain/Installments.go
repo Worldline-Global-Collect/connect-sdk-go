@@ -13,7 +13,7 @@ type Installments struct {
 	NumberOfInstallments        *int64         `json:"numberOfInstallments,omitempty"`
 }
 
-// NewInstallments constructs a new Installments
+// NewInstallments constructs a new Installments instance
 func NewInstallments() *Installments {
 	return &Installments{}
 }

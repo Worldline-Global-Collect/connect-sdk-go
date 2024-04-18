@@ -8,7 +8,7 @@ type ApprovePaymentCardPaymentMethodSpecificOutput struct {
 	VoidResponseID *string `json:"voidResponseId,omitempty"`
 }
 
-// NewApprovePaymentCardPaymentMethodSpecificOutput constructs a new ApprovePaymentCardPaymentMethodSpecificOutput
+// NewApprovePaymentCardPaymentMethodSpecificOutput constructs a new ApprovePaymentCardPaymentMethodSpecificOutput instance
 func NewApprovePaymentCardPaymentMethodSpecificOutput() *ApprovePaymentCardPaymentMethodSpecificOutput {
 	return &ApprovePaymentCardPaymentMethodSpecificOutput{}
 }

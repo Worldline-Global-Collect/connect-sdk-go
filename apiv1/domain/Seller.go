@@ -19,7 +19,7 @@ type Seller struct {
 	Type                *string  `json:"type,omitempty"`
 }
 
-// NewSeller constructs a new Seller
+// NewSeller constructs a new Seller instance
 func NewSeller() *Seller {
 	return &Seller{}
 }

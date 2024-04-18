@@ -17,7 +17,7 @@ type PaymentStatusOutput struct {
 	ThreeDSecureStatus       *string         `json:"threeDSecureStatus,omitempty"`
 }
 
-// NewPaymentStatusOutput constructs a new PaymentStatusOutput
+// NewPaymentStatusOutput constructs a new PaymentStatusOutput instance
 func NewPaymentStatusOutput() *PaymentStatusOutput {
 	return &PaymentStatusOutput{}
 }

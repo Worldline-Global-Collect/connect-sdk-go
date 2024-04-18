@@ -28,7 +28,7 @@ type AirlineFlightLeg struct {
 	Taxes                    *int32  `json:"taxes,omitempty"`
 }
 
-// NewAirlineFlightLeg constructs a new AirlineFlightLeg
+// NewAirlineFlightLeg constructs a new AirlineFlightLeg instance
 func NewAirlineFlightLeg() *AirlineFlightLeg {
 	return &AirlineFlightLeg{}
 }

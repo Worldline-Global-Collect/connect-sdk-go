@@ -8,7 +8,7 @@ type CustomerApprovePayment struct {
 	AccountType *string `json:"accountType,omitempty"`
 }
 
-// NewCustomerApprovePayment constructs a new CustomerApprovePayment
+// NewCustomerApprovePayment constructs a new CustomerApprovePayment instance
 func NewCustomerApprovePayment() *CustomerApprovePayment {
 	return &CustomerApprovePayment{}
 }

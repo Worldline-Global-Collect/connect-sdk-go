@@ -9,7 +9,7 @@ type MandateRedirectData struct {
 	RedirectURL *string `json:"redirectURL,omitempty"`
 }
 
-// NewMandateRedirectData constructs a new MandateRedirectData
+// NewMandateRedirectData constructs a new MandateRedirectData instance
 func NewMandateRedirectData() *MandateRedirectData {
 	return &MandateRedirectData{}
 }

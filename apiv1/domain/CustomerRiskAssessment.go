@@ -17,7 +17,7 @@ type CustomerRiskAssessment struct {
 	ShippingAddress     *AddressPersonal                   `json:"shippingAddress,omitempty"`
 }
 
-// NewCustomerRiskAssessment constructs a new CustomerRiskAssessment
+// NewCustomerRiskAssessment constructs a new CustomerRiskAssessment instance
 func NewCustomerRiskAssessment() *CustomerRiskAssessment {
 	return &CustomerRiskAssessment{}
 }

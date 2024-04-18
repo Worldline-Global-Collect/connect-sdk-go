@@ -9,7 +9,7 @@ type FraugsterResults struct {
 	FraudScore               *int32  `json:"fraudScore,omitempty"`
 }
 
-// NewFraugsterResults constructs a new FraugsterResults
+// NewFraugsterResults constructs a new FraugsterResults instance
 func NewFraugsterResults() *FraugsterResults {
 	return &FraugsterResults{}
 }

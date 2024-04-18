@@ -10,7 +10,7 @@ type NonSepaDirectDebitPaymentProduct705SpecificInput struct {
 	TransactionType *string          `json:"transactionType,omitempty"`
 }
 
-// NewNonSepaDirectDebitPaymentProduct705SpecificInput constructs a new NonSepaDirectDebitPaymentProduct705SpecificInput
+// NewNonSepaDirectDebitPaymentProduct705SpecificInput constructs a new NonSepaDirectDebitPaymentProduct705SpecificInput instance
 func NewNonSepaDirectDebitPaymentProduct705SpecificInput() *NonSepaDirectDebitPaymentProduct705SpecificInput {
 	return &NonSepaDirectDebitPaymentProduct705SpecificInput{}
 }

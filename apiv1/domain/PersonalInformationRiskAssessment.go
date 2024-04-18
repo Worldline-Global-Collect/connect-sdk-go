@@ -8,7 +8,7 @@ type PersonalInformationRiskAssessment struct {
 	Name *PersonalNameRiskAssessment `json:"name,omitempty"`
 }
 
-// NewPersonalInformationRiskAssessment constructs a new PersonalInformationRiskAssessment
+// NewPersonalInformationRiskAssessment constructs a new PersonalInformationRiskAssessment instance
 func NewPersonalInformationRiskAssessment() *PersonalInformationRiskAssessment {
 	return &PersonalInformationRiskAssessment{}
 }

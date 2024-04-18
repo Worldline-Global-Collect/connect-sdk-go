@@ -11,7 +11,7 @@ import (
 	"github.com/Worldline-Global-Collect/connect-sdk-go/apiv1/domain"
 )
 
-// DeclinedRefundError represents an error response from a create refund call
+// DeclinedRefundError represents an error response from a refund call.
 type DeclinedRefundError struct {
 	errorMessage  string
 	statusCode    int
@@ -20,70 +20,71 @@ type DeclinedRefundError struct {
 }
 
 // Message returns the error message
-func (dpe DeclinedRefundError) Message() string {
-	return dpe.errorMessage
+func (e DeclinedRefundError) Message() string {
+	return e.errorMessage
 }
 
 // StatusCode returns the status code
-func (dpe DeclinedRefundError) StatusCode() int {
-	return dpe.statusCode
+func (e DeclinedRefundError) StatusCode() int {
+	return e.statusCode
 }
 
 // ResponseBody returns the response body
-func (dpe DeclinedRefundError) ResponseBody() string {
-	return dpe.responseBody
+func (e DeclinedRefundError) ResponseBody() string {
+	return e.responseBody
 }
 
-// ErrorID returns the error id
-func (dpe DeclinedRefundError) ErrorID() string {
-	if dpe.errorResponse.ErrorID == nil {
+// ErrorID implements the APIError interface
+func (e DeclinedRefundError) ErrorID() string {
+	if e.errorResponse.ErrorID == nil {
 		return ""
 	}
-	return *dpe.errorResponse.ErrorID
+	return *e.errorResponse.ErrorID
 }
 
-// Errors returns a slice of underlying errors
-func (dpe DeclinedRefundError) Errors() []domain.APIError {
+// Errors implements the APIError interface
+func (e DeclinedRefundError) Errors() []domain.APIError {
 	// Return a clone instead of the original slice - immutability insurance
-	if dpe.errorResponse.Errors == nil {
+	if e.errorResponse.Errors == nil {
 		return []domain.APIError{}
 	}
-	return append([]domain.APIError{}, *dpe.errorResponse.Errors...)
+	return append([]domain.APIError{}, *e.errorResponse.Errors...)
 }
 
-// RefundResult returns the refund result
-func (dpe DeclinedRefundError) RefundResult() *domain.RefundResult {
-	return dpe.errorResponse.RefundResult
+// RefundResult returns the result of creating a refund
+func (e DeclinedRefundError) RefundResult() *domain.RefundResult {
+	return e.errorResponse.RefundResult
 }
 
 // String implements the Stringer interface
 // Format: 'errorMessage; statusCode=; responseBody='
-func (dpe DeclinedRefundError) String() string {
-	list := dpe.errorMessage
+func (e DeclinedRefundError) String() string {
+	list := e.errorMessage
 
-	if dpe.statusCode > 0 {
-		list = list + "; statusCode=" + strconv.Itoa(dpe.statusCode)
+	if e.statusCode > 0 {
+		list = list + "; statusCode=" + strconv.Itoa(e.statusCode)
 	}
-	if len(dpe.responseBody) != 0 {
-		list = list + "; responseBody='" + dpe.responseBody + "'"
+	if len(e.responseBody) != 0 {
+		list = list + "; responseBody='" + e.responseBody + "'"
 	}
 
 	return list
 }
 
 // Error implements the error interface
-func (dpe DeclinedRefundError) Error() string {
-	return dpe.String()
+func (e DeclinedRefundError) Error() string {
+	return e.String()
 }
 
-// NewDeclinedRefundError creates a DeclinedRefundError with the given statusCode, responseBody and errorResponse
+// NewDeclinedRefundError creates a new DeclinedRefundError with the given statusCode, responseBody and errorResponse
 func NewDeclinedRefundError(statusCode int, responseBody string, errorResponse *domain.RefundErrorResponse) (*DeclinedRefundError, error) {
-	if errorResponse.RefundResult.ID == nil || errorResponse.RefundResult.Status == nil {
-		return nil, goerr.New("cannot get refund")
+	errorMessage := "the Worldline Global Collect platform returned a declined refund response"
+	if errorResponse != nil && errorResponse.RefundResult != nil {
+		refundResult := errorResponse.RefundResult
+		if refundResult.ID == nil || refundResult.Status == nil {
+			return nil, goerr.New("cannot get properties from refundResult")
+		}
+		errorMessage = fmt.Sprintf("declined refund '%s' with status '%s'", *refundResult.ID, *refundResult.Status)
 	}
-	errorMessage := fmt.Sprintf("declined refund '%s' with status '%s'",
-		*errorResponse.RefundResult.ID,
-		*errorResponse.RefundResult.Status)
-
 	return &DeclinedRefundError{errorMessage, statusCode, responseBody, errorResponse}, nil
 }

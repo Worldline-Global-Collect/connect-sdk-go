@@ -10,7 +10,7 @@ type TokenEWallet struct {
 	Data     *TokenEWalletData `json:"data,omitempty"`
 }
 
-// NewTokenEWallet constructs a new TokenEWallet
+// NewTokenEWallet constructs a new TokenEWallet instance
 func NewTokenEWallet() *TokenEWallet {
 	return &TokenEWallet{}
 }

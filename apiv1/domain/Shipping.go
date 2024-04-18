@@ -15,7 +15,7 @@ type Shipping struct {
 	Type             *string          `json:"type,omitempty"`
 }
 
-// NewShipping constructs a new Shipping
+// NewShipping constructs a new Shipping instance
 func NewShipping() *Shipping {
 	return &Shipping{}
 }

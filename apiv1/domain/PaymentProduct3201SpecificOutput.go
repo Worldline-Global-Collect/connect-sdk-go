@@ -8,7 +8,7 @@ type PaymentProduct3201SpecificOutput struct {
 	Card *CardEssentials `json:"card,omitempty"`
 }
 
-// NewPaymentProduct3201SpecificOutput constructs a new PaymentProduct3201SpecificOutput
+// NewPaymentProduct3201SpecificOutput constructs a new PaymentProduct3201SpecificOutput instance
 func NewPaymentProduct3201SpecificOutput() *PaymentProduct3201SpecificOutput {
 	return &PaymentProduct3201SpecificOutput{}
 }

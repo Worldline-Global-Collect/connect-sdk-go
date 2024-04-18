@@ -19,6 +19,6 @@ func handleDeclinedPayout(payoutResult *domain.PayoutResult) {
 	// handle the result here
 }
 
-func handleAPIErrors(errors []domain.APIError) {
-	// handle the errors here
+func handleErrorResponse(errorID string, errors []domain.APIError) {
+	// handle the error response here
 }

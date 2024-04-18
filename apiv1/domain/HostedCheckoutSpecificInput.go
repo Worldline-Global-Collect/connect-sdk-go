@@ -17,7 +17,7 @@ type HostedCheckoutSpecificInput struct {
 	Variant               *string                              `json:"variant,omitempty"`
 }
 
-// NewHostedCheckoutSpecificInput constructs a new HostedCheckoutSpecificInput
+// NewHostedCheckoutSpecificInput constructs a new HostedCheckoutSpecificInput instance
 func NewHostedCheckoutSpecificInput() *HostedCheckoutSpecificInput {
 	return &HostedCheckoutSpecificInput{}
 }

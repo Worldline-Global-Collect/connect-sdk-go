@@ -11,7 +11,7 @@ type RefundMobileMethodSpecificOutput struct {
 	TotalAmountRefunded *int64  `json:"totalAmountRefunded,omitempty"`
 }
 
-// NewRefundMobileMethodSpecificOutput constructs a new RefundMobileMethodSpecificOutput
+// NewRefundMobileMethodSpecificOutput constructs a new RefundMobileMethodSpecificOutput instance
 func NewRefundMobileMethodSpecificOutput() *RefundMobileMethodSpecificOutput {
 	return &RefundMobileMethodSpecificOutput{}
 }

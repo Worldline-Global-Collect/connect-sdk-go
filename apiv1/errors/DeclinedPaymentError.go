@@ -11,7 +11,7 @@ import (
 	"github.com/Worldline-Global-Collect/connect-sdk-go/apiv1/domain"
 )
 
-// DeclinedPaymentError represents an error response from a create payment call
+// DeclinedPaymentError represents an error response from a create payment call.
 type DeclinedPaymentError struct {
 	errorMessage  string
 	statusCode    int
@@ -20,70 +20,71 @@ type DeclinedPaymentError struct {
 }
 
 // Message returns the error message
-func (dpe DeclinedPaymentError) Message() string {
-	return dpe.errorMessage
+func (e DeclinedPaymentError) Message() string {
+	return e.errorMessage
 }
 
 // StatusCode returns the status code
-func (dpe DeclinedPaymentError) StatusCode() int {
-	return dpe.statusCode
+func (e DeclinedPaymentError) StatusCode() int {
+	return e.statusCode
 }
 
 // ResponseBody returns the response body
-func (dpe DeclinedPaymentError) ResponseBody() string {
-	return dpe.responseBody
+func (e DeclinedPaymentError) ResponseBody() string {
+	return e.responseBody
 }
 
-// ErrorID returns the error id
-func (dpe DeclinedPaymentError) ErrorID() string {
-	if dpe.errorResponse.ErrorID == nil {
+// ErrorID implements the APIError interface
+func (e DeclinedPaymentError) ErrorID() string {
+	if e.errorResponse.ErrorID == nil {
 		return ""
 	}
-	return *dpe.errorResponse.ErrorID
+	return *e.errorResponse.ErrorID
 }
 
-// Errors returns a slice of underlying errors
-func (dpe DeclinedPaymentError) Errors() []domain.APIError {
+// Errors implements the APIError interface
+func (e DeclinedPaymentError) Errors() []domain.APIError {
 	// Return a clone instead of the original slice - immutability insurance
-	if dpe.errorResponse.Errors == nil {
+	if e.errorResponse.Errors == nil {
 		return []domain.APIError{}
 	}
-	return append([]domain.APIError{}, *dpe.errorResponse.Errors...)
+	return append([]domain.APIError{}, *e.errorResponse.Errors...)
 }
 
-// PaymentResult returns the payment creation result
-func (dpe DeclinedPaymentError) PaymentResult() *domain.CreatePaymentResult {
-	return dpe.errorResponse.PaymentResult
+// PaymentResult returns the result of creating a payment
+func (e DeclinedPaymentError) PaymentResult() *domain.CreatePaymentResult {
+	return e.errorResponse.PaymentResult
 }
 
 // String implements the Stringer interface
 // Format: 'errorMessage; statusCode=; responseBody='
-func (dpe DeclinedPaymentError) String() string {
-	list := dpe.errorMessage
+func (e DeclinedPaymentError) String() string {
+	list := e.errorMessage
 
-	if dpe.statusCode > 0 {
-		list = list + "; statusCode=" + strconv.Itoa(dpe.statusCode)
+	if e.statusCode > 0 {
+		list = list + "; statusCode=" + strconv.Itoa(e.statusCode)
 	}
-	if len(dpe.responseBody) != 0 {
-		list = list + "; responseBody='" + dpe.responseBody + "'"
+	if len(e.responseBody) != 0 {
+		list = list + "; responseBody='" + e.responseBody + "'"
 	}
 
 	return list
 }
 
 // Error implements the error interface
-func (dpe DeclinedPaymentError) Error() string {
-	return dpe.String()
+func (e DeclinedPaymentError) Error() string {
+	return e.String()
 }
 
-// NewDeclinedPaymentError creates a DeclinedRefundError with the given statusCode, responseBody and errorResponse
+// NewDeclinedPaymentError creates a new DeclinedPaymentError with the given statusCode, responseBody and errorResponse
 func NewDeclinedPaymentError(statusCode int, responseBody string, errorResponse *domain.PaymentErrorResponse) (*DeclinedPaymentError, error) {
-	if errorResponse.PaymentResult.Payment.ID == nil || errorResponse.PaymentResult.Payment.Status == nil {
-		return nil, goerr.New("cannot get payment")
+	errorMessage := "the Worldline Global Collect platform returned a declined payment response"
+	if errorResponse != nil && errorResponse.PaymentResult != nil && errorResponse.PaymentResult.Payment != nil {
+		payment := errorResponse.PaymentResult.Payment
+		if payment.ID == nil || payment.Status == nil {
+			return nil, goerr.New("cannot get properties from payment")
+		}
+		errorMessage = fmt.Sprintf("declined payment '%s' with status '%s'", *payment.ID, *payment.Status)
 	}
-	errorMessage := fmt.Sprintf("declined payment '%s' with status '%s'",
-		*errorResponse.PaymentResult.Payment.ID,
-		*errorResponse.PaymentResult.Payment.Status)
-
 	return &DeclinedPaymentError{errorMessage, statusCode, responseBody, errorResponse}, nil
 }

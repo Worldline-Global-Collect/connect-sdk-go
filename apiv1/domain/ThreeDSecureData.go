@@ -10,7 +10,7 @@ type ThreeDSecureData struct {
 	UtcTimestamp     *string `json:"utcTimestamp,omitempty"`
 }
 
-// NewThreeDSecureData constructs a new ThreeDSecureData
+// NewThreeDSecureData constructs a new ThreeDSecureData instance
 func NewThreeDSecureData() *ThreeDSecureData {
 	return &ThreeDSecureData{}
 }

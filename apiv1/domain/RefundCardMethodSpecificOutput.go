@@ -12,7 +12,7 @@ type RefundCardMethodSpecificOutput struct {
 	TotalAmountRefunded *int64          `json:"totalAmountRefunded,omitempty"`
 }
 
-// NewRefundCardMethodSpecificOutput constructs a new RefundCardMethodSpecificOutput
+// NewRefundCardMethodSpecificOutput constructs a new RefundCardMethodSpecificOutput instance
 func NewRefundCardMethodSpecificOutput() *RefundCardMethodSpecificOutput {
 	return &RefundCardMethodSpecificOutput{}
 }

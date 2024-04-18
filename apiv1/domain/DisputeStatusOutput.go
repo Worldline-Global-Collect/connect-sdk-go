@@ -11,7 +11,7 @@ type DisputeStatusOutput struct {
 	StatusCodeChangeDateTime *string `json:"statusCodeChangeDateTime,omitempty"`
 }
 
-// NewDisputeStatusOutput constructs a new DisputeStatusOutput
+// NewDisputeStatusOutput constructs a new DisputeStatusOutput instance
 func NewDisputeStatusOutput() *DisputeStatusOutput {
 	return &DisputeStatusOutput{}
 }

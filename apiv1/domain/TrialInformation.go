@@ -12,7 +12,7 @@ type TrialInformation struct {
 	TrialPeriodRecurring    *Frequency     `json:"trialPeriodRecurring,omitempty"`
 }
 
-// NewTrialInformation constructs a new TrialInformation
+// NewTrialInformation constructs a new TrialInformation instance
 func NewTrialInformation() *TrialInformation {
 	return &TrialInformation{}
 }

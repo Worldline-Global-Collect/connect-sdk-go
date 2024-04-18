@@ -8,7 +8,7 @@ type NonSepaDirectDebitPaymentProduct730SpecificInput struct {
 	BankAccountBban *BankAccountBban `json:"bankAccountBban,omitempty"`
 }
 
-// NewNonSepaDirectDebitPaymentProduct730SpecificInput constructs a new NonSepaDirectDebitPaymentProduct730SpecificInput
+// NewNonSepaDirectDebitPaymentProduct730SpecificInput constructs a new NonSepaDirectDebitPaymentProduct730SpecificInput instance
 func NewNonSepaDirectDebitPaymentProduct730SpecificInput() *NonSepaDirectDebitPaymentProduct730SpecificInput {
 	return &NonSepaDirectDebitPaymentProduct730SpecificInput{}
 }

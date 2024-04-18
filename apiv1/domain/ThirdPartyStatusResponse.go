@@ -8,7 +8,7 @@ type ThirdPartyStatusResponse struct {
 	ThirdPartyStatus *string `json:"thirdPartyStatus,omitempty"`
 }
 
-// NewThirdPartyStatusResponse constructs a new ThirdPartyStatusResponse
+// NewThirdPartyStatusResponse constructs a new ThirdPartyStatusResponse instance
 func NewThirdPartyStatusResponse() *ThirdPartyStatusResponse {
 	return &ThirdPartyStatusResponse{}
 }

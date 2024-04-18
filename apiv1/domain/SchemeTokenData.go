@@ -12,7 +12,7 @@ type SchemeTokenData struct {
 	TokenExpiryDate *string `json:"tokenExpiryDate,omitempty"`
 }
 
-// NewSchemeTokenData constructs a new SchemeTokenData
+// NewSchemeTokenData constructs a new SchemeTokenData instance
 func NewSchemeTokenData() *SchemeTokenData {
 	return &SchemeTokenData{}
 }

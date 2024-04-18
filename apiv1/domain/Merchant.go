@@ -11,7 +11,7 @@ type Merchant struct {
 	WebsiteURL        *string `json:"websiteUrl,omitempty"`
 }
 
-// NewMerchant constructs a new Merchant
+// NewMerchant constructs a new Merchant instance
 func NewMerchant() *Merchant {
 	return &Merchant{}
 }

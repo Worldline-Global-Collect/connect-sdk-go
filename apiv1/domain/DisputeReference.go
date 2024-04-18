@@ -12,7 +12,7 @@ type DisputeReference struct {
 	ProviderReference *string `json:"providerReference,omitempty"`
 }
 
-// NewDisputeReference constructs a new DisputeReference
+// NewDisputeReference constructs a new DisputeReference instance
 func NewDisputeReference() *DisputeReference {
 	return &DisputeReference{}
 }

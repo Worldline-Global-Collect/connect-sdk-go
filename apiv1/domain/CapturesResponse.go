@@ -8,7 +8,7 @@ type CapturesResponse struct {
 	Captures *[]Capture `json:"captures,omitempty"`
 }
 
-// NewCapturesResponse constructs a new CapturesResponse
+// NewCapturesResponse constructs a new CapturesResponse instance
 func NewCapturesResponse() *CapturesResponse {
 	return &CapturesResponse{}
 }

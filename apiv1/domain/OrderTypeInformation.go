@@ -11,7 +11,7 @@ type OrderTypeInformation struct {
 	UsageType       *string `json:"usageType,omitempty"`
 }
 
-// NewOrderTypeInformation constructs a new OrderTypeInformation
+// NewOrderTypeInformation constructs a new OrderTypeInformation instance
 func NewOrderTypeInformation() *OrderTypeInformation {
 	return &OrderTypeInformation{}
 }

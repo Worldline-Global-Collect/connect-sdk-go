@@ -23,7 +23,7 @@ type LodgingData struct {
 	Rooms                              *[]LodgingRoom   `json:"rooms,omitempty"`
 }
 
-// NewLodgingData constructs a new LodgingData
+// NewLodgingData constructs a new LodgingData instance
 func NewLodgingData() *LodgingData {
 	return &LodgingData{}
 }

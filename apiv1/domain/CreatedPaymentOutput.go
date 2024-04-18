@@ -15,7 +15,7 @@ type CreatedPaymentOutput struct {
 	Tokens                    *string                    `json:"tokens,omitempty"`
 }
 
-// NewCreatedPaymentOutput constructs a new CreatedPaymentOutput
+// NewCreatedPaymentOutput constructs a new CreatedPaymentOutput instance
 func NewCreatedPaymentOutput() *CreatedPaymentOutput {
 	return &CreatedPaymentOutput{}
 }

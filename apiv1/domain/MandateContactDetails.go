@@ -8,7 +8,7 @@ type MandateContactDetails struct {
 	EmailAddress *string `json:"emailAddress,omitempty"`
 }
 
-// NewMandateContactDetails constructs a new MandateContactDetails
+// NewMandateContactDetails constructs a new MandateContactDetails instance
 func NewMandateContactDetails() *MandateContactDetails {
 	return &MandateContactDetails{}
 }

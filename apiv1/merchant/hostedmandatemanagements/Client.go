@@ -16,18 +16,19 @@ type Client struct {
 }
 
 // Create represents the resource /{merchantId}/hostedmandatemanagements - Create hosted mandate management
+//
 // Documentation can be found at https://apireference.connect.worldline-solutions.com/s2sapi/v1/en_US/go/hostedmandatemanagements/create.html
 //
 // Can return any of the following errors:
-// * ValidationError if the request was not correct and couldn't be processed (HTTP status code 400)
-// * AuthorizationError if the request was not allowed (HTTP status code 403)
-// * IdempotenceError if an idempotent request caused a conflict (HTTP status code 409)
-// * ReferenceError if an object was attempted to be referenced that doesn't exist or has been removed,
-// or there was a conflict (HTTP status code 404, 409 or 410)
-// * PlatformError if something went wrong at the Worldline Global Collect platform,
-// the Worldline Global Collect platform was unable to process a message from a downstream partner/acquirer,
-// or the service that you're trying to reach is temporary unavailable (HTTP status code 500, 502 or 503)
-// * APIError if the Worldline Global Collect platform returned any other error
+//   * IdempotenceError if an idempotent request caused a conflict (HTTP status code 409)
+//   * ValidationError if the request was not correct and couldn't be processed (HTTP status code 400)
+//   * AuthorizationError if the request was not allowed (HTTP status code 403)
+//   * ReferenceError if an object was attempted to be referenced that doesn't exist or has been removed,
+//     or there was a conflict (HTTP status code 404, 409 or 410)
+//   * PlatformError if something went wrong at the Worldline Global Collect platform,
+//     the Worldline Global Collect platform was unable to process a message from a downstream partner/acquirer,
+//     or the service that you're trying to reach is temporary unavailable (HTTP status code 500, 502 or 503)
+//   * APIError if the Worldline Global Collect platform returned any other error
 func (c *Client) Create(body domain.CreateHostedMandateManagementRequest, context *communicator.CallContext) (domain.CreateHostedMandateManagementResponse, error) {
 	var resultObject domain.CreateHostedMandateManagementResponse
 
@@ -65,18 +66,19 @@ func (c *Client) Create(body domain.CreateHostedMandateManagementRequest, contex
 }
 
 // Get represents the resource /{merchantId}/hostedmandatemanagements/{hostedMandateManagementId} - Get hosted mandate management status
+//
 // Documentation can be found at https://apireference.connect.worldline-solutions.com/s2sapi/v1/en_US/go/hostedmandatemanagements/get.html
 //
 // Can return any of the following errors:
-// * ValidationError if the request was not correct and couldn't be processed (HTTP status code 400)
-// * AuthorizationError if the request was not allowed (HTTP status code 403)
-// * IdempotenceError if an idempotent request caused a conflict (HTTP status code 409)
-// * ReferenceError if an object was attempted to be referenced that doesn't exist or has been removed,
-// or there was a conflict (HTTP status code 404, 409 or 410)
-// * PlatformError if something went wrong at the Worldline Global Collect platform,
-// the Worldline Global Collect platform was unable to process a message from a downstream partner/acquirer,
-// or the service that you're trying to reach is temporary unavailable (HTTP status code 500, 502 or 503)
-// * APIError if the Worldline Global Collect platform returned any other error
+//   * IdempotenceError if an idempotent request caused a conflict (HTTP status code 409)
+//   * ValidationError if the request was not correct and couldn't be processed (HTTP status code 400)
+//   * AuthorizationError if the request was not allowed (HTTP status code 403)
+//   * ReferenceError if an object was attempted to be referenced that doesn't exist or has been removed,
+//     or there was a conflict (HTTP status code 404, 409 or 410)
+//   * PlatformError if something went wrong at the Worldline Global Collect platform,
+//     the Worldline Global Collect platform was unable to process a message from a downstream partner/acquirer,
+//     or the service that you're trying to reach is temporary unavailable (HTTP status code 500, 502 or 503)
+//   * APIError if the Worldline Global Collect platform returned any other error
 func (c *Client) Get(hostedMandateManagementID string, context *communicator.CallContext) (domain.GetHostedMandateManagementResponse, error) {
 	var resultObject domain.GetHostedMandateManagementResponse
 
@@ -117,9 +119,9 @@ func (c *Client) Get(hostedMandateManagementID string, context *communicator.Cal
 	return resultObject, nil
 }
 
-// NewClient constructs a Hostedmandatemanagements Client
+// NewClient constructs a new Hostedmandatemanagements client
 //
-// parent is the *communicator.APIResource on top of which we want to build the new Hostedmandatemanagements Client
+// parent is the communicator.APIResource on top of which we want to build the new Hostedmandatemanagements client
 func NewClient(parent *communicator.APIResource, pathContext map[string]string) (*Client, error) {
 	apiResource, err := communicator.NewAPIResourceWithParent(parent, pathContext)
 	if err != nil {

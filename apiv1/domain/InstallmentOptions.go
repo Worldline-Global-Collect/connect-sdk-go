@@ -10,7 +10,7 @@ type InstallmentOptions struct {
 	InstallmentPlans *[]Installments          `json:"installmentPlans,omitempty"`
 }
 
-// NewInstallmentOptions constructs a new InstallmentOptions
+// NewInstallmentOptions constructs a new InstallmentOptions instance
 func NewInstallmentOptions() *InstallmentOptions {
 	return &InstallmentOptions{}
 }

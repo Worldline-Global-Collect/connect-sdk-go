@@ -11,7 +11,7 @@ type GetInstallmentRequest struct {
 	PaymentProductID *int32         `json:"paymentProductId,omitempty"`
 }
 
-// NewGetInstallmentRequest constructs a new GetInstallmentRequest
+// NewGetInstallmentRequest constructs a new GetInstallmentRequest instance
 func NewGetInstallmentRequest() *GetInstallmentRequest {
 	return &GetInstallmentRequest{}
 }

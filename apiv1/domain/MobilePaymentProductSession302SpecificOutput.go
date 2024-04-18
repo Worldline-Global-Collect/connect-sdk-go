@@ -8,7 +8,7 @@ type MobilePaymentProductSession302SpecificOutput struct {
 	SessionObject *string `json:"sessionObject,omitempty"`
 }
 
-// NewMobilePaymentProductSession302SpecificOutput constructs a new MobilePaymentProductSession302SpecificOutput
+// NewMobilePaymentProductSession302SpecificOutput constructs a new MobilePaymentProductSession302SpecificOutput instance
 func NewMobilePaymentProductSession302SpecificOutput() *MobilePaymentProductSession302SpecificOutput {
 	return &MobilePaymentProductSession302SpecificOutput{}
 }

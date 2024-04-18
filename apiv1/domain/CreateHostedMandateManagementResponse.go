@@ -10,7 +10,7 @@ type CreateHostedMandateManagementResponse struct {
 	PartialRedirectURL        *string `json:"partialRedirectUrl,omitempty"`
 }
 
-// NewCreateHostedMandateManagementResponse constructs a new CreateHostedMandateManagementResponse
+// NewCreateHostedMandateManagementResponse constructs a new CreateHostedMandateManagementResponse instance
 func NewCreateHostedMandateManagementResponse() *CreateHostedMandateManagementResponse {
 	return &CreateHostedMandateManagementResponse{}
 }

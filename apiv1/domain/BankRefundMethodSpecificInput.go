@@ -10,7 +10,7 @@ type BankRefundMethodSpecificInput struct {
 	CountryCode     *string                `json:"countryCode,omitempty"`
 }
 
-// NewBankRefundMethodSpecificInput constructs a new BankRefundMethodSpecificInput
+// NewBankRefundMethodSpecificInput constructs a new BankRefundMethodSpecificInput instance
 func NewBankRefundMethodSpecificInput() *BankRefundMethodSpecificInput {
 	return &BankRefundMethodSpecificInput{}
 }

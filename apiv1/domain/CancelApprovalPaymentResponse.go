@@ -8,7 +8,7 @@ type CancelApprovalPaymentResponse struct {
 	Payment *Payment `json:"payment,omitempty"`
 }
 
-// NewCancelApprovalPaymentResponse constructs a new CancelApprovalPaymentResponse
+// NewCancelApprovalPaymentResponse constructs a new CancelApprovalPaymentResponse instance
 func NewCancelApprovalPaymentResponse() *CancelApprovalPaymentResponse {
 	return &CancelApprovalPaymentResponse{}
 }

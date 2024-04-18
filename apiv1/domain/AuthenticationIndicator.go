@@ -9,7 +9,7 @@ type AuthenticationIndicator struct {
 	Value *string `json:"value,omitempty"`
 }
 
-// NewAuthenticationIndicator constructs a new AuthenticationIndicator
+// NewAuthenticationIndicator constructs a new AuthenticationIndicator instance
 func NewAuthenticationIndicator() *AuthenticationIndicator {
 	return &AuthenticationIndicator{}
 }

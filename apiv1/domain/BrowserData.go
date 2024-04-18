@@ -14,7 +14,7 @@ type BrowserData struct {
 	ScreenWidth       *string `json:"screenWidth,omitempty"`
 }
 
-// NewBrowserData constructs a new BrowserData
+// NewBrowserData constructs a new BrowserData instance
 func NewBrowserData() *BrowserData {
 	return &BrowserData{}
 }

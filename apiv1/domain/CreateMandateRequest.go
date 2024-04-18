@@ -15,7 +15,7 @@ type CreateMandateRequest struct {
 	UniqueMandateReference *string          `json:"uniqueMandateReference,omitempty"`
 }
 
-// NewCreateMandateRequest constructs a new CreateMandateRequest
+// NewCreateMandateRequest constructs a new CreateMandateRequest instance
 func NewCreateMandateRequest() *CreateMandateRequest {
 	return &CreateMandateRequest{}
 }

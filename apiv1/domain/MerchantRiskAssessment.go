@@ -8,7 +8,7 @@ type MerchantRiskAssessment struct {
 	WebsiteURL *string `json:"websiteUrl,omitempty"`
 }
 
-// NewMerchantRiskAssessment constructs a new MerchantRiskAssessment
+// NewMerchantRiskAssessment constructs a new MerchantRiskAssessment instance
 func NewMerchantRiskAssessment() *MerchantRiskAssessment {
 	return &MerchantRiskAssessment{}
 }

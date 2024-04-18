@@ -21,9 +21,9 @@ func (c *Client) Merchant(merchantID string) *merchant.Client {
 	return client
 }
 
-// NewClient constructs a v1 Client
+// NewClient constructs a new v1 client
 //
-// parent is the *communicator.APIResource on top of which we want to build the new v1 Client
+// parent is the communicator.APIResource on top of which we want to build the new v1 client
 func NewClient(parent *communicator.APIResource, pathContext map[string]string) (*Client, error) {
 	apiResource, err := communicator.NewAPIResourceWithParent(parent, pathContext)
 	if err != nil {

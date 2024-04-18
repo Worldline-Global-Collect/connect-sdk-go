@@ -8,7 +8,7 @@ type GetMandateResponse struct {
 	Mandate *MandateResponse `json:"mandate,omitempty"`
 }
 
-// NewGetMandateResponse constructs a new GetMandateResponse
+// NewGetMandateResponse constructs a new GetMandateResponse instance
 func NewGetMandateResponse() *GetMandateResponse {
 	return &GetMandateResponse{}
 }

@@ -10,7 +10,7 @@ type RedirectPaymentProduct869SpecificInput struct {
 	ResidentIDNumber *string `json:"residentIdNumber,omitempty"`
 }
 
-// NewRedirectPaymentProduct869SpecificInput constructs a new RedirectPaymentProduct869SpecificInput
+// NewRedirectPaymentProduct869SpecificInput constructs a new RedirectPaymentProduct869SpecificInput instance
 func NewRedirectPaymentProduct869SpecificInput() *RedirectPaymentProduct869SpecificInput {
 	return &RedirectPaymentProduct869SpecificInput{}
 }

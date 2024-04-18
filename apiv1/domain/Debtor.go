@@ -18,7 +18,7 @@ type Debtor struct {
 	Zip                   *string `json:"zip,omitempty"`
 }
 
-// NewDebtor constructs a new Debtor
+// NewDebtor constructs a new Debtor instance
 func NewDebtor() *Debtor {
 	return &Debtor{}
 }

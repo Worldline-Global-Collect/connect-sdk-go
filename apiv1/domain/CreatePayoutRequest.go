@@ -27,7 +27,7 @@ type CreatePayoutRequest struct {
 	SwiftCode                             *string                                `json:"swiftCode,omitempty"`
 }
 
-// NewCreatePayoutRequest constructs a new CreatePayoutRequest
+// NewCreatePayoutRequest constructs a new CreatePayoutRequest instance
 func NewCreatePayoutRequest() *CreatePayoutRequest {
 	return &CreatePayoutRequest{}
 }

@@ -20,9 +20,9 @@ type Client struct {
 	apiResource *communicator.APIResource
 }
 
-// WithClientMetaInfo returns a new Client which uses the passed meta data for the X-GCS-ClientMetaInfo header.
-// - clientMetaInfo is a JSON string containing the meta data for the client
-// - can give an error if the given clientMetaInfo is not a valid JSON string
+// WithClientMetaInfo returns a new Client which uses the passed metadata for the X-GCS-ClientMetaInfo header.
+//   * clientMetaInfo is a JSON string containing the metadata for the client
+//   * can give an error if the given clientMetaInfo is not a valid JSON string
 func (c *Client) WithClientMetaInfo(clientMetaInfo string) (*Client, error) {
 	if len(c.apiResource.ClientMetaInfo()) == 0 && len(clientMetaInfo) == 0 {
 		return c, nil

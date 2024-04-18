@@ -9,7 +9,7 @@ type GetHostedCheckoutResponse struct {
 	Status               *string               `json:"status,omitempty"`
 }
 
-// NewGetHostedCheckoutResponse constructs a new GetHostedCheckoutResponse
+// NewGetHostedCheckoutResponse constructs a new GetHostedCheckoutResponse instance
 func NewGetHostedCheckoutResponse() *GetHostedCheckoutResponse {
 	return &GetHostedCheckoutResponse{}
 }

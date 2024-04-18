@@ -19,57 +19,57 @@ type PlatformError struct {
 }
 
 // Message returns the error message
-func (gce PlatformError) Message() string {
-	return gce.errorMessage
+func (e PlatformError) Message() string {
+	return e.errorMessage
 }
 
 // StatusCode returns the status code
-func (gce PlatformError) StatusCode() int {
-	return gce.statusCode
+func (e PlatformError) StatusCode() int {
+	return e.statusCode
 }
 
 // ResponseBody returns the response body
-func (gce PlatformError) ResponseBody() string {
-	return gce.responseBody
+func (e PlatformError) ResponseBody() string {
+	return e.responseBody
 }
 
-// ErrorID returns the error id
-func (gce PlatformError) ErrorID() string {
-	return gce.errorID
+// ErrorID implements the APIError interface
+func (e PlatformError) ErrorID() string {
+	return e.errorID
 }
 
-// Errors returns a slice of underlying errors
-func (gce PlatformError) Errors() []domain.APIError {
+// Errors implements the APIError interface
+func (e PlatformError) Errors() []domain.APIError {
 	// Return a clone instead of the original slice - immutability insurance
-	return append([]domain.APIError{}, gce.errors...)
+	return append([]domain.APIError{}, e.errors...)
 }
 
-// String implements the Stringer ineterface
+// String implements the Stringer interface
 // Format: 'errorMessage; statusCode=; responseBody='
-func (gce PlatformError) String() string {
-	list := gce.errorMessage
+func (e PlatformError) String() string {
+	list := e.errorMessage
 
-	if gce.statusCode > 0 {
-		list = list + "; statusCode=" + strconv.Itoa(gce.statusCode)
+	if e.statusCode > 0 {
+		list = list + "; statusCode=" + strconv.Itoa(e.statusCode)
 	}
-	if len(gce.responseBody) != 0 {
-		list = list + "; responseBody='" + gce.responseBody + "'"
+	if len(e.responseBody) != 0 {
+		list = list + "; responseBody='" + e.responseBody + "'"
 	}
 
 	return list
 }
 
 // Error implements the error interface
-func (gce PlatformError) Error() string {
-	return gce.String()
+func (e PlatformError) Error() string {
+	return e.String()
 }
 
-// NewPlatformError creates a PlatformError with the given statusCode, responseBody, errorID and errors
+// NewPlatformError creates a new PlatformError with the given statusCode, responseBody and response fields
 func NewPlatformError(statusCode int, responseBody, errorID string, errors []domain.APIError) (*PlatformError, error) {
 	return &PlatformError{"the Worldline Global Collect platform returned an error response", statusCode, responseBody, errorID, errors}, nil
 }
 
-// NewPlatformErrorVerbose creates a PlatformError with the given message, statusCode, responseBody, errorID and errors
+// NewPlatformErrorVerbose creates a new PlatformError with the given message, statusCode and response fields
 func NewPlatformErrorVerbose(message string, statusCode int, responseBody, errorID string, errors []domain.APIError) (*PlatformError, error) {
 	return &PlatformError{message, statusCode, responseBody, errorID, errors}, nil
 }

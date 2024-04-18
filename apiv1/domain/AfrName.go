@@ -9,7 +9,7 @@ type AfrName struct {
 	Surname   *string `json:"surname,omitempty"`
 }
 
-// NewAfrName constructs a new AfrName
+// NewAfrName constructs a new AfrName instance
 func NewAfrName() *AfrName {
 	return &AfrName{}
 }

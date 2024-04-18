@@ -9,7 +9,7 @@ type HostedCheckoutSpecificOutput struct {
 	Variant          *string `json:"variant,omitempty"`
 }
 
-// NewHostedCheckoutSpecificOutput constructs a new HostedCheckoutSpecificOutput
+// NewHostedCheckoutSpecificOutput constructs a new HostedCheckoutSpecificOutput instance
 func NewHostedCheckoutSpecificOutput() *HostedCheckoutSpecificOutput {
 	return &HostedCheckoutSpecificOutput{}
 }

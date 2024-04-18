@@ -10,7 +10,7 @@ type TokenSepaDirectDebitWithoutCreditor struct {
 	Mandate  *MandateSepaDirectDebitWithoutCreditor `json:"mandate,omitempty"`
 }
 
-// NewTokenSepaDirectDebitWithoutCreditor constructs a new TokenSepaDirectDebitWithoutCreditor
+// NewTokenSepaDirectDebitWithoutCreditor constructs a new TokenSepaDirectDebitWithoutCreditor instance
 func NewTokenSepaDirectDebitWithoutCreditor() *TokenSepaDirectDebitWithoutCreditor {
 	return &TokenSepaDirectDebitWithoutCreditor{}
 }

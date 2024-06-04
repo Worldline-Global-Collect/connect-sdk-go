@@ -11,6 +11,7 @@ type Shipping struct {
 	EmailAddress     *string          `json:"emailAddress,omitempty"`
 	FirstUsageDate   *string          `json:"firstUsageDate,omitempty"`
 	IsFirstUsage     *bool            `json:"isFirstUsage,omitempty"`
+	ShippedFromZip   *string          `json:"shippedFromZip,omitempty"`
 	TrackingNumber   *string          `json:"trackingNumber,omitempty"`
 	Type             *string          `json:"type,omitempty"`
 }

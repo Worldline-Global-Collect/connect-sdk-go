@@ -9,6 +9,7 @@ type CardPaymentMethodSpecificOutput struct {
 	Card                       *CardEssentials      `json:"card,omitempty"`
 	FraudResults               *CardFraudResults    `json:"fraudResults,omitempty"`
 	InitialSchemeTransactionID *string              `json:"initialSchemeTransactionId,omitempty"`
+	NetworkTokenUsed           *bool                `json:"networkTokenUsed,omitempty"`
 	PaymentProductID           *int32               `json:"paymentProductId,omitempty"`
 	SchemeTransactionID        *string              `json:"schemeTransactionId,omitempty"`
 	ThreeDSecureResults        *ThreeDSecureResults `json:"threeDSecureResults,omitempty"`

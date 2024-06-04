@@ -1,6 +1,7 @@
 package communicator
 
 import (
+	"io"
 	"net/url"
 	"time"
 
@@ -13,6 +14,9 @@ import (
 // Instead of setting up a new HTTP connection for each request, this connection uses a pool of HTTP connections.
 // Thread-safe
 type Connection interface {
+	logging.Capable
+	obfuscation.Capable
+	io.Closer
 
 	// Get sends a GET request to the Worldline Global Collect platform and calls the given response handler with the response.
 	Get(resourceURI url.URL, requestHeaders []communication.Header, handler communication.ResponseHandler) (interface{}, error)
@@ -39,25 +43,4 @@ type Connection interface {
 
 	// CloseExpiredConnections closes all expired HTTP connections.
 	CloseExpiredConnections()
-
-	// IMPLEMENTATION logging.Capable INTERFACE
-
-	// EnableLogging turns on logging using the given communicator logger.
-	EnableLogging(communicatorLogger logging.CommunicatorLogger)
-
-	// DisableLogging turns off logging.
-	DisableLogging()
-
-	// IMPLEMENTATION obfuscation.Capable INTERFACE
-
-	// SetBodyObfuscator sets the body obfuscator to use.
-	SetBodyObfuscator(bodyObfuscator obfuscation.BodyObfuscator)
-
-	// SetHeaderObfuscator sets the header obfuscator to use.
-	SetHeaderObfuscator(headerObfuscator obfuscation.HeaderObfuscator)
-
-	// IMPLEMENTATION io.Closer INTERFACE
-
-	// Close closes the connection of the Communicator
-	Close() error
 }

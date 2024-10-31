@@ -51,7 +51,7 @@ func StoreInMemorySecretKey(keyID, secretKey string) error {
 	return nil
 }
 
-// RemoveInMemorySecretKey removes the given keyID and it's associated secretKey from the in-memory secret key store
+// RemoveInMemorySecretKey removes the given keyID and its associated secretKey from the in-memory secret key store
 func RemoveInMemorySecretKey(keyID string) {
 	keyStoreLock.Lock()
 	defer keyStoreLock.Unlock()

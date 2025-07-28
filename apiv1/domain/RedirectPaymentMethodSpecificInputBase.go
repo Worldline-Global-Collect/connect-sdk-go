@@ -7,6 +7,7 @@ package domain
 type RedirectPaymentMethodSpecificInputBase struct {
 	ExpirationPeriod                  *int32                                       `json:"expirationPeriod,omitempty"`
 	PaymentProduct4101SpecificInput   *RedirectPaymentProduct4101SpecificInputBase `json:"paymentProduct4101SpecificInput,omitempty"`
+	PaymentProduct838SpecificInput    *RedirectPaymentProduct838SpecificInputBase  `json:"paymentProduct838SpecificInput,omitempty"`
 	PaymentProduct840SpecificInput    *RedirectPaymentProduct840SpecificInputBase  `json:"paymentProduct840SpecificInput,omitempty"`
 	PaymentProductID                  *int32                                       `json:"paymentProductId,omitempty"`
 	RecurringPaymentSequenceIndicator *string                                      `json:"recurringPaymentSequenceIndicator,omitempty"`

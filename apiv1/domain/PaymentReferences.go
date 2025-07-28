@@ -5,13 +5,14 @@ package domain
 
 // PaymentReferences represents class PaymentReferences
 type PaymentReferences struct {
-	MerchantOrderID      *int64  `json:"merchantOrderId,omitempty"`
-	MerchantReference    *string `json:"merchantReference,omitempty"`
-	PaymentReference     *string `json:"paymentReference,omitempty"`
-	ProviderID           *string `json:"providerId,omitempty"`
-	ProviderMerchantID   *string `json:"providerMerchantId,omitempty"`
-	ProviderReference    *string `json:"providerReference,omitempty"`
-	ReferenceOrigPayment *string `json:"referenceOrigPayment,omitempty"`
+	MerchantCaptureReference *string `json:"merchantCaptureReference,omitempty"`
+	MerchantOrderID          *int64  `json:"merchantOrderId,omitempty"`
+	MerchantReference        *string `json:"merchantReference,omitempty"`
+	PaymentReference         *string `json:"paymentReference,omitempty"`
+	ProviderID               *string `json:"providerId,omitempty"`
+	ProviderMerchantID       *string `json:"providerMerchantId,omitempty"`
+	ProviderReference        *string `json:"providerReference,omitempty"`
+	ReferenceOrigPayment     *string `json:"referenceOrigPayment,omitempty"`
 }
 
 // NewPaymentReferences constructs a new PaymentReferences instance

@@ -7,9 +7,11 @@ package domain
 type Shipping struct {
 	Address          *AddressPersonal `json:"address,omitempty"`
 	AddressIndicator *string          `json:"addressIndicator,omitempty"`
+	Carrier          *string          `json:"carrier,omitempty"`
 	Comments         *string          `json:"comments,omitempty"`
 	EmailAddress     *string          `json:"emailAddress,omitempty"`
 	FirstUsageDate   *string          `json:"firstUsageDate,omitempty"`
+	Instructions     *string          `json:"instructions,omitempty"`
 	IsFirstUsage     *bool            `json:"isFirstUsage,omitempty"`
 	ShippedFromZip   *string          `json:"shippedFromZip,omitempty"`
 	TrackingNumber   *string          `json:"trackingNumber,omitempty"`

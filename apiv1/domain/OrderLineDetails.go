@@ -11,10 +11,12 @@ type OrderLineDetails struct {
 	NaicsCommodityCode      *string `json:"naicsCommodityCode,omitempty"`
 	ProductCategory         *string `json:"productCategory,omitempty"`
 	ProductCode             *string `json:"productCode,omitempty"`
+	ProductImageURL         *string `json:"productImageUrl,omitempty"`
 	ProductName             *string `json:"productName,omitempty"`
 	ProductPrice            *int64  `json:"productPrice,omitempty"`
 	ProductSku              *string `json:"productSku,omitempty"`
 	ProductType             *string `json:"productType,omitempty"`
+	ProductURL              *string `json:"productUrl,omitempty"`
 	Quantity                *int64  `json:"quantity,omitempty"`
 	TaxAmount               *int64  `json:"taxAmount,omitempty"`
 	Unit                    *string `json:"unit,omitempty"`

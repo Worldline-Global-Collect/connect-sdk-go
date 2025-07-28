@@ -284,6 +284,7 @@ func TestIntegratedCreateToken(t *testing.T) {
 }
 
 func TestIntegratedRiskAssessments(t *testing.T) {
+	t.Skip("Risk assessments are not available for pre-prod sandbox accounts")
 	skipTestIfNeeded(t)
 
 	client, err := getClientIntegration()

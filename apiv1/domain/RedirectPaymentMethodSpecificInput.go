@@ -9,6 +9,7 @@ type RedirectPaymentMethodSpecificInput struct {
 	IsRecurring                       *bool                                    `json:"isRecurring,omitempty"`
 	PaymentProduct4101SpecificInput   *RedirectPaymentProduct4101SpecificInput `json:"paymentProduct4101SpecificInput,omitempty"`
 	PaymentProduct809SpecificInput    *RedirectPaymentProduct809SpecificInput  `json:"paymentProduct809SpecificInput,omitempty"`
+	PaymentProduct838SpecificInput    *RedirectPaymentProduct838SpecificInput  `json:"paymentProduct838SpecificInput,omitempty"`
 	PaymentProduct840SpecificInput    *RedirectPaymentProduct840SpecificInput  `json:"paymentProduct840SpecificInput,omitempty"`
 	PaymentProduct861SpecificInput    *RedirectPaymentProduct861SpecificInput  `json:"paymentProduct861SpecificInput,omitempty"`
 	PaymentProduct863SpecificInput    *RedirectPaymentProduct863SpecificInput  `json:"paymentProduct863SpecificInput,omitempty"`

@@ -7,6 +7,7 @@ import (
 	"fmt"
 
 	"github.com/Worldline-Global-Collect/connect-sdk-go"
+	"github.com/Worldline-Global-Collect/connect-sdk-go/apiv1/merchant/payments"
 )
 
 func getPaymentExample() {
@@ -18,7 +19,15 @@ func getPaymentExample() {
 		_ = client.Close()
 	}(client)
 
-	response, err := client.V1().Merchant("merchantId").Payments().Get("paymentId", nil)
+	// Assigning literals to pointer variables directly is not supported.
+	// The below code uses helper function connectsdk.NewBool to overcome this issue.
+	// This helper function is provided by the SDK's root package.
+	// http://stackoverflow.com/a/30716481 lists a few more alternatives.
+
+	var query payments.GetParams
+	query.ReturnOperations = connectsdk.NewBool(true)
+
+	response, err := client.V1().Merchant("merchantId").Payments().Get("paymentId", query, nil)
 
 	fmt.Println(response, err)
 }

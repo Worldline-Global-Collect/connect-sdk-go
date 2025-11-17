@@ -6,6 +6,7 @@ package domain
 // WebhooksEvent represents an event that is sent by webhooks
 type WebhooksEvent struct {
 	APIVersion *string          `json:"apiVersion,omitempty"`
+	Capture    *CaptureResponse `json:"capture,omitempty"`
 	Created    *string          `json:"created,omitempty"`
 	Dispute    *DisputeResponse `json:"dispute,omitempty"`
 	ID         *string          `json:"id,omitempty"`

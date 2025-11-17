@@ -130,7 +130,7 @@ func (c *Client) Find(query FindParams, context *communicator.CallContext) (doma
 //     the Worldline Global Collect platform was unable to process a message from a downstream partner/acquirer,
 //     or the service that you're trying to reach is temporary unavailable (HTTP status code 500, 502 or 503)
 //   * APIError if the Worldline Global Collect platform returned any other error
-func (c *Client) Get(paymentID string, context *communicator.CallContext) (domain.PaymentResponse, error) {
+func (c *Client) Get(paymentID string, query GetParams, context *communicator.CallContext) (domain.PaymentResponse, error) {
 	var resultObject domain.PaymentResponse
 
 	pathContext := map[string]string{
@@ -144,7 +144,7 @@ func (c *Client) Get(paymentID string, context *communicator.CallContext) (domai
 
 	clientHeaders := c.apiResource.ClientHeaders()
 
-	getErr := c.apiResource.Communicator().Get(uri, clientHeaders, nil, context, &resultObject)
+	getErr := c.apiResource.Communicator().Get(uri, clientHeaders, &query, context, &resultObject)
 	if getErr != nil {
 		responseError, isResponseError := getErr.(*commErrors.ResponseError)
 		if isResponseError {

@@ -5,6 +5,7 @@ package domain
 
 // DisputeResponse represents class DisputeResponse
 type DisputeResponse struct {
+	CaptureID     *string              `json:"captureId,omitempty"`
 	DisputeOutput *DisputeOutput       `json:"disputeOutput,omitempty"`
 	ID            *string              `json:"id,omitempty"`
 	PaymentID     *string              `json:"paymentId,omitempty"`

@@ -5,6 +5,7 @@ package domain
 
 // CaptureStatusOutput represents class CaptureStatusOutput
 type CaptureStatusOutput struct {
+	IsFinal                  *bool           `json:"isFinal,omitempty"`
 	IsRefundable             *bool           `json:"isRefundable,omitempty"`
 	IsRetriable              *bool           `json:"isRetriable,omitempty"`
 	ProviderRawOutput        *[]KeyValuePair `json:"providerRawOutput,omitempty"`

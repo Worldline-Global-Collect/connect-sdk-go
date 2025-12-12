@@ -11,7 +11,6 @@ type RedirectPaymentMethodSpecificOutput struct {
 	FraudResults                     *FraudResults                     `json:"fraudResults,omitempty"`
 	PaymentProduct3201SpecificOutput *PaymentProduct3201SpecificOutput `json:"paymentProduct3201SpecificOutput,omitempty"`
 	PaymentProduct806SpecificOutput  *PaymentProduct806SpecificOutput  `json:"paymentProduct806SpecificOutput,omitempty"`
-	PaymentProduct836SpecificOutput  *PaymentProduct836SpecificOutput  `json:"paymentProduct836SpecificOutput,omitempty"`
 	PaymentProduct840SpecificOutput  *PaymentProduct840SpecificOutput  `json:"paymentProduct840SpecificOutput,omitempty"`
 	PaymentProduct866SpecificOutput  *PaymentProduct866SpecificOutput  `json:"paymentProduct866SpecificOutput,omitempty"`
 	PaymentProductID                 *int32                            `json:"paymentProductId,omitempty"`

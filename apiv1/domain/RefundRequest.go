@@ -9,6 +9,7 @@ type RefundRequest struct {
 	BankRefundMethodSpecificInput *BankRefundMethodSpecificInput `json:"bankRefundMethodSpecificInput,omitempty"`
 	Customer                      *RefundCustomer                `json:"customer,omitempty"`
 	RefundDate                    *string                        `json:"refundDate,omitempty"`
+	RefundReason                  *string                        `json:"refundReason,omitempty"`
 	RefundReferences              *RefundReferences              `json:"refundReferences,omitempty"`
 }
 

@@ -8,6 +8,7 @@ type TrialInformation struct {
 	AmountOfMoneyAfterTrial *AmountOfMoney `json:"amountOfMoneyAfterTrial,omitempty"`
 	EndDate                 *string        `json:"endDate,omitempty"`
 	IsRecurring             *bool          `json:"isRecurring,omitempty"`
+	StartDate               *string        `json:"startDate,omitempty"`
 	TrialPeriod             *TrialPeriod   `json:"trialPeriod,omitempty"`
 	TrialPeriodRecurring    *Frequency     `json:"trialPeriodRecurring,omitempty"`
 }

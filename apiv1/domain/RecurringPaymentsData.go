@@ -5,8 +5,11 @@ package domain
 
 // RecurringPaymentsData represents class RecurringPaymentsData
 type RecurringPaymentsData struct {
-	RecurringInterval *Frequency        `json:"recurringInterval,omitempty"`
-	TrialInformation  *TrialInformation `json:"trialInformation,omitempty"`
+	PaymentProduct302SpecificInput *PaymentProduct302SpecificInput `json:"paymentProduct302SpecificInput,omitempty"`
+	RecurringEndDate               *string                         `json:"recurringEndDate,omitempty"`
+	RecurringInterval              *Frequency                      `json:"recurringInterval,omitempty"`
+	RecurringStartDate             *string                         `json:"recurringStartDate,omitempty"`
+	TrialInformation               *TrialInformation               `json:"trialInformation,omitempty"`
 }
 
 // NewRecurringPaymentsData constructs a new RecurringPaymentsData instance

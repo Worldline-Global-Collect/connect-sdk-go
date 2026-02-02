@@ -6,6 +6,7 @@ import (
 	"net/url"
 	"os"
 	"testing"
+	"time"
 
 	"github.com/Worldline-Global-Collect/connect-sdk-go/apiv1/domain"
 	v1Errors "github.com/Worldline-Global-Collect/connect-sdk-go/apiv1/errors"
@@ -243,6 +244,8 @@ func TestIntegratedCreateToken(t *testing.T) {
 		_ = client.Close()
 	}(client)
 
+	expiryDate := time.Now().AddDate(0, 6, 0).Format("0106")
+
 	var request domain.CreateTokenRequest
 	request.PaymentProductID = NewInt32(1)
 
@@ -264,7 +267,7 @@ func TestIntegratedCreateToken(t *testing.T) {
 	cardWithoutCVV.CardholderName = NewString("Jan")
 	cardWithoutCVV.IssueNumber = NewString("12")
 	cardWithoutCVV.CardNumber = NewString("4567350000427977")
-	cardWithoutCVV.ExpiryDate = NewString("1225")
+	cardWithoutCVV.ExpiryDate = NewString(expiryDate)
 
 	response, err := client.V1().Merchant(envMerchantID).Tokens().Create(request, nil)
 	if err != nil {

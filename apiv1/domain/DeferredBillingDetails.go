@@ -5,6 +5,7 @@ package domain
 
 // DeferredBillingDetails represents class DeferredBillingDetails
 type DeferredBillingDetails struct {
+	DeferredPaymentAmount        *int64  `json:"deferredPaymentAmount,omitempty"`
 	DeferredPaymentDate          *string `json:"deferredPaymentDate,omitempty"`
 	Description                  *string `json:"description,omitempty"`
 	FreeCancellationDate         *string `json:"freeCancellationDate,omitempty"`

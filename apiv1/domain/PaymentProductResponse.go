@@ -7,12 +7,14 @@ package domain
 type PaymentProductResponse struct {
 	AccountsOnFile                *[]AccountOnFile               `json:"accountsOnFile,omitempty"`
 	AcquirerCountry               *string                        `json:"acquirerCountry,omitempty"`
+	AllowsClickToPay              *bool                          `json:"allowsClickToPay,omitempty"`
 	AllowsInstallments            *bool                          `json:"allowsInstallments,omitempty"`
 	AllowsRecurring               *bool                          `json:"allowsRecurring,omitempty"`
 	AllowsTokenization            *bool                          `json:"allowsTokenization,omitempty"`
 	AuthenticationIndicator       *AuthenticationIndicator       `json:"authenticationIndicator,omitempty"`
 	AutoTokenized                 *bool                          `json:"autoTokenized,omitempty"`
 	CanBeIframed                  *bool                          `json:"canBeIframed,omitempty"`
+	ClickToPayConfiguration       *ClickToPayConfiguration       `json:"clickToPayConfiguration,omitempty"`
 	DeviceFingerprintEnabled      *bool                          `json:"deviceFingerprintEnabled,omitempty"`
 	DisplayHints                  *PaymentProductDisplayHints    `json:"displayHints,omitempty"`
 	Fields                        *[]PaymentProductField         `json:"fields,omitempty"`

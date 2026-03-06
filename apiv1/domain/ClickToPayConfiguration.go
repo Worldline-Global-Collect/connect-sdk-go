@@ -5,8 +5,9 @@ package domain
 
 // ClickToPayConfiguration represents class ClickToPayConfiguration
 type ClickToPayConfiguration struct {
-	Mastercard *ClickToPayConfigurationMastercard `json:"mastercard,omitempty"`
-	Visa       *ClickToPayConfigurationVisa       `json:"visa,omitempty"`
+	DisplayHints *ClickToPayDisplayHints            `json:"displayHints,omitempty"`
+	Mastercard   *ClickToPayConfigurationMastercard `json:"mastercard,omitempty"`
+	Visa         *ClickToPayConfigurationVisa       `json:"visa,omitempty"`
 }
 
 // NewClickToPayConfiguration constructs a new ClickToPayConfiguration instance

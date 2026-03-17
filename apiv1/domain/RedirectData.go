@@ -3,13 +3,13 @@
 
 package domain
 
-// RedirectData represents class RedirectData
+// RedirectData represents class RedirectData.
 type RedirectData struct {
 	RETURNMAC   *string `json:"RETURNMAC,omitempty"`
 	RedirectURL *string `json:"redirectURL,omitempty"`
 }
 
-// NewRedirectData constructs a new RedirectData instance
+// NewRedirectData constructs a new RedirectData instance.
 func NewRedirectData() *RedirectData {
 	return &RedirectData{}
 }

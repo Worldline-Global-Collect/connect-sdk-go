@@ -11,12 +11,12 @@ import (
 	"github.com/Worldline-Global-Collect/connect-sdk-go/json"
 )
 
-// CreateV1HMACConfiguration creates a CommunicatorConfiguration with default v1HMAC settings and the given apiKeyID and secretAPIKey
+// CreateV1HMACConfiguration creates a CommunicatorConfiguration with default v1HMAC settings and the given apiKeyID and secretAPIKey.
 func CreateV1HMACConfiguration(apiKeyID, secretAPIKey, integrator string) (*configuration.CommunicatorConfiguration, error) {
 	return configuration.DefaultV1HMACConfiguration(apiKeyID, secretAPIKey, integrator)
 }
 
-// CreateCommunicatorBuilder creates a CommunicatorBuilder with the given CommunicatorConfiguration
+// CreateCommunicatorBuilder creates a CommunicatorBuilder with the given CommunicatorConfiguration.
 func CreateCommunicatorBuilder(apiKeyID, secretAPIKey, integrator string) (*CommunicatorBuilder, error) {
 	conf, err := CreateV1HMACConfiguration(apiKeyID, secretAPIKey, integrator)
 	if err != nil {
@@ -26,7 +26,7 @@ func CreateCommunicatorBuilder(apiKeyID, secretAPIKey, integrator string) (*Comm
 	return CreateCommunicatorBuilderFromConfiguration(conf)
 }
 
-// CreateCommunicatorBuilderFromConfiguration creates a CommunicatorBuilder with the given CommunicatorConfiguration
+// CreateCommunicatorBuilderFromConfiguration creates a CommunicatorBuilder with the given CommunicatorConfiguration.
 func CreateCommunicatorBuilderFromConfiguration(config *configuration.CommunicatorConfiguration) (*CommunicatorBuilder, error) {
 	builder := NewCommunicatorBuilder()
 
@@ -70,10 +70,11 @@ func getAuthenticator(conf *configuration.CommunicatorConfiguration) (authentica
 	if conf.AuthorizationType == configuration.V1HMAC {
 		return v1hmac.NewAuthenticator(conf.GetAPIKeyID(), conf.GetSecretAPIKey())
 	}
+
 	return nil, errors.New("unknown authorizationType " + string(conf.AuthorizationType))
 }
 
-// CreateCommunicator creates a Communicator with default settings and the given apiKeyID and secretAPIKey
+// CreateCommunicator creates a Communicator with default settings and the given apiKeyID and secretAPIKey.
 func CreateCommunicator(apiKeyID, secretAPIKey, integrator string) (*communicator.Communicator, error) {
 	conf, err := CreateV1HMACConfiguration(apiKeyID, secretAPIKey, integrator)
 	if err != nil {
@@ -83,7 +84,7 @@ func CreateCommunicator(apiKeyID, secretAPIKey, integrator string) (*communicato
 	return CreateCommunicatorFromConfiguration(conf)
 }
 
-// CreateCommunicatorFromConfiguration creates a Communicator with the given CommunicatorConfiguration
+// CreateCommunicatorFromConfiguration creates a Communicator with the given CommunicatorConfiguration.
 func CreateCommunicatorFromConfiguration(conf *configuration.CommunicatorConfiguration) (*communicator.Communicator, error) {
 	builder, err := CreateCommunicatorBuilderFromConfiguration(conf)
 	if err != nil {
@@ -93,12 +94,12 @@ func CreateCommunicatorFromConfiguration(conf *configuration.CommunicatorConfigu
 	return builder.Build()
 }
 
-// CreateCommunicatorWithDefaultMarshaller creates a Communicator with the given components and a default marshaller
+// CreateCommunicatorWithDefaultMarshaller creates a Communicator with the given components and a default marshaller.
 func CreateCommunicatorWithDefaultMarshaller(apiEndpoint *url.URL, connection communicator.Connection, authenticator authentication.Authenticator, metadataProvider *communicator.MetadataProvider) (*communicator.Communicator, error) {
 	return communicator.NewCommunicator(apiEndpoint, connection, authenticator, metadataProvider, json.DefaultMarshaller())
 }
 
-// CreateClient creates a Client with the given CommunicatorConfiguration
+// CreateClient creates a Client with the given CommunicatorConfiguration.
 func CreateClient(apiKeyID, secretAPIKey, integrator string) (*Client, error) {
 	conf, err := CreateV1HMACConfiguration(apiKeyID, secretAPIKey, integrator)
 	if err != nil {
@@ -108,7 +109,7 @@ func CreateClient(apiKeyID, secretAPIKey, integrator string) (*Client, error) {
 	return CreateClientFromConfiguration(conf)
 }
 
-// CreateClientFromConfiguration creates a Client with the given CommunicatorConfiguration
+// CreateClientFromConfiguration creates a Client with the given CommunicatorConfiguration.
 func CreateClientFromConfiguration(config *configuration.CommunicatorConfiguration) (*Client, error) {
 	comm, err := CreateCommunicatorFromConfiguration(config)
 	if err != nil {
@@ -118,7 +119,7 @@ func CreateClientFromConfiguration(config *configuration.CommunicatorConfigurati
 	return CreateClientFromCommunicator(comm)
 }
 
-// CreateClientWithDefaultMarshaller creates a Client with the given components and a default marshaller
+// CreateClientWithDefaultMarshaller creates a Client with the given components and a default marshaller.
 func CreateClientWithDefaultMarshaller(apiEndpoint *url.URL, connection communicator.Connection, authenticator authentication.Authenticator, metadataProvider *communicator.MetadataProvider) (*Client, error) {
 	comm, err := CreateCommunicatorWithDefaultMarshaller(apiEndpoint, connection, authenticator, metadataProvider)
 	if err != nil {
@@ -128,12 +129,12 @@ func CreateClientWithDefaultMarshaller(apiEndpoint *url.URL, connection communic
 	return CreateClientFromCommunicator(comm)
 }
 
-// CreateClientFromCommunicator creates a Client with the given Communicator
+// CreateClientFromCommunicator creates a Client with the given Communicator.
 func CreateClientFromCommunicator(communicator *communicator.Communicator) (*Client, error) {
 	return NewClient(communicator)
 }
 
-// NewCallContext creates a CallContext using the given idempotenceKey
+// NewCallContext creates a CallContext using the given idempotenceKey.
 func NewCallContext(idempotenceKey string) *communicator.CallContext {
 	return communicator.NewCallContext(idempotenceKey)
 }

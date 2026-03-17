@@ -3,12 +3,12 @@
 
 package domain
 
-// PayoutMerchant represents class PayoutMerchant
+// PayoutMerchant represents class PayoutMerchant.
 type PayoutMerchant struct {
 	ConfigurationID *string `json:"configurationId,omitempty"`
 }
 
-// NewPayoutMerchant constructs a new PayoutMerchant instance
+// NewPayoutMerchant constructs a new PayoutMerchant instance.
 func NewPayoutMerchant() *PayoutMerchant {
 	return &PayoutMerchant{}
 }

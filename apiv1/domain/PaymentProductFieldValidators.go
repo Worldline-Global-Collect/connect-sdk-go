@@ -3,7 +3,7 @@
 
 package domain
 
-// PaymentProductFieldValidators represents class PaymentProductFieldValidators
+// PaymentProductFieldValidators represents class PaymentProductFieldValidators.
 type PaymentProductFieldValidators struct {
 	BoletoBancarioRequiredness *BoletoBancarioRequirednessValidator `json:"boletoBancarioRequiredness,omitempty"`
 	EmailAddress               *EmptyValidator                      `json:"emailAddress,omitempty"`
@@ -18,7 +18,7 @@ type PaymentProductFieldValidators struct {
 	TermsAndConditions         *EmptyValidator                      `json:"termsAndConditions,omitempty"`
 }
 
-// NewPaymentProductFieldValidators constructs a new PaymentProductFieldValidators instance
+// NewPaymentProductFieldValidators constructs a new PaymentProductFieldValidators instance.
 func NewPaymentProductFieldValidators() *PaymentProductFieldValidators {
 	return &PaymentProductFieldValidators{}
 }

@@ -3,7 +3,7 @@
 
 package domain
 
-// OrderInvoiceData represents class OrderInvoiceData
+// OrderInvoiceData represents class OrderInvoiceData.
 type OrderInvoiceData struct {
 	AdditionalData *string   `json:"additionalData,omitempty"`
 	InvoiceDate    *string   `json:"invoiceDate,omitempty"`
@@ -11,7 +11,7 @@ type OrderInvoiceData struct {
 	TextQualifiers *[]string `json:"textQualifiers,omitempty"`
 }
 
-// NewOrderInvoiceData constructs a new OrderInvoiceData instance
+// NewOrderInvoiceData constructs a new OrderInvoiceData instance.
 func NewOrderInvoiceData() *OrderInvoiceData {
 	return &OrderInvoiceData{}
 }

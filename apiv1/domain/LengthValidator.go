@@ -3,13 +3,13 @@
 
 package domain
 
-// LengthValidator represents class LengthValidator
+// LengthValidator represents class LengthValidator.
 type LengthValidator struct {
 	MaxLength *int32 `json:"maxLength,omitempty"`
 	MinLength *int32 `json:"minLength,omitempty"`
 }
 
-// NewLengthValidator constructs a new LengthValidator instance
+// NewLengthValidator constructs a new LengthValidator instance.
 func NewLengthValidator() *LengthValidator {
 	return &LengthValidator{}
 }

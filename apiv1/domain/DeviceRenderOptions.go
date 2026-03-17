@@ -3,7 +3,7 @@
 
 package domain
 
-// DeviceRenderOptions represents class DeviceRenderOptions
+// DeviceRenderOptions represents class DeviceRenderOptions.
 type DeviceRenderOptions struct {
 	SdkInterface *string   `json:"sdkInterface,omitempty"`
 	// Deprecated: Use deviceRenderOptions.sdkUiTypes instead
@@ -11,7 +11,7 @@ type DeviceRenderOptions struct {
 	SdkUITypes   *[]string `json:"sdkUiTypes,omitempty"`
 }
 
-// NewDeviceRenderOptions constructs a new DeviceRenderOptions instance
+// NewDeviceRenderOptions constructs a new DeviceRenderOptions instance.
 func NewDeviceRenderOptions() *DeviceRenderOptions {
 	return &DeviceRenderOptions{}
 }

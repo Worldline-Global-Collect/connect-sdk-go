@@ -125,13 +125,14 @@ func TestObfuscateBodyWithCustomCardRule(t *testing.T) {
 		var chars bytes.Buffer
 		i := 0
 		for _, r := range value {
-			if i < 6 || i >= valueLength - 4 {
+			if i < 6 || i >= valueLength-4 {
 				chars.WriteRune(r)
 			} else {
 				chars.WriteRune('*')
 			}
 			i++
 		}
+
 		return chars.String()
 	}
 	bodyObfuscator := NewBodyObfuscator(ruleMap{

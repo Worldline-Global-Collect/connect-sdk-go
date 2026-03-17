@@ -3,14 +3,14 @@
 
 package domain
 
-// RefundCashMethodSpecificOutput represents class RefundCashMethodSpecificOutput
+// RefundCashMethodSpecificOutput represents class RefundCashMethodSpecificOutput.
 type RefundCashMethodSpecificOutput struct {
 	RefundProductID     *int32 `json:"refundProductId,omitempty"`
 	TotalAmountPaid     *int64 `json:"totalAmountPaid,omitempty"`
 	TotalAmountRefunded *int64 `json:"totalAmountRefunded,omitempty"`
 }
 
-// NewRefundCashMethodSpecificOutput constructs a new RefundCashMethodSpecificOutput instance
+// NewRefundCashMethodSpecificOutput constructs a new RefundCashMethodSpecificOutput instance.
 func NewRefundCashMethodSpecificOutput() *RefundCashMethodSpecificOutput {
 	return &RefundCashMethodSpecificOutput{}
 }

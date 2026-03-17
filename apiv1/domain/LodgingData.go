@@ -3,7 +3,7 @@
 
 package domain
 
-// LodgingData represents class LodgingData
+// LodgingData represents class LodgingData.
 type LodgingData struct {
 	Charges                            *[]LodgingCharge `json:"charges,omitempty"`
 	CheckInDate                        *string          `json:"checkInDate,omitempty"`
@@ -23,7 +23,7 @@ type LodgingData struct {
 	Rooms                              *[]LodgingRoom   `json:"rooms,omitempty"`
 }
 
-// NewLodgingData constructs a new LodgingData instance
+// NewLodgingData constructs a new LodgingData instance.
 func NewLodgingData() *LodgingData {
 	return &LodgingData{}
 }

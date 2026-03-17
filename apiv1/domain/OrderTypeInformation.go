@@ -3,7 +3,7 @@
 
 package domain
 
-// OrderTypeInformation represents class OrderTypeInformation
+// OrderTypeInformation represents class OrderTypeInformation.
 type OrderTypeInformation struct {
 	FundingType     *string `json:"fundingType,omitempty"`
 	PaymentCode     *string `json:"paymentCode,omitempty"`
@@ -12,7 +12,7 @@ type OrderTypeInformation struct {
 	UsageType       *string `json:"usageType,omitempty"`
 }
 
-// NewOrderTypeInformation constructs a new OrderTypeInformation instance
+// NewOrderTypeInformation constructs a new OrderTypeInformation instance.
 func NewOrderTypeInformation() *OrderTypeInformation {
 	return &OrderTypeInformation{}
 }

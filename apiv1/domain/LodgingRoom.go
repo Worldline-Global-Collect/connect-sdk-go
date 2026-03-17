@@ -3,7 +3,7 @@
 
 package domain
 
-// LodgingRoom represents class LodgingRoom
+// LodgingRoom represents class LodgingRoom.
 type LodgingRoom struct {
 	DailyRoomRate                  *string `json:"dailyRoomRate,omitempty"`
 	DailyRoomRateCurrencyCode      *string `json:"dailyRoomRateCurrencyCode,omitempty"`
@@ -16,7 +16,7 @@ type LodgingRoom struct {
 	TypeOfRoom                     *string `json:"typeOfRoom,omitempty"`
 }
 
-// NewLodgingRoom constructs a new LodgingRoom instance
+// NewLodgingRoom constructs a new LodgingRoom instance.
 func NewLodgingRoom() *LodgingRoom {
 	return &LodgingRoom{}
 }

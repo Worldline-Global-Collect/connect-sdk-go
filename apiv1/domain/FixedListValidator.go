@@ -3,12 +3,12 @@
 
 package domain
 
-// FixedListValidator represents class FixedListValidator
+// FixedListValidator represents class FixedListValidator.
 type FixedListValidator struct {
 	AllowedValues *[]string `json:"allowedValues,omitempty"`
 }
 
-// NewFixedListValidator constructs a new FixedListValidator instance
+// NewFixedListValidator constructs a new FixedListValidator instance.
 func NewFixedListValidator() *FixedListValidator {
 	return &FixedListValidator{}
 }

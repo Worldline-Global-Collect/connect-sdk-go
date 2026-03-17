@@ -3,12 +3,12 @@
 
 package domain
 
-// TestConnection represents class TestConnection
+// TestConnection represents class TestConnection.
 type TestConnection struct {
 	Result *string `json:"result,omitempty"`
 }
 
-// NewTestConnection constructs a new TestConnection instance
+// NewTestConnection constructs a new TestConnection instance.
 func NewTestConnection() *TestConnection {
 	return &TestConnection{}
 }

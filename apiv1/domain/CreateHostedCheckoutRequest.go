@@ -3,7 +3,7 @@
 
 package domain
 
-// CreateHostedCheckoutRequest represents class CreateHostedCheckoutRequest
+// CreateHostedCheckoutRequest represents class CreateHostedCheckoutRequest.
 type CreateHostedCheckoutRequest struct {
 	BankTransferPaymentMethodSpecificInput    *BankTransferPaymentMethodSpecificInputBase     `json:"bankTransferPaymentMethodSpecificInput,omitempty"`
 	CardPaymentMethodSpecificInput            *CardPaymentMethodSpecificInputBase             `json:"cardPaymentMethodSpecificInput,omitempty"`
@@ -18,7 +18,7 @@ type CreateHostedCheckoutRequest struct {
 	SepaDirectDebitPaymentMethodSpecificInput *SepaDirectDebitPaymentMethodSpecificInputBase  `json:"sepaDirectDebitPaymentMethodSpecificInput,omitempty"`
 }
 
-// NewCreateHostedCheckoutRequest constructs a new CreateHostedCheckoutRequest instance
+// NewCreateHostedCheckoutRequest constructs a new CreateHostedCheckoutRequest instance.
 func NewCreateHostedCheckoutRequest() *CreateHostedCheckoutRequest {
 	return &CreateHostedCheckoutRequest{}
 }

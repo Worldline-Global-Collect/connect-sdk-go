@@ -3,7 +3,7 @@
 
 package domain
 
-// AirlineFlightLeg represents class AirlineFlightLeg
+// AirlineFlightLeg represents class AirlineFlightLeg.
 type AirlineFlightLeg struct {
 	AirlineClass             *string `json:"airlineClass,omitempty"`
 	ArrivalAirport           *string `json:"arrivalAirport,omitempty"`
@@ -28,7 +28,7 @@ type AirlineFlightLeg struct {
 	Taxes                    *int32  `json:"taxes,omitempty"`
 }
 
-// NewAirlineFlightLeg constructs a new AirlineFlightLeg instance
+// NewAirlineFlightLeg constructs a new AirlineFlightLeg instance.
 func NewAirlineFlightLeg() *AirlineFlightLeg {
 	return &AirlineFlightLeg{}
 }

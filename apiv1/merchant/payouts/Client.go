@@ -4,6 +4,8 @@
 package payouts
 
 import (
+	"errors"
+
 	"github.com/Worldline-Global-Collect/connect-sdk-go/apiv1/domain"
 	v1Errors "github.com/Worldline-Global-Collect/connect-sdk-go/apiv1/errors"
 	"github.com/Worldline-Global-Collect/connect-sdk-go/communicator"
@@ -15,9 +17,9 @@ type Client struct {
 	apiResource *communicator.APIResource
 }
 
-// Create represents the resource /{merchantId}/payouts - Create payout
+// Create represents the resource /{merchantId}/payouts - Create payout.
 //
-// Documentation can be found at https://apireference.connect.worldline-solutions.com/s2sapi/v1/en_US/go/payouts/create.html
+// Documentation can be found at https://apireference.connect.worldline-solutions.com/s2sapi/v1/en_US/go/payouts/create.html.
 //
 // Can return any of the following errors:
 //   * DeclinedPayoutError if the Worldline Global Collect platform declined / rejected the payout. The payout result will be available from the exception.
@@ -42,11 +44,9 @@ func (c *Client) Create(body domain.CreatePayoutRequest, context *communicator.C
 
 	postErr := c.apiResource.Communicator().Post(uri, clientHeaders, nil, body, context, &resultObject)
 	if postErr != nil {
-		responseError, isResponseError := postErr.(*commErrors.ResponseError)
-		if isResponseError {
-			var errorObject interface{}
-
-			errorObject = &domain.PayoutErrorResponse{}
+		var responseError *commErrors.ResponseError
+		if errors.As(postErr, &responseError) {
+			errorObject := &domain.PayoutErrorResponse{}
 			err = c.apiResource.Communicator().Marshaller().Unmarshal(responseError.Body(), errorObject)
 			if err != nil {
 				return resultObject, err
@@ -66,9 +66,9 @@ func (c *Client) Create(body domain.CreatePayoutRequest, context *communicator.C
 	return resultObject, nil
 }
 
-// Find represents the resource /{merchantId}/payouts - Find payouts
+// Find represents the resource /{merchantId}/payouts - Find payouts.
 //
-// Documentation can be found at https://apireference.connect.worldline-solutions.com/s2sapi/v1/en_US/go/payouts/find.html
+// Documentation can be found at https://apireference.connect.worldline-solutions.com/s2sapi/v1/en_US/go/payouts/find.html.
 //
 // Can return any of the following errors:
 //   * IdempotenceError if an idempotent request caused a conflict (HTTP status code 409)
@@ -92,11 +92,9 @@ func (c *Client) Find(query FindParams, context *communicator.CallContext) (doma
 
 	getErr := c.apiResource.Communicator().Get(uri, clientHeaders, &query, context, &resultObject)
 	if getErr != nil {
-		responseError, isResponseError := getErr.(*commErrors.ResponseError)
-		if isResponseError {
-			var errorObject interface{}
-
-			errorObject = &domain.ErrorResponse{}
+		var responseError *commErrors.ResponseError
+		if errors.As(getErr, &responseError) {
+			errorObject := &domain.ErrorResponse{}
 			err = c.apiResource.Communicator().Marshaller().Unmarshal(responseError.Body(), errorObject)
 			if err != nil {
 				return resultObject, err
@@ -116,9 +114,9 @@ func (c *Client) Find(query FindParams, context *communicator.CallContext) (doma
 	return resultObject, nil
 }
 
-// Get represents the resource /{merchantId}/payouts/{payoutId} - Get payout
+// Get represents the resource /{merchantId}/payouts/{payoutId} - Get payout.
 //
-// Documentation can be found at https://apireference.connect.worldline-solutions.com/s2sapi/v1/en_US/go/payouts/get.html
+// Documentation can be found at https://apireference.connect.worldline-solutions.com/s2sapi/v1/en_US/go/payouts/get.html.
 //
 // Can return any of the following errors:
 //   * IdempotenceError if an idempotent request caused a conflict (HTTP status code 409)
@@ -146,11 +144,9 @@ func (c *Client) Get(payoutID string, context *communicator.CallContext) (domain
 
 	getErr := c.apiResource.Communicator().Get(uri, clientHeaders, nil, context, &resultObject)
 	if getErr != nil {
-		responseError, isResponseError := getErr.(*commErrors.ResponseError)
-		if isResponseError {
-			var errorObject interface{}
-
-			errorObject = &domain.ErrorResponse{}
+		var responseError *commErrors.ResponseError
+		if errors.As(getErr, &responseError) {
+			errorObject := &domain.ErrorResponse{}
 			err = c.apiResource.Communicator().Marshaller().Unmarshal(responseError.Body(), errorObject)
 			if err != nil {
 				return resultObject, err
@@ -170,9 +166,9 @@ func (c *Client) Get(payoutID string, context *communicator.CallContext) (domain
 	return resultObject, nil
 }
 
-// Approve represents the resource /{merchantId}/payouts/{payoutId}/approve - Approve payout
+// Approve represents the resource /{merchantId}/payouts/{payoutId}/approve - Approve payout.
 //
-// Documentation can be found at https://apireference.connect.worldline-solutions.com/s2sapi/v1/en_US/go/payouts/approve.html
+// Documentation can be found at https://apireference.connect.worldline-solutions.com/s2sapi/v1/en_US/go/payouts/approve.html.
 //
 // Can return any of the following errors:
 //   * IdempotenceError if an idempotent request caused a conflict (HTTP status code 409)
@@ -200,11 +196,9 @@ func (c *Client) Approve(payoutID string, body domain.ApprovePayoutRequest, cont
 
 	postErr := c.apiResource.Communicator().Post(uri, clientHeaders, nil, body, context, &resultObject)
 	if postErr != nil {
-		responseError, isResponseError := postErr.(*commErrors.ResponseError)
-		if isResponseError {
-			var errorObject interface{}
-
-			errorObject = &domain.ErrorResponse{}
+		var responseError *commErrors.ResponseError
+		if errors.As(postErr, &responseError) {
+			errorObject := &domain.ErrorResponse{}
 			err = c.apiResource.Communicator().Marshaller().Unmarshal(responseError.Body(), errorObject)
 			if err != nil {
 				return resultObject, err
@@ -224,9 +218,9 @@ func (c *Client) Approve(payoutID string, body domain.ApprovePayoutRequest, cont
 	return resultObject, nil
 }
 
-// Cancel represents the resource /{merchantId}/payouts/{payoutId}/cancel - Cancel payout
+// Cancel represents the resource /{merchantId}/payouts/{payoutId}/cancel - Cancel payout.
 //
-// Documentation can be found at https://apireference.connect.worldline-solutions.com/s2sapi/v1/en_US/go/payouts/cancel.html
+// Documentation can be found at https://apireference.connect.worldline-solutions.com/s2sapi/v1/en_US/go/payouts/cancel.html.
 //
 // Can return any of the following errors:
 //   * IdempotenceError if an idempotent request caused a conflict (HTTP status code 409)
@@ -253,11 +247,9 @@ func (c *Client) Cancel(payoutID string, context *communicator.CallContext) erro
 	var resultObject map[string]interface{}
 	postErr := c.apiResource.Communicator().Post(uri, clientHeaders, nil, nil, context, &resultObject)
 	if postErr != nil {
-		responseError, isResponseError := postErr.(*commErrors.ResponseError)
-		if isResponseError {
-			var errorObject interface{}
-
-			errorObject = &domain.ErrorResponse{}
+		var responseError *commErrors.ResponseError
+		if errors.As(postErr, &responseError) {
+			errorObject := &domain.ErrorResponse{}
 			err = c.apiResource.Communicator().Marshaller().Unmarshal(responseError.Body(), errorObject)
 			if err != nil {
 				return err
@@ -277,9 +269,9 @@ func (c *Client) Cancel(payoutID string, context *communicator.CallContext) erro
 	return nil
 }
 
-// Cancelapproval represents the resource /{merchantId}/payouts/{payoutId}/cancelapproval - Undo approve payout
+// Cancelapproval represents the resource /{merchantId}/payouts/{payoutId}/cancelapproval - Undo approve payout.
 //
-// Documentation can be found at https://apireference.connect.worldline-solutions.com/s2sapi/v1/en_US/go/payouts/cancelapproval.html
+// Documentation can be found at https://apireference.connect.worldline-solutions.com/s2sapi/v1/en_US/go/payouts/cancelapproval.html.
 //
 // Can return any of the following errors:
 //   * IdempotenceError if an idempotent request caused a conflict (HTTP status code 409)
@@ -306,11 +298,9 @@ func (c *Client) Cancelapproval(payoutID string, context *communicator.CallConte
 	var resultObject map[string]interface{}
 	postErr := c.apiResource.Communicator().Post(uri, clientHeaders, nil, nil, context, &resultObject)
 	if postErr != nil {
-		responseError, isResponseError := postErr.(*commErrors.ResponseError)
-		if isResponseError {
-			var errorObject interface{}
-
-			errorObject = &domain.ErrorResponse{}
+		var responseError *commErrors.ResponseError
+		if errors.As(postErr, &responseError) {
+			errorObject := &domain.ErrorResponse{}
 			err = c.apiResource.Communicator().Marshaller().Unmarshal(responseError.Body(), errorObject)
 			if err != nil {
 				return err
@@ -330,9 +320,9 @@ func (c *Client) Cancelapproval(payoutID string, context *communicator.CallConte
 	return nil
 }
 
-// NewClient constructs a new Payouts client
+// NewClient constructs a new Payouts client.
 //
-// parent is the communicator.APIResource on top of which we want to build the new Payouts client
+// parent is the communicator.APIResource on top of which we want to build the new Payouts client.
 func NewClient(parent *communicator.APIResource, pathContext map[string]string) (*Client, error) {
 	apiResource, err := communicator.NewAPIResourceWithParent(parent, pathContext)
 	if err != nil {

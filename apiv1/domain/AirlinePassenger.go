@@ -3,7 +3,7 @@
 
 package domain
 
-// AirlinePassenger represents class AirlinePassenger
+// AirlinePassenger represents class AirlinePassenger.
 type AirlinePassenger struct {
 	FirstName     *string `json:"firstName,omitempty"`
 	Surname       *string `json:"surname,omitempty"`
@@ -11,7 +11,7 @@ type AirlinePassenger struct {
 	Title         *string `json:"title,omitempty"`
 }
 
-// NewAirlinePassenger constructs a new AirlinePassenger instance
+// NewAirlinePassenger constructs a new AirlinePassenger instance.
 func NewAirlinePassenger() *AirlinePassenger {
 	return &AirlinePassenger{}
 }

@@ -3,12 +3,12 @@
 
 package domain
 
-// GetMandateResponse represents class GetMandateResponse
+// GetMandateResponse represents class GetMandateResponse.
 type GetMandateResponse struct {
 	Mandate *MandateResponse `json:"mandate,omitempty"`
 }
 
-// NewGetMandateResponse constructs a new GetMandateResponse instance
+// NewGetMandateResponse constructs a new GetMandateResponse instance.
 func NewGetMandateResponse() *GetMandateResponse {
 	return &GetMandateResponse{}
 }

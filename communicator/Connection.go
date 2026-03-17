@@ -12,7 +12,7 @@ import (
 
 // Connection represents a pooled connection to the Worldline Global Collect platform server.
 // Instead of setting up a new HTTP connection for each request, this connection uses a pool of HTTP connections.
-// Thread-safe
+// Thread-safe.
 type Connection interface {
 	logging.Capable
 	obfuscation.Capable

@@ -3,13 +3,13 @@
 
 package domain
 
-// ProtectionEligibility represents class ProtectionEligibility
+// ProtectionEligibility represents class ProtectionEligibility.
 type ProtectionEligibility struct {
 	Eligibility *string `json:"eligibility,omitempty"`
 	Type        *string `json:"type,omitempty"`
 }
 
-// NewProtectionEligibility constructs a new ProtectionEligibility instance
+// NewProtectionEligibility constructs a new ProtectionEligibility instance.
 func NewProtectionEligibility() *ProtectionEligibility {
 	return &ProtectionEligibility{}
 }

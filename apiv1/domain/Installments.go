@@ -3,7 +3,7 @@
 
 package domain
 
-// Installments represents class Installments
+// Installments represents class Installments.
 type Installments struct {
 	AmountOfMoneyPerInstallment *AmountOfMoney `json:"amountOfMoneyPerInstallment,omitempty"`
 	AmountOfMoneyTotal          *AmountOfMoney `json:"amountOfMoneyTotal,omitempty"`
@@ -13,7 +13,7 @@ type Installments struct {
 	NumberOfInstallments        *int64         `json:"numberOfInstallments,omitempty"`
 }
 
-// NewInstallments constructs a new Installments instance
+// NewInstallments constructs a new Installments instance.
 func NewInstallments() *Installments {
 	return &Installments{}
 }

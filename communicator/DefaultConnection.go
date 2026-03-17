@@ -56,6 +56,7 @@ func (c *DefaultConnection) PostMultipart(uri url.URL, headerList []communicatio
 	defer func(r io.ReadCloser) {
 		_ = r.Close()
 	}(r)
+
 	return c.sendRequest("POST", uri, headerList, r, "<binary content>", handler)
 }
 
@@ -73,6 +74,7 @@ func (c *DefaultConnection) PutMultipart(uri url.URL, headerList []communication
 	defer func(r io.ReadCloser) {
 		_ = r.Close()
 	}(r)
+
 	return c.sendRequest("PUT", uri, headerList, r, "<binary content>", handler)
 }
 
@@ -85,6 +87,7 @@ func (c *DefaultConnection) sendRequest(method string, uri url.URL, headerList [
 	httpRequest, err := http.NewRequest(method, uri.String(), body)
 	if err != nil {
 		c.logError(id, err)
+
 		return nil, err
 	}
 
@@ -100,17 +103,17 @@ func (c *DefaultConnection) sendRequest(method string, uri url.URL, headerList [
 	c.logRequest(id, bodyString, httpRequest)
 
 	httpResponse, err := c.client.Do(httpRequest)
-	switch ce := err.(type) {
-	case *url.Error:
-		{
-			c.logError(id, ce)
+	var ce *url.Error
+	if errors.As(err, &ce) {
+		c.logError(id, ce)
 
-			newErr, _ := commErrors.NewCommunicationError(ce)
-			return nil, newErr
-		}
+		newErr, _ := commErrors.NewCommunicationError(ce)
+
+		return nil, newErr
 	}
 	if err != nil {
 		c.logError(id, err)
+
 		return nil, err
 	}
 
@@ -132,6 +135,7 @@ func (c *DefaultConnection) sendRequest(method string, uri url.URL, headerList [
 		header, err := communication.NewHeader(name, values[0])
 		if err != nil {
 			c.logError(id, err)
+
 			return nil, err
 		}
 		responseHeaders = append(responseHeaders, *header)
@@ -176,6 +180,7 @@ func (c *DefaultConnection) logRequest(id, body string, request *http.Request) {
 	requestMessage, err := logging.NewRequestLogMessageBuilder(id, request.Method, requestURL, c.bodyObfuscator, c.headerObfuscator)
 	if err != nil {
 		c.logError(id, err)
+
 		return
 	}
 
@@ -208,6 +213,7 @@ func (c *DefaultConnection) logResponse(id string, reader io.Reader, binaryRespo
 	responseMessage, err := logging.NewResponseLogMessageBuilder(id, response.StatusCode, duration, c.bodyObfuscator, c.headerObfuscator)
 	if err != nil {
 		c.logError(id, err)
+
 		return
 	}
 
@@ -239,7 +245,6 @@ func (c *DefaultConnection) logResponse(id string, reader io.Reader, binaryRespo
 				// continue with logging
 			}
 		}
-
 	}
 
 	message := responseMessage.BuildMessage()
@@ -276,6 +281,7 @@ func (c *DefaultConnection) createMultipartReader(body *communication.MultipartF
 			err := writer.WriteField(name, value)
 			if err != nil {
 				_ = w.CloseWithError(err)
+
 				return
 			}
 		}
@@ -287,17 +293,20 @@ func (c *DefaultConnection) createMultipartReader(body *communication.MultipartF
 			pw, err := writer.CreatePart(header)
 			if err != nil {
 				_ = w.CloseWithError(err)
+
 				return
 			}
 			_, err = io.Copy(pw, file.GetContent())
 			if err != nil {
 				_ = w.CloseWithError(err)
+
 				return
 			}
 		}
 		err = writer.Close()
 		if err != nil {
 			_ = w.CloseWithError(err)
+
 			return
 		}
 		_ = w.Close()
@@ -308,10 +317,10 @@ func (c *DefaultConnection) createMultipartReader(body *communication.MultipartF
 
 // CloseIdleConnections closes all HTTP connections that have been idle for the specified time.
 // This should also include all expired HTTP connections.
-// timespan represents the time spent idle
-// Note: in the current implementation, it is only possible to close the connection after a predetermined time
-// Therefore, this implementation ignores the parameter, and instead uses the preconfigured one
-func (c *DefaultConnection) CloseIdleConnections(t time.Duration) {
+// timespan represents the time spent idle.
+// Note: in the current implementation, it is only possible to close the connection after a predetermined time.
+// Therefore, this implementation ignores the parameter, and instead uses the preconfigured one.
+func (c *DefaultConnection) CloseIdleConnections(_ time.Duration) {
 	// Assume t is equal to configured value
 	c.underlyingTransport.CloseIdleConnections()
 }
@@ -331,26 +340,26 @@ func (c *DefaultConnection) SetHeaderObfuscator(headerObfuscator obfuscation.Hea
 	c.headerObfuscator = headerObfuscator
 }
 
-// EnableLogging implements the logging.Capable interface
-// Enables logging to the given CommunicatorLogger
+// EnableLogging implements the logging.Capable interface.
+// Enables logging to the given CommunicatorLogger.
 func (c *DefaultConnection) EnableLogging(logger logging.CommunicatorLogger) {
 	c.logger = logger
 }
 
-// DisableLogging implements the logging.Capable interface
-// Disables logging
+// DisableLogging implements the logging.Capable interface.
+// Disables logging.
 func (c *DefaultConnection) DisableLogging() {
 	c.logger = nil
 }
 
-// Close implements the io.Closer interface
+// Close implements the io.Closer interface.
 func (c *DefaultConnection) Close() error {
 	// No-op, because the http.Client connection's close automatically after the socket timeout passes
 	// and they can't be closed manually
 	return nil
 }
 
-// NewDefaultConnection creates a new object that implements Connection, and initializes it
+// NewDefaultConnection creates a new object that implements Connection, and initializes it.
 func NewDefaultConnection(socketTimeout, connectTimeout, keepAliveTimeout, idleTimeout time.Duration, maxConnections int, proxy *url.URL) (*DefaultConnection, error) {
 	dialer := net.Dialer{
 		Timeout:   connectTimeout,

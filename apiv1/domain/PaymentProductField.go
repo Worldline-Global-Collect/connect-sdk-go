@@ -3,7 +3,7 @@
 
 package domain
 
-// PaymentProductField represents class PaymentProductField
+// PaymentProductField represents class PaymentProductField.
 type PaymentProductField struct {
 	DataRestrictions *PaymentProductFieldDataRestrictions `json:"dataRestrictions,omitempty"`
 	DisplayHints     *PaymentProductFieldDisplayHints     `json:"displayHints,omitempty"`
@@ -12,7 +12,7 @@ type PaymentProductField struct {
 	UsedForLookup    *bool                                `json:"usedForLookup,omitempty"`
 }
 
-// NewPaymentProductField constructs a new PaymentProductField instance
+// NewPaymentProductField constructs a new PaymentProductField instance.
 func NewPaymentProductField() *PaymentProductField {
 	return &PaymentProductField{}
 }

@@ -3,12 +3,12 @@
 
 package domain
 
-// ConvertAmount represents class ConvertAmount
+// ConvertAmount represents class ConvertAmount.
 type ConvertAmount struct {
 	ConvertedAmount *int64 `json:"convertedAmount,omitempty"`
 }
 
-// NewConvertAmount constructs a new ConvertAmount instance
+// NewConvertAmount constructs a new ConvertAmount instance.
 func NewConvertAmount() *ConvertAmount {
 	return &ConvertAmount{}
 }

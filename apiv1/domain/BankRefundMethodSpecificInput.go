@@ -3,14 +3,14 @@
 
 package domain
 
-// BankRefundMethodSpecificInput represents class BankRefundMethodSpecificInput
+// BankRefundMethodSpecificInput represents class BankRefundMethodSpecificInput.
 type BankRefundMethodSpecificInput struct {
 	BankAccountBban *BankAccountBbanRefund `json:"bankAccountBban,omitempty"`
 	BankAccountIban *BankAccountIban       `json:"bankAccountIban,omitempty"`
 	CountryCode     *string                `json:"countryCode,omitempty"`
 }
 
-// NewBankRefundMethodSpecificInput constructs a new BankRefundMethodSpecificInput instance
+// NewBankRefundMethodSpecificInput constructs a new BankRefundMethodSpecificInput instance.
 func NewBankRefundMethodSpecificInput() *BankRefundMethodSpecificInput {
 	return &BankRefundMethodSpecificInput{}
 }

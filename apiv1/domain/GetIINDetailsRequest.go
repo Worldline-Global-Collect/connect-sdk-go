@@ -3,13 +3,13 @@
 
 package domain
 
-// GetIINDetailsRequest represents class GetIINDetailsRequest
+// GetIINDetailsRequest represents class GetIINDetailsRequest.
 type GetIINDetailsRequest struct {
 	Bin            *string         `json:"bin,omitempty"`
 	PaymentContext *PaymentContext `json:"paymentContext,omitempty"`
 }
 
-// NewGetIINDetailsRequest constructs a new GetIINDetailsRequest instance
+// NewGetIINDetailsRequest constructs a new GetIINDetailsRequest instance.
 func NewGetIINDetailsRequest() *GetIINDetailsRequest {
 	return &GetIINDetailsRequest{}
 }

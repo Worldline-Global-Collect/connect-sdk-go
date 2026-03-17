@@ -3,13 +3,13 @@
 
 package domain
 
-// AutomaticReloadBillingDetails represents class AutomaticReloadBillingDetails
+// AutomaticReloadBillingDetails represents class AutomaticReloadBillingDetails.
 type AutomaticReloadBillingDetails struct {
 	AutomaticReloadPaymentThresholdAmount *int64  `json:"automaticReloadPaymentThresholdAmount,omitempty"`
 	Description                           *string `json:"description,omitempty"`
 }
 
-// NewAutomaticReloadBillingDetails constructs a new AutomaticReloadBillingDetails instance
+// NewAutomaticReloadBillingDetails constructs a new AutomaticReloadBillingDetails instance.
 func NewAutomaticReloadBillingDetails() *AutomaticReloadBillingDetails {
 	return &AutomaticReloadBillingDetails{}
 }

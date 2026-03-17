@@ -3,7 +3,7 @@
 
 package domain
 
-// RefundRequest represents class RefundRequest
+// RefundRequest represents class RefundRequest.
 type RefundRequest struct {
 	AmountOfMoney                 *AmountOfMoney                 `json:"amountOfMoney,omitempty"`
 	BankRefundMethodSpecificInput *BankRefundMethodSpecificInput `json:"bankRefundMethodSpecificInput,omitempty"`
@@ -13,7 +13,7 @@ type RefundRequest struct {
 	RefundReferences              *RefundReferences              `json:"refundReferences,omitempty"`
 }
 
-// NewRefundRequest constructs a new RefundRequest instance
+// NewRefundRequest constructs a new RefundRequest instance.
 func NewRefundRequest() *RefundRequest {
 	return &RefundRequest{}
 }

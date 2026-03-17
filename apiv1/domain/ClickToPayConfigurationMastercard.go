@@ -3,13 +3,13 @@
 
 package domain
 
-// ClickToPayConfigurationMastercard represents class ClickToPayConfigurationMastercard
+// ClickToPayConfigurationMastercard represents class ClickToPayConfigurationMastercard.
 type ClickToPayConfigurationMastercard struct {
 	SrcDpaID       *string `json:"srcDpaId,omitempty"`
 	SrcInitiatorID *string `json:"srcInitiatorId,omitempty"`
 }
 
-// NewClickToPayConfigurationMastercard constructs a new ClickToPayConfigurationMastercard instance
+// NewClickToPayConfigurationMastercard constructs a new ClickToPayConfigurationMastercard instance.
 func NewClickToPayConfigurationMastercard() *ClickToPayConfigurationMastercard {
 	return &ClickToPayConfigurationMastercard{}
 }

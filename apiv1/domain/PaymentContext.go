@@ -3,7 +3,7 @@
 
 package domain
 
-// PaymentContext represents class PaymentContext
+// PaymentContext represents class PaymentContext.
 type PaymentContext struct {
 	AmountOfMoney  *AmountOfMoney `json:"amountOfMoney,omitempty"`
 	CountryCode    *string        `json:"countryCode,omitempty"`
@@ -11,7 +11,7 @@ type PaymentContext struct {
 	IsRecurring    *bool          `json:"isRecurring,omitempty"`
 }
 
-// NewPaymentContext constructs a new PaymentContext instance
+// NewPaymentContext constructs a new PaymentContext instance.
 func NewPaymentContext() *PaymentContext {
 	return &PaymentContext{}
 }

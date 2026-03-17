@@ -3,12 +3,12 @@
 
 package domain
 
-// PaymentProduct866SpecificOutput represents class PaymentProduct866SpecificOutput
+// PaymentProduct866SpecificOutput represents class PaymentProduct866SpecificOutput.
 type PaymentProduct866SpecificOutput struct {
 	WalletUsed *string `json:"walletUsed,omitempty"`
 }
 
-// NewPaymentProduct866SpecificOutput constructs a new PaymentProduct866SpecificOutput instance
+// NewPaymentProduct866SpecificOutput constructs a new PaymentProduct866SpecificOutput instance.
 func NewPaymentProduct866SpecificOutput() *PaymentProduct866SpecificOutput {
 	return &PaymentProduct866SpecificOutput{}
 }

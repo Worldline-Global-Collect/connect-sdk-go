@@ -3,12 +3,12 @@
 
 package domain
 
-// OrderReferencesApprovePayment represents class OrderReferencesApprovePayment
+// OrderReferencesApprovePayment represents class OrderReferencesApprovePayment.
 type OrderReferencesApprovePayment struct {
 	MerchantReference *string `json:"merchantReference,omitempty"`
 }
 
-// NewOrderReferencesApprovePayment constructs a new OrderReferencesApprovePayment instance
+// NewOrderReferencesApprovePayment constructs a new OrderReferencesApprovePayment instance.
 func NewOrderReferencesApprovePayment() *OrderReferencesApprovePayment {
 	return &OrderReferencesApprovePayment{}
 }

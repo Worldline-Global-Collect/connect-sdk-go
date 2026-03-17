@@ -3,7 +3,7 @@
 
 package domain
 
-// AccountOnFileAttribute represents class AccountOnFileAttribute
+// AccountOnFileAttribute represents class AccountOnFileAttribute.
 type AccountOnFileAttribute struct {
 	Key             *string `json:"key,omitempty"`
 	MustWriteReason *string `json:"mustWriteReason,omitempty"`
@@ -11,7 +11,7 @@ type AccountOnFileAttribute struct {
 	Value           *string `json:"value,omitempty"`
 }
 
-// NewAccountOnFileAttribute constructs a new AccountOnFileAttribute instance
+// NewAccountOnFileAttribute constructs a new AccountOnFileAttribute instance.
 func NewAccountOnFileAttribute() *AccountOnFileAttribute {
 	return &AccountOnFileAttribute{}
 }

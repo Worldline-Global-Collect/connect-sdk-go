@@ -3,12 +3,12 @@
 
 package domain
 
-// SdkDataOutput represents class SdkDataOutput
+// SdkDataOutput represents class SdkDataOutput.
 type SdkDataOutput struct {
 	SdkTransactionID *string `json:"sdkTransactionId,omitempty"`
 }
 
-// NewSdkDataOutput constructs a new SdkDataOutput instance
+// NewSdkDataOutput constructs a new SdkDataOutput instance.
 func NewSdkDataOutput() *SdkDataOutput {
 	return &SdkDataOutput{}
 }

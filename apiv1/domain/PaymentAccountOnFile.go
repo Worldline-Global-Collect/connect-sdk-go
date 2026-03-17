@@ -3,13 +3,13 @@
 
 package domain
 
-// PaymentAccountOnFile represents class PaymentAccountOnFile
+// PaymentAccountOnFile represents class PaymentAccountOnFile.
 type PaymentAccountOnFile struct {
 	CreateDate                                    *string `json:"createDate,omitempty"`
 	NumberOfCardOnFileCreationAttemptsLast24Hours *int32  `json:"numberOfCardOnFileCreationAttemptsLast24Hours,omitempty"`
 }
 
-// NewPaymentAccountOnFile constructs a new PaymentAccountOnFile instance
+// NewPaymentAccountOnFile constructs a new PaymentAccountOnFile instance.
 func NewPaymentAccountOnFile() *PaymentAccountOnFile {
 	return &PaymentAccountOnFile{}
 }

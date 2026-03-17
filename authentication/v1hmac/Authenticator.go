@@ -14,13 +14,13 @@ import (
 	"github.com/Worldline-Global-Collect/connect-sdk-go/communicator/communication"
 )
 
-// Authenticator represents an authentication.Authenticator implementation using v1HMAC signatures
+// Authenticator represents an authentication.Authenticator implementation using v1HMAC signatures.
 type Authenticator struct {
 	apiKeyID     string
 	secretAPIKey string
 }
 
-// GetAuthorization creates an authentication signature for the given httpMethod, resourceURI and requestHeaders
+// GetAuthorization creates an authentication signature for the given httpMethod, resourceURI and requestHeaders.
 func (a Authenticator) GetAuthorization(httpMethod string, resourceURI url.URL, requestHeaders []communication.Header) (string, error) {
 	if strings.TrimSpace(httpMethod) == "" {
 		return "", errors.New("httpMethod is required")
@@ -33,6 +33,7 @@ func (a Authenticator) GetAuthorization(httpMethod string, resourceURI url.URL, 
 	if err != nil {
 		return "", err
 	}
+
 	return "GCS v1HMAC:" + a.apiKeyID + ":" + signedData, nil
 }
 
@@ -52,6 +53,7 @@ func (a Authenticator) signData(s string) (string, error) {
 		return "", err
 	}
 	output := writableBuffer.String()
+
 	return output, nil
 }
 
@@ -64,10 +66,7 @@ func toDataToSign(httpMethod string, resourceURI url.URL, requestHeaders []commu
 		} else if strings.ToLower(header.Name()) == "date" {
 			date = header.Value()
 		} else if strings.HasPrefix(strings.ToLower(header.Name()), "x-gcs") {
-			newValue, err := toCanonicalizedHeaderValue(header.Value())
-			if err != nil {
-				return "", err
-			}
+			newValue := toCanonicalizedHeaderValue(header.Value())
 			newHeader, err := communication.NewHeader(strings.ToLower(header.Name()), newValue)
 			if err != nil {
 				return "", err
@@ -115,15 +114,13 @@ func toCanonicalizedResource(resourceURI url.URL) (string, error) {
 	return resource.String(), nil
 }
 
-func toCanonicalizedHeaderValue(s string) (string, error) {
-	regex, err := regexp.Compile("\r?\n[\t\f ]*")
-	if err != nil {
-		return "", err
-	}
-	return strings.TrimSpace(regex.ReplaceAllString(s, " ")), nil
+func toCanonicalizedHeaderValue(s string) string {
+	regex := regexp.MustCompile("\r?\n[\t\f ]*")
+
+	return strings.TrimSpace(regex.ReplaceAllString(s, " "))
 }
 
-// NewAuthenticator creates an Authenticator with the given apiKeyID and secretAPIKey
+// NewAuthenticator creates an Authenticator with the given apiKeyID and secretAPIKey.
 //- The apiKeyID is an identifier for the secret API key. The apiKeyID can be retrieved from the Configuration Center
 //  This identifier is visible in the HTTP request and is also used to identify the correct account.
 //- secretAPIKey is a shared secret. The shared secret can be retrieved from the Configuration Center.

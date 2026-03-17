@@ -3,7 +3,7 @@
 
 package domain
 
-// RefundEWalletMethodSpecificOutput represents class RefundEWalletMethodSpecificOutput
+// RefundEWalletMethodSpecificOutput represents class RefundEWalletMethodSpecificOutput.
 type RefundEWalletMethodSpecificOutput struct {
 	PaymentProduct840SpecificOutput *RefundPaymentProduct840SpecificOutput `json:"paymentProduct840SpecificOutput,omitempty"`
 	RefundProductID                 *int32                                 `json:"refundProductId,omitempty"`
@@ -11,7 +11,7 @@ type RefundEWalletMethodSpecificOutput struct {
 	TotalAmountRefunded             *int64                                 `json:"totalAmountRefunded,omitempty"`
 }
 
-// NewRefundEWalletMethodSpecificOutput constructs a new RefundEWalletMethodSpecificOutput instance
+// NewRefundEWalletMethodSpecificOutput constructs a new RefundEWalletMethodSpecificOutput instance.
 func NewRefundEWalletMethodSpecificOutput() *RefundEWalletMethodSpecificOutput {
 	return &RefundEWalletMethodSpecificOutput{}
 }

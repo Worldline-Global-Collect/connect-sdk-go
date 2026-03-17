@@ -3,7 +3,7 @@
 
 package domain
 
-// FraudResults represents class FraudResults
+// FraudResults represents class FraudResults.
 type FraudResults struct {
 	CybersourceDecisionManager *CybersourceDecisionManager `json:"cybersourceDecisionManager,omitempty"`
 	FraudServiceResult         *string                     `json:"fraudServiceResult,omitempty"`
@@ -11,7 +11,7 @@ type FraudResults struct {
 	MicrosoftFraudProtection   *MicrosoftFraudResults      `json:"microsoftFraudProtection,omitempty"`
 }
 
-// NewFraudResults constructs a new FraudResults instance
+// NewFraudResults constructs a new FraudResults instance.
 func NewFraudResults() *FraudResults {
 	return &FraudResults{}
 }

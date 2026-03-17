@@ -3,14 +3,14 @@
 
 package domain
 
-// NetworkTokenData represents class NetworkTokenData
+// NetworkTokenData represents class NetworkTokenData.
 type NetworkTokenData struct {
 	NetworkToken     *string `json:"networkToken,omitempty"`
 	TokenExpiryDate  *string `json:"tokenExpiryDate,omitempty"`
 	TokenReferenceID *string `json:"tokenReferenceId,omitempty"`
 }
 
-// NewNetworkTokenData constructs a new NetworkTokenData instance
+// NewNetworkTokenData constructs a new NetworkTokenData instance.
 func NewNetworkTokenData() *NetworkTokenData {
 	return &NetworkTokenData{}
 }

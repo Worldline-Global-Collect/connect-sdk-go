@@ -3,14 +3,14 @@
 
 package domain
 
-// EInvoicePaymentMethodSpecificOutput represents class EInvoicePaymentMethodSpecificOutput
+// EInvoicePaymentMethodSpecificOutput represents class EInvoicePaymentMethodSpecificOutput.
 type EInvoicePaymentMethodSpecificOutput struct {
 	FraudResults                     *FraudResults                             `json:"fraudResults,omitempty"`
 	PaymentProduct9000SpecificOutput *EInvoicePaymentProduct9000SpecificOutput `json:"paymentProduct9000SpecificOutput,omitempty"`
 	PaymentProductID                 *int32                                    `json:"paymentProductId,omitempty"`
 }
 
-// NewEInvoicePaymentMethodSpecificOutput constructs a new EInvoicePaymentMethodSpecificOutput instance
+// NewEInvoicePaymentMethodSpecificOutput constructs a new EInvoicePaymentMethodSpecificOutput instance.
 func NewEInvoicePaymentMethodSpecificOutput() *EInvoicePaymentMethodSpecificOutput {
 	return &EInvoicePaymentMethodSpecificOutput{}
 }

@@ -3,7 +3,7 @@
 
 package domain
 
-// TrialInformation represents class TrialInformation
+// TrialInformation represents class TrialInformation.
 type TrialInformation struct {
 	AmountOfMoneyAfterTrial *AmountOfMoney `json:"amountOfMoneyAfterTrial,omitempty"`
 	EndDate                 *string        `json:"endDate,omitempty"`
@@ -13,7 +13,7 @@ type TrialInformation struct {
 	TrialPeriodRecurring    *Frequency     `json:"trialPeriodRecurring,omitempty"`
 }
 
-// NewTrialInformation constructs a new TrialInformation instance
+// NewTrialInformation constructs a new TrialInformation instance.
 func NewTrialInformation() *TrialInformation {
 	return &TrialInformation{}
 }

@@ -3,7 +3,7 @@
 
 package domain
 
-// CreatePayoutRequest represents class CreatePayoutRequest
+// CreatePayoutRequest represents class CreatePayoutRequest.
 type CreatePayoutRequest struct {
 	// Deprecated: Moved to PayoutDetails
 	AmountOfMoney                         *AmountOfMoney                         `json:"amountOfMoney,omitempty"`
@@ -27,7 +27,7 @@ type CreatePayoutRequest struct {
 	SwiftCode                             *string                                `json:"swiftCode,omitempty"`
 }
 
-// NewCreatePayoutRequest constructs a new CreatePayoutRequest instance
+// NewCreatePayoutRequest constructs a new CreatePayoutRequest instance.
 func NewCreatePayoutRequest() *CreatePayoutRequest {
 	return &CreatePayoutRequest{}
 }

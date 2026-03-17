@@ -3,13 +3,13 @@
 
 package domain
 
-// NonSepaDirectDebitPaymentMethodSpecificOutput represents class NonSepaDirectDebitPaymentMethodSpecificOutput
+// NonSepaDirectDebitPaymentMethodSpecificOutput represents class NonSepaDirectDebitPaymentMethodSpecificOutput.
 type NonSepaDirectDebitPaymentMethodSpecificOutput struct {
 	FraudResults     *FraudResults `json:"fraudResults,omitempty"`
 	PaymentProductID *int32        `json:"paymentProductId,omitempty"`
 }
 
-// NewNonSepaDirectDebitPaymentMethodSpecificOutput constructs a new NonSepaDirectDebitPaymentMethodSpecificOutput instance
+// NewNonSepaDirectDebitPaymentMethodSpecificOutput constructs a new NonSepaDirectDebitPaymentMethodSpecificOutput instance.
 func NewNonSepaDirectDebitPaymentMethodSpecificOutput() *NonSepaDirectDebitPaymentMethodSpecificOutput {
 	return &NonSepaDirectDebitPaymentMethodSpecificOutput{}
 }

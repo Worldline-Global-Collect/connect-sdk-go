@@ -3,7 +3,7 @@
 
 package domain
 
-// PersonalName represents class PersonalName
+// PersonalName represents class PersonalName.
 type PersonalName struct {
 	FirstName     *string `json:"firstName,omitempty"`
 	Surname       *string `json:"surname,omitempty"`
@@ -11,7 +11,7 @@ type PersonalName struct {
 	Title         *string `json:"title,omitempty"`
 }
 
-// NewPersonalName constructs a new PersonalName instance
+// NewPersonalName constructs a new PersonalName instance.
 func NewPersonalName() *PersonalName {
 	return &PersonalName{}
 }

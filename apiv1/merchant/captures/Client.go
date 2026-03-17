@@ -4,6 +4,8 @@
 package captures
 
 import (
+	"errors"
+
 	"github.com/Worldline-Global-Collect/connect-sdk-go/apiv1/domain"
 	v1Errors "github.com/Worldline-Global-Collect/connect-sdk-go/apiv1/errors"
 	"github.com/Worldline-Global-Collect/connect-sdk-go/communicator"
@@ -15,9 +17,9 @@ type Client struct {
 	apiResource *communicator.APIResource
 }
 
-// Get represents the resource /{merchantId}/captures/{captureId} - Get capture
+// Get represents the resource /{merchantId}/captures/{captureId} - Get capture.
 //
-// Documentation can be found at https://apireference.connect.worldline-solutions.com/s2sapi/v1/en_US/go/captures/get.html
+// Documentation can be found at https://apireference.connect.worldline-solutions.com/s2sapi/v1/en_US/go/captures/get.html.
 //
 // Can return any of the following errors:
 //   * IdempotenceError if an idempotent request caused a conflict (HTTP status code 409)
@@ -45,11 +47,9 @@ func (c *Client) Get(captureID string, context *communicator.CallContext) (domai
 
 	getErr := c.apiResource.Communicator().Get(uri, clientHeaders, nil, context, &resultObject)
 	if getErr != nil {
-		responseError, isResponseError := getErr.(*commErrors.ResponseError)
-		if isResponseError {
-			var errorObject interface{}
-
-			errorObject = &domain.ErrorResponse{}
+		var responseError *commErrors.ResponseError
+		if errors.As(getErr, &responseError) {
+			errorObject := &domain.ErrorResponse{}
 			err = c.apiResource.Communicator().Marshaller().Unmarshal(responseError.Body(), errorObject)
 			if err != nil {
 				return resultObject, err
@@ -69,9 +69,9 @@ func (c *Client) Get(captureID string, context *communicator.CallContext) (domai
 	return resultObject, nil
 }
 
-// Refund represents the resource /{merchantId}/captures/{captureId}/refund - Create Refund
+// Refund represents the resource /{merchantId}/captures/{captureId}/refund - Create Refund.
 //
-// Documentation can be found at https://apireference.connect.worldline-solutions.com/s2sapi/v1/en_US/go/captures/refund.html
+// Documentation can be found at https://apireference.connect.worldline-solutions.com/s2sapi/v1/en_US/go/captures/refund.html.
 //
 // Can return any of the following errors:
 //   * DeclinedRefundError if the Worldline Global Collect platform declined / rejected the refund. The refund result will be available from the exception.
@@ -100,11 +100,9 @@ func (c *Client) Refund(captureID string, body domain.RefundRequest, context *co
 
 	postErr := c.apiResource.Communicator().Post(uri, clientHeaders, nil, body, context, &resultObject)
 	if postErr != nil {
-		responseError, isResponseError := postErr.(*commErrors.ResponseError)
-		if isResponseError {
-			var errorObject interface{}
-
-			errorObject = &domain.RefundErrorResponse{}
+		var responseError *commErrors.ResponseError
+		if errors.As(postErr, &responseError) {
+			errorObject := &domain.RefundErrorResponse{}
 			err = c.apiResource.Communicator().Marshaller().Unmarshal(responseError.Body(), errorObject)
 			if err != nil {
 				return resultObject, err
@@ -124,9 +122,9 @@ func (c *Client) Refund(captureID string, body domain.RefundRequest, context *co
 	return resultObject, nil
 }
 
-// Disputes represents the resource /{merchantId}/captures/{captureId}/disputes - Get disputes
+// Disputes represents the resource /{merchantId}/captures/{captureId}/disputes - Get disputes.
 //
-// Documentation can be found at https://apireference.connect.worldline-solutions.com/s2sapi/v1/en_US/go/captures/disputes.html
+// Documentation can be found at https://apireference.connect.worldline-solutions.com/s2sapi/v1/en_US/go/captures/disputes.html.
 //
 // Can return any of the following errors:
 //   * IdempotenceError if an idempotent request caused a conflict (HTTP status code 409)
@@ -154,11 +152,9 @@ func (c *Client) Disputes(captureID string, context *communicator.CallContext) (
 
 	getErr := c.apiResource.Communicator().Get(uri, clientHeaders, nil, context, &resultObject)
 	if getErr != nil {
-		responseError, isResponseError := getErr.(*commErrors.ResponseError)
-		if isResponseError {
-			var errorObject interface{}
-
-			errorObject = &domain.ErrorResponse{}
+		var responseError *commErrors.ResponseError
+		if errors.As(getErr, &responseError) {
+			errorObject := &domain.ErrorResponse{}
 			err = c.apiResource.Communicator().Marshaller().Unmarshal(responseError.Body(), errorObject)
 			if err != nil {
 				return resultObject, err
@@ -178,9 +174,9 @@ func (c *Client) Disputes(captureID string, context *communicator.CallContext) (
 	return resultObject, nil
 }
 
-// Dispute represents the resource /{merchantId}/captures/{captureId}/dispute - Create dispute
+// Dispute represents the resource /{merchantId}/captures/{captureId}/dispute - Create dispute.
 //
-// Documentation can be found at https://apireference.connect.worldline-solutions.com/s2sapi/v1/en_US/go/captures/dispute.html
+// Documentation can be found at https://apireference.connect.worldline-solutions.com/s2sapi/v1/en_US/go/captures/dispute.html.
 //
 // Can return any of the following errors:
 //   * IdempotenceError if an idempotent request caused a conflict (HTTP status code 409)
@@ -208,11 +204,9 @@ func (c *Client) Dispute(captureID string, body domain.CreateDisputeRequest, con
 
 	postErr := c.apiResource.Communicator().Post(uri, clientHeaders, nil, body, context, &resultObject)
 	if postErr != nil {
-		responseError, isResponseError := postErr.(*commErrors.ResponseError)
-		if isResponseError {
-			var errorObject interface{}
-
-			errorObject = &domain.ErrorResponse{}
+		var responseError *commErrors.ResponseError
+		if errors.As(postErr, &responseError) {
+			errorObject := &domain.ErrorResponse{}
 			err = c.apiResource.Communicator().Marshaller().Unmarshal(responseError.Body(), errorObject)
 			if err != nil {
 				return resultObject, err
@@ -232,9 +226,9 @@ func (c *Client) Dispute(captureID string, body domain.CreateDisputeRequest, con
 	return resultObject, nil
 }
 
-// NewClient constructs a new Captures client
+// NewClient constructs a new Captures client.
 //
-// parent is the communicator.APIResource on top of which we want to build the new Captures client
+// parent is the communicator.APIResource on top of which we want to build the new Captures client.
 func NewClient(parent *communicator.APIResource, pathContext map[string]string) (*Client, error) {
 	apiResource, err := communicator.NewAPIResourceWithParent(parent, pathContext)
 	if err != nil {

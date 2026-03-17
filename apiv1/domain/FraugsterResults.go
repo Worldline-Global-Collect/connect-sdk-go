@@ -3,13 +3,13 @@
 
 package domain
 
-// FraugsterResults represents class FraugsterResults
+// FraugsterResults represents class FraugsterResults.
 type FraugsterResults struct {
 	FraudInvestigationPoints *string `json:"fraudInvestigationPoints,omitempty"`
 	FraudScore               *int32  `json:"fraudScore,omitempty"`
 }
 
-// NewFraugsterResults constructs a new FraugsterResults instance
+// NewFraugsterResults constructs a new FraugsterResults instance.
 func NewFraugsterResults() *FraugsterResults {
 	return &FraugsterResults{}
 }

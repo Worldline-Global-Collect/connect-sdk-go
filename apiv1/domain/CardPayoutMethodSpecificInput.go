@@ -3,7 +3,7 @@
 
 package domain
 
-// CardPayoutMethodSpecificInput represents class CardPayoutMethodSpecificInput
+// CardPayoutMethodSpecificInput represents class CardPayoutMethodSpecificInput.
 type CardPayoutMethodSpecificInput struct {
 	Card             *Card            `json:"card,omitempty"`
 	PaymentProductID *int32           `json:"paymentProductId,omitempty"`
@@ -11,7 +11,7 @@ type CardPayoutMethodSpecificInput struct {
 	Token            *string          `json:"token,omitempty"`
 }
 
-// NewCardPayoutMethodSpecificInput constructs a new CardPayoutMethodSpecificInput instance
+// NewCardPayoutMethodSpecificInput constructs a new CardPayoutMethodSpecificInput instance.
 func NewCardPayoutMethodSpecificInput() *CardPayoutMethodSpecificInput {
 	return &CardPayoutMethodSpecificInput{}
 }

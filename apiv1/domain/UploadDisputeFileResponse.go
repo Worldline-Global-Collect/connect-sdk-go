@@ -3,13 +3,13 @@
 
 package domain
 
-// UploadDisputeFileResponse represents class UploadDisputeFileResponse
+// UploadDisputeFileResponse represents class UploadDisputeFileResponse.
 type UploadDisputeFileResponse struct {
 	DisputeID *string `json:"disputeId,omitempty"`
 	FileID    *string `json:"fileId,omitempty"`
 }
 
-// NewUploadDisputeFileResponse constructs a new UploadDisputeFileResponse instance
+// NewUploadDisputeFileResponse constructs a new UploadDisputeFileResponse instance.
 func NewUploadDisputeFileResponse() *UploadDisputeFileResponse {
 	return &UploadDisputeFileResponse{}
 }

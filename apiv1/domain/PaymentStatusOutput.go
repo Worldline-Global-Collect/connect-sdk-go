@@ -3,7 +3,7 @@
 
 package domain
 
-// PaymentStatusOutput represents class PaymentStatusOutput
+// PaymentStatusOutput represents class PaymentStatusOutput.
 type PaymentStatusOutput struct {
 	Errors                   *[]APIError     `json:"errors,omitempty"`
 	IsAuthorized             *bool           `json:"isAuthorized,omitempty"`
@@ -17,7 +17,7 @@ type PaymentStatusOutput struct {
 	ThreeDSecureStatus       *string         `json:"threeDSecureStatus,omitempty"`
 }
 
-// NewPaymentStatusOutput constructs a new PaymentStatusOutput instance
+// NewPaymentStatusOutput constructs a new PaymentStatusOutput instance.
 func NewPaymentStatusOutput() *PaymentStatusOutput {
 	return &PaymentStatusOutput{}
 }

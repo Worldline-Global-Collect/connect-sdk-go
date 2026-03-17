@@ -3,7 +3,7 @@
 
 package domain
 
-// PaymentResponse represents class PaymentResponse
+// PaymentResponse represents class PaymentResponse.
 type PaymentResponse struct {
 	HostedCheckoutSpecificOutput *HostedCheckoutSpecificOutput `json:"hostedCheckoutSpecificOutput,omitempty"`
 	ID                           *string                       `json:"id,omitempty"`
@@ -12,7 +12,7 @@ type PaymentResponse struct {
 	StatusOutput                 *PaymentStatusOutput          `json:"statusOutput,omitempty"`
 }
 
-// NewPaymentResponse constructs a new PaymentResponse instance
+// NewPaymentResponse constructs a new PaymentResponse instance.
 func NewPaymentResponse() *PaymentResponse {
 	return &PaymentResponse{}
 }

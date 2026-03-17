@@ -33,8 +33,8 @@ func (e ResponseError) GetHeader(headerName string) *communication.Header {
 	return communication.Headers(e.headers).GetHeader(headerName)
 }
 
-// String implements the Stringer interface
-// Format: 'errorMessage; statusCode=; responseBody='
+// String implements the Stringer interface.
+// Format: 'errorMessage; statusCode=; responseBody='.
 func (e ResponseError) String() string {
 	result := "the Worldline Global Collect platform returned an error response"
 
@@ -51,12 +51,12 @@ func (e ResponseError) String() string {
 	return result
 }
 
-// Error implements the error interface
+// Error implements the error interface.
 func (e ResponseError) Error() string {
 	return e.String()
 }
 
-// NewResponseError creates a new ResponseError with the specified response
+// NewResponseError creates a new ResponseError with the specified response.
 func NewResponseError(statusCode int, body string, headers []communication.Header) (*ResponseError, error) {
 	return &ResponseError{statusCode: statusCode, body: body, headers: headers}, nil
 }

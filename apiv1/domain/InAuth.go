@@ -3,7 +3,7 @@
 
 package domain
 
-// InAuth represents class InAuth
+// InAuth represents class InAuth.
 type InAuth struct {
 	DeviceCategory       *string `json:"deviceCategory,omitempty"`
 	DeviceID             *string `json:"deviceId,omitempty"`
@@ -12,7 +12,7 @@ type InAuth struct {
 	TrueIPAddressCountry *string `json:"trueIpAddressCountry,omitempty"`
 }
 
-// NewInAuth constructs a new InAuth instance
+// NewInAuth constructs a new InAuth instance.
 func NewInAuth() *InAuth {
 	return &InAuth{}
 }

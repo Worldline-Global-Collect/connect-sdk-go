@@ -8,5 +8,5 @@ type SecretKeyStore interface {
 	//
 	// Can return any of the following errors:
 	// SecretKeyNotAvailableError if there is no secretKey with the given keyID
-	GetSecretKey(string) (string, error)
+	GetSecretKey(keyID string) (string, error)
 }

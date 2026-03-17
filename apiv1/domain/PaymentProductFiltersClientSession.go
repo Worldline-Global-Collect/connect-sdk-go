@@ -3,13 +3,13 @@
 
 package domain
 
-// PaymentProductFiltersClientSession represents class PaymentProductFiltersClientSession
+// PaymentProductFiltersClientSession represents class PaymentProductFiltersClientSession.
 type PaymentProductFiltersClientSession struct {
 	Exclude    *PaymentProductFilter `json:"exclude,omitempty"`
 	RestrictTo *PaymentProductFilter `json:"restrictTo,omitempty"`
 }
 
-// NewPaymentProductFiltersClientSession constructs a new PaymentProductFiltersClientSession instance
+// NewPaymentProductFiltersClientSession constructs a new PaymentProductFiltersClientSession instance.
 func NewPaymentProductFiltersClientSession() *PaymentProductFiltersClientSession {
 	return &PaymentProductFiltersClientSession{}
 }

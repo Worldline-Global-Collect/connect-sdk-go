@@ -3,7 +3,7 @@
 
 package domain
 
-// Shipping represents class Shipping
+// Shipping represents class Shipping.
 type Shipping struct {
 	Address          *AddressPersonal `json:"address,omitempty"`
 	AddressIndicator *string          `json:"addressIndicator,omitempty"`
@@ -18,7 +18,7 @@ type Shipping struct {
 	Type             *string          `json:"type,omitempty"`
 }
 
-// NewShipping constructs a new Shipping instance
+// NewShipping constructs a new Shipping instance.
 func NewShipping() *Shipping {
 	return &Shipping{}
 }

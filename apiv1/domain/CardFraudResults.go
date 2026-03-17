@@ -3,7 +3,7 @@
 
 package domain
 
-// CardFraudResults represents class CardFraudResults
+// CardFraudResults represents class CardFraudResults.
 type CardFraudResults struct {
 	AvsResult                  *string                      `json:"avsResult,omitempty"`
 	CvvResult                  *string                      `json:"cvvResult,omitempty"`
@@ -15,7 +15,7 @@ type CardFraudResults struct {
 	RetailDecisions            *FraudResultsRetailDecisions `json:"retailDecisions,omitempty"`
 }
 
-// NewCardFraudResults constructs a new CardFraudResults instance
+// NewCardFraudResults constructs a new CardFraudResults instance.
 func NewCardFraudResults() *CardFraudResults {
 	return &CardFraudResults{}
 }

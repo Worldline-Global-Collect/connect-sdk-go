@@ -18,34 +18,34 @@ type PlatformError struct {
 	errors       []domain.APIError
 }
 
-// Message returns the error message
+// Message returns the error message.
 func (e PlatformError) Message() string {
 	return e.errorMessage
 }
 
-// StatusCode returns the status code
+// StatusCode returns the status code.
 func (e PlatformError) StatusCode() int {
 	return e.statusCode
 }
 
-// ResponseBody returns the response body
+// ResponseBody returns the response body.
 func (e PlatformError) ResponseBody() string {
 	return e.responseBody
 }
 
-// ErrorID implements the APIError interface
+// ErrorID implements the APIError interface.
 func (e PlatformError) ErrorID() string {
 	return e.errorID
 }
 
-// Errors implements the APIError interface
+// Errors implements the APIError interface.
 func (e PlatformError) Errors() []domain.APIError {
 	// Return a clone instead of the original slice - immutability insurance
 	return append([]domain.APIError{}, e.errors...)
 }
 
-// String implements the Stringer interface
-// Format: 'errorMessage; statusCode=; responseBody='
+// String implements the Stringer interface.
+// Format: 'errorMessage; statusCode=; responseBody='.
 func (e PlatformError) String() string {
 	list := e.errorMessage
 
@@ -59,17 +59,17 @@ func (e PlatformError) String() string {
 	return list
 }
 
-// Error implements the error interface
+// Error implements the error interface.
 func (e PlatformError) Error() string {
 	return e.String()
 }
 
-// NewPlatformError creates a new PlatformError with the given statusCode, responseBody and response fields
+// NewPlatformError creates a new PlatformError with the given statusCode, responseBody and response fields.
 func NewPlatformError(statusCode int, responseBody, errorID string, errors []domain.APIError) (*PlatformError, error) {
 	return &PlatformError{"the Worldline Global Collect platform returned an error response", statusCode, responseBody, errorID, errors}, nil
 }
 
-// NewPlatformErrorVerbose creates a new PlatformError with the given message, statusCode and response fields
+// NewPlatformErrorVerbose creates a new PlatformError with the given message, statusCode and response fields.
 func NewPlatformErrorVerbose(message string, statusCode int, responseBody, errorID string, errors []domain.APIError) (*PlatformError, error) {
 	return &PlatformError{message, statusCode, responseBody, errorID, errors}, nil
 }

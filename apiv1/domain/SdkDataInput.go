@@ -3,7 +3,7 @@
 
 package domain
 
-// SdkDataInput represents class SdkDataInput
+// SdkDataInput represents class SdkDataInput.
 type SdkDataInput struct {
 	DeviceRenderOptions   *DeviceRenderOptions `json:"deviceRenderOptions,omitempty"`
 	SdkAppID              *string              `json:"sdkAppId,omitempty"`
@@ -14,7 +14,7 @@ type SdkDataInput struct {
 	SdkTransactionID      *string              `json:"sdkTransactionId,omitempty"`
 }
 
-// NewSdkDataInput constructs a new SdkDataInput instance
+// NewSdkDataInput constructs a new SdkDataInput instance.
 func NewSdkDataInput() *SdkDataInput {
 	return &SdkDataInput{}
 }

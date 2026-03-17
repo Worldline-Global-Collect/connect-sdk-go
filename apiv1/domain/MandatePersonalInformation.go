@@ -3,13 +3,13 @@
 
 package domain
 
-// MandatePersonalInformation represents class MandatePersonalInformation
+// MandatePersonalInformation represents class MandatePersonalInformation.
 type MandatePersonalInformation struct {
 	Name  *MandatePersonalName `json:"name,omitempty"`
 	Title *string              `json:"title,omitempty"`
 }
 
-// NewMandatePersonalInformation constructs a new MandatePersonalInformation instance
+// NewMandatePersonalInformation constructs a new MandatePersonalInformation instance.
 func NewMandatePersonalInformation() *MandatePersonalInformation {
 	return &MandatePersonalInformation{}
 }

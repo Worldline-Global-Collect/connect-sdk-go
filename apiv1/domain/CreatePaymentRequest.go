@@ -3,7 +3,7 @@
 
 package domain
 
-// CreatePaymentRequest represents class CreatePaymentRequest
+// CreatePaymentRequest represents class CreatePaymentRequest.
 type CreatePaymentRequest struct {
 	BankTransferPaymentMethodSpecificInput    *BankTransferPaymentMethodSpecificInput       `json:"bankTransferPaymentMethodSpecificInput,omitempty"`
 	CardPaymentMethodSpecificInput            *CardPaymentMethodSpecificInput               `json:"cardPaymentMethodSpecificInput,omitempty"`
@@ -20,7 +20,7 @@ type CreatePaymentRequest struct {
 	SepaDirectDebitPaymentMethodSpecificInput *SepaDirectDebitPaymentMethodSpecificInput    `json:"sepaDirectDebitPaymentMethodSpecificInput,omitempty"`
 }
 
-// NewCreatePaymentRequest constructs a new CreatePaymentRequest instance
+// NewCreatePaymentRequest constructs a new CreatePaymentRequest instance.
 func NewCreatePaymentRequest() *CreatePaymentRequest {
 	return &CreatePaymentRequest{}
 }

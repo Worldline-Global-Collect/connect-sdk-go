@@ -3,7 +3,7 @@
 
 package domain
 
-// HostedCheckoutSpecificInput represents class HostedCheckoutSpecificInput
+// HostedCheckoutSpecificInput represents class HostedCheckoutSpecificInput.
 type HostedCheckoutSpecificInput struct {
 	IsRecurring           *bool                                `json:"isRecurring,omitempty"`
 	Locale                *string                              `json:"locale,omitempty"`
@@ -17,7 +17,7 @@ type HostedCheckoutSpecificInput struct {
 	Variant               *string                              `json:"variant,omitempty"`
 }
 
-// NewHostedCheckoutSpecificInput constructs a new HostedCheckoutSpecificInput instance
+// NewHostedCheckoutSpecificInput constructs a new HostedCheckoutSpecificInput instance.
 func NewHostedCheckoutSpecificInput() *HostedCheckoutSpecificInput {
 	return &HostedCheckoutSpecificInput{}
 }

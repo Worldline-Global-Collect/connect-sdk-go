@@ -3,12 +3,12 @@
 
 package domain
 
-// CancelPaymentMobilePaymentMethodSpecificOutput represents class CancelPaymentMobilePaymentMethodSpecificOutput
+// CancelPaymentMobilePaymentMethodSpecificOutput represents class CancelPaymentMobilePaymentMethodSpecificOutput.
 type CancelPaymentMobilePaymentMethodSpecificOutput struct {
 	VoidResponseID *string `json:"voidResponseId,omitempty"`
 }
 
-// NewCancelPaymentMobilePaymentMethodSpecificOutput constructs a new CancelPaymentMobilePaymentMethodSpecificOutput instance
+// NewCancelPaymentMobilePaymentMethodSpecificOutput constructs a new CancelPaymentMobilePaymentMethodSpecificOutput instance.
 func NewCancelPaymentMobilePaymentMethodSpecificOutput() *CancelPaymentMobilePaymentMethodSpecificOutput {
 	return &CancelPaymentMobilePaymentMethodSpecificOutput{}
 }

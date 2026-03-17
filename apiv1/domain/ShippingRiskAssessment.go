@@ -3,14 +3,14 @@
 
 package domain
 
-// ShippingRiskAssessment represents class ShippingRiskAssessment
+// ShippingRiskAssessment represents class ShippingRiskAssessment.
 type ShippingRiskAssessment struct {
 	Address        *AddressPersonal `json:"address,omitempty"`
 	Comments       *string          `json:"comments,omitempty"`
 	TrackingNumber *string          `json:"trackingNumber,omitempty"`
 }
 
-// NewShippingRiskAssessment constructs a new ShippingRiskAssessment instance
+// NewShippingRiskAssessment constructs a new ShippingRiskAssessment instance.
 func NewShippingRiskAssessment() *ShippingRiskAssessment {
 	return &ShippingRiskAssessment{}
 }

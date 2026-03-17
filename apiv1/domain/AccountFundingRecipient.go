@@ -3,7 +3,7 @@
 
 package domain
 
-// AccountFundingRecipient represents class AccountFundingRecipient
+// AccountFundingRecipient represents class AccountFundingRecipient.
 type AccountFundingRecipient struct {
 	AccountNumber     *string  `json:"accountNumber,omitempty"`
 	AccountNumberType *string  `json:"accountNumberType,omitempty"`
@@ -13,7 +13,7 @@ type AccountFundingRecipient struct {
 	PartialPan        *string  `json:"partialPan,omitempty"`
 }
 
-// NewAccountFundingRecipient constructs a new AccountFundingRecipient instance
+// NewAccountFundingRecipient constructs a new AccountFundingRecipient instance.
 func NewAccountFundingRecipient() *AccountFundingRecipient {
 	return &AccountFundingRecipient{}
 }

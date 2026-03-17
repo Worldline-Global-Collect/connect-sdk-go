@@ -3,7 +3,7 @@
 
 package domain
 
-// MandateCustomer represents class MandateCustomer
+// MandateCustomer represents class MandateCustomer.
 type MandateCustomer struct {
 	BankAccountIban     *BankAccountIban            `json:"bankAccountIban,omitempty"`
 	CompanyName         *string                     `json:"companyName,omitempty"`
@@ -12,7 +12,7 @@ type MandateCustomer struct {
 	PersonalInformation *MandatePersonalInformation `json:"personalInformation,omitempty"`
 }
 
-// NewMandateCustomer constructs a new MandateCustomer instance
+// NewMandateCustomer constructs a new MandateCustomer instance.
 func NewMandateCustomer() *MandateCustomer {
 	return &MandateCustomer{}
 }

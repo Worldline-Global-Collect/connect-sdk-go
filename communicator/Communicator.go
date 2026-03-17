@@ -29,32 +29,32 @@ type Communicator struct {
 	marshaller       json.Marshaller
 }
 
-// APIEndpoint returns the apiEndpoint of the Communicator
+// APIEndpoint returns the apiEndpoint of the Communicator.
 func (c *Communicator) APIEndpoint() *url.URL {
 	return c.apiEndpoint
 }
 
-// Connection returns the connection of the Communicator
+// Connection returns the connection of the Communicator.
 func (c *Communicator) Connection() Connection {
 	return c.connection
 }
 
-// MetadataProvider returns the metadataProvider of the Communicator
+// MetadataProvider returns the metadataProvider of the Communicator.
 func (c *Communicator) MetadataProvider() *MetadataProvider {
 	return c.metadataProvider
 }
 
-// Authenticator returns the authenticator of the Communicator
+// Authenticator returns the authenticator of the Communicator.
 func (c *Communicator) Authenticator() authentication.Authenticator {
 	return c.authenticator
 }
 
-// Marshaller returns the marshaller of the Communicator
+// Marshaller returns the marshaller of the Communicator.
 func (c *Communicator) Marshaller() json.Marshaller {
 	return c.marshaller
 }
 
-// Close closes the connection of the Communicator
+// Close closes the connection of the Communicator.
 func (c *Communicator) Close() error {
 	return c.connection.Close()
 }
@@ -79,13 +79,13 @@ func (c *Communicator) DisableLogging() {
 	c.connection.DisableLogging()
 }
 
-// Get corresponds to the HTTP Get method
+// Get corresponds to the HTTP Get method.
 //
-// relativePath is the Path to call, relative to the base URI
-// requestHeaders is an optimal list of request headers
-// requestParameters is an optional set of request parameters. If not used set to nil
-// context is an optional Call context which can be used
-// expectedObject is a reference to the expected response object
+// relativePath is the Path to call, relative to the base URI.
+// requestHeaders is an optimal list of request headers.
+// requestParameters is an optional set of request parameters. If not used set to nil.
+// context is an optional Call context which can be used.
+// expectedObject is a reference to the expected response object.
 func (c *Communicator) Get(relativePath string, requestHeaders []communication.Header, requestParameters communication.ParamRequest, context *CallContext, expectedObject interface{}) error {
 	var requestParameterList []communication.RequestParam
 	if requestParameters != nil {
@@ -104,17 +104,18 @@ func (c *Communicator) Get(relativePath string, requestHeaders []communication.H
 	_, err = c.connection.Get(uri, requestHeaders, func(statusCode int, headers []communication.Header, reader io.Reader) (interface{}, error) {
 		return nil, c.processResponse(statusCode, reader, headers, relativePath, context, expectedObject)
 	})
+
 	return err
 }
 
-// GetWithHandler corresponds to the HTTP Get method
+// GetWithHandler corresponds to the HTTP Get method.
 //
-// relativePath is the Path to call, relative to the base URI
-// requestHeaders is an optimal list of request headers
-// requestParameters is an optional set of request parameters. If not used set to nil
-// context is an optional Call context which can be used
-// expectedObject is a reference to the expected response object
-// bodyHandler is a BodyHandler that handles the body stream
+// relativePath is the Path to call, relative to the base URI.
+// requestHeaders is an optimal list of request headers.
+// requestParameters is an optional set of request parameters. If not used set to nil.
+// context is an optional Call context which can be used.
+// expectedObject is a reference to the expected response object.
+// bodyHandler is a BodyHandler that handles the body stream.
 func (c *Communicator) GetWithHandler(relativePath string, requestHeaders []communication.Header, requestParameters communication.ParamRequest, context *CallContext, bodyHandler BodyHandler) error {
 	var requestParameterList []communication.RequestParam
 	if requestParameters != nil {
@@ -133,16 +134,17 @@ func (c *Communicator) GetWithHandler(relativePath string, requestHeaders []comm
 	_, err = c.connection.Get(uri, requestHeaders, func(statusCode int, headers []communication.Header, reader io.Reader) (interface{}, error) {
 		return nil, c.processResponseWithHandler(statusCode, reader, headers, relativePath, context, bodyHandler)
 	})
+
 	return err
 }
 
-// Delete corresponds to the HTTP Delete method
+// Delete corresponds to the HTTP Delete method.
 //
-// relativePath is the Path to call, relative to the base URI
-// requestHeaders is an optimal list of request headers
-// requestParameters is an optional set of request parameters. If not used set to nil
-// context is an optional Call context which can be used
-// expectedObject is a reference to the expected response object
+// relativePath is the Path to call, relative to the base URI.
+// requestHeaders is an optimal list of request headers.
+// requestParameters is an optional set of request parameters. If not used set to nil.
+// context is an optional Call context which can be used.
+// expectedObject is a reference to the expected response object.
 func (c *Communicator) Delete(relativePath string, requestHeaders []communication.Header, requestParameters communication.ParamRequest, context *CallContext, expectedObject interface{}) error {
 	var requestParameterList []communication.RequestParam
 	if requestParameters != nil {
@@ -161,17 +163,18 @@ func (c *Communicator) Delete(relativePath string, requestHeaders []communicatio
 	_, err = c.connection.Delete(uri, requestHeaders, func(statusCode int, headers []communication.Header, reader io.Reader) (interface{}, error) {
 		return nil, c.processResponse(statusCode, reader, headers, relativePath, context, expectedObject)
 	})
+
 	return err
 }
 
-// DeleteWithHandler corresponds to the HTTP Delete method
+// DeleteWithHandler corresponds to the HTTP Delete method.
 //
-// relativePath is the Path to call, relative to the base URI
-// requestHeaders is an optimal list of request headers
-// requestParameters is an optional set of request parameters. If not used set to nil
-// context is an optional Call context which can be used
-// expectedObject is a reference to the expected response object
-// bodyHandler is a BodyHandler that handles the body stream
+// relativePath is the Path to call, relative to the base URI.
+// requestHeaders is an optimal list of request headers.
+// requestParameters is an optional set of request parameters. If not used set to nil.
+// context is an optional Call context which can be used.
+// expectedObject is a reference to the expected response object.
+// bodyHandler is a BodyHandler that handles the body stream.
 func (c *Communicator) DeleteWithHandler(relativePath string, requestHeaders []communication.Header, requestParameters communication.ParamRequest, context *CallContext, bodyHandler BodyHandler) error {
 	var requestParameterList []communication.RequestParam
 	if requestParameters != nil {
@@ -190,17 +193,18 @@ func (c *Communicator) DeleteWithHandler(relativePath string, requestHeaders []c
 	_, err = c.connection.Delete(uri, requestHeaders, func(statusCode int, headers []communication.Header, reader io.Reader) (interface{}, error) {
 		return nil, c.processResponseWithHandler(statusCode, reader, headers, relativePath, context, bodyHandler)
 	})
+
 	return err
 }
 
-// Post corresponds to the HTTP Post method
+// Post corresponds to the HTTP Post method.
 //
-// relativePath is the Path to call, relative to the base URI
-// requestHeaders is an optimal list of request headers
-// requestParameters is an optional set of request parameters. If not used set it to nil
-// requestBody is the body of the request. If not used set to nil
-// context is an optional Call context which can be used. If not used set it to nil
-// expectedObject is a reference to the expected response object
+// relativePath is the Path to call, relative to the base URI.
+// requestHeaders is an optimal list of request headers.
+// requestParameters is an optional set of request parameters. If not used set it to nil.
+// requestBody is the body of the request. If not used set to nil.
+// context is an optional Call context which can be used. If not used set it to nil.
+// expectedObject is a reference to the expected response object.
 func (c *Communicator) Post(relativePath string, requestHeaders []communication.Header, requestParameters communication.ParamRequest, requestBody interface{}, context *CallContext, expectedResponse interface{}) error {
 	if multipartObject, ok := requestBody.(communication.MultipartFormDataObject); ok {
 		return c.postMultipart(relativePath, requestHeaders, requestParameters, &multipartObject, context, expectedResponse)
@@ -240,6 +244,7 @@ func (c *Communicator) Post(relativePath string, requestHeaders []communication.
 	_, err = c.connection.Post(uri, requestHeaders, requestJSON, func(statusCode int, headers []communication.Header, reader io.Reader) (interface{}, error) {
 		return nil, c.processResponse(statusCode, reader, headers, relativePath, context, expectedResponse)
 	})
+
 	return err
 }
 
@@ -264,18 +269,19 @@ func (c *Communicator) postMultipart(relativePath string, requestHeaders []commu
 	_, err = c.connection.PostMultipart(uri, requestHeaders, requestBody, func(statusCode int, headers []communication.Header, reader io.Reader) (interface{}, error) {
 		return nil, c.processResponse(statusCode, reader, headers, relativePath, context, expectedResponse)
 	})
+
 	return err
 }
 
-// PostWithHandler corresponds to the HTTP Post method
+// PostWithHandler corresponds to the HTTP Post method.
 //
-// relativePath is the Path to call, relative to the base URI
-// requestHeaders is an optimal list of request headers
-// requestParameters is an optional set of request parameters. If not used set it to nil
-// requestBody is the body of the request. If not used set to nil
-// context is an optional Call context which can be used. If not used set it to nil
-// expectedObject is a reference to the expected response object
-// bodyHandler is a BodyHandler that handles the body stream
+// relativePath is the Path to call, relative to the base URI.
+// requestHeaders is an optimal list of request headers.
+// requestParameters is an optional set of request parameters. If not used set it to nil.
+// requestBody is the body of the request. If not used set to nil.
+// context is an optional Call context which can be used. If not used set it to nil.
+// expectedObject is a reference to the expected response object.
+// bodyHandler is a BodyHandler that handles the body stream.
 func (c *Communicator) PostWithHandler(relativePath string, requestHeaders []communication.Header, requestParameters communication.ParamRequest, requestBody interface{}, context *CallContext, bodyHandler BodyHandler) error {
 	if multipartObject, ok := requestBody.(communication.MultipartFormDataObject); ok {
 		return c.postMultipartWithHandler(relativePath, requestHeaders, requestParameters, &multipartObject, context, bodyHandler)
@@ -340,17 +346,18 @@ func (c *Communicator) postMultipartWithHandler(relativePath string, requestHead
 	_, err = c.connection.PostMultipart(uri, requestHeaders, requestBody, func(statusCode int, headers []communication.Header, reader io.Reader) (interface{}, error) {
 		return nil, c.processResponseWithHandler(statusCode, reader, headers, relativePath, context, bodyHandler)
 	})
+
 	return err
 }
 
-// Put corresponds to the HTTP Put method
+// Put corresponds to the HTTP Put method.
 //
-// relativePath is the Path to call, relative to the base URI
-// requestHeaders is an optimal list of request headers
-// requestParameters is an optional set of request parameters. If not used set it to nil
-// requestBody is the body of the request. If not used set to nil
-// context is an optional Call context which can be used. If not used set it to nil
-// expectedObject is a reference to the expected response object
+// relativePath is the Path to call, relative to the base URI.
+// requestHeaders is an optimal list of request headers.
+// requestParameters is an optional set of request parameters. If not used set it to nil.
+// requestBody is the body of the request. If not used set to nil.
+// context is an optional Call context which can be used. If not used set it to nil.
+// expectedObject is a reference to the expected response object.
 func (c *Communicator) Put(relativePath string, requestHeaders []communication.Header, requestParameters communication.ParamRequest, requestBody interface{}, context *CallContext, expectedObject interface{}) error {
 	if multipartObject, ok := requestBody.(communication.MultipartFormDataObject); ok {
 		return c.putMultipart(relativePath, requestHeaders, requestParameters, &multipartObject, context, expectedObject)
@@ -390,6 +397,7 @@ func (c *Communicator) Put(relativePath string, requestHeaders []communication.H
 	_, err = c.connection.Put(uri, requestHeaders, requestJSON, func(statusCode int, headers []communication.Header, reader io.Reader) (interface{}, error) {
 		return nil, c.processResponse(statusCode, reader, headers, relativePath, context, expectedObject)
 	})
+
 	return err
 }
 
@@ -414,18 +422,19 @@ func (c *Communicator) putMultipart(relativePath string, requestHeaders []commun
 	_, err = c.connection.PutMultipart(uri, requestHeaders, requestBody, func(statusCode int, headers []communication.Header, reader io.Reader) (interface{}, error) {
 		return nil, c.processResponse(statusCode, reader, headers, relativePath, context, expectedResponse)
 	})
+
 	return err
 }
 
-// PutWithHandler corresponds to the HTTP Put method
+// PutWithHandler corresponds to the HTTP Put method.
 //
-// relativePath is the Path to call, relative to the base URI
-// requestHeaders is an optimal list of request headers
-// requestParameters is an optional set of request parameters. If not used set it to nil
-// requestBody is the body of the request. If not used set to nil
-// context is an optional Call context which can be used. If not used set it to nil
-// expectedObject is a reference to the expected response object
-// bodyHandler is a BodyHandler that handles the body stream
+// relativePath is the Path to call, relative to the base URI.
+// requestHeaders is an optimal list of request headers.
+// requestParameters is an optional set of request parameters. If not used set it to nil.
+// requestBody is the body of the request. If not used set to nil.
+// context is an optional Call context which can be used. If not used set it to nil.
+// expectedObject is a reference to the expected response object.
+// bodyHandler is a BodyHandler that handles the body stream.
 func (c *Communicator) PutWithHandler(relativePath string, requestHeaders []communication.Header, requestParameters communication.ParamRequest, requestBody interface{}, context *CallContext, bodyHandler BodyHandler) error {
 	if multipartObject, ok := requestBody.(communication.MultipartFormDataObject); ok {
 		return c.putMultipartWithHandler(relativePath, requestHeaders, requestParameters, &multipartObject, context, bodyHandler)
@@ -465,6 +474,7 @@ func (c *Communicator) PutWithHandler(relativePath string, requestHeaders []comm
 	_, err = c.connection.Put(uri, requestHeaders, requestJSON, func(statusCode int, headers []communication.Header, reader io.Reader) (interface{}, error) {
 		return nil, c.processResponseWithHandler(statusCode, reader, headers, relativePath, context, bodyHandler)
 	})
+
 	return err
 }
 
@@ -489,18 +499,19 @@ func (c *Communicator) putMultipartWithHandler(relativePath string, requestHeade
 	_, err = c.connection.PutMultipart(uri, requestHeaders, requestBody, func(statusCode int, headers []communication.Header, reader io.Reader) (interface{}, error) {
 		return nil, c.processResponseWithHandler(statusCode, reader, headers, relativePath, context, bodyHandler)
 	})
+
 	return err
 }
 
 // CloseExpiredConnections is a utility method that delegates the call to this communicator's connection.
-// Also see Connection.CloseExpiredConnections
+// Also see Connection.CloseExpiredConnections.
 func (c *Communicator) CloseExpiredConnections() {
 	c.connection.CloseExpiredConnections()
 }
 
 // CloseIdleConnections is a utility method that delegates the call to this communicator's connection.
 // The duration argument is a specification of how long the connection has to be Idle.
-// Also see Connection.CloseIdleConnections
+// Also see Connection.CloseIdleConnections.
 func (c *Communicator) CloseIdleConnections(duration time.Duration) {
 	c.connection.CloseIdleConnections(duration)
 }
@@ -520,21 +531,24 @@ func (c *Communicator) toAbsoluteURI(relativePath string, requestParameters []co
 		absolutePath = "/" + relativePath
 	}
 
-	var rawQuery = ""
+	var rawQuery strings.Builder
 	for index, element := range requestParameters {
 		if index != 0 {
-			rawQuery += "&"
+			rawQuery.WriteString("&")
 		}
 		id := url.QueryEscape(element.Name())
 		value := url.QueryEscape(element.Value())
-		rawQuery += id + "=" + value
+		rawQuery.WriteString(id)
+		rawQuery.WriteString("=")
+		rawQuery.WriteString(value)
 	}
 
 	var absoluteURI = url.URL{Scheme: c.apiEndpoint.Scheme,
 		Host:     c.apiEndpoint.Host,
 		Path:     absolutePath,
-		RawQuery: rawQuery,
+		RawQuery: rawQuery.String(),
 	}
+
 	return absoluteURI, nil
 }
 
@@ -547,13 +561,13 @@ func (c *Communicator) addGenericHeaders(httpMethod string, url url.URL, request
 	header, _ := communication.NewHeader("Date", getHeaderDateString())
 	requestHeaders = append(requestHeaders, *header)
 
-	//add content specific headers
+	// add content specific headers
 	if context != nil && context.GetIdempotenceKey() != "" {
 		header, _ = communication.NewHeader("X-GCS-Idempotence-Key", context.GetIdempotenceKey())
 		requestHeaders = append(requestHeaders, *header)
 	}
 
-	//add authorization
+	// add authorization
 	authorization, err := c.authenticator.GetAuthorization(httpMethod, url, requestHeaders)
 	if err != nil {
 		return nil, err
@@ -583,14 +597,18 @@ func (c *Communicator) createErrorIfNecessary(statusCode int, reader io.Reader, 
 			cause, _ := commErrors.NewResponseError(statusCode, body, headers)
 			if statusCode == http.StatusNotFound {
 				err, _ := commErrors.NewNotFoundErrorVerbose("The requested resource was not found; invalid path: "+requestPath, cause)
+
 				return err
 			}
 			err, _ := commErrors.NewCommunicationError(cause)
+
 			return err
 		}
 		responseErr, _ := commErrors.NewResponseError(statusCode, body, headers)
+
 		return responseErr
 	}
+
 	return nil
 }
 
@@ -637,6 +655,7 @@ func getIdempotenceTimestamp(headers []communication.Header) (*int64, error) {
 	}
 
 	timestamp, err := strconv.ParseInt(header.Value(), 10, 64)
+
 	return &timestamp, err
 }
 
@@ -647,10 +666,11 @@ func isJSON(headers []communication.Header) bool {
 	}
 
 	contentType := strings.ToLower(header.Value())
+
 	return contentType == "application/json" || strings.HasPrefix(contentType, "application/json")
 }
 
-// NewCommunicator creates a communicator with the given apiEndpoint, connection, authenticator, metadata provider and marshaller
+// NewCommunicator creates a communicator with the given apiEndpoint, connection, authenticator, metadata provider and marshaller.
 func NewCommunicator(apiEndpoint *url.URL, connection Connection, authenticator authentication.Authenticator, metadataProvider *MetadataProvider, marshaller json.Marshaller) (*Communicator, error) {
 	if apiEndpoint == nil {
 		return nil, errors.New("apiEndpoint is required")

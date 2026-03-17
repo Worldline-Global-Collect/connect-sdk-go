@@ -3,7 +3,7 @@
 
 package domain
 
-// MandateAddress represents class MandateAddress
+// MandateAddress represents class MandateAddress.
 type MandateAddress struct {
 	City        *string `json:"city,omitempty"`
 	CountryCode *string `json:"countryCode,omitempty"`
@@ -12,7 +12,7 @@ type MandateAddress struct {
 	Zip         *string `json:"zip,omitempty"`
 }
 
-// NewMandateAddress constructs a new MandateAddress instance
+// NewMandateAddress constructs a new MandateAddress instance.
 func NewMandateAddress() *MandateAddress {
 	return &MandateAddress{}
 }

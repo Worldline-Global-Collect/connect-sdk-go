@@ -3,7 +3,7 @@
 
 package domain
 
-// GetIINDetailsResponse represents class GetIINDetailsResponse
+// GetIINDetailsResponse represents class GetIINDetailsResponse.
 type GetIINDetailsResponse struct {
 	CoBrands           *[]IINDetail `json:"coBrands,omitempty"`
 	CountryCode        *string      `json:"countryCode,omitempty"`
@@ -11,7 +11,7 @@ type GetIINDetailsResponse struct {
 	PaymentProductID   *int32       `json:"paymentProductId,omitempty"`
 }
 
-// NewGetIINDetailsResponse constructs a new GetIINDetailsResponse instance
+// NewGetIINDetailsResponse constructs a new GetIINDetailsResponse instance.
 func NewGetIINDetailsResponse() *GetIINDetailsResponse {
 	return &GetIINDetailsResponse{}
 }

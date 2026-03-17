@@ -3,7 +3,7 @@
 
 package domain
 
-// DeferredBillingDetails represents class DeferredBillingDetails
+// DeferredBillingDetails represents class DeferredBillingDetails.
 type DeferredBillingDetails struct {
 	DeferredPaymentAmount        *int64  `json:"deferredPaymentAmount,omitempty"`
 	DeferredPaymentDate          *string `json:"deferredPaymentDate,omitempty"`
@@ -12,7 +12,7 @@ type DeferredBillingDetails struct {
 	FreeCancellationDateTimeZone *string `json:"freeCancellationDateTimeZone,omitempty"`
 }
 
-// NewDeferredBillingDetails constructs a new DeferredBillingDetails instance
+// NewDeferredBillingDetails constructs a new DeferredBillingDetails instance.
 func NewDeferredBillingDetails() *DeferredBillingDetails {
 	return &DeferredBillingDetails{}
 }

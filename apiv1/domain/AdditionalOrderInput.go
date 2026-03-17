@@ -3,7 +3,7 @@
 
 package domain
 
-// AdditionalOrderInput represents class AdditionalOrderInput
+// AdditionalOrderInput represents class AdditionalOrderInput.
 type AdditionalOrderInput struct {
 	AccountFundingRecipient *AccountFundingRecipient `json:"accountFundingRecipient,omitempty"`
 	AirlineData             *AirlineData             `json:"airlineData,omitempty"`
@@ -19,7 +19,7 @@ type AdditionalOrderInput struct {
 	TypeInformation         *OrderTypeInformation    `json:"typeInformation,omitempty"`
 }
 
-// NewAdditionalOrderInput constructs a new AdditionalOrderInput instance
+// NewAdditionalOrderInput constructs a new AdditionalOrderInput instance.
 func NewAdditionalOrderInput() *AdditionalOrderInput {
 	return &AdditionalOrderInput{}
 }

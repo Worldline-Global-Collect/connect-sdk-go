@@ -3,7 +3,7 @@
 
 package domain
 
-// MobilePaymentMethodSpecificOutput represents class MobilePaymentMethodSpecificOutput
+// MobilePaymentMethodSpecificOutput represents class MobilePaymentMethodSpecificOutput.
 type MobilePaymentMethodSpecificOutput struct {
 	AuthorisationCode          *string              `json:"authorisationCode,omitempty"`
 	FraudResults               *CardFraudResults    `json:"fraudResults,omitempty"`
@@ -16,7 +16,7 @@ type MobilePaymentMethodSpecificOutput struct {
 	Token                      *string              `json:"token,omitempty"`
 }
 
-// NewMobilePaymentMethodSpecificOutput constructs a new MobilePaymentMethodSpecificOutput instance
+// NewMobilePaymentMethodSpecificOutput constructs a new MobilePaymentMethodSpecificOutput instance.
 func NewMobilePaymentMethodSpecificOutput() *MobilePaymentMethodSpecificOutput {
 	return &MobilePaymentMethodSpecificOutput{}
 }

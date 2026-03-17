@@ -3,7 +3,7 @@
 
 package domain
 
-// DisputeReference represents class DisputeReference
+// DisputeReference represents class DisputeReference.
 type DisputeReference struct {
 	MerchantOrderID   *string `json:"merchantOrderId,omitempty"`
 	MerchantReference *string `json:"merchantReference,omitempty"`
@@ -12,7 +12,7 @@ type DisputeReference struct {
 	ProviderReference *string `json:"providerReference,omitempty"`
 }
 
-// NewDisputeReference constructs a new DisputeReference instance
+// NewDisputeReference constructs a new DisputeReference instance.
 func NewDisputeReference() *DisputeReference {
 	return &DisputeReference{}
 }

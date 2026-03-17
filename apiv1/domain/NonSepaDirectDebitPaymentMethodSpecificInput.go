@@ -3,7 +3,7 @@
 
 package domain
 
-// NonSepaDirectDebitPaymentMethodSpecificInput represents class NonSepaDirectDebitPaymentMethodSpecificInput
+// NonSepaDirectDebitPaymentMethodSpecificInput represents class NonSepaDirectDebitPaymentMethodSpecificInput.
 type NonSepaDirectDebitPaymentMethodSpecificInput struct {
 	DateCollect                       *string                                           `json:"dateCollect,omitempty"`
 	DirectDebitText                   *string                                           `json:"directDebitText,omitempty"`
@@ -17,7 +17,7 @@ type NonSepaDirectDebitPaymentMethodSpecificInput struct {
 	Tokenize                          *bool                                             `json:"tokenize,omitempty"`
 }
 
-// NewNonSepaDirectDebitPaymentMethodSpecificInput constructs a new NonSepaDirectDebitPaymentMethodSpecificInput instance
+// NewNonSepaDirectDebitPaymentMethodSpecificInput constructs a new NonSepaDirectDebitPaymentMethodSpecificInput instance.
 func NewNonSepaDirectDebitPaymentMethodSpecificInput() *NonSepaDirectDebitPaymentMethodSpecificInput {
 	return &NonSepaDirectDebitPaymentMethodSpecificInput{}
 }

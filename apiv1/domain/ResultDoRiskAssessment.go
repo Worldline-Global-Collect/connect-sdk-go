@@ -3,7 +3,7 @@
 
 package domain
 
-// ResultDoRiskAssessment represents class ResultDoRiskAssessment
+// ResultDoRiskAssessment represents class ResultDoRiskAssessment.
 type ResultDoRiskAssessment struct {
 	Category                          *string                            `json:"category,omitempty"`
 	Result                            *string                            `json:"result,omitempty"`
@@ -11,7 +11,7 @@ type ResultDoRiskAssessment struct {
 	ValidationBankAccountOutput       *ValidationBankAccountOutput       `json:"validationBankAccountOutput,omitempty"`
 }
 
-// NewResultDoRiskAssessment constructs a new ResultDoRiskAssessment instance
+// NewResultDoRiskAssessment constructs a new ResultDoRiskAssessment instance.
 func NewResultDoRiskAssessment() *ResultDoRiskAssessment {
 	return &ResultDoRiskAssessment{}
 }

@@ -3,7 +3,7 @@
 
 package domain
 
-// BankTransferPayoutMethodSpecificInput represents class BankTransferPayoutMethodSpecificInput
+// BankTransferPayoutMethodSpecificInput represents class BankTransferPayoutMethodSpecificInput.
 type BankTransferPayoutMethodSpecificInput struct {
 	BankAccountBban *BankAccountBban `json:"bankAccountBban,omitempty"`
 	BankAccountIban *BankAccountIban `json:"bankAccountIban,omitempty"`
@@ -14,7 +14,7 @@ type BankTransferPayoutMethodSpecificInput struct {
 	SwiftCode       *string          `json:"swiftCode,omitempty"`
 }
 
-// NewBankTransferPayoutMethodSpecificInput constructs a new BankTransferPayoutMethodSpecificInput instance
+// NewBankTransferPayoutMethodSpecificInput constructs a new BankTransferPayoutMethodSpecificInput instance.
 func NewBankTransferPayoutMethodSpecificInput() *BankTransferPayoutMethodSpecificInput {
 	return &BankTransferPayoutMethodSpecificInput{}
 }

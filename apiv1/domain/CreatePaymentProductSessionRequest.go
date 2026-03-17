@@ -3,12 +3,12 @@
 
 package domain
 
-// CreatePaymentProductSessionRequest represents class CreatePaymentProductSessionRequest
+// CreatePaymentProductSessionRequest represents class CreatePaymentProductSessionRequest.
 type CreatePaymentProductSessionRequest struct {
 	PaymentProductSession302SpecificInput *MobilePaymentProductSession302SpecificInput `json:"paymentProductSession302SpecificInput,omitempty"`
 }
 
-// NewCreatePaymentProductSessionRequest constructs a new CreatePaymentProductSessionRequest instance
+// NewCreatePaymentProductSessionRequest constructs a new CreatePaymentProductSessionRequest instance.
 func NewCreatePaymentProductSessionRequest() *CreatePaymentProductSessionRequest {
 	return &CreatePaymentProductSessionRequest{}
 }

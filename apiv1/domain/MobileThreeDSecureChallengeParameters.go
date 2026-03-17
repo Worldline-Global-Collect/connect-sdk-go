@@ -3,7 +3,7 @@
 
 package domain
 
-// MobileThreeDSecureChallengeParameters represents class MobileThreeDSecureChallengeParameters
+// MobileThreeDSecureChallengeParameters represents class MobileThreeDSecureChallengeParameters.
 type MobileThreeDSecureChallengeParameters struct {
 	AcsReferenceNumber        *string `json:"acsReferenceNumber,omitempty"`
 	AcsSignedContent          *string `json:"acsSignedContent,omitempty"`
@@ -11,7 +11,7 @@ type MobileThreeDSecureChallengeParameters struct {
 	ThreeDServerTransactionID *string `json:"threeDServerTransactionId,omitempty"`
 }
 
-// NewMobileThreeDSecureChallengeParameters constructs a new MobileThreeDSecureChallengeParameters instance
+// NewMobileThreeDSecureChallengeParameters constructs a new MobileThreeDSecureChallengeParameters instance.
 func NewMobileThreeDSecureChallengeParameters() *MobileThreeDSecureChallengeParameters {
 	return &MobileThreeDSecureChallengeParameters{}
 }

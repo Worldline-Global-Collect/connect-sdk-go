@@ -3,7 +3,7 @@
 
 package domain
 
-// PaymentProduct863ThirdPartyData represents class PaymentProduct863ThirdPartyData
+// PaymentProduct863ThirdPartyData represents class PaymentProduct863ThirdPartyData.
 type PaymentProduct863ThirdPartyData struct {
 	AppID       *string `json:"appId,omitempty"`
 	NonceStr    *string `json:"nonceStr,omitempty"`
@@ -14,7 +14,7 @@ type PaymentProduct863ThirdPartyData struct {
 	TimeStamp   *string `json:"timeStamp,omitempty"`
 }
 
-// NewPaymentProduct863ThirdPartyData constructs a new PaymentProduct863ThirdPartyData instance
+// NewPaymentProduct863ThirdPartyData constructs a new PaymentProduct863ThirdPartyData instance.
 func NewPaymentProduct863ThirdPartyData() *PaymentProduct863ThirdPartyData {
 	return &PaymentProduct863ThirdPartyData{}
 }

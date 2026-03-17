@@ -18,34 +18,34 @@ type AuthorizationError struct {
 	errors       []domain.APIError
 }
 
-// Message returns the error message
+// Message returns the error message.
 func (e AuthorizationError) Message() string {
 	return e.errorMessage
 }
 
-// StatusCode returns the status code
+// StatusCode returns the status code.
 func (e AuthorizationError) StatusCode() int {
 	return e.statusCode
 }
 
-// ResponseBody returns the response body
+// ResponseBody returns the response body.
 func (e AuthorizationError) ResponseBody() string {
 	return e.responseBody
 }
 
-// ErrorID implements the APIError interface
+// ErrorID implements the APIError interface.
 func (e AuthorizationError) ErrorID() string {
 	return e.errorID
 }
 
-// Errors implements the APIError interface
+// Errors implements the APIError interface.
 func (e AuthorizationError) Errors() []domain.APIError {
 	// Return a clone instead of the original slice - immutability insurance
 	return append([]domain.APIError{}, e.errors...)
 }
 
-// String implements the Stringer interface
-// Format: 'errorMessage; statusCode=; responseBody='
+// String implements the Stringer interface.
+// Format: 'errorMessage; statusCode=; responseBody='.
 func (e AuthorizationError) String() string {
 	list := e.errorMessage
 
@@ -59,17 +59,17 @@ func (e AuthorizationError) String() string {
 	return list
 }
 
-// Error implements the error interface
+// Error implements the error interface.
 func (e AuthorizationError) Error() string {
 	return e.String()
 }
 
-// NewAuthorizationError creates a new AuthorizationError with the given statusCode, responseBody and response fields
+// NewAuthorizationError creates a new AuthorizationError with the given statusCode, responseBody and response fields.
 func NewAuthorizationError(statusCode int, responseBody, errorID string, errors []domain.APIError) (*AuthorizationError, error) {
 	return &AuthorizationError{"the Worldline Global Collect platform returned an authorization error response", statusCode, responseBody, errorID, errors}, nil
 }
 
-// NewAuthorizationErrorVerbose creates a new AuthorizationError with the given message, statusCode and response fields
+// NewAuthorizationErrorVerbose creates a new AuthorizationError with the given message, statusCode and response fields.
 func NewAuthorizationErrorVerbose(message string, statusCode int, responseBody, errorID string, errors []domain.APIError) (*AuthorizationError, error) {
 	return &AuthorizationError{message, statusCode, responseBody, errorID, errors}, nil
 }

@@ -3,7 +3,7 @@
 
 package domain
 
-// RiskAssessmentBankAccount represents class RiskAssessmentBankAccount
+// RiskAssessmentBankAccount represents class RiskAssessmentBankAccount.
 type RiskAssessmentBankAccount struct {
 	BankAccountBban  *BankAccountBban        `json:"bankAccountBban,omitempty"`
 	BankAccountIban  *BankAccountIban        `json:"bankAccountIban,omitempty"`
@@ -13,7 +13,7 @@ type RiskAssessmentBankAccount struct {
 	PaymentProductID *int32                  `json:"paymentProductId,omitempty"`
 }
 
-// NewRiskAssessmentBankAccount constructs a new RiskAssessmentBankAccount instance
+// NewRiskAssessmentBankAccount constructs a new RiskAssessmentBankAccount instance.
 func NewRiskAssessmentBankAccount() *RiskAssessmentBankAccount {
 	return &RiskAssessmentBankAccount{}
 }

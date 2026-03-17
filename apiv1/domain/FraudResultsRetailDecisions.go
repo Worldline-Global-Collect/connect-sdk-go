@@ -3,14 +3,14 @@
 
 package domain
 
-// FraudResultsRetailDecisions represents class FraudResultsRetailDecisions
+// FraudResultsRetailDecisions represents class FraudResultsRetailDecisions.
 type FraudResultsRetailDecisions struct {
 	FraudCode   *string `json:"fraudCode,omitempty"`
 	FraudNeural *string `json:"fraudNeural,omitempty"`
 	FraudRCF    *string `json:"fraudRCF,omitempty"`
 }
 
-// NewFraudResultsRetailDecisions constructs a new FraudResultsRetailDecisions instance
+// NewFraudResultsRetailDecisions constructs a new FraudResultsRetailDecisions instance.
 func NewFraudResultsRetailDecisions() *FraudResultsRetailDecisions {
 	return &FraudResultsRetailDecisions{}
 }

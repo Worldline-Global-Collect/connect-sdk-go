@@ -43,14 +43,17 @@ func NewUploadableFile(fileName string, content io.Reader, contentType string) (
 func NewUploadableFileWithLength(fileName string, content io.Reader, contentType string, contentLength int64) (*UploadableFile, error) {
 	if strings.TrimSpace(fileName) == "" {
 		err := errors.New("fileName is required")
+
 		return nil, err
 	}
 	if content == nil {
 		err := errors.New("content is required")
+
 		return nil, err
 	}
 	if strings.TrimSpace(contentType) == "" {
 		err := errors.New("contentType is required")
+
 		return nil, err
 	}
 	if contentLength < -1 {

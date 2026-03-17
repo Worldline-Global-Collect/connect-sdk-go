@@ -3,7 +3,7 @@
 
 package domain
 
-// AddressPersonal represents class AddressPersonal
+// AddressPersonal represents class AddressPersonal.
 type AddressPersonal struct {
 	AdditionalInfo *string       `json:"additionalInfo,omitempty"`
 	City           *string       `json:"city,omitempty"`
@@ -16,7 +16,7 @@ type AddressPersonal struct {
 	Zip            *string       `json:"zip,omitempty"`
 }
 
-// NewAddressPersonal constructs a new AddressPersonal instance
+// NewAddressPersonal constructs a new AddressPersonal instance.
 func NewAddressPersonal() *AddressPersonal {
 	return &AddressPersonal{}
 }

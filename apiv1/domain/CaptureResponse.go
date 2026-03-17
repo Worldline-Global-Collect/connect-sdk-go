@@ -3,7 +3,7 @@
 
 package domain
 
-// CaptureResponse represents class CaptureResponse
+// CaptureResponse represents class CaptureResponse.
 type CaptureResponse struct {
 	CaptureOutput *CaptureOutput       `json:"captureOutput,omitempty"`
 	ID            *string              `json:"id,omitempty"`
@@ -11,7 +11,7 @@ type CaptureResponse struct {
 	StatusOutput  *CaptureStatusOutput `json:"statusOutput,omitempty"`
 }
 
-// NewCaptureResponse constructs a new CaptureResponse instance
+// NewCaptureResponse constructs a new CaptureResponse instance.
 func NewCaptureResponse() *CaptureResponse {
 	return &CaptureResponse{}
 }

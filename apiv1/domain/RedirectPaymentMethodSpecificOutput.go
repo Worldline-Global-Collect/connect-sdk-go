@@ -3,7 +3,7 @@
 
 package domain
 
-// RedirectPaymentMethodSpecificOutput represents class RedirectPaymentMethodSpecificOutput
+// RedirectPaymentMethodSpecificOutput represents class RedirectPaymentMethodSpecificOutput.
 type RedirectPaymentMethodSpecificOutput struct {
 	BankAccountBban                  *BankAccountBban                  `json:"bankAccountBban,omitempty"`
 	BankAccountIban                  *BankAccountIban                  `json:"bankAccountIban,omitempty"`
@@ -17,7 +17,7 @@ type RedirectPaymentMethodSpecificOutput struct {
 	Token                            *string                           `json:"token,omitempty"`
 }
 
-// NewRedirectPaymentMethodSpecificOutput constructs a new RedirectPaymentMethodSpecificOutput instance
+// NewRedirectPaymentMethodSpecificOutput constructs a new RedirectPaymentMethodSpecificOutput instance.
 func NewRedirectPaymentMethodSpecificOutput() *RedirectPaymentMethodSpecificOutput {
 	return &RedirectPaymentMethodSpecificOutput{}
 }

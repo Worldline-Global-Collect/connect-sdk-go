@@ -3,12 +3,12 @@
 
 package domain
 
-// ApprovePayoutRequest represents class ApprovePayoutRequest
+// ApprovePayoutRequest represents class ApprovePayoutRequest.
 type ApprovePayoutRequest struct {
 	DatePayout *string `json:"datePayout,omitempty"`
 }
 
-// NewApprovePayoutRequest constructs a new ApprovePayoutRequest instance
+// NewApprovePayoutRequest constructs a new ApprovePayoutRequest instance.
 func NewApprovePayoutRequest() *ApprovePayoutRequest {
 	return &ApprovePayoutRequest{}
 }

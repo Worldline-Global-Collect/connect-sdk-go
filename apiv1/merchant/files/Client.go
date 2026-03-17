@@ -4,6 +4,8 @@
 package files
 
 import (
+	"errors"
+
 	"github.com/Worldline-Global-Collect/connect-sdk-go/apiv1/domain"
 	v1Errors "github.com/Worldline-Global-Collect/connect-sdk-go/apiv1/errors"
 	"github.com/Worldline-Global-Collect/connect-sdk-go/communicator"
@@ -15,9 +17,9 @@ type Client struct {
 	apiResource *communicator.APIResource
 }
 
-// GetFile represents the resource /{merchantId}/files/{fileId} - Retrieve File
+// GetFile represents the resource /{merchantId}/files/{fileId} - Retrieve File.
 //
-// Documentation can be found at https://apireference.connect.worldline-solutions.com/fileserviceapi/v1/en_US/go/files/getFile.html
+// Documentation can be found at https://apireference.connect.worldline-solutions.com/fileserviceapi/v1/en_US/go/files/getFile.html.
 //
 // Can return any of the following errors:
 //   * IdempotenceError if an idempotent request caused a conflict (HTTP status code 409)
@@ -43,11 +45,9 @@ func (c *Client) GetFile(fileID string, context *communicator.CallContext, bodyH
 
 	getErr := c.apiResource.Communicator().GetWithHandler(uri, clientHeaders, nil, context, bodyHandler)
 	if getErr != nil {
-		responseError, isResponseError := getErr.(*commErrors.ResponseError)
-		if isResponseError {
-			var errorObject interface{}
-
-			errorObject = &domain.ErrorResponse{}
+		var responseError *commErrors.ResponseError
+		if errors.As(getErr, &responseError) {
+			errorObject := &domain.ErrorResponse{}
 			err = c.apiResource.Communicator().Marshaller().Unmarshal(responseError.Body(), errorObject)
 			if err != nil {
 				return err
@@ -67,9 +67,9 @@ func (c *Client) GetFile(fileID string, context *communicator.CallContext, bodyH
 	return nil
 }
 
-// NewClient constructs a new Files client
+// NewClient constructs a new Files client.
 //
-// parent is the communicator.APIResource on top of which we want to build the new Files client
+// parent is the communicator.APIResource on top of which we want to build the new Files client.
 func NewClient(parent *communicator.APIResource, pathContext map[string]string) (*Client, error) {
 	apiResource, err := communicator.NewAPIResourceWithParent(parent, pathContext)
 	if err != nil {

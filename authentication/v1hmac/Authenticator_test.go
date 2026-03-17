@@ -10,28 +10,19 @@ import (
 )
 
 func TestToCanonicalizedHeaderValue(t *testing.T) {
-	result, err := toCanonicalizedHeaderValue("foo\nbar  ")
-	if err != nil {
-		t.Fatalf("TestToCanonicalizedHeaderValue : %v", err)
-	}
+	result := toCanonicalizedHeaderValue("foo\nbar  ")
 	if result != "foo bar" {
 		t.Fatalf("TestToCanonicalizedHeaderValue : wrong canonization 1 '%s' != '%s'",
 			result, "foo bar")
 	}
 
-	result, err = toCanonicalizedHeaderValue("foo\r\n  bar")
-	if err != nil {
-		t.Fatalf("TestToCanonicalizedHeaderValue : %v", err)
-	}
+	result = toCanonicalizedHeaderValue("foo\r\n  bar")
 	if result != "foo bar" {
 		t.Fatalf("TestToCanonicalizedHeaderValue : wrong canonization 2 '%s' != '%s'",
 			result, "foo bar")
 	}
 
-	result, err = toCanonicalizedHeaderValue(" some value  \r\n \n with  some \r\n  spaces ")
-	if err != nil {
-		t.Fatalf("TestToCanonicalizedHeaderValue : %v", err)
-	}
+	result = toCanonicalizedHeaderValue(" some value  \r\n \n with  some \r\n  spaces ")
 	if result != "some value    with  some  spaces" {
 		t.Fatalf("TestToCanonicalizedHeaderValue : wrong canonization 3 '%s' != '%s'",
 			result, "some value    with  some  spaces")

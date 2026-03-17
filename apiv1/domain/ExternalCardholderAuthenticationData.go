@@ -3,7 +3,7 @@
 
 package domain
 
-// ExternalCardholderAuthenticationData represents class ExternalCardholderAuthenticationData
+// ExternalCardholderAuthenticationData represents class ExternalCardholderAuthenticationData.
 type ExternalCardholderAuthenticationData struct {
 	AcsTransactionID             *string `json:"acsTransactionId,omitempty"`
 	AppliedExemption             *string `json:"appliedExemption,omitempty"`
@@ -19,7 +19,7 @@ type ExternalCardholderAuthenticationData struct {
 	Xid                          *string `json:"xid,omitempty"`
 }
 
-// NewExternalCardholderAuthenticationData constructs a new ExternalCardholderAuthenticationData instance
+// NewExternalCardholderAuthenticationData constructs a new ExternalCardholderAuthenticationData instance.
 func NewExternalCardholderAuthenticationData() *ExternalCardholderAuthenticationData {
 	return &ExternalCardholderAuthenticationData{}
 }

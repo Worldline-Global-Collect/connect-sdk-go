@@ -9,15 +9,15 @@ import (
 	"github.com/Worldline-Global-Collect/connect-sdk-go/communicator/communication"
 )
 
-// PrivacypolicyParams represents query parameters for Get privacy policy
+// PrivacypolicyParams represents query parameters for Get privacy policy.
 //
-// Documentation can be found at https://apireference.connect.worldline-solutions.com/s2sapi/v1/en_US/go/services/privacypolicy.html
+// Documentation can be found at https://apireference.connect.worldline-solutions.com/s2sapi/v1/en_US/go/services/privacypolicy.html.
 type PrivacypolicyParams struct {
 	Locale           *string
 	PaymentProductID *int32
 }
 
-// ToRequestParameters converts the query to communication.RequestParams
+// ToRequestParameters converts the query to communication.RequestParams.
 func (params *PrivacypolicyParams) ToRequestParameters() communication.RequestParams {
 	reqParams := communication.RequestParams{}
 
@@ -33,7 +33,7 @@ func (params *PrivacypolicyParams) ToRequestParameters() communication.RequestPa
 	return reqParams
 }
 
-// NewPrivacypolicyParams constructs a new PrivacypolicyParams instance
+// NewPrivacypolicyParams constructs a new PrivacypolicyParams instance.
 func NewPrivacypolicyParams() *PrivacypolicyParams {
 	return &PrivacypolicyParams{}
 }

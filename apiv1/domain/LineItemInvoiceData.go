@@ -3,7 +3,7 @@
 
 package domain
 
-// LineItemInvoiceData represents class LineItemInvoiceData
+// LineItemInvoiceData represents class LineItemInvoiceData.
 type LineItemInvoiceData struct {
 	Description        *string `json:"description,omitempty"`
 	MerchantLinenumber *string `json:"merchantLinenumber,omitempty"`
@@ -12,7 +12,7 @@ type LineItemInvoiceData struct {
 	PricePerItem       *int64  `json:"pricePerItem,omitempty"`
 }
 
-// NewLineItemInvoiceData constructs a new LineItemInvoiceData instance
+// NewLineItemInvoiceData constructs a new LineItemInvoiceData instance.
 func NewLineItemInvoiceData() *LineItemInvoiceData {
 	return &LineItemInvoiceData{}
 }

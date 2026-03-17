@@ -3,13 +3,13 @@
 
 package domain
 
-// BankAccountIban represents class BankAccountIban
+// BankAccountIban represents class BankAccountIban.
 type BankAccountIban struct {
 	AccountHolderName *string `json:"accountHolderName,omitempty"`
 	Iban              *string `json:"iban,omitempty"`
 }
 
-// NewBankAccountIban constructs a new BankAccountIban instance
+// NewBankAccountIban constructs a new BankAccountIban instance.
 func NewBankAccountIban() *BankAccountIban {
 	return &BankAccountIban{}
 }

@@ -7,7 +7,7 @@ import "github.com/Worldline-Global-Collect/connect-sdk-go/apiv1/domain"
 
 // APIError represents an error response from the Worldline Global Collect platform which contains an ID and a list of errors.
 type APIError interface {
-	// Error implements the error interface
+	// Error implements the error interface.
 	Error() string
 
 	// Message gets the raw response body that was returned by the Worldline Global Collect platform.

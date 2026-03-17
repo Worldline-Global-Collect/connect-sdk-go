@@ -10,6 +10,7 @@ type HeaderObfuscator struct {
 // ObfuscateHeader obfuscates the value for the given header as necessary.
 func (o HeaderObfuscator) ObfuscateHeader(name, value string) string {
 	name = strings.ToLower(name)
+
 	return o.rules.obfuscateValue(name, value)
 }
 

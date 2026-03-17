@@ -4,6 +4,8 @@
 package sessions
 
 import (
+	"errors"
+
 	"github.com/Worldline-Global-Collect/connect-sdk-go/apiv1/domain"
 	v1Errors "github.com/Worldline-Global-Collect/connect-sdk-go/apiv1/errors"
 	"github.com/Worldline-Global-Collect/connect-sdk-go/communicator"
@@ -15,9 +17,9 @@ type Client struct {
 	apiResource *communicator.APIResource
 }
 
-// Create represents the resource /{merchantId}/sessions - Create session
+// Create represents the resource /{merchantId}/sessions - Create session.
 //
-// Documentation can be found at https://apireference.connect.worldline-solutions.com/s2sapi/v1/en_US/go/sessions/create.html
+// Documentation can be found at https://apireference.connect.worldline-solutions.com/s2sapi/v1/en_US/go/sessions/create.html.
 //
 // Can return any of the following errors:
 //   * IdempotenceError if an idempotent request caused a conflict (HTTP status code 409)
@@ -41,11 +43,9 @@ func (c *Client) Create(body domain.SessionRequest, context *communicator.CallCo
 
 	postErr := c.apiResource.Communicator().Post(uri, clientHeaders, nil, body, context, &resultObject)
 	if postErr != nil {
-		responseError, isResponseError := postErr.(*commErrors.ResponseError)
-		if isResponseError {
-			var errorObject interface{}
-
-			errorObject = &domain.ErrorResponse{}
+		var responseError *commErrors.ResponseError
+		if errors.As(postErr, &responseError) {
+			errorObject := &domain.ErrorResponse{}
 			err = c.apiResource.Communicator().Marshaller().Unmarshal(responseError.Body(), errorObject)
 			if err != nil {
 				return resultObject, err
@@ -65,9 +65,9 @@ func (c *Client) Create(body domain.SessionRequest, context *communicator.CallCo
 	return resultObject, nil
 }
 
-// NewClient constructs a new Sessions client
+// NewClient constructs a new Sessions client.
 //
-// parent is the communicator.APIResource on top of which we want to build the new Sessions client
+// parent is the communicator.APIResource on top of which we want to build the new Sessions client.
 func NewClient(parent *communicator.APIResource, pathContext map[string]string) (*Client, error) {
 	apiResource, err := communicator.NewAPIResourceWithParent(parent, pathContext)
 	if err != nil {

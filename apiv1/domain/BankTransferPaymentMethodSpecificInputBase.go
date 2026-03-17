@@ -3,13 +3,13 @@
 
 package domain
 
-// BankTransferPaymentMethodSpecificInputBase represents class BankTransferPaymentMethodSpecificInputBase
+// BankTransferPaymentMethodSpecificInputBase represents class BankTransferPaymentMethodSpecificInputBase.
 type BankTransferPaymentMethodSpecificInputBase struct {
 	AdditionalReference *string `json:"additionalReference,omitempty"`
 	PaymentProductID    *int32  `json:"paymentProductId,omitempty"`
 }
 
-// NewBankTransferPaymentMethodSpecificInputBase constructs a new BankTransferPaymentMethodSpecificInputBase instance
+// NewBankTransferPaymentMethodSpecificInputBase constructs a new BankTransferPaymentMethodSpecificInputBase instance.
 func NewBankTransferPaymentMethodSpecificInputBase() *BankTransferPaymentMethodSpecificInputBase {
 	return &BankTransferPaymentMethodSpecificInputBase{}
 }

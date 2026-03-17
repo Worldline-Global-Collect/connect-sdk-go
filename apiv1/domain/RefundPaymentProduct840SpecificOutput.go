@@ -3,12 +3,12 @@
 
 package domain
 
-// RefundPaymentProduct840SpecificOutput represents class RefundPaymentProduct840SpecificOutput
+// RefundPaymentProduct840SpecificOutput represents class RefundPaymentProduct840SpecificOutput.
 type RefundPaymentProduct840SpecificOutput struct {
 	CustomerAccount *RefundPaymentProduct840CustomerAccount `json:"customerAccount,omitempty"`
 }
 
-// NewRefundPaymentProduct840SpecificOutput constructs a new RefundPaymentProduct840SpecificOutput instance
+// NewRefundPaymentProduct840SpecificOutput constructs a new RefundPaymentProduct840SpecificOutput instance.
 func NewRefundPaymentProduct840SpecificOutput() *RefundPaymentProduct840SpecificOutput {
 	return &RefundPaymentProduct840SpecificOutput{}
 }

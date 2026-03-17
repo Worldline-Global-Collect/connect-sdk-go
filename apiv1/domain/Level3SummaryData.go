@@ -3,7 +3,7 @@
 
 package domain
 
-// Level3SummaryData represents class Level3SummaryData
+// Level3SummaryData represents class Level3SummaryData.
 //
 // Deprecated: Use ShoppingCart.amountBreakdown instead
 type Level3SummaryData struct {
@@ -15,7 +15,7 @@ type Level3SummaryData struct {
 	ShippingAmount *int64 `json:"shippingAmount,omitempty"`
 }
 
-// NewLevel3SummaryData constructs a new Level3SummaryData instance
+// NewLevel3SummaryData constructs a new Level3SummaryData instance.
 func NewLevel3SummaryData() *Level3SummaryData {
 	return &Level3SummaryData{}
 }

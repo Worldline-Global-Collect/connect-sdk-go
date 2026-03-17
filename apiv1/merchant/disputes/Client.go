@@ -4,6 +4,8 @@
 package disputes
 
 import (
+	"errors"
+
 	"github.com/Worldline-Global-Collect/connect-sdk-go/apiv1/domain"
 	v1Errors "github.com/Worldline-Global-Collect/connect-sdk-go/apiv1/errors"
 	"github.com/Worldline-Global-Collect/connect-sdk-go/communicator"
@@ -15,9 +17,9 @@ type Client struct {
 	apiResource *communicator.APIResource
 }
 
-// Get represents the resource /{merchantId}/disputes/{disputeId} - Get dispute
+// Get represents the resource /{merchantId}/disputes/{disputeId} - Get dispute.
 //
-// Documentation can be found at https://apireference.connect.worldline-solutions.com/s2sapi/v1/en_US/go/disputes/get.html
+// Documentation can be found at https://apireference.connect.worldline-solutions.com/s2sapi/v1/en_US/go/disputes/get.html.
 //
 // Can return any of the following errors:
 //   * IdempotenceError if an idempotent request caused a conflict (HTTP status code 409)
@@ -45,11 +47,9 @@ func (c *Client) Get(disputeID string, context *communicator.CallContext) (domai
 
 	getErr := c.apiResource.Communicator().Get(uri, clientHeaders, nil, context, &resultObject)
 	if getErr != nil {
-		responseError, isResponseError := getErr.(*commErrors.ResponseError)
-		if isResponseError {
-			var errorObject interface{}
-
-			errorObject = &domain.ErrorResponse{}
+		var responseError *commErrors.ResponseError
+		if errors.As(getErr, &responseError) {
+			errorObject := &domain.ErrorResponse{}
 			err = c.apiResource.Communicator().Marshaller().Unmarshal(responseError.Body(), errorObject)
 			if err != nil {
 				return resultObject, err
@@ -69,9 +69,9 @@ func (c *Client) Get(disputeID string, context *communicator.CallContext) (domai
 	return resultObject, nil
 }
 
-// Submit represents the resource /{merchantId}/disputes/{disputeId}/submit - Submit dispute
+// Submit represents the resource /{merchantId}/disputes/{disputeId}/submit - Submit dispute.
 //
-// Documentation can be found at https://apireference.connect.worldline-solutions.com/s2sapi/v1/en_US/go/disputes/submit.html
+// Documentation can be found at https://apireference.connect.worldline-solutions.com/s2sapi/v1/en_US/go/disputes/submit.html.
 //
 // Can return any of the following errors:
 //   * IdempotenceError if an idempotent request caused a conflict (HTTP status code 409)
@@ -99,11 +99,9 @@ func (c *Client) Submit(disputeID string, context *communicator.CallContext) (do
 
 	postErr := c.apiResource.Communicator().Post(uri, clientHeaders, nil, nil, context, &resultObject)
 	if postErr != nil {
-		responseError, isResponseError := postErr.(*commErrors.ResponseError)
-		if isResponseError {
-			var errorObject interface{}
-
-			errorObject = &domain.ErrorResponse{}
+		var responseError *commErrors.ResponseError
+		if errors.As(postErr, &responseError) {
+			errorObject := &domain.ErrorResponse{}
 			err = c.apiResource.Communicator().Marshaller().Unmarshal(responseError.Body(), errorObject)
 			if err != nil {
 				return resultObject, err
@@ -123,9 +121,9 @@ func (c *Client) Submit(disputeID string, context *communicator.CallContext) (do
 	return resultObject, nil
 }
 
-// Cancel represents the resource /{merchantId}/disputes/{disputeId}/cancel - Cancel dispute
+// Cancel represents the resource /{merchantId}/disputes/{disputeId}/cancel - Cancel dispute.
 //
-// Documentation can be found at https://apireference.connect.worldline-solutions.com/s2sapi/v1/en_US/go/disputes/cancel.html
+// Documentation can be found at https://apireference.connect.worldline-solutions.com/s2sapi/v1/en_US/go/disputes/cancel.html.
 //
 // Can return any of the following errors:
 //   * IdempotenceError if an idempotent request caused a conflict (HTTP status code 409)
@@ -153,11 +151,9 @@ func (c *Client) Cancel(disputeID string, context *communicator.CallContext) (do
 
 	postErr := c.apiResource.Communicator().Post(uri, clientHeaders, nil, nil, context, &resultObject)
 	if postErr != nil {
-		responseError, isResponseError := postErr.(*commErrors.ResponseError)
-		if isResponseError {
-			var errorObject interface{}
-
-			errorObject = &domain.ErrorResponse{}
+		var responseError *commErrors.ResponseError
+		if errors.As(postErr, &responseError) {
+			errorObject := &domain.ErrorResponse{}
 			err = c.apiResource.Communicator().Marshaller().Unmarshal(responseError.Body(), errorObject)
 			if err != nil {
 				return resultObject, err
@@ -177,9 +173,9 @@ func (c *Client) Cancel(disputeID string, context *communicator.CallContext) (do
 	return resultObject, nil
 }
 
-// UploadFile represents the resource /{merchantId}/disputes/{disputeId} - Upload File
+// UploadFile represents the resource /{merchantId}/disputes/{disputeId} - Upload File.
 //
-// Documentation can be found at https://apireference.connect.worldline-solutions.com/fileserviceapi/v1/en_US/go/disputes/uploadFile.html
+// Documentation can be found at https://apireference.connect.worldline-solutions.com/fileserviceapi/v1/en_US/go/disputes/uploadFile.html.
 //
 // Can return any of the following errors:
 //   * IdempotenceError if an idempotent request caused a conflict (HTTP status code 409)
@@ -207,11 +203,9 @@ func (c *Client) UploadFile(disputeID string, body UploadFileRequest, context *c
 
 	postErr := c.apiResource.Communicator().Post(uri, clientHeaders, nil, &body, context, &resultObject)
 	if postErr != nil {
-		responseError, isResponseError := postErr.(*commErrors.ResponseError)
-		if isResponseError {
-			var errorObject interface{}
-
-			errorObject = &domain.ErrorResponse{}
+		var responseError *commErrors.ResponseError
+		if errors.As(postErr, &responseError) {
+			errorObject := &domain.ErrorResponse{}
 			err = c.apiResource.Communicator().Marshaller().Unmarshal(responseError.Body(), errorObject)
 			if err != nil {
 				return resultObject, err
@@ -231,9 +225,9 @@ func (c *Client) UploadFile(disputeID string, body UploadFileRequest, context *c
 	return resultObject, nil
 }
 
-// NewClient constructs a new Disputes client
+// NewClient constructs a new Disputes client.
 //
-// parent is the communicator.APIResource on top of which we want to build the new Disputes client
+// parent is the communicator.APIResource on top of which we want to build the new Disputes client.
 func NewClient(parent *communicator.APIResource, pathContext map[string]string) (*Client, error) {
 	apiResource, err := communicator.NewAPIResourceWithParent(parent, pathContext)
 	if err != nil {

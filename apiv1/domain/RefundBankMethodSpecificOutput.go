@@ -3,14 +3,14 @@
 
 package domain
 
-// RefundBankMethodSpecificOutput represents class RefundBankMethodSpecificOutput
+// RefundBankMethodSpecificOutput represents class RefundBankMethodSpecificOutput.
 type RefundBankMethodSpecificOutput struct {
 	RefundProductID     *int32 `json:"refundProductId,omitempty"`
 	TotalAmountPaid     *int64 `json:"totalAmountPaid,omitempty"`
 	TotalAmountRefunded *int64 `json:"totalAmountRefunded,omitempty"`
 }
 
-// NewRefundBankMethodSpecificOutput constructs a new RefundBankMethodSpecificOutput instance
+// NewRefundBankMethodSpecificOutput constructs a new RefundBankMethodSpecificOutput instance.
 func NewRefundBankMethodSpecificOutput() *RefundBankMethodSpecificOutput {
 	return &RefundBankMethodSpecificOutput{}
 }

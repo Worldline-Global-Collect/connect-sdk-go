@@ -3,7 +3,7 @@
 
 package domain
 
-// SepaDirectDebitPaymentProduct771SpecificInput represents class SepaDirectDebitPaymentProduct771SpecificInput
+// SepaDirectDebitPaymentProduct771SpecificInput represents class SepaDirectDebitPaymentProduct771SpecificInput.
 type SepaDirectDebitPaymentProduct771SpecificInput struct {
 	ExistingUniqueMandateReference *string                     `json:"existingUniqueMandateReference,omitempty"`
 	Mandate                        *CreateMandateWithReturnURL `json:"mandate,omitempty"`
@@ -11,7 +11,7 @@ type SepaDirectDebitPaymentProduct771SpecificInput struct {
 	MandateReference               *string                     `json:"mandateReference,omitempty"`
 }
 
-// NewSepaDirectDebitPaymentProduct771SpecificInput constructs a new SepaDirectDebitPaymentProduct771SpecificInput instance
+// NewSepaDirectDebitPaymentProduct771SpecificInput constructs a new SepaDirectDebitPaymentProduct771SpecificInput instance.
 func NewSepaDirectDebitPaymentProduct771SpecificInput() *SepaDirectDebitPaymentProduct771SpecificInput {
 	return &SepaDirectDebitPaymentProduct771SpecificInput{}
 }

@@ -3,7 +3,7 @@
 
 package domain
 
-// Card represents class Card
+// Card represents class Card.
 type Card struct {
 	CardNumber     *string `json:"cardNumber,omitempty"`
 	CardholderName *string `json:"cardholderName,omitempty"`
@@ -13,7 +13,7 @@ type Card struct {
 	PartialPin     *string `json:"partialPin,omitempty"`
 }
 
-// NewCard constructs a new Card instance
+// NewCard constructs a new Card instance.
 func NewCard() *Card {
 	return &Card{}
 }

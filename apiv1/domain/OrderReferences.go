@@ -3,7 +3,7 @@
 
 package domain
 
-// OrderReferences represents class OrderReferences
+// OrderReferences represents class OrderReferences.
 type OrderReferences struct {
 	Descriptor         *string           `json:"descriptor,omitempty"`
 	InvoiceData        *OrderInvoiceData `json:"invoiceData,omitempty"`
@@ -13,7 +13,7 @@ type OrderReferences struct {
 	ProviderMerchantID *string           `json:"providerMerchantId,omitempty"`
 }
 
-// NewOrderReferences constructs a new OrderReferences instance
+// NewOrderReferences constructs a new OrderReferences instance.
 func NewOrderReferences() *OrderReferences {
 	return &OrderReferences{}
 }

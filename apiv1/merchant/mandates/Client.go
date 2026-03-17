@@ -4,6 +4,8 @@
 package mandates
 
 import (
+	"errors"
+
 	"github.com/Worldline-Global-Collect/connect-sdk-go/apiv1/domain"
 	v1Errors "github.com/Worldline-Global-Collect/connect-sdk-go/apiv1/errors"
 	"github.com/Worldline-Global-Collect/connect-sdk-go/communicator"
@@ -15,9 +17,9 @@ type Client struct {
 	apiResource *communicator.APIResource
 }
 
-// Create represents the resource /{merchantId}/mandates - Create mandate
+// Create represents the resource /{merchantId}/mandates - Create mandate.
 //
-// Documentation can be found at https://apireference.connect.worldline-solutions.com/s2sapi/v1/en_US/go/mandates/create.html
+// Documentation can be found at https://apireference.connect.worldline-solutions.com/s2sapi/v1/en_US/go/mandates/create.html.
 //
 // Can return any of the following errors:
 //   * IdempotenceError if an idempotent request caused a conflict (HTTP status code 409)
@@ -41,11 +43,9 @@ func (c *Client) Create(body domain.CreateMandateRequest, context *communicator.
 
 	postErr := c.apiResource.Communicator().Post(uri, clientHeaders, nil, body, context, &resultObject)
 	if postErr != nil {
-		responseError, isResponseError := postErr.(*commErrors.ResponseError)
-		if isResponseError {
-			var errorObject interface{}
-
-			errorObject = &domain.ErrorResponse{}
+		var responseError *commErrors.ResponseError
+		if errors.As(postErr, &responseError) {
+			errorObject := &domain.ErrorResponse{}
 			err = c.apiResource.Communicator().Marshaller().Unmarshal(responseError.Body(), errorObject)
 			if err != nil {
 				return resultObject, err
@@ -65,9 +65,9 @@ func (c *Client) Create(body domain.CreateMandateRequest, context *communicator.
 	return resultObject, nil
 }
 
-// CreateWithMandateReference represents the resource /{merchantId}/mandates/{uniqueMandateReference} - Create mandate with mandatereference
+// CreateWithMandateReference represents the resource /{merchantId}/mandates/{uniqueMandateReference} - Create mandate with mandatereference.
 //
-// Documentation can be found at https://apireference.connect.worldline-solutions.com/s2sapi/v1/en_US/go/mandates/createWithMandateReference.html
+// Documentation can be found at https://apireference.connect.worldline-solutions.com/s2sapi/v1/en_US/go/mandates/createWithMandateReference.html.
 //
 // Can return any of the following errors:
 //   * IdempotenceError if an idempotent request caused a conflict (HTTP status code 409)
@@ -95,11 +95,9 @@ func (c *Client) CreateWithMandateReference(uniqueMandateReference string, body 
 
 	putErr := c.apiResource.Communicator().Put(uri, clientHeaders, nil, body, context, &resultObject)
 	if putErr != nil {
-		responseError, isResponseError := putErr.(*commErrors.ResponseError)
-		if isResponseError {
-			var errorObject interface{}
-
-			errorObject = &domain.ErrorResponse{}
+		var responseError *commErrors.ResponseError
+		if errors.As(putErr, &responseError) {
+			errorObject := &domain.ErrorResponse{}
 			err = c.apiResource.Communicator().Marshaller().Unmarshal(responseError.Body(), errorObject)
 			if err != nil {
 				return resultObject, err
@@ -119,9 +117,9 @@ func (c *Client) CreateWithMandateReference(uniqueMandateReference string, body 
 	return resultObject, nil
 }
 
-// Get represents the resource /{merchantId}/mandates/{uniqueMandateReference} - Get mandate
+// Get represents the resource /{merchantId}/mandates/{uniqueMandateReference} - Get mandate.
 //
-// Documentation can be found at https://apireference.connect.worldline-solutions.com/s2sapi/v1/en_US/go/mandates/get.html
+// Documentation can be found at https://apireference.connect.worldline-solutions.com/s2sapi/v1/en_US/go/mandates/get.html.
 //
 // Can return any of the following errors:
 //   * IdempotenceError if an idempotent request caused a conflict (HTTP status code 409)
@@ -149,11 +147,9 @@ func (c *Client) Get(uniqueMandateReference string, context *communicator.CallCo
 
 	getErr := c.apiResource.Communicator().Get(uri, clientHeaders, nil, context, &resultObject)
 	if getErr != nil {
-		responseError, isResponseError := getErr.(*commErrors.ResponseError)
-		if isResponseError {
-			var errorObject interface{}
-
-			errorObject = &domain.ErrorResponse{}
+		var responseError *commErrors.ResponseError
+		if errors.As(getErr, &responseError) {
+			errorObject := &domain.ErrorResponse{}
 			err = c.apiResource.Communicator().Marshaller().Unmarshal(responseError.Body(), errorObject)
 			if err != nil {
 				return resultObject, err
@@ -173,9 +169,9 @@ func (c *Client) Get(uniqueMandateReference string, context *communicator.CallCo
 	return resultObject, nil
 }
 
-// Block represents the resource /{merchantId}/mandates/{uniqueMandateReference}/block - Block mandate
+// Block represents the resource /{merchantId}/mandates/{uniqueMandateReference}/block - Block mandate.
 //
-// Documentation can be found at https://apireference.connect.worldline-solutions.com/s2sapi/v1/en_US/go/mandates/block.html
+// Documentation can be found at https://apireference.connect.worldline-solutions.com/s2sapi/v1/en_US/go/mandates/block.html.
 //
 // Can return any of the following errors:
 //   * IdempotenceError if an idempotent request caused a conflict (HTTP status code 409)
@@ -203,11 +199,9 @@ func (c *Client) Block(uniqueMandateReference string, context *communicator.Call
 
 	postErr := c.apiResource.Communicator().Post(uri, clientHeaders, nil, nil, context, &resultObject)
 	if postErr != nil {
-		responseError, isResponseError := postErr.(*commErrors.ResponseError)
-		if isResponseError {
-			var errorObject interface{}
-
-			errorObject = &domain.ErrorResponse{}
+		var responseError *commErrors.ResponseError
+		if errors.As(postErr, &responseError) {
+			errorObject := &domain.ErrorResponse{}
 			err = c.apiResource.Communicator().Marshaller().Unmarshal(responseError.Body(), errorObject)
 			if err != nil {
 				return resultObject, err
@@ -227,9 +221,9 @@ func (c *Client) Block(uniqueMandateReference string, context *communicator.Call
 	return resultObject, nil
 }
 
-// Unblock represents the resource /{merchantId}/mandates/{uniqueMandateReference}/unblock - Unblock mandate
+// Unblock represents the resource /{merchantId}/mandates/{uniqueMandateReference}/unblock - Unblock mandate.
 //
-// Documentation can be found at https://apireference.connect.worldline-solutions.com/s2sapi/v1/en_US/go/mandates/unblock.html
+// Documentation can be found at https://apireference.connect.worldline-solutions.com/s2sapi/v1/en_US/go/mandates/unblock.html.
 //
 // Can return any of the following errors:
 //   * IdempotenceError if an idempotent request caused a conflict (HTTP status code 409)
@@ -257,11 +251,9 @@ func (c *Client) Unblock(uniqueMandateReference string, context *communicator.Ca
 
 	postErr := c.apiResource.Communicator().Post(uri, clientHeaders, nil, nil, context, &resultObject)
 	if postErr != nil {
-		responseError, isResponseError := postErr.(*commErrors.ResponseError)
-		if isResponseError {
-			var errorObject interface{}
-
-			errorObject = &domain.ErrorResponse{}
+		var responseError *commErrors.ResponseError
+		if errors.As(postErr, &responseError) {
+			errorObject := &domain.ErrorResponse{}
 			err = c.apiResource.Communicator().Marshaller().Unmarshal(responseError.Body(), errorObject)
 			if err != nil {
 				return resultObject, err
@@ -281,9 +273,9 @@ func (c *Client) Unblock(uniqueMandateReference string, context *communicator.Ca
 	return resultObject, nil
 }
 
-// Revoke represents the resource /{merchantId}/mandates/{uniqueMandateReference}/revoke - Revoke mandate
+// Revoke represents the resource /{merchantId}/mandates/{uniqueMandateReference}/revoke - Revoke mandate.
 //
-// Documentation can be found at https://apireference.connect.worldline-solutions.com/s2sapi/v1/en_US/go/mandates/revoke.html
+// Documentation can be found at https://apireference.connect.worldline-solutions.com/s2sapi/v1/en_US/go/mandates/revoke.html.
 //
 // Can return any of the following errors:
 //   * IdempotenceError if an idempotent request caused a conflict (HTTP status code 409)
@@ -311,11 +303,9 @@ func (c *Client) Revoke(uniqueMandateReference string, context *communicator.Cal
 
 	postErr := c.apiResource.Communicator().Post(uri, clientHeaders, nil, nil, context, &resultObject)
 	if postErr != nil {
-		responseError, isResponseError := postErr.(*commErrors.ResponseError)
-		if isResponseError {
-			var errorObject interface{}
-
-			errorObject = &domain.ErrorResponse{}
+		var responseError *commErrors.ResponseError
+		if errors.As(postErr, &responseError) {
+			errorObject := &domain.ErrorResponse{}
 			err = c.apiResource.Communicator().Marshaller().Unmarshal(responseError.Body(), errorObject)
 			if err != nil {
 				return resultObject, err
@@ -335,9 +325,9 @@ func (c *Client) Revoke(uniqueMandateReference string, context *communicator.Cal
 	return resultObject, nil
 }
 
-// NewClient constructs a new Mandates client
+// NewClient constructs a new Mandates client.
 //
-// parent is the communicator.APIResource on top of which we want to build the new Mandates client
+// parent is the communicator.APIResource on top of which we want to build the new Mandates client.
 func NewClient(parent *communicator.APIResource, pathContext map[string]string) (*Client, error) {
 	apiResource, err := communicator.NewAPIResourceWithParent(parent, pathContext)
 	if err != nil {

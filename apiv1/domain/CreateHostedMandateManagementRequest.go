@@ -3,13 +3,13 @@
 
 package domain
 
-// CreateHostedMandateManagementRequest represents class CreateHostedMandateManagementRequest
+// CreateHostedMandateManagementRequest represents class CreateHostedMandateManagementRequest.
 type CreateHostedMandateManagementRequest struct {
 	CreateMandateInfo                    *HostedMandateInfo                    `json:"createMandateInfo,omitempty"`
 	HostedMandateManagementSpecificInput *HostedMandateManagementSpecificInput `json:"hostedMandateManagementSpecificInput,omitempty"`
 }
 
-// NewCreateHostedMandateManagementRequest constructs a new CreateHostedMandateManagementRequest instance
+// NewCreateHostedMandateManagementRequest constructs a new CreateHostedMandateManagementRequest instance.
 func NewCreateHostedMandateManagementRequest() *CreateHostedMandateManagementRequest {
 	return &CreateHostedMandateManagementRequest{}
 }

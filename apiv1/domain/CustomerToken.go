@@ -3,7 +3,7 @@
 
 package domain
 
-// CustomerToken represents class CustomerToken
+// CustomerToken represents class CustomerToken.
 type CustomerToken struct {
 	BillingAddress      *Address                  `json:"billingAddress,omitempty"`
 	CompanyInformation  *CompanyInformation       `json:"companyInformation,omitempty"`
@@ -13,7 +13,7 @@ type CustomerToken struct {
 	VatNumber           *string                   `json:"vatNumber,omitempty"`
 }
 
-// NewCustomerToken constructs a new CustomerToken instance
+// NewCustomerToken constructs a new CustomerToken instance.
 func NewCustomerToken() *CustomerToken {
 	return &CustomerToken{}
 }

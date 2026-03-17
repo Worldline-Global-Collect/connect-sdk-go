@@ -3,7 +3,7 @@
 
 package domain
 
-// DisputeStatusOutput represents class DisputeStatusOutput
+// DisputeStatusOutput represents class DisputeStatusOutput.
 type DisputeStatusOutput struct {
 	IsCancellable            *bool   `json:"isCancellable,omitempty"`
 	StatusCategory           *string `json:"statusCategory,omitempty"`
@@ -11,7 +11,7 @@ type DisputeStatusOutput struct {
 	StatusCodeChangeDateTime *string `json:"statusCodeChangeDateTime,omitempty"`
 }
 
-// NewDisputeStatusOutput constructs a new DisputeStatusOutput instance
+// NewDisputeStatusOutput constructs a new DisputeStatusOutput instance.
 func NewDisputeStatusOutput() *DisputeStatusOutput {
 	return &DisputeStatusOutput{}
 }

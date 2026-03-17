@@ -18,7 +18,7 @@ type Helper struct {
 	signatureValidator *validation.SignatureValidator
 }
 
-// Unmarshal unmarshalls the given body and validates it using the requestHeaders
+// Unmarshal unmarshalls the given body and validates it using the requestHeaders.
 //
 // Can return any of the following errors:
 //   * validation.SignatureValidationError if the body could not be validated successfully
@@ -44,17 +44,17 @@ func (h Helper) Unmarshal(body string, requestHeaders []communication.Header) (*
 	return event, nil
 }
 
-// Marshaller returns the marshaller of the webhooks helper
+// Marshaller returns the marshaller of the webhooks helper.
 func (h Helper) Marshaller() json.Marshaller {
 	return h.marshaller
 }
 
-// SecretKeyStore returns the secret key store of the webhooks helper
+// SecretKeyStore returns the secret key store of the webhooks helper.
 func (h Helper) SecretKeyStore() validation.SecretKeyStore {
 	return h.signatureValidator.SecretKeyStore()
 }
 
-// NewHelper creates a new Helper with the given marshaller and secretKeyStore
+// NewHelper creates a new Helper with the given marshaller and secret key store.
 func NewHelper(marshaller json.Marshaller, secretKeyStore validation.SecretKeyStore) (*Helper, error) {
 	if marshaller == nil {
 		return nil, errors.New("nil marshaller")

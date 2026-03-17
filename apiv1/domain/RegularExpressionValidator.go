@@ -3,12 +3,12 @@
 
 package domain
 
-// RegularExpressionValidator represents class RegularExpressionValidator
+// RegularExpressionValidator represents class RegularExpressionValidator.
 type RegularExpressionValidator struct {
 	RegularExpression *string `json:"regularExpression,omitempty"`
 }
 
-// NewRegularExpressionValidator constructs a new RegularExpressionValidator instance
+// NewRegularExpressionValidator constructs a new RegularExpressionValidator instance.
 func NewRegularExpressionValidator() *RegularExpressionValidator {
 	return &RegularExpressionValidator{}
 }

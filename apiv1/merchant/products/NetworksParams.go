@@ -9,9 +9,9 @@ import (
 	"github.com/Worldline-Global-Collect/connect-sdk-go/communicator/communication"
 )
 
-// NetworksParams represents query parameters for Get payment product networks
+// NetworksParams represents query parameters for Get payment product networks.
 //
-// Documentation can be found at https://apireference.connect.worldline-solutions.com/s2sapi/v1/en_US/go/products/networks.html
+// Documentation can be found at https://apireference.connect.worldline-solutions.com/s2sapi/v1/en_US/go/products/networks.html.
 type NetworksParams struct {
 	CountryCode  *string
 	CurrencyCode *string
@@ -19,7 +19,7 @@ type NetworksParams struct {
 	IsRecurring  *bool
 }
 
-// ToRequestParameters converts the query to communication.RequestParams
+// ToRequestParameters converts the query to communication.RequestParams.
 func (params *NetworksParams) ToRequestParameters() communication.RequestParams {
 	reqParams := communication.RequestParams{}
 
@@ -43,7 +43,7 @@ func (params *NetworksParams) ToRequestParameters() communication.RequestParams 
 	return reqParams
 }
 
-// NewNetworksParams constructs a new NetworksParams instance
+// NewNetworksParams constructs a new NetworksParams instance.
 func NewNetworksParams() *NetworksParams {
 	return &NetworksParams{}
 }

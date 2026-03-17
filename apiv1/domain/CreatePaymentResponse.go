@@ -3,14 +3,14 @@
 
 package domain
 
-// CreatePaymentResponse represents class CreatePaymentResponse
+// CreatePaymentResponse represents class CreatePaymentResponse.
 type CreatePaymentResponse struct {
 	CreationOutput *PaymentCreationOutput `json:"creationOutput,omitempty"`
 	MerchantAction *MerchantAction        `json:"merchantAction,omitempty"`
 	Payment        *Payment               `json:"payment,omitempty"`
 }
 
-// NewCreatePaymentResponse constructs a new CreatePaymentResponse instance
+// NewCreatePaymentResponse constructs a new CreatePaymentResponse instance.
 func NewCreatePaymentResponse() *CreatePaymentResponse {
 	return &CreatePaymentResponse{}
 }

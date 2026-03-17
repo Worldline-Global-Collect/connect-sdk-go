@@ -3,7 +3,7 @@
 
 package domain
 
-// PaymentApprovalResponse represents class PaymentApprovalResponse
+// PaymentApprovalResponse represents class PaymentApprovalResponse.
 type PaymentApprovalResponse struct {
 	CardPaymentMethodSpecificOutput   *ApprovePaymentCardPaymentMethodSpecificOutput   `json:"cardPaymentMethodSpecificOutput,omitempty"`
 	MobilePaymentMethodSpecificOutput *ApprovePaymentMobilePaymentMethodSpecificOutput `json:"mobilePaymentMethodSpecificOutput,omitempty"`
@@ -12,7 +12,7 @@ type PaymentApprovalResponse struct {
 	PaymentMethodSpecificOutput       *ApprovePaymentCardPaymentMethodSpecificOutput   `json:"paymentMethodSpecificOutput,omitempty"`
 }
 
-// NewPaymentApprovalResponse constructs a new PaymentApprovalResponse instance
+// NewPaymentApprovalResponse constructs a new PaymentApprovalResponse instance.
 func NewPaymentApprovalResponse() *PaymentApprovalResponse {
 	return &PaymentApprovalResponse{}
 }

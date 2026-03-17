@@ -25,16 +25,16 @@ type MetadataProvider struct {
 	metadataHeaders []communication.Header
 }
 
-// prohibitedHeaders are the headers that can't be included in the server requests
+// prohibitedHeaders are the headers that can't be included in the server requests.
 var prohibitedHeaders = []string{serverMetaInfoHeader, "X-GCS-Idempotence-Key", "Date", "Content-Type", "Authorization"}
 
 func getPlatformIdentifier() string {
-	//I believe there is no standard function thus we need to do something like
-	//https://github.com/matishsiao/goInfo
+	// I believe there is no standard function thus we need to do something like
+	// https://github.com/matishsiao/goInfo
 	return runtime.GOOS + " " + runtime.Version() + "(" + runtime.GOARCH + ")"
 }
 
-const sdkVersion = "4.4.0"
+const sdkVersion = "4.5.0"
 const sdkIdentifier = "GoServerSDK/v" + sdkVersion
 const serverMetaInfoHeader = "X-GCS-ServerMetaInfo"
 
@@ -45,7 +45,7 @@ func (m MetadataProvider) MetadataHeaders() []communication.Header {
 	return append([]communication.Header{}, m.metadataHeaders...)
 }
 
-// NewMetadataProvider creates a MetadataProvider
+// NewMetadataProvider creates a MetadataProvider.
 func NewMetadataProvider(integrator string) (*MetadataProvider, error) {
 	return newMetadataProvider(integrator, nil, nil)
 }
@@ -78,6 +78,7 @@ func newMetadataProvider(integrator string, shoppingCartExtension *domain.Shoppi
 	header, _ := communication.NewHeader(serverMetaInfoHeader, serverMetaInfoBase64)
 	headers := []communication.Header{*header}
 	headers = append(headers, additionalRequestHeaders...)
+
 	return &MetadataProvider{serverMetaInfo, headers}, nil
 }
 
@@ -87,6 +88,7 @@ func validateAdditionalRequestHeader(additionalRequestHeader *communication.Head
 			return errors.New("header is prohibited")
 		}
 	}
+
 	return nil
 }
 
@@ -97,5 +99,6 @@ func validateAdditionalRequestHeaders(additionalRequestHeaders []communication.H
 			return err
 		}
 	}
+
 	return nil
 }

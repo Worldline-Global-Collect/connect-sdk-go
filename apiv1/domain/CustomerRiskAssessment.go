@@ -3,7 +3,7 @@
 
 package domain
 
-// CustomerRiskAssessment represents class CustomerRiskAssessment
+// CustomerRiskAssessment represents class CustomerRiskAssessment.
 type CustomerRiskAssessment struct {
 	Account             *CustomerAccountRiskAssessment     `json:"account,omitempty"`
 	AccountType         *string                            `json:"accountType,omitempty"`
@@ -17,7 +17,7 @@ type CustomerRiskAssessment struct {
 	ShippingAddress     *AddressPersonal                   `json:"shippingAddress,omitempty"`
 }
 
-// NewCustomerRiskAssessment constructs a new CustomerRiskAssessment instance
+// NewCustomerRiskAssessment constructs a new CustomerRiskAssessment instance.
 func NewCustomerRiskAssessment() *CustomerRiskAssessment {
 	return &CustomerRiskAssessment{}
 }

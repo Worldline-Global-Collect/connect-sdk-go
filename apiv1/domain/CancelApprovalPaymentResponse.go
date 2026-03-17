@@ -3,12 +3,12 @@
 
 package domain
 
-// CancelApprovalPaymentResponse represents class CancelApprovalPaymentResponse
+// CancelApprovalPaymentResponse represents class CancelApprovalPaymentResponse.
 type CancelApprovalPaymentResponse struct {
 	Payment *Payment `json:"payment,omitempty"`
 }
 
-// NewCancelApprovalPaymentResponse constructs a new CancelApprovalPaymentResponse instance
+// NewCancelApprovalPaymentResponse constructs a new CancelApprovalPaymentResponse instance.
 func NewCancelApprovalPaymentResponse() *CancelApprovalPaymentResponse {
 	return &CancelApprovalPaymentResponse{}
 }

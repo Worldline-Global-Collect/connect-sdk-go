@@ -3,7 +3,7 @@
 
 package domain
 
-// ShoppingCart represents class ShoppingCart
+// ShoppingCart represents class ShoppingCart.
 type ShoppingCart struct {
 	AmountBreakdown              *[]AmountBreakdown `json:"amountBreakdown,omitempty"`
 	GiftCardPurchase             *GiftCardPurchase  `json:"giftCardPurchase,omitempty"`
@@ -13,7 +13,7 @@ type ShoppingCart struct {
 	ReOrderIndicator             *bool              `json:"reOrderIndicator,omitempty"`
 }
 
-// NewShoppingCart constructs a new ShoppingCart instance
+// NewShoppingCart constructs a new ShoppingCart instance.
 func NewShoppingCart() *ShoppingCart {
 	return &ShoppingCart{}
 }

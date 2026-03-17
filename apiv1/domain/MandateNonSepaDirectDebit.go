@@ -3,13 +3,13 @@
 
 package domain
 
-// MandateNonSepaDirectDebit represents class MandateNonSepaDirectDebit
+// MandateNonSepaDirectDebit represents class MandateNonSepaDirectDebit.
 type MandateNonSepaDirectDebit struct {
 	PaymentProduct705SpecificData *TokenNonSepaDirectDebitPaymentProduct705SpecificData `json:"paymentProduct705SpecificData,omitempty"`
 	PaymentProduct730SpecificData *TokenNonSepaDirectDebitPaymentProduct730SpecificData `json:"paymentProduct730SpecificData,omitempty"`
 }
 
-// NewMandateNonSepaDirectDebit constructs a new MandateNonSepaDirectDebit instance
+// NewMandateNonSepaDirectDebit constructs a new MandateNonSepaDirectDebit instance.
 func NewMandateNonSepaDirectDebit() *MandateNonSepaDirectDebit {
 	return &MandateNonSepaDirectDebit{}
 }

@@ -3,13 +3,13 @@
 
 package domain
 
-// BankTransferPaymentMethodSpecificOutput represents class BankTransferPaymentMethodSpecificOutput
+// BankTransferPaymentMethodSpecificOutput represents class BankTransferPaymentMethodSpecificOutput.
 type BankTransferPaymentMethodSpecificOutput struct {
 	FraudResults     *FraudResults `json:"fraudResults,omitempty"`
 	PaymentProductID *int32        `json:"paymentProductId,omitempty"`
 }
 
-// NewBankTransferPaymentMethodSpecificOutput constructs a new BankTransferPaymentMethodSpecificOutput instance
+// NewBankTransferPaymentMethodSpecificOutput constructs a new BankTransferPaymentMethodSpecificOutput instance.
 func NewBankTransferPaymentMethodSpecificOutput() *BankTransferPaymentMethodSpecificOutput {
 	return &BankTransferPaymentMethodSpecificOutput{}
 }

@@ -2,6 +2,7 @@ package webhooks
 
 import (
 	"encoding/json"
+	"errors"
 	"io"
 	"testing"
 
@@ -110,7 +111,7 @@ func (m *fakeMarshaller) Unmarshal(data string, v interface{}) error {
 	return nil
 }
 
-func (m *fakeMarshaller) UnmarshalFromReader(reader io.Reader, v interface{}) error {
+func (m *fakeMarshaller) UnmarshalFromReader(_ io.Reader, _ interface{}) error {
 	return nil
 }
 
@@ -137,8 +138,8 @@ func TestUnmarshalAPIVersionMismatch(t *testing.T) {
 		t.Fatal("nil error")
 	}
 
-	_, ok := err.(*validation.APIVersionMismatchError)
-	if !ok {
+	var avme *validation.APIVersionMismatchError
+	if !errors.As(err, &avme) {
 		t.Fatal("wrong error returned")
 	}
 }
@@ -163,8 +164,8 @@ func TestUnmarshalNoSecretKeyAvailable(t *testing.T) {
 		t.Fatal("nil error")
 	}
 
-	_, ok := err.(*validation.SecretKeyNotAvailableError)
-	if !ok {
+	var sknae *validation.SecretKeyNotAvailableError
+	if !errors.As(err, &sknae) {
 		t.Fatal("wrong error returned")
 	}
 }
@@ -186,8 +187,8 @@ func TestUnmarshalMissingHeaders(t *testing.T) {
 		t.Fatal("nil error")
 	}
 
-	_, ok := err.(*validation.SignatureValidationError)
-	if !ok {
+	var sve *validation.SignatureValidationError
+	if !errors.As(err, &sve) {
 		t.Fatal("wrong error returned")
 	}
 }
@@ -213,8 +214,8 @@ func TestUnmarshalDuplicateHeaders(t *testing.T) {
 		t.Fatal("nil error")
 	}
 
-	_, ok := err.(*validation.SignatureValidationError)
-	if !ok {
+	var sve *validation.SignatureValidationError
+	if !errors.As(err, &sve) {
 		t.Fatal("wrong error returned")
 	}
 }
@@ -364,8 +365,8 @@ func TestUnmarshalInvalidBody(t *testing.T) {
 		t.Fatal("nil error")
 	}
 
-	_, ok := err.(*validation.SignatureValidationError)
-	if !ok {
+	var sve *validation.SignatureValidationError
+	if !errors.As(err, &sve) {
 		t.Fatal("wrong error returned")
 	}
 }
@@ -390,8 +391,8 @@ func TestUnmarshalInvalidSecretKey(t *testing.T) {
 		t.Fatal("nil error")
 	}
 
-	_, ok := err.(*validation.SignatureValidationError)
-	if !ok {
+	var sve *validation.SignatureValidationError
+	if !errors.As(err, &sve) {
 		t.Fatal("wrong error returned")
 	}
 }
@@ -421,8 +422,8 @@ func TestUnmarshalInvalidSignature(t *testing.T) {
 		t.Fatal("nil error")
 	}
 
-	_, ok := err.(*validation.SignatureValidationError)
-	if !ok {
+	var sve *validation.SignatureValidationError
+	if !errors.As(err, &sve) {
 		t.Fatal("wrong error returned")
 	}
 }

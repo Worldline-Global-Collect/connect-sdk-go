@@ -3,7 +3,7 @@
 
 package domain
 
-// BankAccountBbanRefund represents class BankAccountBbanRefund
+// BankAccountBbanRefund represents class BankAccountBbanRefund.
 type BankAccountBbanRefund struct {
 	AccountHolderName *string `json:"accountHolderName,omitempty"`
 	AccountNumber     *string `json:"accountNumber,omitempty"`
@@ -17,7 +17,7 @@ type BankAccountBbanRefund struct {
 	SwiftCode         *string `json:"swiftCode,omitempty"`
 }
 
-// NewBankAccountBbanRefund constructs a new BankAccountBbanRefund instance
+// NewBankAccountBbanRefund constructs a new BankAccountBbanRefund instance.
 func NewBankAccountBbanRefund() *BankAccountBbanRefund {
 	return &BankAccountBbanRefund{}
 }

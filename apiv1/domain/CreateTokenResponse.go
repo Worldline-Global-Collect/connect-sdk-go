@@ -3,14 +3,14 @@
 
 package domain
 
-// CreateTokenResponse represents class CreateTokenResponse
+// CreateTokenResponse represents class CreateTokenResponse.
 type CreateTokenResponse struct {
 	IsNewToken        *bool   `json:"isNewToken,omitempty"`
 	OriginalPaymentID *string `json:"originalPaymentId,omitempty"`
 	Token             *string `json:"token,omitempty"`
 }
 
-// NewCreateTokenResponse constructs a new CreateTokenResponse instance
+// NewCreateTokenResponse constructs a new CreateTokenResponse instance.
 func NewCreateTokenResponse() *CreateTokenResponse {
 	return &CreateTokenResponse{}
 }

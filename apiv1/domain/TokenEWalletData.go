@@ -3,12 +3,12 @@
 
 package domain
 
-// TokenEWalletData represents class TokenEWalletData
+// TokenEWalletData represents class TokenEWalletData.
 type TokenEWalletData struct {
 	BillingAgreementID *string `json:"billingAgreementId,omitempty"`
 }
 
-// NewTokenEWalletData constructs a new TokenEWalletData instance
+// NewTokenEWalletData constructs a new TokenEWalletData instance.
 func NewTokenEWalletData() *TokenEWalletData {
 	return &TokenEWalletData{}
 }

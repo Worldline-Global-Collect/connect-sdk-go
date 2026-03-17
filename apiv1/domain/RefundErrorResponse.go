@@ -3,14 +3,14 @@
 
 package domain
 
-// RefundErrorResponse represents class RefundErrorResponse
+// RefundErrorResponse represents class RefundErrorResponse.
 type RefundErrorResponse struct {
 	ErrorID      *string       `json:"errorId,omitempty"`
 	Errors       *[]APIError   `json:"errors,omitempty"`
 	RefundResult *RefundResult `json:"refundResult,omitempty"`
 }
 
-// NewRefundErrorResponse constructs a new RefundErrorResponse instance
+// NewRefundErrorResponse constructs a new RefundErrorResponse instance.
 func NewRefundErrorResponse() *RefundErrorResponse {
 	return &RefundErrorResponse{}
 }

@@ -21,44 +21,44 @@ type IdempotenceError struct {
 	errors       []domain.APIError
 }
 
-// Message returns the error message
+// Message returns the error message.
 func (e IdempotenceError) Message() string {
 	return e.errorMessage
 }
 
-// StatusCode returns the status code
+// StatusCode returns the status code.
 func (e IdempotenceError) StatusCode() int {
 	return e.statusCode
 }
 
-// ResponseBody returns the response body
+// ResponseBody returns the response body.
 func (e IdempotenceError) ResponseBody() string {
 	return e.responseBody
 }
 
-// ErrorID implements the APIError interface
+// ErrorID implements the APIError interface.
 func (e IdempotenceError) ErrorID() string {
 	return e.errorID
 }
 
-// Errors implements the APIError interface
+// Errors implements the APIError interface.
 func (e IdempotenceError) Errors() []domain.APIError {
 	// Return a clone instead of the original slice - immutability insurance
 	return append([]domain.APIError{}, e.errors...)
 }
 
-// IdempotenceKey returns the idempotence key used
+// IdempotenceKey returns the idempotence key used.
 func (e IdempotenceError) IdempotenceKey() string {
 	return e.idempotenceKey
 }
 
-// IdempotenceRequestTimestamp returns the timestamp of the request
+// IdempotenceRequestTimestamp returns the timestamp of the request.
 func (e IdempotenceError) IdempotenceRequestTimestamp() *int64 {
 	return e.idempotenceRequestTimestamp
 }
 
-// String implements the Stringer interface
-// Format: 'errorMessage; statusCode=; responseBody='
+// String implements the Stringer interface.
+// Format: 'errorMessage; statusCode=; responseBody='.
 func (e IdempotenceError) String() string {
 	list := e.errorMessage
 
@@ -72,17 +72,17 @@ func (e IdempotenceError) String() string {
 	return list
 }
 
-// Error implements the error interface
+// Error implements the error interface.
 func (e IdempotenceError) Error() string {
 	return e.String()
 }
 
-// NewIdempotenceError creates a new IdempotenceError with the given idempotenceKey, idempotenceRequestTimestamp, statusCode, responseBody and response fields
+// NewIdempotenceError creates a new IdempotenceError with the given idempotenceKey, idempotenceRequestTimestamp, statusCode, responseBody and response fields.
 func NewIdempotenceError(idempotenceKey string, idempotenceRequestTimestamp *int64, statusCode int, responseBody, errorID string, errors []domain.APIError) (*IdempotenceError, error) {
 	return &IdempotenceError{idempotenceKey, idempotenceRequestTimestamp, "the Worldline Global Collect platform returned a duplicate request error response", statusCode, responseBody, errorID, errors}, nil
 }
 
-// NewIdempotenceErrorVerbose creates a new IdempotenceError with the given idempotenceKey, idempotenceRequestTimestamp, message, statusCode, responseBody and response fields
+// NewIdempotenceErrorVerbose creates a new IdempotenceError with the given idempotenceKey, idempotenceRequestTimestamp, message, statusCode, responseBody and response fields.
 func NewIdempotenceErrorVerbose(idempotenceKey string, idempotenceRequestTimestamp *int64, message string, statusCode int, responseBody, errorID string, errors []domain.APIError) (*IdempotenceError, error) {
 	return &IdempotenceError{idempotenceKey, idempotenceRequestTimestamp, message, statusCode, responseBody, errorID, errors}, nil
 }

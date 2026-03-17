@@ -3,7 +3,7 @@
 
 package domain
 
-// MerchantAction represents class MerchantAction
+// MerchantAction represents class MerchantAction.
 type MerchantAction struct {
 	ActionType                            *string                                `json:"actionType,omitempty"`
 	FormFields                            *[]PaymentProductField                 `json:"formFields,omitempty"`
@@ -14,7 +14,7 @@ type MerchantAction struct {
 	ThirdPartyData                        *ThirdPartyData                        `json:"thirdPartyData,omitempty"`
 }
 
-// NewMerchantAction constructs a new MerchantAction instance
+// NewMerchantAction constructs a new MerchantAction instance.
 func NewMerchantAction() *MerchantAction {
 	return &MerchantAction{}
 }

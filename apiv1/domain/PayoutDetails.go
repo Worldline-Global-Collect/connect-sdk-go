@@ -3,14 +3,14 @@
 
 package domain
 
-// PayoutDetails represents class PayoutDetails
+// PayoutDetails represents class PayoutDetails.
 type PayoutDetails struct {
 	AmountOfMoney *AmountOfMoney    `json:"amountOfMoney,omitempty"`
 	Customer      *PayoutCustomer   `json:"customer,omitempty"`
 	References    *PayoutReferences `json:"references,omitempty"`
 }
 
-// NewPayoutDetails constructs a new PayoutDetails instance
+// NewPayoutDetails constructs a new PayoutDetails instance.
 func NewPayoutDetails() *PayoutDetails {
 	return &PayoutDetails{}
 }

@@ -9,9 +9,9 @@ import (
 	"github.com/Worldline-Global-Collect/connect-sdk-go/communicator/communication"
 )
 
-// FindParams represents query parameters for Get payment products
+// FindParams represents query parameters for Get payment products.
 //
-// Documentation can be found at https://apireference.connect.worldline-solutions.com/s2sapi/v1/en_US/go/products/find.html
+// Documentation can be found at https://apireference.connect.worldline-solutions.com/s2sapi/v1/en_US/go/products/find.html.
 type FindParams struct {
 	CountryCode    *string
 	CurrencyCode   *string
@@ -25,10 +25,9 @@ type FindParams struct {
 // AddHide adds an element to the Hide array.
 func (params *FindParams) AddHide(value string) {
 	params.Hide = append(params.Hide, value)
-	return
 }
 
-// ToRequestParameters converts the query to communication.RequestParams
+// ToRequestParameters converts the query to communication.RequestParams.
 func (params *FindParams) ToRequestParameters() communication.RequestParams {
 	reqParams := communication.RequestParams{}
 
@@ -64,7 +63,7 @@ func (params *FindParams) ToRequestParameters() communication.RequestParams {
 	return reqParams
 }
 
-// NewFindParams constructs a new FindParams instance
+// NewFindParams constructs a new FindParams instance.
 func NewFindParams() *FindParams {
 	return &FindParams{}
 }

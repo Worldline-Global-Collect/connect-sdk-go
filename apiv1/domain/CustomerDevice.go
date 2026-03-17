@@ -3,7 +3,7 @@
 
 package domain
 
-// CustomerDevice represents class CustomerDevice
+// CustomerDevice represents class CustomerDevice.
 type CustomerDevice struct {
 	AcceptHeader                   *string      `json:"acceptHeader,omitempty"`
 	BrowserData                    *BrowserData `json:"browserData,omitempty"`
@@ -15,7 +15,7 @@ type CustomerDevice struct {
 	UserAgent                      *string      `json:"userAgent,omitempty"`
 }
 
-// NewCustomerDevice constructs a new CustomerDevice instance
+// NewCustomerDevice constructs a new CustomerDevice instance.
 func NewCustomerDevice() *CustomerDevice {
 	return &CustomerDevice{}
 }

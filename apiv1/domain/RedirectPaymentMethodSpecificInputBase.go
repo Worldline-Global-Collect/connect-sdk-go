@@ -3,7 +3,7 @@
 
 package domain
 
-// RedirectPaymentMethodSpecificInputBase represents class RedirectPaymentMethodSpecificInputBase
+// RedirectPaymentMethodSpecificInputBase represents class RedirectPaymentMethodSpecificInputBase.
 type RedirectPaymentMethodSpecificInputBase struct {
 	ExpirationPeriod                  *int32                                       `json:"expirationPeriod,omitempty"`
 	PaymentProduct4101SpecificInput   *RedirectPaymentProduct4101SpecificInputBase `json:"paymentProduct4101SpecificInput,omitempty"`
@@ -16,7 +16,7 @@ type RedirectPaymentMethodSpecificInputBase struct {
 	Tokenize                          *bool                                        `json:"tokenize,omitempty"`
 }
 
-// NewRedirectPaymentMethodSpecificInputBase constructs a new RedirectPaymentMethodSpecificInputBase instance
+// NewRedirectPaymentMethodSpecificInputBase constructs a new RedirectPaymentMethodSpecificInputBase instance.
 func NewRedirectPaymentMethodSpecificInputBase() *RedirectPaymentMethodSpecificInputBase {
 	return &RedirectPaymentMethodSpecificInputBase{}
 }

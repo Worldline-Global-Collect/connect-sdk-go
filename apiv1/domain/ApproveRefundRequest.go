@@ -3,12 +3,12 @@
 
 package domain
 
-// ApproveRefundRequest represents class ApproveRefundRequest
+// ApproveRefundRequest represents class ApproveRefundRequest.
 type ApproveRefundRequest struct {
 	Amount *int64 `json:"amount,omitempty"`
 }
 
-// NewApproveRefundRequest constructs a new ApproveRefundRequest instance
+// NewApproveRefundRequest constructs a new ApproveRefundRequest instance.
 func NewApproveRefundRequest() *ApproveRefundRequest {
 	return &ApproveRefundRequest{}
 }

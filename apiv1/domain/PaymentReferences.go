@@ -3,7 +3,7 @@
 
 package domain
 
-// PaymentReferences represents class PaymentReferences
+// PaymentReferences represents class PaymentReferences.
 type PaymentReferences struct {
 	MerchantCaptureReference *string `json:"merchantCaptureReference,omitempty"`
 	MerchantOrderID          *int64  `json:"merchantOrderId,omitempty"`
@@ -15,7 +15,7 @@ type PaymentReferences struct {
 	ReferenceOrigPayment     *string `json:"referenceOrigPayment,omitempty"`
 }
 
-// NewPaymentReferences constructs a new PaymentReferences instance
+// NewPaymentReferences constructs a new PaymentReferences instance.
 func NewPaymentReferences() *PaymentReferences {
 	return &PaymentReferences{}
 }

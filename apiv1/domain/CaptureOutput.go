@@ -3,7 +3,7 @@
 
 package domain
 
-// CaptureOutput represents class CaptureOutput
+// CaptureOutput represents class CaptureOutput.
 type CaptureOutput struct {
 	AmountOfMoney                              *AmountOfMoney                              `json:"amountOfMoney,omitempty"`
 	AmountPaid                                 *int64                                      `json:"amountPaid,omitempty"`
@@ -18,7 +18,7 @@ type CaptureOutput struct {
 	SepaDirectDebitPaymentMethodSpecificOutput *SepaDirectDebitPaymentMethodSpecificOutput `json:"sepaDirectDebitPaymentMethodSpecificOutput,omitempty"`
 }
 
-// NewCaptureOutput constructs a new CaptureOutput instance
+// NewCaptureOutput constructs a new CaptureOutput instance.
 func NewCaptureOutput() *CaptureOutput {
 	return &CaptureOutput{}
 }

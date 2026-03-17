@@ -3,7 +3,7 @@
 
 package domain
 
-// LoanRecipient represents class LoanRecipient
+// LoanRecipient represents class LoanRecipient.
 //
 // Deprecated: No replacement
 type LoanRecipient struct {
@@ -19,7 +19,7 @@ type LoanRecipient struct {
 	Zip           *string `json:"zip,omitempty"`
 }
 
-// NewLoanRecipient constructs a new LoanRecipient instance
+// NewLoanRecipient constructs a new LoanRecipient instance.
 func NewLoanRecipient() *LoanRecipient {
 	return &LoanRecipient{}
 }

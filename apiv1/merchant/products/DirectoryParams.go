@@ -5,15 +5,15 @@ package products
 
 import "github.com/Worldline-Global-Collect/connect-sdk-go/communicator/communication"
 
-// DirectoryParams represents query parameters for Get payment product directory
+// DirectoryParams represents query parameters for Get payment product directory.
 //
-// Documentation can be found at https://apireference.connect.worldline-solutions.com/s2sapi/v1/en_US/go/products/directory.html
+// Documentation can be found at https://apireference.connect.worldline-solutions.com/s2sapi/v1/en_US/go/products/directory.html.
 type DirectoryParams struct {
 	CountryCode  *string
 	CurrencyCode *string
 }
 
-// ToRequestParameters converts the query to communication.RequestParams
+// ToRequestParameters converts the query to communication.RequestParams.
 func (params *DirectoryParams) ToRequestParameters() communication.RequestParams {
 	reqParams := communication.RequestParams{}
 
@@ -29,7 +29,7 @@ func (params *DirectoryParams) ToRequestParameters() communication.RequestParams
 	return reqParams
 }
 
-// NewDirectoryParams constructs a new DirectoryParams instance
+// NewDirectoryParams constructs a new DirectoryParams instance.
 func NewDirectoryParams() *DirectoryParams {
 	return &DirectoryParams{}
 }

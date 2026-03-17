@@ -3,13 +3,13 @@
 
 package domain
 
-// RedirectPaymentProduct838SpecificInputBase represents class RedirectPaymentProduct838SpecificInputBase
+// RedirectPaymentProduct838SpecificInputBase represents class RedirectPaymentProduct838SpecificInputBase.
 type RedirectPaymentProduct838SpecificInputBase struct {
 	InteroperabilityData  *string `json:"interoperabilityData,omitempty"`
 	InteroperabilityToken *string `json:"interoperabilityToken,omitempty"`
 }
 
-// NewRedirectPaymentProduct838SpecificInputBase constructs a new RedirectPaymentProduct838SpecificInputBase instance
+// NewRedirectPaymentProduct838SpecificInputBase constructs a new RedirectPaymentProduct838SpecificInputBase instance.
 func NewRedirectPaymentProduct838SpecificInputBase() *RedirectPaymentProduct838SpecificInputBase {
 	return &RedirectPaymentProduct838SpecificInputBase{}
 }

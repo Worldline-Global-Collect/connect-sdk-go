@@ -7,22 +7,22 @@ import (
 	"github.com/Worldline-Global-Collect/connect-sdk-go/domain"
 )
 
-// CommunicatorConfiguration represents the configuration to be used by a Communicator
+// CommunicatorConfiguration represents the configuration to be used by a Communicator.
 type CommunicatorConfiguration struct {
-	// APIEndpoint represents the API endpoint of for the communicator
-	// See https://apireference.connect.worldline-solutions.com/s2sapi/v1/en_US/go/endpoints.html
+	// APIEndpoint represents the API endpoint of for the communicator.
+	// See https://apireference.connect.worldline-solutions.com/s2sapi/v1/en_US/go/endpoints.html.
 	APIEndpoint url.URL
-	// ConnectTimeout represents the connect timeout
+	// ConnectTimeout represents the connect timeout.
 	ConnectTimeout time.Duration
-	// SocketTimeout represents the request timeout
+	// SocketTimeout represents the request timeout.
 	SocketTimeout time.Duration
-	// IdleTimeout represents the idle connection timeout
+	// IdleTimeout represents the idle connection timeout.
 	IdleTimeout time.Duration
-	// KeepAliveTimeout represents the HTTP KeepAlive interval
+	// KeepAliveTimeout represents the HTTP KeepAlive interval.
 	KeepAliveTimeout time.Duration
-	// MaxConnections represents the maximum amount of concurrent pooled connections
+	// MaxConnections represents the maximum amount of concurrent pooled connections.
 	MaxConnections int
-	// AuthorizationType represents authorizationType used to sign the requests
+	// AuthorizationType represents authorizationType used to sign the requests.
 	AuthorizationType AuthorizationType
 	// AuthorizationID represents an id used for authorization. The meaning of this id is different for each authorization type.
 	// For instance, for v1HMAC this is the identifier for the secret API key.
@@ -30,11 +30,11 @@ type CommunicatorConfiguration struct {
 	// AuthorizationSecret represents a secret used for authorization. The meaning of this secret is different for each authorization type.
 	// For instance, for v1HMAC this is the secret API key.
 	AuthorizationSecret string
-	// Proxy represents the URL for the connection proxy
+	// Proxy represents the URL for the connection proxy.
 	Proxy *url.URL
-	// Integrator represents the integrator name
+	// Integrator represents the integrator name.
 	Integrator string
-	// ShoppingCartExtension represents the shopping cart extension used in the metadata headers
+	// ShoppingCartExtension represents the shopping cart extension used in the metadata headers.
 	ShoppingCartExtension *domain.ShoppingCartExtension
 }
 
@@ -42,7 +42,7 @@ type CommunicatorConfiguration struct {
 // The APIKeyID can be retrieved from the Configuration Center.
 // This identifier is visible in the HTTP request and is also used to identify the correct account.
 //
-// This function is an alias for getting c.AuthorizationID
+// This function is an alias for getting c.AuthorizationID.
 func (c *CommunicatorConfiguration) GetAPIKeyID() string {
 	return c.AuthorizationID
 }
@@ -51,7 +51,7 @@ func (c *CommunicatorConfiguration) GetAPIKeyID() string {
 // The APIKeyID can be retrieved from the Configuration Center.
 // This identifier is visible in the HTTP request and is also used to identify the correct account.
 //
-// This function is an alias for setting c.AuthorizationID
+// This function is an alias for setting c.AuthorizationID.
 func (c *CommunicatorConfiguration) SetAPIKeyID(apiKeyID string) {
 	c.AuthorizationID = apiKeyID
 }
@@ -61,7 +61,7 @@ func (c *CommunicatorConfiguration) SetAPIKeyID(apiKeyID string) {
 // An APIKeyID and SecretAPIKey always go hand-in-hand, the difference is that SecretAPIKey is never visible in the HTTP request.
 // This secret is used as input for the HMAC algorithm.
 //
-// This function is an alias for getting c.AuthorizationSecret
+// This function is an alias for getting c.AuthorizationSecret.
 func (c *CommunicatorConfiguration) GetSecretAPIKey() string {
 	return c.AuthorizationSecret
 }
@@ -71,20 +71,20 @@ func (c *CommunicatorConfiguration) GetSecretAPIKey() string {
 // An APIKeyID and SecretAPIKey always go hand-in-hand, the difference is that SecretAPIKey is never visible in the HTTP request.
 // This secret is used as input for the HMAC algorithm.
 //
-// This function is an alias for setting c.AuthorizationSecret
+// This function is an alias for setting c.AuthorizationSecret.
 func (c *CommunicatorConfiguration) SetSecretAPIKey(secretAPIKey string) {
 	c.AuthorizationSecret = secretAPIKey
 }
 
 // The default configuration used by the factory is the following:
-// APIEndpoint: api.connect.worldline-solutions.com
-// ConnectTimeout: 5 seconds
-// SocketTimeout: 30 seconds
-// IdleTimeout: 5 seconds
-// KeepAliveTimeout: 30 seconds
-// MaxConnections: 10
-// AuthorizationType: V1HMAC
-// Proxy: none
+//   * APIEndpoint: api.connect.worldline-solutions.com
+//   * ConnectTimeout: 5 seconds
+//   * SocketTimeout: 30 seconds
+//   * IdleTimeout: 5 seconds
+//   * KeepAliveTimeout: 30 seconds
+//   * MaxConnections: 10
+//   * AuthorizationType: V1HMAC
+//   * Proxy: none
 var defaultConfiguration = CommunicatorConfiguration{
 	APIEndpoint: url.URL{
 		Scheme: "https",
@@ -97,7 +97,7 @@ var defaultConfiguration = CommunicatorConfiguration{
 	MaxConnections:   10,
 }
 
-// DefaultV1HMACConfiguration returns the default communicator configuration for the v1HMAC authorization type
+// DefaultV1HMACConfiguration returns the default communicator configuration for the v1HMAC authorization type.
 func DefaultV1HMACConfiguration(apiKeyID, secretAPIKey, integrator string) (*CommunicatorConfiguration, error) {
 	customizedConfiguration := defaultConfiguration
 

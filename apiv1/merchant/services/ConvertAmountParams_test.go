@@ -1,9 +1,10 @@
 package services
 
 import (
-	communication2 "github.com/Worldline-Global-Collect/connect-sdk-go/communicator/communication"
 	"runtime"
 	"testing"
+
+	communication2 "github.com/Worldline-Global-Collect/connect-sdk-go/communicator/communication"
 )
 
 func TestToRequestParameters(t *testing.T) {
@@ -48,6 +49,8 @@ func TestToRequestParameters(t *testing.T) {
 }
 
 func paramRequestCmp(t *testing.T, a communication2.ParamRequest, b communication2.RequestParams) {
+	t.Helper()
+
 	params := a.ToRequestParameters()
 
 	if !requestParamsCmp(params, b) {

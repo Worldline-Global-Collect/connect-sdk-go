@@ -3,7 +3,7 @@
 
 package domain
 
-// OrderLineDetails represents class OrderLineDetails
+// OrderLineDetails represents class OrderLineDetails.
 type OrderLineDetails struct {
 	DiscountAmount          *int64  `json:"discountAmount,omitempty"`
 	GoogleProductCategoryID *int64  `json:"googleProductCategoryId,omitempty"`
@@ -22,7 +22,7 @@ type OrderLineDetails struct {
 	Unit                    *string `json:"unit,omitempty"`
 }
 
-// NewOrderLineDetails constructs a new OrderLineDetails instance
+// NewOrderLineDetails constructs a new OrderLineDetails instance.
 func NewOrderLineDetails() *OrderLineDetails {
 	return &OrderLineDetails{}
 }

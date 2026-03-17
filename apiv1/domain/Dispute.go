@@ -3,7 +3,7 @@
 
 package domain
 
-// Dispute represents class Dispute
+// Dispute represents class Dispute.
 type Dispute struct {
 	CaptureID     *string              `json:"captureId,omitempty"`
 	DisputeOutput *DisputeOutput       `json:"disputeOutput,omitempty"`
@@ -13,7 +13,7 @@ type Dispute struct {
 	StatusOutput  *DisputeStatusOutput `json:"statusOutput,omitempty"`
 }
 
-// NewDispute constructs a new Dispute instance
+// NewDispute constructs a new Dispute instance.
 func NewDispute() *Dispute {
 	return &Dispute{}
 }

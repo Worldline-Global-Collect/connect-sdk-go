@@ -3,12 +3,12 @@
 
 package domain
 
-// CapturePaymentOrderReferences represents class CapturePaymentOrderReferences
+// CapturePaymentOrderReferences represents class CapturePaymentOrderReferences.
 type CapturePaymentOrderReferences struct {
 	MerchantCaptureReference *string `json:"merchantCaptureReference,omitempty"`
 }
 
-// NewCapturePaymentOrderReferences constructs a new CapturePaymentOrderReferences instance
+// NewCapturePaymentOrderReferences constructs a new CapturePaymentOrderReferences instance.
 func NewCapturePaymentOrderReferences() *CapturePaymentOrderReferences {
 	return &CapturePaymentOrderReferences{}
 }

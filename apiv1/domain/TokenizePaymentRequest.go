@@ -3,12 +3,12 @@
 
 package domain
 
-// TokenizePaymentRequest represents class TokenizePaymentRequest
+// TokenizePaymentRequest represents class TokenizePaymentRequest.
 type TokenizePaymentRequest struct {
 	Alias *string `json:"alias,omitempty"`
 }
 
-// NewTokenizePaymentRequest constructs a new TokenizePaymentRequest instance
+// NewTokenizePaymentRequest constructs a new TokenizePaymentRequest instance.
 func NewTokenizePaymentRequest() *TokenizePaymentRequest {
 	return &TokenizePaymentRequest{}
 }

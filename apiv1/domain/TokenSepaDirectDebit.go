@@ -3,14 +3,14 @@
 
 package domain
 
-// TokenSepaDirectDebit represents class TokenSepaDirectDebit
+// TokenSepaDirectDebit represents class TokenSepaDirectDebit.
 type TokenSepaDirectDebit struct {
 	Alias    *string                          `json:"alias,omitempty"`
 	Customer *CustomerTokenWithContactDetails `json:"customer,omitempty"`
 	Mandate  *MandateSepaDirectDebit          `json:"mandate,omitempty"`
 }
 
-// NewTokenSepaDirectDebit constructs a new TokenSepaDirectDebit instance
+// NewTokenSepaDirectDebit constructs a new TokenSepaDirectDebit instance.
 func NewTokenSepaDirectDebit() *TokenSepaDirectDebit {
 	return &TokenSepaDirectDebit{}
 }

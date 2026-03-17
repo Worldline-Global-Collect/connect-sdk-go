@@ -3,7 +3,7 @@
 
 package domain
 
-// TrustlyBankAccount represents class TrustlyBankAccount
+// TrustlyBankAccount represents class TrustlyBankAccount.
 type TrustlyBankAccount struct {
 	AccountLastDigits          *string `json:"accountLastDigits,omitempty"`
 	BankName                   *string `json:"bankName,omitempty"`
@@ -11,7 +11,7 @@ type TrustlyBankAccount struct {
 	PersonIdentificationNumber *string `json:"personIdentificationNumber,omitempty"`
 }
 
-// NewTrustlyBankAccount constructs a new TrustlyBankAccount instance
+// NewTrustlyBankAccount constructs a new TrustlyBankAccount instance.
 func NewTrustlyBankAccount() *TrustlyBankAccount {
 	return &TrustlyBankAccount{}
 }

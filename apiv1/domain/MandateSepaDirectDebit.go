@@ -3,7 +3,7 @@
 
 package domain
 
-// MandateSepaDirectDebit represents class MandateSepaDirectDebit
+// MandateSepaDirectDebit represents class MandateSepaDirectDebit.
 type MandateSepaDirectDebit struct {
 	BankAccountIban            *BankAccountIban `json:"bankAccountIban,omitempty"`
 	Creditor                   *Creditor        `json:"creditor,omitempty"`
@@ -15,7 +15,7 @@ type MandateSepaDirectDebit struct {
 	PreNotification            *string          `json:"preNotification,omitempty"`
 }
 
-// NewMandateSepaDirectDebit constructs a new MandateSepaDirectDebit instance
+// NewMandateSepaDirectDebit constructs a new MandateSepaDirectDebit instance.
 func NewMandateSepaDirectDebit() *MandateSepaDirectDebit {
 	return &MandateSepaDirectDebit{}
 }

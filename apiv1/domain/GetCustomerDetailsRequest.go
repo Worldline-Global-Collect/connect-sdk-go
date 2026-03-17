@@ -3,13 +3,13 @@
 
 package domain
 
-// GetCustomerDetailsRequest represents class GetCustomerDetailsRequest
+// GetCustomerDetailsRequest represents class GetCustomerDetailsRequest.
 type GetCustomerDetailsRequest struct {
 	CountryCode *string         `json:"countryCode,omitempty"`
 	Values      *[]KeyValuePair `json:"values,omitempty"`
 }
 
-// NewGetCustomerDetailsRequest constructs a new GetCustomerDetailsRequest instance
+// NewGetCustomerDetailsRequest constructs a new GetCustomerDetailsRequest instance.
 func NewGetCustomerDetailsRequest() *GetCustomerDetailsRequest {
 	return &GetCustomerDetailsRequest{}
 }

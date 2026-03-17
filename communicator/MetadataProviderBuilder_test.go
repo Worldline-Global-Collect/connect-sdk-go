@@ -30,6 +30,7 @@ func TestWithAdditionalRequestHeader(t *testing.T) {
 		metadataProvider, err := builder.Build()
 		if err != nil && param.allowed {
 			t.Error("Cannot build MetadataProvider")
+
 			continue
 		}
 		if err == nil && !param.allowed {
@@ -42,7 +43,7 @@ func TestWithAdditionalRequestHeader(t *testing.T) {
 			t.Error("Wrong amount of headers stored")
 		}
 		header := headers[0]
-		if "X-GCS-ServerMetaInfo" != header.Name() {
+		if header.Name() != "X-GCS-ServerMetaInfo" {
 			t.Error("X-GCS-ServerMetaInfo should always be set")
 		}
 		header = headers[1]

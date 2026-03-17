@@ -3,7 +3,7 @@
 
 package domain
 
-// CardPaymentMethodSpecificInputBase represents class CardPaymentMethodSpecificInputBase
+// CardPaymentMethodSpecificInputBase represents class CardPaymentMethodSpecificInputBase.
 type CardPaymentMethodSpecificInputBase struct {
 	AcquirerPromotionCode                  *string                `json:"acquirerPromotionCode,omitempty"`
 	AuthorizationMode                      *string                `json:"authorizationMode,omitempty"`
@@ -27,7 +27,7 @@ type CardPaymentMethodSpecificInputBase struct {
 	UnscheduledCardOnFileSequenceIndicator *string                `json:"unscheduledCardOnFileSequenceIndicator,omitempty"`
 }
 
-// NewCardPaymentMethodSpecificInputBase constructs a new CardPaymentMethodSpecificInputBase instance
+// NewCardPaymentMethodSpecificInputBase constructs a new CardPaymentMethodSpecificInputBase instance.
 func NewCardPaymentMethodSpecificInputBase() *CardPaymentMethodSpecificInputBase {
 	return &CardPaymentMethodSpecificInputBase{}
 }

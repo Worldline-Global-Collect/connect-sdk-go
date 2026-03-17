@@ -3,13 +3,13 @@
 
 package domain
 
-// DeviceFingerprintResponse represents class DeviceFingerprintResponse
+// DeviceFingerprintResponse represents class DeviceFingerprintResponse.
 type DeviceFingerprintResponse struct {
 	DeviceFingerprintTransactionID *string `json:"deviceFingerprintTransactionId,omitempty"`
 	HTML                           *string `json:"html,omitempty"`
 }
 
-// NewDeviceFingerprintResponse constructs a new DeviceFingerprintResponse instance
+// NewDeviceFingerprintResponse constructs a new DeviceFingerprintResponse instance.
 func NewDeviceFingerprintResponse() *DeviceFingerprintResponse {
 	return &DeviceFingerprintResponse{}
 }

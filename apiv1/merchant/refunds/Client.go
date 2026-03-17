@@ -4,6 +4,8 @@
 package refunds
 
 import (
+	"errors"
+
 	"github.com/Worldline-Global-Collect/connect-sdk-go/apiv1/domain"
 	v1Errors "github.com/Worldline-Global-Collect/connect-sdk-go/apiv1/errors"
 	"github.com/Worldline-Global-Collect/connect-sdk-go/communicator"
@@ -15,9 +17,9 @@ type Client struct {
 	apiResource *communicator.APIResource
 }
 
-// Find represents the resource /{merchantId}/refunds - Find refunds
+// Find represents the resource /{merchantId}/refunds - Find refunds.
 //
-// Documentation can be found at https://apireference.connect.worldline-solutions.com/s2sapi/v1/en_US/go/refunds/find.html
+// Documentation can be found at https://apireference.connect.worldline-solutions.com/s2sapi/v1/en_US/go/refunds/find.html.
 //
 // Can return any of the following errors:
 //   * IdempotenceError if an idempotent request caused a conflict (HTTP status code 409)
@@ -41,11 +43,9 @@ func (c *Client) Find(query FindParams, context *communicator.CallContext) (doma
 
 	getErr := c.apiResource.Communicator().Get(uri, clientHeaders, &query, context, &resultObject)
 	if getErr != nil {
-		responseError, isResponseError := getErr.(*commErrors.ResponseError)
-		if isResponseError {
-			var errorObject interface{}
-
-			errorObject = &domain.ErrorResponse{}
+		var responseError *commErrors.ResponseError
+		if errors.As(getErr, &responseError) {
+			errorObject := &domain.ErrorResponse{}
 			err = c.apiResource.Communicator().Marshaller().Unmarshal(responseError.Body(), errorObject)
 			if err != nil {
 				return resultObject, err
@@ -65,9 +65,9 @@ func (c *Client) Find(query FindParams, context *communicator.CallContext) (doma
 	return resultObject, nil
 }
 
-// Get represents the resource /{merchantId}/refunds/{refundId} - Get refund
+// Get represents the resource /{merchantId}/refunds/{refundId} - Get refund.
 //
-// Documentation can be found at https://apireference.connect.worldline-solutions.com/s2sapi/v1/en_US/go/refunds/get.html
+// Documentation can be found at https://apireference.connect.worldline-solutions.com/s2sapi/v1/en_US/go/refunds/get.html.
 //
 // Can return any of the following errors:
 //   * IdempotenceError if an idempotent request caused a conflict (HTTP status code 409)
@@ -95,11 +95,9 @@ func (c *Client) Get(refundID string, context *communicator.CallContext) (domain
 
 	getErr := c.apiResource.Communicator().Get(uri, clientHeaders, nil, context, &resultObject)
 	if getErr != nil {
-		responseError, isResponseError := getErr.(*commErrors.ResponseError)
-		if isResponseError {
-			var errorObject interface{}
-
-			errorObject = &domain.ErrorResponse{}
+		var responseError *commErrors.ResponseError
+		if errors.As(getErr, &responseError) {
+			errorObject := &domain.ErrorResponse{}
 			err = c.apiResource.Communicator().Marshaller().Unmarshal(responseError.Body(), errorObject)
 			if err != nil {
 				return resultObject, err
@@ -119,9 +117,9 @@ func (c *Client) Get(refundID string, context *communicator.CallContext) (domain
 	return resultObject, nil
 }
 
-// Approve represents the resource /{merchantId}/refunds/{refundId}/approve - Approve refund
+// Approve represents the resource /{merchantId}/refunds/{refundId}/approve - Approve refund.
 //
-// Documentation can be found at https://apireference.connect.worldline-solutions.com/s2sapi/v1/en_US/go/refunds/approve.html
+// Documentation can be found at https://apireference.connect.worldline-solutions.com/s2sapi/v1/en_US/go/refunds/approve.html.
 //
 // Can return any of the following errors:
 //   * IdempotenceError if an idempotent request caused a conflict (HTTP status code 409)
@@ -148,11 +146,9 @@ func (c *Client) Approve(refundID string, body domain.ApproveRefundRequest, cont
 	var resultObject map[string]interface{}
 	postErr := c.apiResource.Communicator().Post(uri, clientHeaders, nil, body, context, &resultObject)
 	if postErr != nil {
-		responseError, isResponseError := postErr.(*commErrors.ResponseError)
-		if isResponseError {
-			var errorObject interface{}
-
-			errorObject = &domain.ErrorResponse{}
+		var responseError *commErrors.ResponseError
+		if errors.As(postErr, &responseError) {
+			errorObject := &domain.ErrorResponse{}
 			err = c.apiResource.Communicator().Marshaller().Unmarshal(responseError.Body(), errorObject)
 			if err != nil {
 				return err
@@ -172,9 +168,9 @@ func (c *Client) Approve(refundID string, body domain.ApproveRefundRequest, cont
 	return nil
 }
 
-// Cancel represents the resource /{merchantId}/refunds/{refundId}/cancel - Cancel refund
+// Cancel represents the resource /{merchantId}/refunds/{refundId}/cancel - Cancel refund.
 //
-// Documentation can be found at https://apireference.connect.worldline-solutions.com/s2sapi/v1/en_US/go/refunds/cancel.html
+// Documentation can be found at https://apireference.connect.worldline-solutions.com/s2sapi/v1/en_US/go/refunds/cancel.html.
 //
 // Can return any of the following errors:
 //   * IdempotenceError if an idempotent request caused a conflict (HTTP status code 409)
@@ -201,11 +197,9 @@ func (c *Client) Cancel(refundID string, context *communicator.CallContext) erro
 	var resultObject map[string]interface{}
 	postErr := c.apiResource.Communicator().Post(uri, clientHeaders, nil, nil, context, &resultObject)
 	if postErr != nil {
-		responseError, isResponseError := postErr.(*commErrors.ResponseError)
-		if isResponseError {
-			var errorObject interface{}
-
-			errorObject = &domain.ErrorResponse{}
+		var responseError *commErrors.ResponseError
+		if errors.As(postErr, &responseError) {
+			errorObject := &domain.ErrorResponse{}
 			err = c.apiResource.Communicator().Marshaller().Unmarshal(responseError.Body(), errorObject)
 			if err != nil {
 				return err
@@ -225,9 +219,9 @@ func (c *Client) Cancel(refundID string, context *communicator.CallContext) erro
 	return nil
 }
 
-// Cancelapproval represents the resource /{merchantId}/refunds/{refundId}/cancelapproval - Undo approve refund
+// Cancelapproval represents the resource /{merchantId}/refunds/{refundId}/cancelapproval - Undo approve refund.
 //
-// Documentation can be found at https://apireference.connect.worldline-solutions.com/s2sapi/v1/en_US/go/refunds/cancelapproval.html
+// Documentation can be found at https://apireference.connect.worldline-solutions.com/s2sapi/v1/en_US/go/refunds/cancelapproval.html.
 //
 // Can return any of the following errors:
 //   * IdempotenceError if an idempotent request caused a conflict (HTTP status code 409)
@@ -254,11 +248,9 @@ func (c *Client) Cancelapproval(refundID string, context *communicator.CallConte
 	var resultObject map[string]interface{}
 	postErr := c.apiResource.Communicator().Post(uri, clientHeaders, nil, nil, context, &resultObject)
 	if postErr != nil {
-		responseError, isResponseError := postErr.(*commErrors.ResponseError)
-		if isResponseError {
-			var errorObject interface{}
-
-			errorObject = &domain.ErrorResponse{}
+		var responseError *commErrors.ResponseError
+		if errors.As(postErr, &responseError) {
+			errorObject := &domain.ErrorResponse{}
 			err = c.apiResource.Communicator().Marshaller().Unmarshal(responseError.Body(), errorObject)
 			if err != nil {
 				return err
@@ -278,9 +270,9 @@ func (c *Client) Cancelapproval(refundID string, context *communicator.CallConte
 	return nil
 }
 
-// NewClient constructs a new Refunds client
+// NewClient constructs a new Refunds client.
 //
-// parent is the communicator.APIResource on top of which we want to build the new Refunds client
+// parent is the communicator.APIResource on top of which we want to build the new Refunds client.
 func NewClient(parent *communicator.APIResource, pathContext map[string]string) (*Client, error) {
 	apiResource, err := communicator.NewAPIResourceWithParent(parent, pathContext)
 	if err != nil {

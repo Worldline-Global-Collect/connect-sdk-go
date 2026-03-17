@@ -4,6 +4,8 @@
 package productgroups
 
 import (
+	"errors"
+
 	"github.com/Worldline-Global-Collect/connect-sdk-go/apiv1/domain"
 	v1Errors "github.com/Worldline-Global-Collect/connect-sdk-go/apiv1/errors"
 	"github.com/Worldline-Global-Collect/connect-sdk-go/communicator"
@@ -15,9 +17,9 @@ type Client struct {
 	apiResource *communicator.APIResource
 }
 
-// Find represents the resource /{merchantId}/productgroups - Get payment product groups
+// Find represents the resource /{merchantId}/productgroups - Get payment product groups.
 //
-// Documentation can be found at https://apireference.connect.worldline-solutions.com/s2sapi/v1/en_US/go/productgroups/find.html
+// Documentation can be found at https://apireference.connect.worldline-solutions.com/s2sapi/v1/en_US/go/productgroups/find.html.
 //
 // Can return any of the following errors:
 //   * IdempotenceError if an idempotent request caused a conflict (HTTP status code 409)
@@ -41,11 +43,9 @@ func (c *Client) Find(query FindParams, context *communicator.CallContext) (doma
 
 	getErr := c.apiResource.Communicator().Get(uri, clientHeaders, &query, context, &resultObject)
 	if getErr != nil {
-		responseError, isResponseError := getErr.(*commErrors.ResponseError)
-		if isResponseError {
-			var errorObject interface{}
-
-			errorObject = &domain.ErrorResponse{}
+		var responseError *commErrors.ResponseError
+		if errors.As(getErr, &responseError) {
+			errorObject := &domain.ErrorResponse{}
 			err = c.apiResource.Communicator().Marshaller().Unmarshal(responseError.Body(), errorObject)
 			if err != nil {
 				return resultObject, err
@@ -65,9 +65,9 @@ func (c *Client) Find(query FindParams, context *communicator.CallContext) (doma
 	return resultObject, nil
 }
 
-// Get represents the resource /{merchantId}/productgroups/{paymentProductGroupId} - Get payment product group
+// Get represents the resource /{merchantId}/productgroups/{paymentProductGroupId} - Get payment product group.
 //
-// Documentation can be found at https://apireference.connect.worldline-solutions.com/s2sapi/v1/en_US/go/productgroups/get.html
+// Documentation can be found at https://apireference.connect.worldline-solutions.com/s2sapi/v1/en_US/go/productgroups/get.html.
 //
 // Can return any of the following errors:
 //   * IdempotenceError if an idempotent request caused a conflict (HTTP status code 409)
@@ -95,11 +95,9 @@ func (c *Client) Get(paymentProductGroupID string, query GetParams, context *com
 
 	getErr := c.apiResource.Communicator().Get(uri, clientHeaders, &query, context, &resultObject)
 	if getErr != nil {
-		responseError, isResponseError := getErr.(*commErrors.ResponseError)
-		if isResponseError {
-			var errorObject interface{}
-
-			errorObject = &domain.ErrorResponse{}
+		var responseError *commErrors.ResponseError
+		if errors.As(getErr, &responseError) {
+			errorObject := &domain.ErrorResponse{}
 			err = c.apiResource.Communicator().Marshaller().Unmarshal(responseError.Body(), errorObject)
 			if err != nil {
 				return resultObject, err
@@ -119,9 +117,9 @@ func (c *Client) Get(paymentProductGroupID string, query GetParams, context *com
 	return resultObject, nil
 }
 
-// DeviceFingerprint represents the resource /{merchantId}/productgroups/{paymentProductGroupId}/deviceFingerprint - Get device fingerprint
+// DeviceFingerprint represents the resource /{merchantId}/productgroups/{paymentProductGroupId}/deviceFingerprint - Get device fingerprint.
 //
-// Documentation can be found at https://apireference.connect.worldline-solutions.com/s2sapi/v1/en_US/go/productgroups/deviceFingerprint.html
+// Documentation can be found at https://apireference.connect.worldline-solutions.com/s2sapi/v1/en_US/go/productgroups/deviceFingerprint.html.
 //
 // Can return any of the following errors:
 //   * IdempotenceError if an idempotent request caused a conflict (HTTP status code 409)
@@ -149,11 +147,9 @@ func (c *Client) DeviceFingerprint(paymentProductGroupID string, body domain.Dev
 
 	postErr := c.apiResource.Communicator().Post(uri, clientHeaders, nil, body, context, &resultObject)
 	if postErr != nil {
-		responseError, isResponseError := postErr.(*commErrors.ResponseError)
-		if isResponseError {
-			var errorObject interface{}
-
-			errorObject = &domain.ErrorResponse{}
+		var responseError *commErrors.ResponseError
+		if errors.As(postErr, &responseError) {
+			errorObject := &domain.ErrorResponse{}
 			err = c.apiResource.Communicator().Marshaller().Unmarshal(responseError.Body(), errorObject)
 			if err != nil {
 				return resultObject, err
@@ -173,9 +169,9 @@ func (c *Client) DeviceFingerprint(paymentProductGroupID string, body domain.Dev
 	return resultObject, nil
 }
 
-// NewClient constructs a new Productgroups client
+// NewClient constructs a new Productgroups client.
 //
-// parent is the communicator.APIResource on top of which we want to build the new Productgroups client
+// parent is the communicator.APIResource on top of which we want to build the new Productgroups client.
 func NewClient(parent *communicator.APIResource, pathContext map[string]string) (*Client, error) {
 	apiResource, err := communicator.NewAPIResourceWithParent(parent, pathContext)
 	if err != nil {

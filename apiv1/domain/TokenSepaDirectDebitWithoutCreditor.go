@@ -3,14 +3,14 @@
 
 package domain
 
-// TokenSepaDirectDebitWithoutCreditor represents class TokenSepaDirectDebitWithoutCreditor
+// TokenSepaDirectDebitWithoutCreditor represents class TokenSepaDirectDebitWithoutCreditor.
 type TokenSepaDirectDebitWithoutCreditor struct {
 	Alias    *string                                `json:"alias,omitempty"`
 	Customer *CustomerTokenWithContactDetails       `json:"customer,omitempty"`
 	Mandate  *MandateSepaDirectDebitWithoutCreditor `json:"mandate,omitempty"`
 }
 
-// NewTokenSepaDirectDebitWithoutCreditor constructs a new TokenSepaDirectDebitWithoutCreditor instance
+// NewTokenSepaDirectDebitWithoutCreditor constructs a new TokenSepaDirectDebitWithoutCreditor instance.
 func NewTokenSepaDirectDebitWithoutCreditor() *TokenSepaDirectDebitWithoutCreditor {
 	return &TokenSepaDirectDebitWithoutCreditor{}
 }

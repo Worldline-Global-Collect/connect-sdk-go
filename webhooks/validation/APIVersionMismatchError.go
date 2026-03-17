@@ -11,22 +11,22 @@ type APIVersionMismatchError struct {
 	message string
 }
 
-// Error implements the error interface
+// Error implements the error interface.
 func (ame APIVersionMismatchError) Error() string {
 	return ame.message
 }
 
-// EventAPIVersion represents the APIVersion found in the event
+// EventAPIVersion represents the APIVersion found in the event.
 func (ame APIVersionMismatchError) EventAPIVersion() string {
 	return ame.eventAPIVersion
 }
 
-// SDKAPIVersion represents the APIVersion found in the SDK
+// SDKAPIVersion represents the APIVersion found in the SDK.
 func (ame APIVersionMismatchError) SDKAPIVersion() string {
 	return ame.sdkAPIVersion
 }
 
-// NewAPIVersionMismatchError creates an APIVersionMismatchError with the given eventAPIVersion and sdkAPIVersion
+// NewAPIVersionMismatchError creates an APIVersionMismatchError with the given eventAPIVersion and sdkAPIVersion.
 func NewAPIVersionMismatchError(eventAPIVersion, sdkAPIVersion string) *APIVersionMismatchError {
 	message := fmt.Sprintf(`"event API version "%v" is not compatible with SDK API version "%v"`, eventAPIVersion, sdkAPIVersion)
 

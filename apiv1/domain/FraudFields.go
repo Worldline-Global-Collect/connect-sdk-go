@@ -3,7 +3,7 @@
 
 package domain
 
-// FraudFields represents class FraudFields
+// FraudFields represents class FraudFields.
 type FraudFields struct {
 	// Deprecated: For risk assessments there is no replacement. For other calls, use Order.shipping.addressIndicator instead
 	AddressesAreIdentical          *bool                       `json:"addressesAreIdentical,omitempty"`
@@ -37,7 +37,7 @@ type FraudFields struct {
 	Website                        *string                     `json:"website,omitempty"`
 }
 
-// NewFraudFields constructs a new FraudFields instance
+// NewFraudFields constructs a new FraudFields instance.
 func NewFraudFields() *FraudFields {
 	return &FraudFields{}
 }

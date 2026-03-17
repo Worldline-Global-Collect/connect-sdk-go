@@ -3,7 +3,7 @@
 
 package domain
 
-// SchemeTokenData represents class SchemeTokenData
+// SchemeTokenData represents class SchemeTokenData.
 type SchemeTokenData struct {
 	CardholderName  *string `json:"cardholderName,omitempty"`
 	Cryptogram      *string `json:"cryptogram,omitempty"`
@@ -12,7 +12,7 @@ type SchemeTokenData struct {
 	TokenExpiryDate *string `json:"tokenExpiryDate,omitempty"`
 }
 
-// NewSchemeTokenData constructs a new SchemeTokenData instance
+// NewSchemeTokenData constructs a new SchemeTokenData instance.
 func NewSchemeTokenData() *SchemeTokenData {
 	return &SchemeTokenData{}
 }

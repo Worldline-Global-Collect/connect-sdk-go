@@ -3,7 +3,7 @@
 
 package domain
 
-// PaymentProductFieldDisplayHints represents class PaymentProductFieldDisplayHints
+// PaymentProductFieldDisplayHints represents class PaymentProductFieldDisplayHints.
 type PaymentProductFieldDisplayHints struct {
 	AlwaysShow         *bool                           `json:"alwaysShow,omitempty"`
 	DisplayOrder       *int32                          `json:"displayOrder,omitempty"`
@@ -17,7 +17,7 @@ type PaymentProductFieldDisplayHints struct {
 	Tooltip            *PaymentProductFieldTooltip     `json:"tooltip,omitempty"`
 }
 
-// NewPaymentProductFieldDisplayHints constructs a new PaymentProductFieldDisplayHints instance
+// NewPaymentProductFieldDisplayHints constructs a new PaymentProductFieldDisplayHints instance.
 func NewPaymentProductFieldDisplayHints() *PaymentProductFieldDisplayHints {
 	return &PaymentProductFieldDisplayHints{}
 }

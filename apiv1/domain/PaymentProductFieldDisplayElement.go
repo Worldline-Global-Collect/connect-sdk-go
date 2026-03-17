@@ -3,7 +3,7 @@
 
 package domain
 
-// PaymentProductFieldDisplayElement represents class PaymentProductFieldDisplayElement
+// PaymentProductFieldDisplayElement represents class PaymentProductFieldDisplayElement.
 type PaymentProductFieldDisplayElement struct {
 	ID    *string `json:"id,omitempty"`
 	Label *string `json:"label,omitempty"`
@@ -11,7 +11,7 @@ type PaymentProductFieldDisplayElement struct {
 	Value *string `json:"value,omitempty"`
 }
 
-// NewPaymentProductFieldDisplayElement constructs a new PaymentProductFieldDisplayElement instance
+// NewPaymentProductFieldDisplayElement constructs a new PaymentProductFieldDisplayElement instance.
 func NewPaymentProductFieldDisplayElement() *PaymentProductFieldDisplayElement {
 	return &PaymentProductFieldDisplayElement{}
 }

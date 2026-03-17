@@ -3,13 +3,13 @@
 
 package domain
 
-// EInvoicePaymentMethodSpecificInputBase represents class EInvoicePaymentMethodSpecificInputBase
+// EInvoicePaymentMethodSpecificInputBase represents class EInvoicePaymentMethodSpecificInputBase.
 type EInvoicePaymentMethodSpecificInputBase struct {
 	PaymentProductID *int32 `json:"paymentProductId,omitempty"`
 	RequiresApproval *bool  `json:"requiresApproval,omitempty"`
 }
 
-// NewEInvoicePaymentMethodSpecificInputBase constructs a new EInvoicePaymentMethodSpecificInputBase instance
+// NewEInvoicePaymentMethodSpecificInputBase constructs a new EInvoicePaymentMethodSpecificInputBase instance.
 func NewEInvoicePaymentMethodSpecificInputBase() *EInvoicePaymentMethodSpecificInputBase {
 	return &EInvoicePaymentMethodSpecificInputBase{}
 }

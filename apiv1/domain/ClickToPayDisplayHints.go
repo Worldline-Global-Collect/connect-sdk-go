@@ -3,12 +3,12 @@
 
 package domain
 
-// ClickToPayDisplayHints represents class ClickToPayDisplayHints
+// ClickToPayDisplayHints represents class ClickToPayDisplayHints.
 type ClickToPayDisplayHints struct {
 	Logo *string `json:"logo,omitempty"`
 }
 
-// NewClickToPayDisplayHints constructs a new ClickToPayDisplayHints instance
+// NewClickToPayDisplayHints constructs a new ClickToPayDisplayHints instance.
 func NewClickToPayDisplayHints() *ClickToPayDisplayHints {
 	return &ClickToPayDisplayHints{}
 }

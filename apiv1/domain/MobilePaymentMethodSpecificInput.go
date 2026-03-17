@@ -3,7 +3,7 @@
 
 package domain
 
-// MobilePaymentMethodSpecificInput represents class MobilePaymentMethodSpecificInput
+// MobilePaymentMethodSpecificInput represents class MobilePaymentMethodSpecificInput.
 type MobilePaymentMethodSpecificInput struct {
 	AuthorizationMode                      *string                               `json:"authorizationMode,omitempty"`
 	CustomerReference                      *string                               `json:"customerReference,omitempty"`
@@ -23,7 +23,7 @@ type MobilePaymentMethodSpecificInput struct {
 	UnscheduledCardOnFileSequenceIndicator *string                               `json:"unscheduledCardOnFileSequenceIndicator,omitempty"`
 }
 
-// NewMobilePaymentMethodSpecificInput constructs a new MobilePaymentMethodSpecificInput instance
+// NewMobilePaymentMethodSpecificInput constructs a new MobilePaymentMethodSpecificInput instance.
 func NewMobilePaymentMethodSpecificInput() *MobilePaymentMethodSpecificInput {
 	return &MobilePaymentMethodSpecificInput{}
 }

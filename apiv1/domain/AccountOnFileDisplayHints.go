@@ -3,13 +3,13 @@
 
 package domain
 
-// AccountOnFileDisplayHints represents class AccountOnFileDisplayHints
+// AccountOnFileDisplayHints represents class AccountOnFileDisplayHints.
 type AccountOnFileDisplayHints struct {
 	LabelTemplate *[]LabelTemplateElement `json:"labelTemplate,omitempty"`
 	Logo          *string                 `json:"logo,omitempty"`
 }
 
-// NewAccountOnFileDisplayHints constructs a new AccountOnFileDisplayHints instance
+// NewAccountOnFileDisplayHints constructs a new AccountOnFileDisplayHints instance.
 func NewAccountOnFileDisplayHints() *AccountOnFileDisplayHints {
 	return &AccountOnFileDisplayHints{}
 }

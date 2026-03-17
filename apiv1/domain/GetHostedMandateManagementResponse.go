@@ -3,13 +3,13 @@
 
 package domain
 
-// GetHostedMandateManagementResponse represents class GetHostedMandateManagementResponse
+// GetHostedMandateManagementResponse represents class GetHostedMandateManagementResponse.
 type GetHostedMandateManagementResponse struct {
 	Mandate *MandateResponse `json:"mandate,omitempty"`
 	Status  *string          `json:"status,omitempty"`
 }
 
-// NewGetHostedMandateManagementResponse constructs a new GetHostedMandateManagementResponse instance
+// NewGetHostedMandateManagementResponse constructs a new GetHostedMandateManagementResponse instance.
 func NewGetHostedMandateManagementResponse() *GetHostedMandateManagementResponse {
 	return &GetHostedMandateManagementResponse{}
 }

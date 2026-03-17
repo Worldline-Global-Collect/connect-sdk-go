@@ -5,7 +5,7 @@ import (
 	"io"
 )
 
-// defaultMarshaller represents the default implementation of the JSON Marshaller
+// defaultMarshaller represents the default implementation of the JSON Marshaller.
 type defaultMarshaller struct {
 }
 
@@ -37,7 +37,7 @@ func (m defaultMarshaller) UnmarshalFromReader(reader io.Reader, v interface{}) 
 
 var marshaller = &defaultMarshaller{}
 
-// DefaultMarshaller returns the default implementation of the JSON Marshaller
+// DefaultMarshaller returns the default implementation of the JSON Marshaller.
 func DefaultMarshaller() Marshaller {
 	return marshaller
 }

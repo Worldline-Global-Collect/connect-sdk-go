@@ -1,6 +1,7 @@
 package connectsdk
 
 import (
+	"errors"
 	"math/rand"
 	"net"
 	"net/http"
@@ -707,22 +708,16 @@ func TestCreatePaymentInvalidCardNumber(t *testing.T) {
 	requestBody.Order = &order
 
 	_, err = client.V1().Merchant("1234").Payments().Create(requestBody, nil)
-	switch ce := err.(type) {
-	case *v1Errors.ValidationError:
-		{
-			if ce.StatusCode() != http.StatusBadRequest {
-				t.Fatalf("%v: statusCode %v", logPrefix, ce.StatusCode())
-			}
-			if ce.ResponseBody() != createPaymentFailedInvalidCardNumberJSON {
-				t.Fatalf("%v: responseBody %v", logPrefix, ce.ResponseBody())
-			}
-
-			break
+	var ce *v1Errors.ValidationError
+	if errors.As(err, &ce) {
+		if ce.StatusCode() != http.StatusBadRequest {
+			t.Fatalf("%v: statusCode %v", logPrefix, ce.StatusCode())
 		}
-	default:
-		{
-			t.Fatalf("%v: %v", logPrefix, err)
+		if ce.ResponseBody() != createPaymentFailedInvalidCardNumberJSON {
+			t.Fatalf("%v: responseBody %v", logPrefix, ce.ResponseBody())
 		}
+	} else {
+		t.Fatalf("%v: %v", logPrefix, err)
 	}
 
 	if len(logger.entries) != 2 {
@@ -828,22 +823,16 @@ func TestCreatePaymentRejected(t *testing.T) {
 	requestBody.Order = &order
 
 	_, err = client.V1().Merchant("1234").Payments().Create(requestBody, nil)
-	switch ce := err.(type) {
-	case *v1Errors.DeclinedPaymentError:
-		{
-			if ce.StatusCode() != http.StatusPaymentRequired {
-				t.Fatalf("%v: statusCode %v", logPrefix, ce.StatusCode())
-			}
-			if ce.ResponseBody() != createPaymentFailedRejectedJSON {
-				t.Fatalf("%v: responseBody %v", logPrefix, ce.ResponseBody())
-			}
-
-			break
+	var ce *v1Errors.DeclinedPaymentError
+	if errors.As(err, &ce) {
+		if ce.StatusCode() != http.StatusPaymentRequired {
+			t.Fatalf("%v: statusCode %v", logPrefix, ce.StatusCode())
 		}
-	default:
-		{
-			t.Fatalf("%v: %v", logPrefix, err)
+		if ce.ResponseBody() != createPaymentFailedRejectedJSON {
+			t.Fatalf("%v: responseBody %v", logPrefix, ce.ResponseBody())
 		}
+	} else {
+		t.Fatalf("%v: %v", logPrefix, err)
 	}
 
 	if len(logger.entries) != 2 {
@@ -922,22 +911,16 @@ func TestLoggingUnknownServerError(t *testing.T) {
 	client.EnableLogging(logger)
 
 	_, err = client.V1().Merchant("1234").Services().Testconnection(nil)
-	switch ce := err.(type) {
-	case *v1Errors.PlatformError:
-		{
-			if ce.StatusCode() != http.StatusInternalServerError {
-				t.Fatalf("%v: statusCode %v", logPrefix, ce.StatusCode())
-			}
-			if ce.ResponseBody() != unknownServerErrorJSON {
-				t.Fatalf("%v: responseBody %v", logPrefix, ce.ResponseBody())
-			}
-
-			break
+	var ce *v1Errors.PlatformError
+	if errors.As(err, &ce) {
+		if ce.StatusCode() != http.StatusInternalServerError {
+			t.Fatalf("%v: statusCode %v", logPrefix, ce.StatusCode())
 		}
-	default:
-		{
-			t.Fatalf("%v: %v", logPrefix, err)
+		if ce.ResponseBody() != unknownServerErrorJSON {
+			t.Fatalf("%v: responseBody %v", logPrefix, ce.ResponseBody())
 		}
+	} else {
+		t.Fatalf("%v: %v", logPrefix, err)
 	}
 
 	if len(logger.entries) != 2 {
@@ -1009,15 +992,9 @@ func TestNonJson(t *testing.T) {
 	client.EnableLogging(logger)
 
 	_, err = client.V1().Merchant("1234").Services().Testconnection(nil)
-	switch err.(type) {
-	case *commErrors.NotFoundError:
-		{
-			break
-		}
-	default:
-		{
-			t.Fatalf("%v: %v", logPrefix, err)
-		}
+	var nfe *commErrors.NotFoundError
+	if !errors.As(err, &nfe) {
+		t.Fatalf("%v: %v", logPrefix, err)
 	}
 
 	if len(logger.entries) != 2 {
@@ -1092,21 +1069,16 @@ func TestReadTimeout(t *testing.T) {
 	client.EnableLogging(logger)
 
 	_, err = client.V1().Merchant("1234").Services().Testconnection(nil)
-	switch ce := err.(type) {
-	case *commErrors.CommunicationError:
-		{
-			internalError := ce.InternalError()
+	var ce *commErrors.CommunicationError
+	if errors.As(err, &ce) {
+		internalError := ce.InternalError()
 
-			if uErr, ok := internalError.(*url.Error); ok && uErr.Timeout() {
-				break
-			}
-
+		var uErr *url.Error
+		if !errors.As(internalError, &uErr) && uErr.Timeout() {
 			t.Fatalf("%v: %v", logPrefix, internalError)
 		}
-	default:
-		{
-			t.Fatalf("%v: %v", logPrefix, err)
-		}
+	} else {
+		t.Fatalf("%v: %v", logPrefix, err)
 	}
 
 	if len(logger.entries) != 2 {
@@ -1275,21 +1247,16 @@ func TestLogErrorOnly(t *testing.T) {
 		createLoggedDelayedRecordRequest(http.StatusOK, testConnectionJSON, responseHeaders, requestHeaders, 1*time.Second, client, logger))
 
 	_, err = client.V1().Merchant("1234").Services().Testconnection(nil)
-	switch ce := err.(type) {
-	case *commErrors.CommunicationError:
-		{
-			internalError := ce.InternalError()
+	var ce *commErrors.CommunicationError
+	if errors.As(err, &ce) {
+		internalError := ce.InternalError()
 
-			if uErr, ok := internalError.(*url.Error); ok && uErr.Timeout() {
-				break
-			}
-
+		var uErr *url.Error
+		if !errors.As(internalError, &uErr) && uErr.Timeout() {
 			t.Fatalf("%v: %v", logPrefix, internalError)
 		}
-	default:
-		{
-			t.Fatalf("%v: %v", logPrefix, err)
-		}
+	} else {
+		t.Fatalf("%v: %v", logPrefix, err)
 	}
 
 	if len(logger.entries) != 1 {

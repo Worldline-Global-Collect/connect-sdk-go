@@ -3,7 +3,7 @@
 
 package domain
 
-// HostedFile represents class HostedFile
+// HostedFile represents class HostedFile.
 type HostedFile struct {
 	FileName *string `json:"fileName,omitempty"`
 	FileSize *string `json:"fileSize,omitempty"`
@@ -11,7 +11,7 @@ type HostedFile struct {
 	ID       *string `json:"id,omitempty"`
 }
 
-// NewHostedFile constructs a new HostedFile instance
+// NewHostedFile constructs a new HostedFile instance.
 func NewHostedFile() *HostedFile {
 	return &HostedFile{}
 }

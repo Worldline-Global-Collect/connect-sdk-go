@@ -3,7 +3,7 @@
 
 package domain
 
-// GetCustomerDetailsResponse represents class GetCustomerDetailsResponse
+// GetCustomerDetailsResponse represents class GetCustomerDetailsResponse.
 type GetCustomerDetailsResponse struct {
 	City         *string `json:"city,omitempty"`
 	Country      *string `json:"country,omitempty"`
@@ -17,7 +17,7 @@ type GetCustomerDetailsResponse struct {
 	Zip          *string `json:"zip,omitempty"`
 }
 
-// NewGetCustomerDetailsResponse constructs a new GetCustomerDetailsResponse instance
+// NewGetCustomerDetailsResponse constructs a new GetCustomerDetailsResponse instance.
 func NewGetCustomerDetailsResponse() *GetCustomerDetailsResponse {
 	return &GetCustomerDetailsResponse{}
 }

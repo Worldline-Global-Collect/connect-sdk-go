@@ -10,11 +10,13 @@ import (
 
 type inMemorySecretKeyStore struct{}
 
-var keyStoreMap = map[string]string{}
-var keyStoreLock = sync.RWMutex{}
-var keyStore = &inMemorySecretKeyStore{}
+var (
+	keyStoreMap  = map[string]string{}
+	keyStoreLock = sync.RWMutex{}
+	keyStore     = &inMemorySecretKeyStore{}
+)
 
-// GetSecretKey returns the secretKey associated with the given keyID
+// GetSecretKey returns the secretKey associated with the given keyID.
 func (ks *inMemorySecretKeyStore) GetSecretKey(keyID string) (string, error) {
 	keyStoreLock.RLock()
 	defer keyStoreLock.RUnlock()
@@ -34,7 +36,7 @@ func InMemorySecretKeyStore() validation.SecretKeyStore {
 	return keyStore
 }
 
-// StoreInMemorySecretKey stores the given keyID, secretKey pair in the in-memory secret key store
+// StoreInMemorySecretKey stores the given keyID, secretKey pair in the in-memory secret key store.
 func StoreInMemorySecretKey(keyID, secretKey string) error {
 	if strings.TrimSpace(keyID) == "" {
 		return errors.New("invalid keyID")
@@ -51,7 +53,7 @@ func StoreInMemorySecretKey(keyID, secretKey string) error {
 	return nil
 }
 
-// RemoveInMemorySecretKey removes the given keyID and its associated secretKey from the in-memory secret key store
+// RemoveInMemorySecretKey removes the given keyID and its associated secretKey from the in-memory secret key store.
 func RemoveInMemorySecretKey(keyID string) {
 	keyStoreLock.Lock()
 	defer keyStoreLock.Unlock()
@@ -59,7 +61,7 @@ func RemoveInMemorySecretKey(keyID string) {
 	delete(keyStoreMap, keyID)
 }
 
-// ClearInMemorySecretKeys empties the in-memory secret key store
+// ClearInMemorySecretKeys empties the in-memory secret key store.
 func ClearInMemorySecretKeys() {
 	keyStoreLock.Lock()
 	defer keyStoreLock.Unlock()

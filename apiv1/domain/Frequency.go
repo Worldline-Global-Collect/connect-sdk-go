@@ -3,13 +3,13 @@
 
 package domain
 
-// Frequency represents class Frequency
+// Frequency represents class Frequency.
 type Frequency struct {
 	Interval          *string `json:"interval,omitempty"`
 	IntervalFrequency *int32  `json:"intervalFrequency,omitempty"`
 }
 
-// NewFrequency constructs a new Frequency instance
+// NewFrequency constructs a new Frequency instance.
 func NewFrequency() *Frequency {
 	return &Frequency{}
 }

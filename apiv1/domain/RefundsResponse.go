@@ -3,12 +3,12 @@
 
 package domain
 
-// RefundsResponse represents class RefundsResponse
+// RefundsResponse represents class RefundsResponse.
 type RefundsResponse struct {
 	Refunds *[]RefundResult `json:"refunds,omitempty"`
 }
 
-// NewRefundsResponse constructs a new RefundsResponse instance
+// NewRefundsResponse constructs a new RefundsResponse instance.
 func NewRefundsResponse() *RefundsResponse {
 	return &RefundsResponse{}
 }

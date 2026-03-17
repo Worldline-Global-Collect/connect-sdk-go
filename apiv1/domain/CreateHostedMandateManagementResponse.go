@@ -3,14 +3,14 @@
 
 package domain
 
-// CreateHostedMandateManagementResponse represents class CreateHostedMandateManagementResponse
+// CreateHostedMandateManagementResponse represents class CreateHostedMandateManagementResponse.
 type CreateHostedMandateManagementResponse struct {
 	RETURNMAC                 *string `json:"RETURNMAC,omitempty"`
 	HostedMandateManagementID *string `json:"hostedMandateManagementId,omitempty"`
 	PartialRedirectURL        *string `json:"partialRedirectUrl,omitempty"`
 }
 
-// NewCreateHostedMandateManagementResponse constructs a new CreateHostedMandateManagementResponse instance
+// NewCreateHostedMandateManagementResponse constructs a new CreateHostedMandateManagementResponse instance.
 func NewCreateHostedMandateManagementResponse() *CreateHostedMandateManagementResponse {
 	return &CreateHostedMandateManagementResponse{}
 }

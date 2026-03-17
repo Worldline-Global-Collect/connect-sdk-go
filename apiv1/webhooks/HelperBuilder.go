@@ -8,32 +8,32 @@ import (
 	"github.com/Worldline-Global-Collect/connect-sdk-go/webhooks/validation"
 )
 
-// HelperBuilder is used to build Helper objects
+// HelperBuilder is used to build Helper objects.
 type HelperBuilder struct {
 	Marshaller     json.Marshaller
 	SecretKeyStore validation.SecretKeyStore
 }
 
-// WithMarshaller sets the marshaller
+// WithMarshaller sets the marshaller.
 func (h *HelperBuilder) WithMarshaller(marshaller json.Marshaller) *HelperBuilder {
 	h.Marshaller = marshaller
 
 	return h
 }
 
-// WithSecretKeyStore sets the secretKeyStore
+// WithSecretKeyStore sets the secret key store.
 func (h *HelperBuilder) WithSecretKeyStore(secretKeyStore validation.SecretKeyStore) *HelperBuilder {
 	h.SecretKeyStore = secretKeyStore
 
 	return h
 }
 
-// Build creates the Helper object
+// Build creates the Helper object.
 func (h *HelperBuilder) Build() (*Helper, error) {
 	return NewHelper(h.Marshaller, h.SecretKeyStore)
 }
 
-// NewHelperBuilder creates a new HelperBuilder object
+// NewHelperBuilder creates a new HelperBuilder object.
 func NewHelperBuilder() *HelperBuilder {
 	return &HelperBuilder{}
 }

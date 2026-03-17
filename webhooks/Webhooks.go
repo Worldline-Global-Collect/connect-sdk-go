@@ -7,7 +7,7 @@ import v1Webhooks "github.com/Worldline-Global-Collect/connect-sdk-go/apiv1/webh
 
 var v1 = v1Webhooks.NewFactory()
 
-// V1 returns a factory for several v1 webhooks components
+// V1 returns a factory for several v1 webhooks components.
 func V1() *v1Webhooks.Factory {
 	return v1
 }

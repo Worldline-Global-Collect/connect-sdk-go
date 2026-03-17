@@ -3,7 +3,7 @@
 
 package domain
 
-// CybersourceDecisionManager represents class CybersourceDecisionManager
+// CybersourceDecisionManager represents class CybersourceDecisionManager.
 type CybersourceDecisionManager struct {
 	ClauseName    *string   `json:"clauseName,omitempty"`
 	FraudScore    *int32    `json:"fraudScore,omitempty"`
@@ -11,7 +11,7 @@ type CybersourceDecisionManager struct {
 	ReasonCodes   *[]string `json:"reasonCodes,omitempty"`
 }
 
-// NewCybersourceDecisionManager constructs a new CybersourceDecisionManager instance
+// NewCybersourceDecisionManager constructs a new CybersourceDecisionManager instance.
 func NewCybersourceDecisionManager() *CybersourceDecisionManager {
 	return &CybersourceDecisionManager{}
 }

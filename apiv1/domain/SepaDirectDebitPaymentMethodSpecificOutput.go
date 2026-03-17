@@ -3,7 +3,7 @@
 
 package domain
 
-// SepaDirectDebitPaymentMethodSpecificOutput represents class SepaDirectDebitPaymentMethodSpecificOutput
+// SepaDirectDebitPaymentMethodSpecificOutput represents class SepaDirectDebitPaymentMethodSpecificOutput.
 type SepaDirectDebitPaymentMethodSpecificOutput struct {
 	FraudResults                    *FraudResults                    `json:"fraudResults,omitempty"`
 	PaymentProduct771SpecificOutput *PaymentProduct771SpecificOutput `json:"paymentProduct771SpecificOutput,omitempty"`
@@ -11,7 +11,7 @@ type SepaDirectDebitPaymentMethodSpecificOutput struct {
 	Token                           *string                          `json:"token,omitempty"`
 }
 
-// NewSepaDirectDebitPaymentMethodSpecificOutput constructs a new SepaDirectDebitPaymentMethodSpecificOutput instance
+// NewSepaDirectDebitPaymentMethodSpecificOutput constructs a new SepaDirectDebitPaymentMethodSpecificOutput instance.
 func NewSepaDirectDebitPaymentMethodSpecificOutput() *SepaDirectDebitPaymentMethodSpecificOutput {
 	return &SepaDirectDebitPaymentMethodSpecificOutput{}
 }

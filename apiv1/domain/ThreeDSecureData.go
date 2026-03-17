@@ -3,14 +3,14 @@
 
 package domain
 
-// ThreeDSecureData represents class ThreeDSecureData
+// ThreeDSecureData represents class ThreeDSecureData.
 type ThreeDSecureData struct {
 	AcsTransactionID *string `json:"acsTransactionId,omitempty"`
 	Method           *string `json:"method,omitempty"`
 	UtcTimestamp     *string `json:"utcTimestamp,omitempty"`
 }
 
-// NewThreeDSecureData constructs a new ThreeDSecureData instance
+// NewThreeDSecureData constructs a new ThreeDSecureData instance.
 func NewThreeDSecureData() *ThreeDSecureData {
 	return &ThreeDSecureData{}
 }

@@ -1,6 +1,7 @@
 package connectsdk
 
 import (
+	"errors"
 	"net/url"
 	"strings"
 	"testing"
@@ -16,7 +17,7 @@ import (
 	"github.com/Worldline-Global-Collect/connect-sdk-go/logging/obfuscation"
 )
 
-func checkSuccess(connection *TestConnection, response domain.CreatePaymentResponse, err error) string {
+func checkSuccess(_ *TestConnection, response domain.CreatePaymentResponse, err error) string {
 	if err != nil {
 		return "Error during request: " + err.Error()
 	}
@@ -26,14 +27,16 @@ func checkSuccess(connection *TestConnection, response domain.CreatePaymentRespo
 	if payment := response.Payment; payment == nil || payment.Status == nil || *payment.Status != "PENDING_APPROVAL" {
 		return "The status of the payment is unequal to PENDING_APPROVAL"
 	}
+
 	return ""
 }
 
-func checkRejected(connection *TestConnection, response domain.CreatePaymentResponse, err error) string {
+func checkRejected(_ *TestConnection, _ domain.CreatePaymentResponse, err error) string {
 	if err == nil {
 		return "Error expected"
 	}
-	if dpe, ok := err.(*v1Errors.DeclinedPaymentError); ok {
+	var dpe *v1Errors.DeclinedPaymentError
+	if errors.As(err, &dpe) {
 		res := dpe.PaymentResult()
 		if res == nil {
 			return "PaymentResult is nil"
@@ -63,56 +66,64 @@ func checkRejected(connection *TestConnection, response domain.CreatePaymentResp
 	if !strings.Contains(errorString, rejectedJSON) {
 		return "Error message: " + errorString + " does not contain response body"
 	}
+
 	return ""
 }
 
-func checkInvalidRequest(connection *TestConnection, response domain.CreatePaymentResponse, err error) string {
+func checkInvalidRequest(_ *TestConnection, _ domain.CreatePaymentResponse, err error) string {
 	if err == nil {
 		return "Error expected"
 	}
-	if _, ok := err.(*v1Errors.ValidationError); !ok {
+	var ve *v1Errors.ValidationError
+	if !errors.As(err, &ve) {
 		return "Expected ValidationError, but got different error"
 	}
 	errorString := err.Error()
 	if !strings.Contains(errorString, invalidRequestJSON) {
 		return "Error message: " + errorString + " does not contain response body"
 	}
+
 	return ""
 }
 
-func checkInvalidAuthorization(connection *TestConnection, response domain.CreatePaymentResponse, err error) string {
+func checkInvalidAuthorization(_ *TestConnection, _ domain.CreatePaymentResponse, err error) string {
 	if err == nil {
 		return "Error expected"
 	}
-	if _, ok := err.(v1Errors.APIError); !ok {
+	var ae v1Errors.APIError
+	if !errors.As(err, &ae) {
 		return "Expected APIError, but got different error"
 	}
 	errorString := err.Error()
 	if !strings.Contains(errorString, invalidAuthorizationJSON) {
 		return "Error message: " + errorString + " does not contain response body"
 	}
+
 	return ""
 }
 
-func checkReferenceError(connection *TestConnection, response domain.CreatePaymentResponse, err error) string {
+func checkReferenceError(_ *TestConnection, _ domain.CreatePaymentResponse, err error) string {
 	if err == nil {
 		return "Error expected"
 	}
-	if _, ok := err.(*v1Errors.ReferenceError); !ok {
+	var re *v1Errors.ReferenceError
+	if !errors.As(err, &re) {
 		return "Expected ReferenceError, but got different error"
 	}
 	errorString := err.Error()
 	if !strings.Contains(errorString, duplicateRequestJSON) {
 		return "Error message: " + errorString + " does not contain response body"
 	}
+
 	return ""
 }
 
-func checkIdempotenceError(connection *TestConnection, response domain.CreatePaymentResponse, err error) string {
+func checkIdempotenceError(connection *TestConnection, _ domain.CreatePaymentResponse, err error) string {
 	if err == nil {
 		return "Error expected"
 	}
-	if ie, ok := err.(*v1Errors.IdempotenceError); ok {
+	var ie *v1Errors.IdempotenceError
+	if errors.As(err, &ie) {
 		if ie.IdempotenceKey() != connection.idempotenceKey {
 			return "Returned wrong idempotenceKey"
 		}
@@ -123,18 +134,21 @@ func checkIdempotenceError(connection *TestConnection, response domain.CreatePay
 	if !strings.Contains(errorString, duplicateRequestJSON) {
 		return "Error message: " + errorString + " does not contain response body"
 	}
+
 	return ""
 }
 
-func checkNotFound(connection *TestConnection, response domain.CreatePaymentResponse, err error) string {
+func checkNotFound(_ *TestConnection, _ domain.CreatePaymentResponse, err error) string {
 	if err == nil {
 		return "Error expected"
 	}
-	if nfe, ok := err.(*commErrors.NotFoundError); ok {
+	var nfe *commErrors.NotFoundError
+	if errors.As(err, &nfe) {
 		if nfe.InternalError() == nil {
 			return "Returned NotFoundError without internal error"
 		}
-		if _, ok := nfe.InternalError().(*commErrors.ResponseError); !ok {
+		var re *commErrors.ResponseError
+		if !errors.As(nfe.InternalError(), &re) {
 			return "NotFoundError has a different internal error than ResponseError"
 		}
 		if !strings.Contains(nfe.InternalError().Error(), notFoundHTML) {
@@ -147,19 +161,21 @@ func checkNotFound(connection *TestConnection, response domain.CreatePaymentResp
 	return ""
 }
 
-func checkMethodNotAllowed(connection *TestConnection, response domain.CreatePaymentResponse, err error) string {
+func checkMethodNotAllowed(_ *TestConnection, _ domain.CreatePaymentResponse, err error) string {
 	if err == nil {
 		return "Error expected"
 	}
-	if nfe, ok := err.(*commErrors.CommunicationError); ok {
-		if nfe.InternalError() == nil {
+	var ce *commErrors.CommunicationError
+	if errors.As(err, &ce) {
+		if ce.InternalError() == nil {
 			return "Returned CommunicationError without internal error"
 		}
-		if _, ok := nfe.InternalError().(*commErrors.ResponseError); !ok {
+		var re *commErrors.ResponseError
+		if !errors.As(ce.InternalError(), &re) {
 			return "CommunicationError has a different internal error than ResponseError"
 		}
-		if !strings.Contains(nfe.InternalError().Error(), methodNotAllowedHTML) {
-			return "Error message: " + nfe.InternalError().Error() + " does not contain response body"
+		if !strings.Contains(ce.InternalError().Error(), methodNotAllowedHTML) {
+			return "Error message: " + ce.InternalError().Error() + " does not contain response body"
 		}
 	} else {
 		return "Expected CommunicationError, but got different error"
@@ -172,7 +188,7 @@ var table = []TestConnection{
 	// Tests that a non-failure response will not throw an exception.
 	{pendingApprovalJSON, 201, nil, "", checkSuccess},
 
-	//Tests that a failure response with a payment result will return a DeclinedPaymentError.
+	// Tests that a failure response with a payment result will return a DeclinedPaymentError.
 	{rejectedJSON, 400, nil, "", checkRejected},
 
 	// Tests that a 400 failure response without a payment result will return a ValidateError.
@@ -196,6 +212,7 @@ var table = []TestConnection{
 
 func newHeader(name, value string) communication.Header {
 	h, _ := communication.NewHeader(name, value)
+
 	return *h
 }
 
@@ -333,36 +350,36 @@ type CheckResult func(connection *TestConnection, response domain.CreatePaymentR
 
 func (t *TestConnection) CloseExpiredConnections() {
 }
-func (t *TestConnection) CloseIdleConnections(num time.Duration) {
+func (t *TestConnection) CloseIdleConnections(_ time.Duration) {
 }
 func (t *TestConnection) Close() error {
 	return nil
 }
-func (t *TestConnection) Get(resourceURI url.URL, requestHeaders []communication.Header, handler communication.ResponseHandler) (interface{}, error) {
+func (t *TestConnection) Get(_ url.URL, _ []communication.Header, _ communication.ResponseHandler) (interface{}, error) {
 	return nil, nil
 }
-func (t *TestConnection) Delete(resourceURI url.URL, requestHeaders []communication.Header, handler communication.ResponseHandler) (interface{}, error) {
+func (t *TestConnection) Delete(_ url.URL, _ []communication.Header, _ communication.ResponseHandler) (interface{}, error) {
 	return nil, nil
 }
-func (t *TestConnection) Put(resourceURI url.URL, requestHeaders []communication.Header, body string, handler communication.ResponseHandler) (interface{}, error) {
+func (t *TestConnection) Put(_ url.URL, _ []communication.Header, _ string, _ communication.ResponseHandler) (interface{}, error) {
 	return nil, nil
 }
-func (t *TestConnection) PutMultipart(resourceURI url.URL, requestHeaders []communication.Header, body *communication.MultipartFormDataObject, handler communication.ResponseHandler) (interface{}, error) {
+func (t *TestConnection) PutMultipart(_ url.URL, _ []communication.Header, _ *communication.MultipartFormDataObject, _ communication.ResponseHandler) (interface{}, error) {
 	return nil, nil
 }
-func (t *TestConnection) Post(resourceURI url.URL, requestHeaders []communication.Header, body string, handler communication.ResponseHandler) (interface{}, error) {
+func (t *TestConnection) Post(_ url.URL, _ []communication.Header, _ string, handler communication.ResponseHandler) (interface{}, error) {
 	return handler(t.statusCode, t.headers, strings.NewReader(t.body))
 }
-func (t *TestConnection) PostMultipart(resourceURI url.URL, requestHeaders []communication.Header, body *communication.MultipartFormDataObject, handler communication.ResponseHandler) (interface{}, error) {
+func (t *TestConnection) PostMultipart(_ url.URL, _ []communication.Header, _ *communication.MultipartFormDataObject, _ communication.ResponseHandler) (interface{}, error) {
 	return nil, nil
 }
 func (t *TestConnection) DisableLogging() {
 }
-func (t *TestConnection) EnableLogging(logger logging.CommunicatorLogger) {
+func (t *TestConnection) EnableLogging(_ logging.CommunicatorLogger) {
 }
-func (t *TestConnection) SetBodyObfuscator(obfuscator obfuscation.BodyObfuscator) {
+func (t *TestConnection) SetBodyObfuscator(_ obfuscation.BodyObfuscator) {
 }
-func (t *TestConnection) SetHeaderObfuscator(obfuscator obfuscation.HeaderObfuscator) {
+func (t *TestConnection) SetHeaderObfuscator(_ obfuscation.HeaderObfuscator) {
 }
 
 func TestPayment(t *testing.T) {

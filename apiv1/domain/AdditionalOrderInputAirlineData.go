@@ -3,13 +3,13 @@
 
 package domain
 
-// AdditionalOrderInputAirlineData represents class AdditionalOrderInputAirlineData
+// AdditionalOrderInputAirlineData represents class AdditionalOrderInputAirlineData.
 type AdditionalOrderInputAirlineData struct {
 	AirlineData *AirlineData `json:"airlineData,omitempty"`
 	LodgingData *LodgingData `json:"lodgingData,omitempty"`
 }
 
-// NewAdditionalOrderInputAirlineData constructs a new AdditionalOrderInputAirlineData instance
+// NewAdditionalOrderInputAirlineData constructs a new AdditionalOrderInputAirlineData instance.
 func NewAdditionalOrderInputAirlineData() *AdditionalOrderInputAirlineData {
 	return &AdditionalOrderInputAirlineData{}
 }

@@ -3,13 +3,13 @@
 
 package domain
 
-// OrderOutput represents class OrderOutput
+// OrderOutput represents class OrderOutput.
 type OrderOutput struct {
 	AmountOfMoney *AmountOfMoney     `json:"amountOfMoney,omitempty"`
 	References    *PaymentReferences `json:"references,omitempty"`
 }
 
-// NewOrderOutput constructs a new OrderOutput instance
+// NewOrderOutput constructs a new OrderOutput instance.
 func NewOrderOutput() *OrderOutput {
 	return &OrderOutput{}
 }

@@ -4,6 +4,8 @@
 package tokens
 
 import (
+	"errors"
+
 	"github.com/Worldline-Global-Collect/connect-sdk-go/apiv1/domain"
 	v1Errors "github.com/Worldline-Global-Collect/connect-sdk-go/apiv1/errors"
 	"github.com/Worldline-Global-Collect/connect-sdk-go/communicator"
@@ -15,9 +17,9 @@ type Client struct {
 	apiResource *communicator.APIResource
 }
 
-// Create represents the resource /{merchantId}/tokens - Create token
+// Create represents the resource /{merchantId}/tokens - Create token.
 //
-// Documentation can be found at https://apireference.connect.worldline-solutions.com/s2sapi/v1/en_US/go/tokens/create.html
+// Documentation can be found at https://apireference.connect.worldline-solutions.com/s2sapi/v1/en_US/go/tokens/create.html.
 //
 // Can return any of the following errors:
 //   * IdempotenceError if an idempotent request caused a conflict (HTTP status code 409)
@@ -41,11 +43,9 @@ func (c *Client) Create(body domain.CreateTokenRequest, context *communicator.Ca
 
 	postErr := c.apiResource.Communicator().Post(uri, clientHeaders, nil, body, context, &resultObject)
 	if postErr != nil {
-		responseError, isResponseError := postErr.(*commErrors.ResponseError)
-		if isResponseError {
-			var errorObject interface{}
-
-			errorObject = &domain.ErrorResponse{}
+		var responseError *commErrors.ResponseError
+		if errors.As(postErr, &responseError) {
+			errorObject := &domain.ErrorResponse{}
 			err = c.apiResource.Communicator().Marshaller().Unmarshal(responseError.Body(), errorObject)
 			if err != nil {
 				return resultObject, err
@@ -65,9 +65,9 @@ func (c *Client) Create(body domain.CreateTokenRequest, context *communicator.Ca
 	return resultObject, nil
 }
 
-// Get represents the resource /{merchantId}/tokens/{tokenId} - Get token
+// Get represents the resource /{merchantId}/tokens/{tokenId} - Get token.
 //
-// Documentation can be found at https://apireference.connect.worldline-solutions.com/s2sapi/v1/en_US/go/tokens/get.html
+// Documentation can be found at https://apireference.connect.worldline-solutions.com/s2sapi/v1/en_US/go/tokens/get.html.
 //
 // Can return any of the following errors:
 //   * IdempotenceError if an idempotent request caused a conflict (HTTP status code 409)
@@ -95,11 +95,9 @@ func (c *Client) Get(tokenID string, context *communicator.CallContext) (domain.
 
 	getErr := c.apiResource.Communicator().Get(uri, clientHeaders, nil, context, &resultObject)
 	if getErr != nil {
-		responseError, isResponseError := getErr.(*commErrors.ResponseError)
-		if isResponseError {
-			var errorObject interface{}
-
-			errorObject = &domain.ErrorResponse{}
+		var responseError *commErrors.ResponseError
+		if errors.As(getErr, &responseError) {
+			errorObject := &domain.ErrorResponse{}
 			err = c.apiResource.Communicator().Marshaller().Unmarshal(responseError.Body(), errorObject)
 			if err != nil {
 				return resultObject, err
@@ -119,9 +117,9 @@ func (c *Client) Get(tokenID string, context *communicator.CallContext) (domain.
 	return resultObject, nil
 }
 
-// Update represents the resource /{merchantId}/tokens/{tokenId} - Update token
+// Update represents the resource /{merchantId}/tokens/{tokenId} - Update token.
 //
-// Documentation can be found at https://apireference.connect.worldline-solutions.com/s2sapi/v1/en_US/go/tokens/update.html
+// Documentation can be found at https://apireference.connect.worldline-solutions.com/s2sapi/v1/en_US/go/tokens/update.html.
 //
 // Can return any of the following errors:
 //   * IdempotenceError if an idempotent request caused a conflict (HTTP status code 409)
@@ -148,11 +146,9 @@ func (c *Client) Update(tokenID string, body domain.UpdateTokenRequest, context 
 	var resultObject map[string]interface{}
 	putErr := c.apiResource.Communicator().Put(uri, clientHeaders, nil, body, context, &resultObject)
 	if putErr != nil {
-		responseError, isResponseError := putErr.(*commErrors.ResponseError)
-		if isResponseError {
-			var errorObject interface{}
-
-			errorObject = &domain.ErrorResponse{}
+		var responseError *commErrors.ResponseError
+		if errors.As(putErr, &responseError) {
+			errorObject := &domain.ErrorResponse{}
 			err = c.apiResource.Communicator().Marshaller().Unmarshal(responseError.Body(), errorObject)
 			if err != nil {
 				return err
@@ -172,9 +168,9 @@ func (c *Client) Update(tokenID string, body domain.UpdateTokenRequest, context 
 	return nil
 }
 
-// Delete represents the resource /{merchantId}/tokens/{tokenId} - Delete token
+// Delete represents the resource /{merchantId}/tokens/{tokenId} - Delete token.
 //
-// Documentation can be found at https://apireference.connect.worldline-solutions.com/s2sapi/v1/en_US/go/tokens/delete.html
+// Documentation can be found at https://apireference.connect.worldline-solutions.com/s2sapi/v1/en_US/go/tokens/delete.html.
 //
 // Can return any of the following errors:
 //   * IdempotenceError if an idempotent request caused a conflict (HTTP status code 409)
@@ -201,11 +197,9 @@ func (c *Client) Delete(tokenID string, query DeleteParams, context *communicato
 	var resultObject map[string]interface{}
 	deleteErr := c.apiResource.Communicator().Delete(uri, clientHeaders, &query, context, &resultObject)
 	if deleteErr != nil {
-		responseError, isResponseError := deleteErr.(*commErrors.ResponseError)
-		if isResponseError {
-			var errorObject interface{}
-
-			errorObject = &domain.ErrorResponse{}
+		var responseError *commErrors.ResponseError
+		if errors.As(deleteErr, &responseError) {
+			errorObject := &domain.ErrorResponse{}
 			err = c.apiResource.Communicator().Marshaller().Unmarshal(responseError.Body(), errorObject)
 			if err != nil {
 				return err
@@ -225,9 +219,9 @@ func (c *Client) Delete(tokenID string, query DeleteParams, context *communicato
 	return nil
 }
 
-// Approvesepadirectdebit represents the resource /{merchantId}/tokens/{tokenId}/approvesepadirectdebit - Approve SEPA DD mandate
+// Approvesepadirectdebit represents the resource /{merchantId}/tokens/{tokenId}/approvesepadirectdebit - Approve SEPA DD mandate.
 //
-// Documentation can be found at https://apireference.connect.worldline-solutions.com/s2sapi/v1/en_US/go/tokens/approvesepadirectdebit.html
+// Documentation can be found at https://apireference.connect.worldline-solutions.com/s2sapi/v1/en_US/go/tokens/approvesepadirectdebit.html.
 //
 // Can return any of the following errors:
 //   * IdempotenceError if an idempotent request caused a conflict (HTTP status code 409)
@@ -254,11 +248,9 @@ func (c *Client) Approvesepadirectdebit(tokenID string, body domain.ApproveToken
 	var resultObject map[string]interface{}
 	postErr := c.apiResource.Communicator().Post(uri, clientHeaders, nil, body, context, &resultObject)
 	if postErr != nil {
-		responseError, isResponseError := postErr.(*commErrors.ResponseError)
-		if isResponseError {
-			var errorObject interface{}
-
-			errorObject = &domain.ErrorResponse{}
+		var responseError *commErrors.ResponseError
+		if errors.As(postErr, &responseError) {
+			errorObject := &domain.ErrorResponse{}
 			err = c.apiResource.Communicator().Marshaller().Unmarshal(responseError.Body(), errorObject)
 			if err != nil {
 				return err
@@ -278,9 +270,9 @@ func (c *Client) Approvesepadirectdebit(tokenID string, body domain.ApproveToken
 	return nil
 }
 
-// NewClient constructs a new Tokens client
+// NewClient constructs a new Tokens client.
 //
-// parent is the communicator.APIResource on top of which we want to build the new Tokens client
+// parent is the communicator.APIResource on top of which we want to build the new Tokens client.
 func NewClient(parent *communicator.APIResource, pathContext map[string]string) (*Client, error) {
 	apiResource, err := communicator.NewAPIResourceWithParent(parent, pathContext)
 	if err != nil {

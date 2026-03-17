@@ -3,7 +3,7 @@
 
 package domain
 
-// CaptureStatusOutput represents class CaptureStatusOutput
+// CaptureStatusOutput represents class CaptureStatusOutput.
 type CaptureStatusOutput struct {
 	IsFinal                  *bool           `json:"isFinal,omitempty"`
 	IsRefundable             *bool           `json:"isRefundable,omitempty"`
@@ -13,7 +13,7 @@ type CaptureStatusOutput struct {
 	StatusCodeChangeDateTime *string         `json:"statusCodeChangeDateTime,omitempty"`
 }
 
-// NewCaptureStatusOutput constructs a new CaptureStatusOutput instance
+// NewCaptureStatusOutput constructs a new CaptureStatusOutput instance.
 func NewCaptureStatusOutput() *CaptureStatusOutput {
 	return &CaptureStatusOutput{}
 }

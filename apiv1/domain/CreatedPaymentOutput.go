@@ -3,7 +3,7 @@
 
 package domain
 
-// CreatedPaymentOutput represents class CreatedPaymentOutput
+// CreatedPaymentOutput represents class CreatedPaymentOutput.
 type CreatedPaymentOutput struct {
 	DisplayedData             *DisplayedData             `json:"displayedData,omitempty"`
 	IsCheckedRememberMe       *bool                      `json:"isCheckedRememberMe,omitempty"`
@@ -15,7 +15,7 @@ type CreatedPaymentOutput struct {
 	Tokens                    *string                    `json:"tokens,omitempty"`
 }
 
-// NewCreatedPaymentOutput constructs a new CreatedPaymentOutput instance
+// NewCreatedPaymentOutput constructs a new CreatedPaymentOutput instance.
 func NewCreatedPaymentOutput() *CreatedPaymentOutput {
 	return &CreatedPaymentOutput{}
 }

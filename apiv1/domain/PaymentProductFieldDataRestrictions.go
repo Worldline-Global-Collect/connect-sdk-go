@@ -3,13 +3,13 @@
 
 package domain
 
-// PaymentProductFieldDataRestrictions represents class PaymentProductFieldDataRestrictions
+// PaymentProductFieldDataRestrictions represents class PaymentProductFieldDataRestrictions.
 type PaymentProductFieldDataRestrictions struct {
 	IsRequired *bool                          `json:"isRequired,omitempty"`
 	Validators *PaymentProductFieldValidators `json:"validators,omitempty"`
 }
 
-// NewPaymentProductFieldDataRestrictions constructs a new PaymentProductFieldDataRestrictions instance
+// NewPaymentProductFieldDataRestrictions constructs a new PaymentProductFieldDataRestrictions instance.
 func NewPaymentProductFieldDataRestrictions() *PaymentProductFieldDataRestrictions {
 	return &PaymentProductFieldDataRestrictions{}
 }

@@ -3,12 +3,12 @@
 
 package domain
 
-// ThirdPartyStatusResponse represents class ThirdPartyStatusResponse
+// ThirdPartyStatusResponse represents class ThirdPartyStatusResponse.
 type ThirdPartyStatusResponse struct {
 	ThirdPartyStatus *string `json:"thirdPartyStatus,omitempty"`
 }
 
-// NewThirdPartyStatusResponse constructs a new ThirdPartyStatusResponse instance
+// NewThirdPartyStatusResponse constructs a new ThirdPartyStatusResponse instance.
 func NewThirdPartyStatusResponse() *ThirdPartyStatusResponse {
 	return &ThirdPartyStatusResponse{}
 }

@@ -11,13 +11,15 @@ import (
 
 var errRequestIDEmpty = errors.New("requestID can't be empty")
 
-const messageTemplateWithoutBody = `Outgoing request (requestId='%s'):
+const (
+	messageTemplateWithoutBody = `Outgoing request (requestId='%s'):
 	method:       '%s'
 	uri:          '%s'
 	headers:      '%s'`
-const messageTemplateWithBody = messageTemplateWithoutBody + `
+	messageTemplateWithBody = messageTemplateWithoutBody + `
 	content-type: '%s'
 	body:         '%s'`
+)
 
 // RequestLogMessageBuilder represents utility class to build request log messages.
 type RequestLogMessageBuilder struct {
@@ -36,7 +38,7 @@ type RequestLogMessageBuilder struct {
 	headerObfuscator obfuscation.HeaderObfuscator
 }
 
-// RequestLogMessage represents a log message about a Request
+// RequestLogMessage represents a log message about a Request.
 type RequestLogMessage struct {
 	requestID string
 	method    string
@@ -53,37 +55,37 @@ type RequestLogMessage struct {
 	headerObfuscator obfuscation.HeaderObfuscator
 }
 
-// RequestID returns the request ID
+// RequestID returns the request ID.
 func (rl RequestLogMessage) RequestID() string {
 	return rl.requestID
 }
 
-// Method returns the request method
+// Method returns the request method.
 func (rl RequestLogMessage) Method() string {
 	return rl.method
 }
 
-// URL returns the request URL
+// URL returns the request URL.
 func (rl RequestLogMessage) URL() url.URL {
 	return rl.url
 }
 
-// Body returns the request body
+// Body returns the request body.
 func (rl RequestLogMessage) Body() string {
 	return rl.body
 }
 
-// ContentType returns the content type
+// ContentType returns the content type.
 func (rl RequestLogMessage) ContentType() string {
 	return rl.contentType
 }
 
-// Headers returns the headers
+// Headers returns the headers.
 func (rl RequestLogMessage) Headers() map[string][]string {
 	return rl.headers
 }
 
-// String implements the Stringer interface
+// String implements the Stringer interface.
 func (rl RequestLogMessage) String() string {
 	if len(rl.body) == 0 {
 		return fmt.Sprintf(messageTemplateWithoutBody, rl.requestID, rl.method, rl.url.Path, rl.headersFormatted)
@@ -92,7 +94,7 @@ func (rl RequestLogMessage) String() string {
 	return fmt.Sprintf(messageTemplateWithBody, rl.requestID, rl.method, rl.url.Path, rl.headersFormatted, rl.contentType, rl.body)
 }
 
-// AddHeader adds a header to the log message using the name and value
+// AddHeader adds a header to the log message using the name and value.
 func (rlm *RequestLogMessageBuilder) AddHeader(name, value string) error {
 	if rlm.headersBuffer.Len() > 0 {
 		rlm.headersBuffer.WriteString(", ")
@@ -113,7 +115,7 @@ func (rlm *RequestLogMessageBuilder) AddHeader(name, value string) error {
 	return nil
 }
 
-// SetBody sets the request body
+// SetBody sets the request body.
 func (rlm *RequestLogMessageBuilder) SetBody(body, contentType string) error {
 	obfuscatedBody, err := rlm.bodyObfuscator.ObfuscateBody(body)
 	if err != nil {
@@ -126,7 +128,7 @@ func (rlm *RequestLogMessageBuilder) SetBody(body, contentType string) error {
 	return nil
 }
 
-// SetBinaryBody sets the binary request body
+// SetBinaryBody sets the binary request body.
 func (rlm *RequestLogMessageBuilder) SetBinaryBody(contentType string) error {
 	if !isBinaryContent(contentType) {
 		return errors.New("Not a binary content type: " + contentType)
@@ -138,7 +140,7 @@ func (rlm *RequestLogMessageBuilder) SetBinaryBody(contentType string) error {
 	return nil
 }
 
-// BuildMessage builds the RequestLogMessage
+// BuildMessage builds the RequestLogMessage.
 func (rlm *RequestLogMessageBuilder) BuildMessage() *RequestLogMessage {
 	return &RequestLogMessage{
 		rlm.requestID,
@@ -153,7 +155,7 @@ func (rlm *RequestLogMessageBuilder) BuildMessage() *RequestLogMessage {
 	}
 }
 
-// NewRequestLogMessageBuilder creates a RequestLogMessageBuilder with the given requestID, method, url and obfuscators
+// NewRequestLogMessageBuilder creates a RequestLogMessageBuilder with the given requestID, method, url and obfuscators.
 func NewRequestLogMessageBuilder(requestID, method string, url url.URL, bodyObfuscator obfuscation.BodyObfuscator, headerObfuscator obfuscation.HeaderObfuscator) (*RequestLogMessageBuilder, error) {
 	if len(requestID) == 0 {
 		return nil, errRequestIDEmpty

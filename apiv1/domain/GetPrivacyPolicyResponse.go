@@ -3,12 +3,12 @@
 
 package domain
 
-// GetPrivacyPolicyResponse represents class GetPrivacyPolicyResponse
+// GetPrivacyPolicyResponse represents class GetPrivacyPolicyResponse.
 type GetPrivacyPolicyResponse struct {
 	HTMLContent *string `json:"htmlContent,omitempty"`
 }
 
-// NewGetPrivacyPolicyResponse constructs a new GetPrivacyPolicyResponse instance
+// NewGetPrivacyPolicyResponse constructs a new GetPrivacyPolicyResponse instance.
 func NewGetPrivacyPolicyResponse() *GetPrivacyPolicyResponse {
 	return &GetPrivacyPolicyResponse{}
 }

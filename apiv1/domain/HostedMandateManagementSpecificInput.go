@@ -3,7 +3,7 @@
 
 package domain
 
-// HostedMandateManagementSpecificInput represents class HostedMandateManagementSpecificInput
+// HostedMandateManagementSpecificInput represents class HostedMandateManagementSpecificInput.
 type HostedMandateManagementSpecificInput struct {
 	Locale         *string `json:"locale,omitempty"`
 	ReturnURL      *string `json:"returnUrl,omitempty"`
@@ -11,7 +11,7 @@ type HostedMandateManagementSpecificInput struct {
 	Variant        *string `json:"variant,omitempty"`
 }
 
-// NewHostedMandateManagementSpecificInput constructs a new HostedMandateManagementSpecificInput instance
+// NewHostedMandateManagementSpecificInput constructs a new HostedMandateManagementSpecificInput instance.
 func NewHostedMandateManagementSpecificInput() *HostedMandateManagementSpecificInput {
 	return &HostedMandateManagementSpecificInput{}
 }

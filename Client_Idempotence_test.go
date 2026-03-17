@@ -174,6 +174,7 @@ func createRequest() domain.CreatePaymentRequest {
 
 type stoppableListener struct {
 	*net.TCPListener
+
 	stop     chan int
 	finished sync.WaitGroup
 }
@@ -196,9 +197,8 @@ func (sl *stoppableListener) Accept() (net.Conn, error) {
 		}
 
 		if err != nil {
-			netErr, ok := err.(net.Error)
-
-			if ok && netErr.Timeout() && netErr.Temporary() {
+			var netErr net.Error
+			if errors.As(err, &netErr) && netErr.Timeout() && netErr.Temporary() {
 				continue
 			}
 		}
@@ -257,11 +257,12 @@ func createRecordRequest(statusCode int, body string, responseHeaders map[string
 
 const letterBytes = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ"
 
-func randString(n int) string {
-	b := make([]byte, n)
+func randString() string {
+	b := make([]byte, 32)
 	for i := range b {
 		b[i] = letterBytes[rand.Intn(len(letterBytes))]
 	}
+
 	return string(b)
 }
 
@@ -295,7 +296,7 @@ func createTestEnvironment(path string, handleFunc http.HandlerFunc) (net.Listen
 func TestIdempotenceFirstRequest(t *testing.T) {
 	logPrefix := "TestIdempotenceFirstRequest"
 
-	idempotenceKey := randString(32)
+	idempotenceKey := randString()
 
 	responseHeaders := map[string]string{
 		"Content-Type": "application/json",
@@ -342,8 +343,8 @@ func TestIdempotenceFirstRequest(t *testing.T) {
 func TestIdempotenceSecondRequest(t *testing.T) {
 	logPrefix := "TestIdempotenceSecondRequest"
 
-	idempotenceKey := randString(32)
-	idempotenceTimeStamp := time.Now().Sub(time.Unix(0, 0)).Nanoseconds() / int64(time.Millisecond)
+	idempotenceKey := randString()
+	idempotenceTimeStamp := time.Since(time.Unix(0, 0)).Nanoseconds() / int64(time.Millisecond)
 
 	responseHeaders := map[string]string{
 		"Content-Type":                        "application/json",
@@ -392,8 +393,8 @@ func TestIdempotenceSecondRequest(t *testing.T) {
 func TestIdempotenceFirstFailure(t *testing.T) {
 	logPrefix := "TestIdempotenceFirstFailure"
 
-	idempotenceKey := randString(32)
-	idempotenceTimeStamp := time.Now().Sub(time.Unix(0, 0)).Nanoseconds() / int64(time.Millisecond)
+	idempotenceKey := randString()
+	idempotenceTimeStamp := time.Since(time.Unix(0, 0)).Nanoseconds() / int64(time.Millisecond)
 
 	responseHeaders := map[string]string{
 		"Content-Type":                        "application/json",
@@ -418,22 +419,16 @@ func TestIdempotenceFirstFailure(t *testing.T) {
 
 	request := createRequest()
 	_, err = client.V1().Merchant("20000").Payments().Create(request, context)
-	switch ce := err.(type) {
-	case *v1Errors.DeclinedPaymentError:
-		{
-			if ce.StatusCode() != http.StatusPaymentRequired {
-				t.Fatalf("%v: statusCode %v", logPrefix, ce.StatusCode())
-			}
-			if ce.ResponseBody() != idempotenceRejectJSON {
-				t.Fatalf("%v: responseBody %v", logPrefix, ce.ResponseBody())
-			}
-
-			break
+	var ce *v1Errors.DeclinedPaymentError
+	if errors.As(err, &ce) {
+		if ce.StatusCode() != http.StatusPaymentRequired {
+			t.Fatalf("%v: statusCode %v", logPrefix, ce.StatusCode())
 		}
-	default:
-		{
-			t.Fatalf("%v: %v", logPrefix, err)
+		if ce.ResponseBody() != idempotenceRejectJSON {
+			t.Fatalf("%v: responseBody %v", logPrefix, ce.ResponseBody())
 		}
+	} else {
+		t.Fatalf("%v: %v", logPrefix, err)
 	}
 
 	if idempotenceKey != requestHeaders["X-GCS-Idempotence-Key"][0] {
@@ -449,7 +444,7 @@ func TestIdempotenceFirstFailure(t *testing.T) {
 func TestIdempotenceSecondFailure(t *testing.T) {
 	logPrefix := "TestIdempotenceSecondFailure"
 
-	idempotenceKey := randString(32)
+	idempotenceKey := randString()
 
 	responseHeaders := map[string]string{
 		"Content-Type": "application/json",
@@ -473,22 +468,18 @@ func TestIdempotenceSecondFailure(t *testing.T) {
 
 	request := createRequest()
 	_, err = client.V1().Merchant("20000").Payments().Create(request, context)
-	switch ce := err.(type) {
-	case *v1Errors.DeclinedPaymentError:
-		{
-			if ce.StatusCode() != http.StatusPaymentRequired {
-				t.Fatalf("%v: statusCode %v", logPrefix, ce.StatusCode())
-			}
-			if ce.ResponseBody() != idempotenceRejectJSON {
-				t.Fatalf("%v: responseBody %v", logPrefix, ce.ResponseBody())
-			}
 
-			break
+	var ce *v1Errors.DeclinedPaymentError
+	if errors.As(err, &ce) {
+		if ce.StatusCode() != http.StatusPaymentRequired {
+			t.Fatalf("%v: statusCode %v", logPrefix, ce.StatusCode())
 		}
-	default:
-		{
-			t.Fatalf("%v: %v", logPrefix, err)
+
+		if ce.ResponseBody() != idempotenceRejectJSON {
+			t.Fatalf("%v: responseBody %v", logPrefix, ce.ResponseBody())
 		}
+	} else {
+		t.Fatalf("%v: %v", logPrefix, err)
 	}
 
 	if idempotenceKey != requestHeaders["X-GCS-Idempotence-Key"][0] {
@@ -504,7 +495,7 @@ func TestIdempotenceSecondFailure(t *testing.T) {
 func TestIdempotenceDuplicateRequest(t *testing.T) {
 	logPrefix := "TestIdempotenceDuplicateRequest"
 
-	idempotenceKey := randString(32)
+	idempotenceKey := randString()
 
 	responseHeaders := map[string]string{
 		"Content-Type": "application/json",
@@ -528,28 +519,25 @@ func TestIdempotenceDuplicateRequest(t *testing.T) {
 
 	request := createRequest()
 	_, err = client.V1().Merchant("20000").Payments().Create(request, context)
-	switch ce := err.(type) {
-	case *v1Errors.IdempotenceError:
-		{
-			if ce.StatusCode() != http.StatusConflict {
-				t.Fatalf("%v: statusCode %v", logPrefix, ce.StatusCode())
-			}
-			if ce.ResponseBody() != idempotenceDuplicateFailureJSON {
-				t.Fatalf("%v: responseBody %v", logPrefix, ce.ResponseBody())
-			}
 
-			break
+	var ce *v1Errors.IdempotenceError
+	if errors.As(err, &ce) {
+		if ce.StatusCode() != http.StatusConflict {
+			t.Fatalf("%v: statusCode %v", logPrefix, ce.StatusCode())
 		}
-	default:
-		{
-			t.Fatalf("%v: %v", logPrefix, err)
+
+		if ce.ResponseBody() != idempotenceDuplicateFailureJSON {
+			t.Fatalf("%v: responseBody %v", logPrefix, ce.ResponseBody())
 		}
+	} else {
+		t.Fatalf("%v: %v", logPrefix, err)
 	}
 
 	if idempotenceKey != requestHeaders["X-GCS-Idempotence-Key"][0] {
 		t.Fatalf("%v: idempotenceKey mismatch %v %v", logPrefix,
 			idempotenceKey, requestHeaders["X-GCS-Idempotence-Key"][0])
 	}
+
 	if idempotenceKey != context.IdempotenceKey {
 		t.Fatalf("%v: idempotenceKey mismatch %v %v", logPrefix,
 			idempotenceKey, context.IdempotenceKey)

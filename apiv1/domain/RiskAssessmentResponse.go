@@ -3,12 +3,12 @@
 
 package domain
 
-// RiskAssessmentResponse represents class RiskAssessmentResponse
+// RiskAssessmentResponse represents class RiskAssessmentResponse.
 type RiskAssessmentResponse struct {
 	Results *[]ResultDoRiskAssessment `json:"results,omitempty"`
 }
 
-// NewRiskAssessmentResponse constructs a new RiskAssessmentResponse instance
+// NewRiskAssessmentResponse constructs a new RiskAssessmentResponse instance.
 func NewRiskAssessmentResponse() *RiskAssessmentResponse {
 	return &RiskAssessmentResponse{}
 }

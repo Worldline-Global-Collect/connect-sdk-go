@@ -3,12 +3,12 @@
 
 package domain
 
-// DeviceFingerprintRequest represents class DeviceFingerprintRequest
+// DeviceFingerprintRequest represents class DeviceFingerprintRequest.
 type DeviceFingerprintRequest struct {
 	CollectorCallback *string `json:"collectorCallback,omitempty"`
 }
 
-// NewDeviceFingerprintRequest constructs a new DeviceFingerprintRequest instance
+// NewDeviceFingerprintRequest constructs a new DeviceFingerprintRequest instance.
 func NewDeviceFingerprintRequest() *DeviceFingerprintRequest {
 	return &DeviceFingerprintRequest{}
 }

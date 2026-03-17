@@ -3,12 +3,12 @@
 
 package domain
 
-// TokenNonSepaDirectDebitPaymentProduct730SpecificData represents class TokenNonSepaDirectDebitPaymentProduct730SpecificData
+// TokenNonSepaDirectDebitPaymentProduct730SpecificData represents class TokenNonSepaDirectDebitPaymentProduct730SpecificData.
 type TokenNonSepaDirectDebitPaymentProduct730SpecificData struct {
 	BankAccountBban *BankAccountBban `json:"bankAccountBban,omitempty"`
 }
 
-// NewTokenNonSepaDirectDebitPaymentProduct730SpecificData constructs a new TokenNonSepaDirectDebitPaymentProduct730SpecificData instance
+// NewTokenNonSepaDirectDebitPaymentProduct730SpecificData constructs a new TokenNonSepaDirectDebitPaymentProduct730SpecificData instance.
 func NewTokenNonSepaDirectDebitPaymentProduct730SpecificData() *TokenNonSepaDirectDebitPaymentProduct730SpecificData {
 	return &TokenNonSepaDirectDebitPaymentProduct730SpecificData{}
 }

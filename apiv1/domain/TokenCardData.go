@@ -3,14 +3,14 @@
 
 package domain
 
-// TokenCardData represents class TokenCardData
+// TokenCardData represents class TokenCardData.
 type TokenCardData struct {
 	CardWithoutCvv       *CardWithoutCvv `json:"cardWithoutCvv,omitempty"`
 	FirstTransactionDate *string         `json:"firstTransactionDate,omitempty"`
 	ProviderReference    *string         `json:"providerReference,omitempty"`
 }
 
-// NewTokenCardData constructs a new TokenCardData instance
+// NewTokenCardData constructs a new TokenCardData instance.
 func NewTokenCardData() *TokenCardData {
 	return &TokenCardData{}
 }

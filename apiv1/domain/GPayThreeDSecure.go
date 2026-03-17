@@ -3,7 +3,7 @@
 
 package domain
 
-// GPayThreeDSecure represents class GPayThreeDSecure
+// GPayThreeDSecure represents class GPayThreeDSecure.
 type GPayThreeDSecure struct {
 	ChallengeCanvasSize *string          `json:"challengeCanvasSize,omitempty"`
 	ChallengeIndicator  *string          `json:"challengeIndicator,omitempty"`
@@ -12,7 +12,7 @@ type GPayThreeDSecure struct {
 	SkipAuthentication  *bool            `json:"skipAuthentication,omitempty"`
 }
 
-// NewGPayThreeDSecure constructs a new GPayThreeDSecure instance
+// NewGPayThreeDSecure constructs a new GPayThreeDSecure instance.
 func NewGPayThreeDSecure() *GPayThreeDSecure {
 	return &GPayThreeDSecure{}
 }

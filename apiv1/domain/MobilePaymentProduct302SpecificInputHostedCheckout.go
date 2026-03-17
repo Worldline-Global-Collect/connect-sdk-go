@@ -3,12 +3,12 @@
 
 package domain
 
-// MobilePaymentProduct302SpecificInputHostedCheckout represents class MobilePaymentProduct302SpecificInputHostedCheckout
+// MobilePaymentProduct302SpecificInputHostedCheckout represents class MobilePaymentProduct302SpecificInputHostedCheckout.
 type MobilePaymentProduct302SpecificInputHostedCheckout struct {
 	BusinessName *string `json:"businessName,omitempty"`
 }
 
-// NewMobilePaymentProduct302SpecificInputHostedCheckout constructs a new MobilePaymentProduct302SpecificInputHostedCheckout instance
+// NewMobilePaymentProduct302SpecificInputHostedCheckout constructs a new MobilePaymentProduct302SpecificInputHostedCheckout instance.
 func NewMobilePaymentProduct302SpecificInputHostedCheckout() *MobilePaymentProduct302SpecificInputHostedCheckout {
 	return &MobilePaymentProduct302SpecificInputHostedCheckout{}
 }

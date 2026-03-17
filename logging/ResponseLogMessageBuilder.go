@@ -33,7 +33,7 @@ type ResponseLogMessageBuilder struct {
 	headerObfuscator obfuscation.HeaderObfuscator
 }
 
-// ResponseLogMessage represents a log message about a Response
+// ResponseLogMessage represents a log message about a Response.
 type ResponseLogMessage struct {
 	responseID string
 	statusCode int
@@ -50,42 +50,42 @@ type ResponseLogMessage struct {
 	headerObfuscator obfuscation.HeaderObfuscator
 }
 
-// ResponseID returns the response id
+// ResponseID returns the response id.
 func (rl ResponseLogMessage) ResponseID() string {
 	return rl.responseID
 }
 
-// StatusCode returns the response status code
+// StatusCode returns the response status code.
 func (rl ResponseLogMessage) StatusCode() int {
 	return rl.statusCode
 }
 
-// Duration returns the transport duration
+// Duration returns the transport duration.
 func (rl ResponseLogMessage) Duration() time.Duration {
 	return rl.duration
 }
 
-// Body returns the response body
+// Body returns the response body.
 func (rl ResponseLogMessage) Body() string {
 	return rl.body
 }
 
-// ContentType returns the response content-type
+// ContentType returns the response content-type.
 func (rl ResponseLogMessage) ContentType() string {
 	return rl.contentType
 }
 
-// Headers returns the response headers
+// Headers returns the response headers.
 func (rl ResponseLogMessage) Headers() map[string][]string {
 	return rl.headers
 }
 
-// String implements the Stringer interface
+// String implements the Stringer interface.
 func (rl ResponseLogMessage) String() string {
 	return fmt.Sprintf(messageTemplate, rl.responseID, rl.duration, rl.statusCode, rl.headersFormatted, rl.contentType, rl.body)
 }
 
-// AddHeader adds a header to the log message using the name and value
+// AddHeader adds a header to the log message using the name and value.
 func (rlm *ResponseLogMessageBuilder) AddHeader(name, value string) error {
 	if rlm.headersBuffer.Len() > 0 {
 		rlm.headersBuffer.WriteString(", ")
@@ -106,7 +106,7 @@ func (rlm *ResponseLogMessageBuilder) AddHeader(name, value string) error {
 	return nil
 }
 
-// SetBody sets the request body
+// SetBody sets the request body.
 func (rlm *ResponseLogMessageBuilder) SetBody(body, contentType string) error {
 	obfuscatedBody, err := rlm.bodyObfuscator.ObfuscateBody(body)
 	if err != nil {
@@ -119,7 +119,7 @@ func (rlm *ResponseLogMessageBuilder) SetBody(body, contentType string) error {
 	return nil
 }
 
-// SetBinaryBody sets the binary request body
+// SetBinaryBody sets the binary request body.
 func (rlm *ResponseLogMessageBuilder) SetBinaryBody(contentType string) error {
 	if !isBinaryContent(contentType) {
 		return errors.New("Not a binary content type: " + contentType)
@@ -139,7 +139,7 @@ func isBinaryContent(contentType string) bool {
 		!strings.Contains(contentType, "xml")
 }
 
-// BuildMessage builds the ResponseLogMessage
+// BuildMessage builds the ResponseLogMessage.
 func (rlm *ResponseLogMessageBuilder) BuildMessage() *ResponseLogMessage {
 	return &ResponseLogMessage{
 		rlm.responseID,
@@ -155,7 +155,7 @@ func (rlm *ResponseLogMessageBuilder) BuildMessage() *ResponseLogMessage {
 	}
 }
 
-// NewResponseLogMessageBuilder creates a ResponseLogMessageBuilder with the given responseID, statusCode, duration and obfuscators
+// NewResponseLogMessageBuilder creates a ResponseLogMessageBuilder with the given responseID, statusCode, duration and obfuscators.
 func NewResponseLogMessageBuilder(responseID string, statusCode int, duration time.Duration, bodyObfuscator obfuscation.BodyObfuscator, headerObfuscator obfuscation.HeaderObfuscator) (*ResponseLogMessageBuilder, error) {
 	if len(responseID) == 0 {
 		return nil, errRequestIDEmpty

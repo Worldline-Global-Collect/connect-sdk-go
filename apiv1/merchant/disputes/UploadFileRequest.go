@@ -8,14 +8,14 @@ import (
 	"github.com/Worldline-Global-Collect/connect-sdk-go/domain"
 )
 
-// UploadFileRequest represents multipart/form-data parameters for Upload File
+// UploadFileRequest represents multipart/form-data parameters for Upload File.
 //
-// Documentation can be found at https://apireference.connect.worldline-solutions.com/fileserviceapi/v1/en_US/go/disputes/uploadFile.html
+// Documentation can be found at https://apireference.connect.worldline-solutions.com/fileserviceapi/v1/en_US/go/disputes/uploadFile.html.
 type UploadFileRequest struct {
 	File *domain.UploadableFile
 }
 
-// ToMultipartFormDataObject converts the multipart/form-data request to communication.MultipartFormDataObject
+// ToMultipartFormDataObject converts the multipart/form-data request to communication.MultipartFormDataObject.
 func (request UploadFileRequest) ToMultipartFormDataObject() *communication.MultipartFormDataObject {
 	multipart, _ := communication.NewMultipartFormDataObject()
 
@@ -26,7 +26,7 @@ func (request UploadFileRequest) ToMultipartFormDataObject() *communication.Mult
 	return multipart
 }
 
-// NewUploadFileRequest constructs a new UploadFileRequest instance
+// NewUploadFileRequest constructs a new UploadFileRequest instance.
 func NewUploadFileRequest() *UploadFileRequest {
 	return &UploadFileRequest{}
 }

@@ -4,6 +4,7 @@
 package products
 
 import (
+	"errors"
 	"strconv"
 
 	"github.com/Worldline-Global-Collect/connect-sdk-go/apiv1/domain"
@@ -17,9 +18,9 @@ type Client struct {
 	apiResource *communicator.APIResource
 }
 
-// Find represents the resource /{merchantId}/products - Get payment products
+// Find represents the resource /{merchantId}/products - Get payment products.
 //
-// Documentation can be found at https://apireference.connect.worldline-solutions.com/s2sapi/v1/en_US/go/products/find.html
+// Documentation can be found at https://apireference.connect.worldline-solutions.com/s2sapi/v1/en_US/go/products/find.html.
 //
 // Can return any of the following errors:
 //   * IdempotenceError if an idempotent request caused a conflict (HTTP status code 409)
@@ -43,11 +44,9 @@ func (c *Client) Find(query FindParams, context *communicator.CallContext) (doma
 
 	getErr := c.apiResource.Communicator().Get(uri, clientHeaders, &query, context, &resultObject)
 	if getErr != nil {
-		responseError, isResponseError := getErr.(*commErrors.ResponseError)
-		if isResponseError {
-			var errorObject interface{}
-
-			errorObject = &domain.ErrorResponse{}
+		var responseError *commErrors.ResponseError
+		if errors.As(getErr, &responseError) {
+			errorObject := &domain.ErrorResponse{}
 			err = c.apiResource.Communicator().Marshaller().Unmarshal(responseError.Body(), errorObject)
 			if err != nil {
 				return resultObject, err
@@ -67,9 +66,9 @@ func (c *Client) Find(query FindParams, context *communicator.CallContext) (doma
 	return resultObject, nil
 }
 
-// Get represents the resource /{merchantId}/products/{paymentProductId} - Get payment product
+// Get represents the resource /{merchantId}/products/{paymentProductId} - Get payment product.
 //
-// Documentation can be found at https://apireference.connect.worldline-solutions.com/s2sapi/v1/en_US/go/products/get.html
+// Documentation can be found at https://apireference.connect.worldline-solutions.com/s2sapi/v1/en_US/go/products/get.html.
 //
 // Can return any of the following errors:
 //   * IdempotenceError if an idempotent request caused a conflict (HTTP status code 409)
@@ -97,11 +96,9 @@ func (c *Client) Get(paymentProductID int32, query GetParams, context *communica
 
 	getErr := c.apiResource.Communicator().Get(uri, clientHeaders, &query, context, &resultObject)
 	if getErr != nil {
-		responseError, isResponseError := getErr.(*commErrors.ResponseError)
-		if isResponseError {
-			var errorObject interface{}
-
-			errorObject = &domain.ErrorResponse{}
+		var responseError *commErrors.ResponseError
+		if errors.As(getErr, &responseError) {
+			errorObject := &domain.ErrorResponse{}
 			err = c.apiResource.Communicator().Marshaller().Unmarshal(responseError.Body(), errorObject)
 			if err != nil {
 				return resultObject, err
@@ -121,9 +118,9 @@ func (c *Client) Get(paymentProductID int32, query GetParams, context *communica
 	return resultObject, nil
 }
 
-// Directory represents the resource /{merchantId}/products/{paymentProductId}/directory - Get payment product directory
+// Directory represents the resource /{merchantId}/products/{paymentProductId}/directory - Get payment product directory.
 //
-// Documentation can be found at https://apireference.connect.worldline-solutions.com/s2sapi/v1/en_US/go/products/directory.html
+// Documentation can be found at https://apireference.connect.worldline-solutions.com/s2sapi/v1/en_US/go/products/directory.html.
 //
 // Can return any of the following errors:
 //   * IdempotenceError if an idempotent request caused a conflict (HTTP status code 409)
@@ -151,11 +148,9 @@ func (c *Client) Directory(paymentProductID int32, query DirectoryParams, contex
 
 	getErr := c.apiResource.Communicator().Get(uri, clientHeaders, &query, context, &resultObject)
 	if getErr != nil {
-		responseError, isResponseError := getErr.(*commErrors.ResponseError)
-		if isResponseError {
-			var errorObject interface{}
-
-			errorObject = &domain.ErrorResponse{}
+		var responseError *commErrors.ResponseError
+		if errors.As(getErr, &responseError) {
+			errorObject := &domain.ErrorResponse{}
 			err = c.apiResource.Communicator().Marshaller().Unmarshal(responseError.Body(), errorObject)
 			if err != nil {
 				return resultObject, err
@@ -175,9 +170,9 @@ func (c *Client) Directory(paymentProductID int32, query DirectoryParams, contex
 	return resultObject, nil
 }
 
-// CustomerDetails represents the resource /{merchantId}/products/{paymentProductId}/customerDetails - Get customer details
+// CustomerDetails represents the resource /{merchantId}/products/{paymentProductId}/customerDetails - Get customer details.
 //
-// Documentation can be found at https://apireference.connect.worldline-solutions.com/s2sapi/v1/en_US/go/products/customerDetails.html
+// Documentation can be found at https://apireference.connect.worldline-solutions.com/s2sapi/v1/en_US/go/products/customerDetails.html.
 //
 // Can return any of the following errors:
 //   * IdempotenceError if an idempotent request caused a conflict (HTTP status code 409)
@@ -205,11 +200,9 @@ func (c *Client) CustomerDetails(paymentProductID int32, body domain.GetCustomer
 
 	postErr := c.apiResource.Communicator().Post(uri, clientHeaders, nil, body, context, &resultObject)
 	if postErr != nil {
-		responseError, isResponseError := postErr.(*commErrors.ResponseError)
-		if isResponseError {
-			var errorObject interface{}
-
-			errorObject = &domain.ErrorResponse{}
+		var responseError *commErrors.ResponseError
+		if errors.As(postErr, &responseError) {
+			errorObject := &domain.ErrorResponse{}
 			err = c.apiResource.Communicator().Marshaller().Unmarshal(responseError.Body(), errorObject)
 			if err != nil {
 				return resultObject, err
@@ -229,9 +222,9 @@ func (c *Client) CustomerDetails(paymentProductID int32, body domain.GetCustomer
 	return resultObject, nil
 }
 
-// DeviceFingerprint represents the resource /{merchantId}/products/{paymentProductId}/deviceFingerprint - Get device fingerprint
+// DeviceFingerprint represents the resource /{merchantId}/products/{paymentProductId}/deviceFingerprint - Get device fingerprint.
 //
-// Documentation can be found at https://apireference.connect.worldline-solutions.com/s2sapi/v1/en_US/go/products/deviceFingerprint.html
+// Documentation can be found at https://apireference.connect.worldline-solutions.com/s2sapi/v1/en_US/go/products/deviceFingerprint.html.
 //
 // Can return any of the following errors:
 //   * IdempotenceError if an idempotent request caused a conflict (HTTP status code 409)
@@ -259,11 +252,9 @@ func (c *Client) DeviceFingerprint(paymentProductID int32, body domain.DeviceFin
 
 	postErr := c.apiResource.Communicator().Post(uri, clientHeaders, nil, body, context, &resultObject)
 	if postErr != nil {
-		responseError, isResponseError := postErr.(*commErrors.ResponseError)
-		if isResponseError {
-			var errorObject interface{}
-
-			errorObject = &domain.ErrorResponse{}
+		var responseError *commErrors.ResponseError
+		if errors.As(postErr, &responseError) {
+			errorObject := &domain.ErrorResponse{}
 			err = c.apiResource.Communicator().Marshaller().Unmarshal(responseError.Body(), errorObject)
 			if err != nil {
 				return resultObject, err
@@ -283,9 +274,9 @@ func (c *Client) DeviceFingerprint(paymentProductID int32, body domain.DeviceFin
 	return resultObject, nil
 }
 
-// Networks represents the resource /{merchantId}/products/{paymentProductId}/networks - Get payment product networks
+// Networks represents the resource /{merchantId}/products/{paymentProductId}/networks - Get payment product networks.
 //
-// Documentation can be found at https://apireference.connect.worldline-solutions.com/s2sapi/v1/en_US/go/products/networks.html
+// Documentation can be found at https://apireference.connect.worldline-solutions.com/s2sapi/v1/en_US/go/products/networks.html.
 //
 // Can return any of the following errors:
 //   * IdempotenceError if an idempotent request caused a conflict (HTTP status code 409)
@@ -313,11 +304,9 @@ func (c *Client) Networks(paymentProductID int32, query NetworksParams, context 
 
 	getErr := c.apiResource.Communicator().Get(uri, clientHeaders, &query, context, &resultObject)
 	if getErr != nil {
-		responseError, isResponseError := getErr.(*commErrors.ResponseError)
-		if isResponseError {
-			var errorObject interface{}
-
-			errorObject = &domain.ErrorResponse{}
+		var responseError *commErrors.ResponseError
+		if errors.As(getErr, &responseError) {
+			errorObject := &domain.ErrorResponse{}
 			err = c.apiResource.Communicator().Marshaller().Unmarshal(responseError.Body(), errorObject)
 			if err != nil {
 				return resultObject, err
@@ -337,9 +326,9 @@ func (c *Client) Networks(paymentProductID int32, query NetworksParams, context 
 	return resultObject, nil
 }
 
-// Sessions represents the resource /{merchantId}/products/{paymentProductId}/sessions - Create session for payment product
+// Sessions represents the resource /{merchantId}/products/{paymentProductId}/sessions - Create session for payment product.
 //
-// Documentation can be found at https://apireference.connect.worldline-solutions.com/s2sapi/v1/en_US/go/products/sessions.html
+// Documentation can be found at https://apireference.connect.worldline-solutions.com/s2sapi/v1/en_US/go/products/sessions.html.
 //
 // Can return any of the following errors:
 //   * IdempotenceError if an idempotent request caused a conflict (HTTP status code 409)
@@ -367,11 +356,9 @@ func (c *Client) Sessions(paymentProductID int32, body domain.CreatePaymentProdu
 
 	postErr := c.apiResource.Communicator().Post(uri, clientHeaders, nil, body, context, &resultObject)
 	if postErr != nil {
-		responseError, isResponseError := postErr.(*commErrors.ResponseError)
-		if isResponseError {
-			var errorObject interface{}
-
-			errorObject = &domain.ErrorResponse{}
+		var responseError *commErrors.ResponseError
+		if errors.As(postErr, &responseError) {
+			errorObject := &domain.ErrorResponse{}
 			err = c.apiResource.Communicator().Marshaller().Unmarshal(responseError.Body(), errorObject)
 			if err != nil {
 				return resultObject, err
@@ -391,9 +378,9 @@ func (c *Client) Sessions(paymentProductID int32, body domain.CreatePaymentProdu
 	return resultObject, nil
 }
 
-// NewClient constructs a new Products client
+// NewClient constructs a new Products client.
 //
-// parent is the communicator.APIResource on top of which we want to build the new Products client
+// parent is the communicator.APIResource on top of which we want to build the new Products client.
 func NewClient(parent *communicator.APIResource, pathContext map[string]string) (*Client, error) {
 	apiResource, err := communicator.NewAPIResourceWithParent(parent, pathContext)
 	if err != nil {

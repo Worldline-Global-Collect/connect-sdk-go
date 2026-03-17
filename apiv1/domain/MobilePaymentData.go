@@ -3,13 +3,13 @@
 
 package domain
 
-// MobilePaymentData represents class MobilePaymentData
+// MobilePaymentData represents class MobilePaymentData.
 type MobilePaymentData struct {
 	Dpan       *string `json:"dpan,omitempty"`
 	ExpiryDate *string `json:"expiryDate,omitempty"`
 }
 
-// NewMobilePaymentData constructs a new MobilePaymentData instance
+// NewMobilePaymentData constructs a new MobilePaymentData instance.
 func NewMobilePaymentData() *MobilePaymentData {
 	return &MobilePaymentData{}
 }

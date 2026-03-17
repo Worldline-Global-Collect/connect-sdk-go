@@ -33,6 +33,7 @@ func (o BodyObfuscator) obfuscateValue(value interface{}, rule Rule) (string, er
 	if boolVal, ok := value.(bool); ok {
 		return rule(strconv.FormatBool(boolVal)), nil
 	}
+
 	return "", errInvalidDataType
 }
 
@@ -51,7 +52,6 @@ func (o BodyObfuscator) navigateJSON(content interface{}) error {
 				}
 
 				contentMap[name] = obfuscatedValue
-
 			} else {
 				err := o.navigateJSON(obj)
 				if err != nil {
@@ -73,7 +73,7 @@ func (o BodyObfuscator) navigateJSON(content interface{}) error {
 	return nil
 }
 
-// ObfuscateBody obfuscates the given body as necessary
+// ObfuscateBody obfuscates the given body as necessary.
 func (o BodyObfuscator) ObfuscateBody(body string) (string, error) {
 	if strings.TrimSpace(body) == "" {
 		return body, nil
@@ -81,7 +81,9 @@ func (o BodyObfuscator) ObfuscateBody(body string) (string, error) {
 
 	var parsedJSON interface{}
 	err := json.Unmarshal([]byte(body), &parsedJSON)
-	if _, ok := err.(*json.SyntaxError); ok {
+
+	var syntaxError *json.SyntaxError
+	if errors.As(err, &syntaxError) {
 		return body, nil
 	}
 	if err != nil {

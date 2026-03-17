@@ -3,7 +3,7 @@
 
 package domain
 
-// CreateMandateBase represents class CreateMandateBase
+// CreateMandateBase represents class CreateMandateBase.
 type CreateMandateBase struct {
 	Alias                  *string          `json:"alias,omitempty"`
 	Customer               *MandateCustomer `json:"customer,omitempty"`
@@ -14,7 +14,7 @@ type CreateMandateBase struct {
 	UniqueMandateReference *string          `json:"uniqueMandateReference,omitempty"`
 }
 
-// NewCreateMandateBase constructs a new CreateMandateBase instance
+// NewCreateMandateBase constructs a new CreateMandateBase instance.
 func NewCreateMandateBase() *CreateMandateBase {
 	return &CreateMandateBase{}
 }

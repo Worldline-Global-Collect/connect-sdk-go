@@ -3,13 +3,13 @@
 
 package domain
 
-// GetHostedCheckoutResponse represents class GetHostedCheckoutResponse
+// GetHostedCheckoutResponse represents class GetHostedCheckoutResponse.
 type GetHostedCheckoutResponse struct {
 	CreatedPaymentOutput *CreatedPaymentOutput `json:"createdPaymentOutput,omitempty"`
 	Status               *string               `json:"status,omitempty"`
 }
 
-// NewGetHostedCheckoutResponse constructs a new GetHostedCheckoutResponse instance
+// NewGetHostedCheckoutResponse constructs a new GetHostedCheckoutResponse instance.
 func NewGetHostedCheckoutResponse() *GetHostedCheckoutResponse {
 	return &GetHostedCheckoutResponse{}
 }

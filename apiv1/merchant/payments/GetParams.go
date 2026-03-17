@@ -9,14 +9,14 @@ import (
 	"github.com/Worldline-Global-Collect/connect-sdk-go/communicator/communication"
 )
 
-// GetParams represents query parameters for Get payment
+// GetParams represents query parameters for Get payment.
 //
-// Documentation can be found at https://apireference.connect.worldline-solutions.com/s2sapi/v1/en_US/go/payments/get.html
+// Documentation can be found at https://apireference.connect.worldline-solutions.com/s2sapi/v1/en_US/go/payments/get.html.
 type GetParams struct {
 	ReturnOperations *bool
 }
 
-// ToRequestParameters converts the query to communication.RequestParams
+// ToRequestParameters converts the query to communication.RequestParams.
 func (params *GetParams) ToRequestParameters() communication.RequestParams {
 	reqParams := communication.RequestParams{}
 
@@ -28,7 +28,7 @@ func (params *GetParams) ToRequestParameters() communication.RequestParams {
 	return reqParams
 }
 
-// NewGetParams constructs a new GetParams instance
+// NewGetParams constructs a new GetParams instance.
 func NewGetParams() *GetParams {
 	return &GetParams{}
 }

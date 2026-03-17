@@ -3,7 +3,7 @@
 
 package domain
 
-// MandateSepaDirectDebitWithoutCreditor represents class MandateSepaDirectDebitWithoutCreditor
+// MandateSepaDirectDebitWithoutCreditor represents class MandateSepaDirectDebitWithoutCreditor.
 type MandateSepaDirectDebitWithoutCreditor struct {
 	BankAccountIban            *BankAccountIban `json:"bankAccountIban,omitempty"`
 	CustomerContractIdentifier *string          `json:"customerContractIdentifier,omitempty"`
@@ -13,7 +13,7 @@ type MandateSepaDirectDebitWithoutCreditor struct {
 	PreNotification            *string          `json:"preNotification,omitempty"`
 }
 
-// NewMandateSepaDirectDebitWithoutCreditor constructs a new MandateSepaDirectDebitWithoutCreditor instance
+// NewMandateSepaDirectDebitWithoutCreditor constructs a new MandateSepaDirectDebitWithoutCreditor instance.
 func NewMandateSepaDirectDebitWithoutCreditor() *MandateSepaDirectDebitWithoutCreditor {
 	return &MandateSepaDirectDebitWithoutCreditor{}
 }

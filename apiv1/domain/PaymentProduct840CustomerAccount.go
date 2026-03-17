@@ -3,7 +3,7 @@
 
 package domain
 
-// PaymentProduct840CustomerAccount represents class PaymentProduct840CustomerAccount
+// PaymentProduct840CustomerAccount represents class PaymentProduct840CustomerAccount.
 type PaymentProduct840CustomerAccount struct {
 	AccountID             *string `json:"accountId,omitempty"`
 	BillingAgreementID    *string `json:"billingAgreementId,omitempty"`
@@ -17,7 +17,7 @@ type PaymentProduct840CustomerAccount struct {
 	Surname               *string `json:"surname,omitempty"`
 }
 
-// NewPaymentProduct840CustomerAccount constructs a new PaymentProduct840CustomerAccount instance
+// NewPaymentProduct840CustomerAccount constructs a new PaymentProduct840CustomerAccount instance.
 func NewPaymentProduct840CustomerAccount() *PaymentProduct840CustomerAccount {
 	return &PaymentProduct840CustomerAccount{}
 }

@@ -3,7 +3,7 @@
 
 package domain
 
-// OrderStatusOutput represents class OrderStatusOutput
+// OrderStatusOutput represents class OrderStatusOutput.
 type OrderStatusOutput struct {
 	Errors                   *[]APIError     `json:"errors,omitempty"`
 	IsCancellable            *bool           `json:"isCancellable,omitempty"`
@@ -14,7 +14,7 @@ type OrderStatusOutput struct {
 	StatusCodeChangeDateTime *string         `json:"statusCodeChangeDateTime,omitempty"`
 }
 
-// NewOrderStatusOutput constructs a new OrderStatusOutput instance
+// NewOrderStatusOutput constructs a new OrderStatusOutput instance.
 func NewOrderStatusOutput() *OrderStatusOutput {
 	return &OrderStatusOutput{}
 }

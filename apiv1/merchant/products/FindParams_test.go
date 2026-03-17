@@ -85,6 +85,8 @@ func TestFindParamsToRequestParameters(t *testing.T) {
 }
 
 func paramRequestCmp(t *testing.T, a communication.ParamRequest, b communication.RequestParams) {
+	t.Helper()
+
 	params := a.ToRequestParameters()
 
 	if !requestParamsCmp(params, b) {

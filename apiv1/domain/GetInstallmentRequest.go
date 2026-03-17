@@ -3,7 +3,7 @@
 
 package domain
 
-// GetInstallmentRequest represents class GetInstallmentRequest
+// GetInstallmentRequest represents class GetInstallmentRequest.
 type GetInstallmentRequest struct {
 	AmountOfMoney    *AmountOfMoney `json:"amountOfMoney,omitempty"`
 	Bin              *string        `json:"bin,omitempty"`
@@ -11,7 +11,7 @@ type GetInstallmentRequest struct {
 	PaymentProductID *int32         `json:"paymentProductId,omitempty"`
 }
 
-// NewGetInstallmentRequest constructs a new GetInstallmentRequest instance
+// NewGetInstallmentRequest constructs a new GetInstallmentRequest instance.
 func NewGetInstallmentRequest() *GetInstallmentRequest {
 	return &GetInstallmentRequest{}
 }

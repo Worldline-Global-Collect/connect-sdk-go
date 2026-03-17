@@ -3,7 +3,7 @@
 
 package domain
 
-// PaymentCreationOutput represents class PaymentCreationOutput
+// PaymentCreationOutput represents class PaymentCreationOutput.
 type PaymentCreationOutput struct {
 	AdditionalReference   *string `json:"additionalReference,omitempty"`
 	ExternalReference     *string `json:"externalReference,omitempty"`
@@ -13,7 +13,7 @@ type PaymentCreationOutput struct {
 	TokenizationSucceeded *bool   `json:"tokenizationSucceeded,omitempty"`
 }
 
-// NewPaymentCreationOutput constructs a new PaymentCreationOutput instance
+// NewPaymentCreationOutput constructs a new PaymentCreationOutput instance.
 func NewPaymentCreationOutput() *PaymentCreationOutput {
 	return &PaymentCreationOutput{}
 }

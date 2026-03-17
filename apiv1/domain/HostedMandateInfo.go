@@ -3,7 +3,7 @@
 
 package domain
 
-// HostedMandateInfo represents class HostedMandateInfo
+// HostedMandateInfo represents class HostedMandateInfo.
 type HostedMandateInfo struct {
 	Alias                  *string          `json:"alias,omitempty"`
 	Customer               *MandateCustomer `json:"customer,omitempty"`
@@ -13,7 +13,7 @@ type HostedMandateInfo struct {
 	UniqueMandateReference *string          `json:"uniqueMandateReference,omitempty"`
 }
 
-// NewHostedMandateInfo constructs a new HostedMandateInfo instance
+// NewHostedMandateInfo constructs a new HostedMandateInfo instance.
 func NewHostedMandateInfo() *HostedMandateInfo {
 	return &HostedMandateInfo{}
 }

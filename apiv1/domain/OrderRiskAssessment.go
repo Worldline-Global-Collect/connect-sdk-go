@@ -3,7 +3,7 @@
 
 package domain
 
-// OrderRiskAssessment represents class OrderRiskAssessment
+// OrderRiskAssessment represents class OrderRiskAssessment.
 type OrderRiskAssessment struct {
 	AdditionalInput *AdditionalOrderInputAirlineData `json:"additionalInput,omitempty"`
 	AmountOfMoney   *AmountOfMoney                   `json:"amountOfMoney,omitempty"`
@@ -11,7 +11,7 @@ type OrderRiskAssessment struct {
 	Shipping        *ShippingRiskAssessment          `json:"shipping,omitempty"`
 }
 
-// NewOrderRiskAssessment constructs a new OrderRiskAssessment instance
+// NewOrderRiskAssessment constructs a new OrderRiskAssessment instance.
 func NewOrderRiskAssessment() *OrderRiskAssessment {
 	return &OrderRiskAssessment{}
 }

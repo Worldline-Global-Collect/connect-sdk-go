@@ -3,7 +3,7 @@
 
 package domain
 
-// CreateHostedCheckoutResponse represents class CreateHostedCheckoutResponse
+// CreateHostedCheckoutResponse represents class CreateHostedCheckoutResponse.
 type CreateHostedCheckoutResponse struct {
 	RETURNMAC          *string   `json:"RETURNMAC,omitempty"`
 	HostedCheckoutID   *string   `json:"hostedCheckoutId,omitempty"`
@@ -12,7 +12,7 @@ type CreateHostedCheckoutResponse struct {
 	PartialRedirectURL *string   `json:"partialRedirectUrl,omitempty"`
 }
 
-// NewCreateHostedCheckoutResponse constructs a new CreateHostedCheckoutResponse instance
+// NewCreateHostedCheckoutResponse constructs a new CreateHostedCheckoutResponse instance.
 func NewCreateHostedCheckoutResponse() *CreateHostedCheckoutResponse {
 	return &CreateHostedCheckoutResponse{}
 }

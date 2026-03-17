@@ -3,7 +3,7 @@
 
 package domain
 
-// ValidationBankAccountOutput represents class ValidationBankAccountOutput
+// ValidationBankAccountOutput represents class ValidationBankAccountOutput.
 type ValidationBankAccountOutput struct {
 	Checks                   *[]ValidationBankAccountCheck `json:"checks,omitempty"`
 	NewBankName              *string                       `json:"newBankName,omitempty"`
@@ -12,7 +12,7 @@ type ValidationBankAccountOutput struct {
 	ReformattedBranchCode    *string                       `json:"reformattedBranchCode,omitempty"`
 }
 
-// NewValidationBankAccountOutput constructs a new ValidationBankAccountOutput instance
+// NewValidationBankAccountOutput constructs a new ValidationBankAccountOutput instance.
 func NewValidationBankAccountOutput() *ValidationBankAccountOutput {
 	return &ValidationBankAccountOutput{}
 }

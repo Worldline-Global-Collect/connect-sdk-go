@@ -3,12 +3,12 @@
 
 package domain
 
-// InstallmentOptionsResponse represents class InstallmentOptionsResponse
+// InstallmentOptionsResponse represents class InstallmentOptionsResponse.
 type InstallmentOptionsResponse struct {
 	InstallmentOptions *[]InstallmentOptions `json:"installmentOptions,omitempty"`
 }
 
-// NewInstallmentOptionsResponse constructs a new InstallmentOptionsResponse instance
+// NewInstallmentOptionsResponse constructs a new InstallmentOptionsResponse instance.
 func NewInstallmentOptionsResponse() *InstallmentOptionsResponse {
 	return &InstallmentOptionsResponse{}
 }

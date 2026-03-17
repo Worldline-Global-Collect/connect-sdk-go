@@ -3,13 +3,13 @@
 
 package domain
 
-// ContactDetailsToken represents class ContactDetailsToken
+// ContactDetailsToken represents class ContactDetailsToken.
 type ContactDetailsToken struct {
 	EmailAddress     *string `json:"emailAddress,omitempty"`
 	EmailMessageType *string `json:"emailMessageType,omitempty"`
 }
 
-// NewContactDetailsToken constructs a new ContactDetailsToken instance
+// NewContactDetailsToken constructs a new ContactDetailsToken instance.
 func NewContactDetailsToken() *ContactDetailsToken {
 	return &ContactDetailsToken{}
 }

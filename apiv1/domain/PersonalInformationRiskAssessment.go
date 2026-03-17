@@ -3,12 +3,12 @@
 
 package domain
 
-// PersonalInformationRiskAssessment represents class PersonalInformationRiskAssessment
+// PersonalInformationRiskAssessment represents class PersonalInformationRiskAssessment.
 type PersonalInformationRiskAssessment struct {
 	Name *PersonalNameRiskAssessment `json:"name,omitempty"`
 }
 
-// NewPersonalInformationRiskAssessment constructs a new PersonalInformationRiskAssessment instance
+// NewPersonalInformationRiskAssessment constructs a new PersonalInformationRiskAssessment instance.
 func NewPersonalInformationRiskAssessment() *PersonalInformationRiskAssessment {
 	return &PersonalInformationRiskAssessment{}
 }

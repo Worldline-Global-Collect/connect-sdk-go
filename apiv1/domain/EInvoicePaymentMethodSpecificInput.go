@@ -3,7 +3,7 @@
 
 package domain
 
-// EInvoicePaymentMethodSpecificInput represents class EInvoicePaymentMethodSpecificInput
+// EInvoicePaymentMethodSpecificInput represents class EInvoicePaymentMethodSpecificInput.
 type EInvoicePaymentMethodSpecificInput struct {
 	AcceptedTermsAndConditions      *bool                                    `json:"acceptedTermsAndConditions,omitempty"`
 	PaymentProduct9000SpecificInput *EInvoicePaymentProduct9000SpecificInput `json:"paymentProduct9000SpecificInput,omitempty"`
@@ -11,7 +11,7 @@ type EInvoicePaymentMethodSpecificInput struct {
 	RequiresApproval                *bool                                    `json:"requiresApproval,omitempty"`
 }
 
-// NewEInvoicePaymentMethodSpecificInput constructs a new EInvoicePaymentMethodSpecificInput instance
+// NewEInvoicePaymentMethodSpecificInput constructs a new EInvoicePaymentMethodSpecificInput instance.
 func NewEInvoicePaymentMethodSpecificInput() *EInvoicePaymentMethodSpecificInput {
 	return &EInvoicePaymentMethodSpecificInput{}
 }

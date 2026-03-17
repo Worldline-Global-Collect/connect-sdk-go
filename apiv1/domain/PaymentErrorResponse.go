@@ -3,14 +3,14 @@
 
 package domain
 
-// PaymentErrorResponse represents class PaymentErrorResponse
+// PaymentErrorResponse represents class PaymentErrorResponse.
 type PaymentErrorResponse struct {
 	ErrorID       *string              `json:"errorId,omitempty"`
 	Errors        *[]APIError          `json:"errors,omitempty"`
 	PaymentResult *CreatePaymentResult `json:"paymentResult,omitempty"`
 }
 
-// NewPaymentErrorResponse constructs a new PaymentErrorResponse instance
+// NewPaymentErrorResponse constructs a new PaymentErrorResponse instance.
 func NewPaymentErrorResponse() *PaymentErrorResponse {
 	return &PaymentErrorResponse{}
 }

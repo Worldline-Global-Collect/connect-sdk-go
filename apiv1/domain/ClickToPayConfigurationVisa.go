@@ -3,7 +3,7 @@
 
 package domain
 
-// ClickToPayConfigurationVisa represents class ClickToPayConfigurationVisa
+// ClickToPayConfigurationVisa represents class ClickToPayConfigurationVisa.
 type ClickToPayConfigurationVisa struct {
 	EncryptionKey  *string `json:"encryptionKey,omitempty"`
 	NModulus       *string `json:"nModulus,omitempty"`
@@ -11,7 +11,7 @@ type ClickToPayConfigurationVisa struct {
 	SrcInitiatorID *string `json:"srcInitiatorId,omitempty"`
 }
 
-// NewClickToPayConfigurationVisa constructs a new ClickToPayConfigurationVisa instance
+// NewClickToPayConfigurationVisa constructs a new ClickToPayConfigurationVisa instance.
 func NewClickToPayConfigurationVisa() *ClickToPayConfigurationVisa {
 	return &ClickToPayConfigurationVisa{}
 }

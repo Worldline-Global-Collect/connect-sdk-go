@@ -3,7 +3,7 @@
 
 package domain
 
-// RefundCardMethodSpecificOutput represents class RefundCardMethodSpecificOutput
+// RefundCardMethodSpecificOutput represents class RefundCardMethodSpecificOutput.
 type RefundCardMethodSpecificOutput struct {
 	AuthorisationCode   *string         `json:"authorisationCode,omitempty"`
 	Card                *CardEssentials `json:"card,omitempty"`
@@ -12,7 +12,7 @@ type RefundCardMethodSpecificOutput struct {
 	TotalAmountRefunded *int64          `json:"totalAmountRefunded,omitempty"`
 }
 
-// NewRefundCardMethodSpecificOutput constructs a new RefundCardMethodSpecificOutput instance
+// NewRefundCardMethodSpecificOutput constructs a new RefundCardMethodSpecificOutput instance.
 func NewRefundCardMethodSpecificOutput() *RefundCardMethodSpecificOutput {
 	return &RefundCardMethodSpecificOutput{}
 }

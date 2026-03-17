@@ -3,14 +3,14 @@
 
 package domain
 
-// PersonalNameToken represents class PersonalNameToken
+// PersonalNameToken represents class PersonalNameToken.
 type PersonalNameToken struct {
 	FirstName     *string `json:"firstName,omitempty"`
 	Surname       *string `json:"surname,omitempty"`
 	SurnamePrefix *string `json:"surnamePrefix,omitempty"`
 }
 
-// NewPersonalNameToken constructs a new PersonalNameToken instance
+// NewPersonalNameToken constructs a new PersonalNameToken instance.
 func NewPersonalNameToken() *PersonalNameToken {
 	return &PersonalNameToken{}
 }

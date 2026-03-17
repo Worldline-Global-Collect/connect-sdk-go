@@ -3,10 +3,14 @@ package obfuscation
 import "testing"
 
 func CheckObfuscateHeaderWithMatch(t *testing.T, name, originalValue, expectedObfuscatedValue string) {
+	t.Helper()
+
 	CheckObfuscateHeaderWithMatchWithCustomObfuscator(t, DefaultHeaderObfuscator(), name, originalValue, expectedObfuscatedValue)
 }
 
 func CheckObfuscateHeaderWithMatchWithCustomObfuscator(t *testing.T, headerObfuscator HeaderObfuscator, name, originalValue, expectedObfuscatedValue string) {
+	t.Helper()
+
 	obfuscatedValue := headerObfuscator.ObfuscateHeader(name, originalValue)
 
 	if obfuscatedValue != expectedObfuscatedValue {
@@ -15,6 +19,8 @@ func CheckObfuscateHeaderWithMatchWithCustomObfuscator(t *testing.T, headerObfus
 }
 
 func CheckObfuscateHeaderWithNoMatch(t *testing.T, name, originalValue string) {
+	t.Helper()
+
 	headerObfuscator := DefaultHeaderObfuscator()
 	obfuscatedValue := headerObfuscator.ObfuscateHeader(name, originalValue)
 

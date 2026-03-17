@@ -3,7 +3,7 @@
 
 package domain
 
-// RecurringPaymentsData represents class RecurringPaymentsData
+// RecurringPaymentsData represents class RecurringPaymentsData.
 type RecurringPaymentsData struct {
 	PaymentProduct302SpecificInput *PaymentProduct302SpecificInput `json:"paymentProduct302SpecificInput,omitempty"`
 	RecurringEndDate               *string                         `json:"recurringEndDate,omitempty"`
@@ -12,7 +12,7 @@ type RecurringPaymentsData struct {
 	TrialInformation               *TrialInformation               `json:"trialInformation,omitempty"`
 }
 
-// NewRecurringPaymentsData constructs a new RecurringPaymentsData instance
+// NewRecurringPaymentsData constructs a new RecurringPaymentsData instance.
 func NewRecurringPaymentsData() *RecurringPaymentsData {
 	return &RecurringPaymentsData{}
 }

@@ -3,14 +3,14 @@
 
 package domain
 
-// DisputeCreationDetail represents class DisputeCreationDetail
+// DisputeCreationDetail represents class DisputeCreationDetail.
 type DisputeCreationDetail struct {
 	DisputeCreationDate *string `json:"disputeCreationDate,omitempty"`
 	DisputeOriginator   *string `json:"disputeOriginator,omitempty"`
 	UserName            *string `json:"userName,omitempty"`
 }
 
-// NewDisputeCreationDetail constructs a new DisputeCreationDetail instance
+// NewDisputeCreationDetail constructs a new DisputeCreationDetail instance.
 func NewDisputeCreationDetail() *DisputeCreationDetail {
 	return &DisputeCreationDetail{}
 }

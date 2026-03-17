@@ -3,14 +3,14 @@
 
 package domain
 
-// PayoutReferences represents class PayoutReferences
+// PayoutReferences represents class PayoutReferences.
 type PayoutReferences struct {
 	InvoiceNumber     *string `json:"invoiceNumber,omitempty"`
 	MerchantOrderID   *int64  `json:"merchantOrderId,omitempty"`
 	MerchantReference *string `json:"merchantReference,omitempty"`
 }
 
-// NewPayoutReferences constructs a new PayoutReferences instance
+// NewPayoutReferences constructs a new PayoutReferences instance.
 func NewPayoutReferences() *PayoutReferences {
 	return &PayoutReferences{}
 }

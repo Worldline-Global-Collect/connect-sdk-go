@@ -3,14 +3,14 @@
 
 package domain
 
-// PaymentProductFiltersHostedCheckout represents class PaymentProductFiltersHostedCheckout
+// PaymentProductFiltersHostedCheckout represents class PaymentProductFiltersHostedCheckout.
 type PaymentProductFiltersHostedCheckout struct {
 	Exclude    *PaymentProductFilter `json:"exclude,omitempty"`
 	RestrictTo *PaymentProductFilter `json:"restrictTo,omitempty"`
 	TokensOnly *bool                 `json:"tokensOnly,omitempty"`
 }
 
-// NewPaymentProductFiltersHostedCheckout constructs a new PaymentProductFiltersHostedCheckout instance
+// NewPaymentProductFiltersHostedCheckout constructs a new PaymentProductFiltersHostedCheckout instance.
 func NewPaymentProductFiltersHostedCheckout() *PaymentProductFiltersHostedCheckout {
 	return &PaymentProductFiltersHostedCheckout{}
 }

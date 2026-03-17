@@ -3,7 +3,7 @@
 
 package domain
 
-// RefundResponse represents class RefundResponse
+// RefundResponse represents class RefundResponse.
 type RefundResponse struct {
 	ID           *string            `json:"id,omitempty"`
 	RefundOutput *RefundOutput      `json:"refundOutput,omitempty"`
@@ -11,7 +11,7 @@ type RefundResponse struct {
 	StatusOutput *OrderStatusOutput `json:"statusOutput,omitempty"`
 }
 
-// NewRefundResponse constructs a new RefundResponse instance
+// NewRefundResponse constructs a new RefundResponse instance.
 func NewRefundResponse() *RefundResponse {
 	return &RefundResponse{}
 }

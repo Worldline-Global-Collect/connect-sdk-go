@@ -3,7 +3,7 @@
 
 package domain
 
-// Order represents class Order
+// Order represents class Order.
 type Order struct {
 	AdditionalInput *AdditionalOrderInput `json:"additionalInput,omitempty"`
 	AmountOfMoney   *AmountOfMoney        `json:"amountOfMoney,omitempty"`
@@ -17,7 +17,7 @@ type Order struct {
 	ShoppingCart    *ShoppingCart         `json:"shoppingCart,omitempty"`
 }
 
-// NewOrder constructs a new Order instance
+// NewOrder constructs a new Order instance.
 func NewOrder() *Order {
 	return &Order{}
 }

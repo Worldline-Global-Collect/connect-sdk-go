@@ -3,7 +3,7 @@
 
 package domain
 
-// MandateResponse represents class MandateResponse
+// MandateResponse represents class MandateResponse.
 type MandateResponse struct {
 	Alias                  *string          `json:"alias,omitempty"`
 	Customer               *MandateCustomer `json:"customer,omitempty"`
@@ -13,7 +13,7 @@ type MandateResponse struct {
 	UniqueMandateReference *string          `json:"uniqueMandateReference,omitempty"`
 }
 
-// NewMandateResponse constructs a new MandateResponse instance
+// NewMandateResponse constructs a new MandateResponse instance.
 func NewMandateResponse() *MandateResponse {
 	return &MandateResponse{}
 }

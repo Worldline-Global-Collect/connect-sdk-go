@@ -17,12 +17,12 @@ type SignatureValidator struct {
 	secretKeyStore SecretKeyStore
 }
 
-// SecretKeyStore returns the configured secret key store
+// SecretKeyStore returns the configured secret key store.
 func (v SignatureValidator) SecretKeyStore() SecretKeyStore {
 	return v.secretKeyStore
 }
 
-// Validate validates the given body using the given request headers
+// Validate validates the given body using the given request headers.
 func (v SignatureValidator) Validate(body string, requestHeaders []communication.Header) error {
 	signature, err := getHeaderValue(requestHeaders, "X-GCS-Signature")
 	if err != nil {
@@ -83,7 +83,7 @@ func getHeaderValue(headers []communication.Header, name string) (string, error)
 	return value, nil
 }
 
-// NewSignatureValidator creates a signature validator with the given secretKeyStore
+// NewSignatureValidator creates a signature validator with the given secret key store.
 func NewSignatureValidator(secretKeyStore SecretKeyStore) (*SignatureValidator, error) {
 	if secretKeyStore == nil {
 		return nil, errors.New("secretKeyStore is required")

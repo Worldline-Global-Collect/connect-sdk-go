@@ -3,7 +3,7 @@
 
 package domain
 
-// FindRefundsResponse represents class FindRefundsResponse
+// FindRefundsResponse represents class FindRefundsResponse.
 type FindRefundsResponse struct {
 	Limit      *int32          `json:"limit,omitempty"`
 	Offset     *int32          `json:"offset,omitempty"`
@@ -11,7 +11,7 @@ type FindRefundsResponse struct {
 	TotalCount *int32          `json:"totalCount,omitempty"`
 }
 
-// NewFindRefundsResponse constructs a new FindRefundsResponse instance
+// NewFindRefundsResponse constructs a new FindRefundsResponse instance.
 func NewFindRefundsResponse() *FindRefundsResponse {
 	return &FindRefundsResponse{}
 }

@@ -2,6 +2,7 @@ package connectsdk
 
 import (
 	"crypto/rand"
+	"errors"
 	"fmt"
 	"net/url"
 	"os"
@@ -333,8 +334,8 @@ func TestIntegratedRiskAssessments(t *testing.T) {
 }
 
 func TestIntegratedMultilineHeader(t *testing.T) {
-	//skipTestIfNeeded(t)
 	t.Skip("fails inside sandbox")
+	skipTestIfNeeded(t)
 
 	conf, _ := configuration.DefaultV1HMACConfiguration(envAPIKeyID, envSecretAPIKey, "Worldline")
 	if len(envEndpointURL) == 0 {
@@ -428,14 +429,15 @@ func doCreatePayment(client *Client, request domain.CreatePaymentRequest, contex
 			MerchantAction: response.MerchantAction,
 			Payment:        response.Payment,
 		}
+
 		return result, nil
 	}
-	switch realError := err.(type) {
-	case *v1Errors.DeclinedPaymentError:
-		return *realError.PaymentResult(), nil
-	default:
-		return domain.CreatePaymentResult{}, err
+	var dpe *v1Errors.DeclinedPaymentError
+	if errors.As(err, &dpe) {
+		return *dpe.PaymentResult(), nil
 	}
+
+	return domain.CreatePaymentResult{}, err
 }
 
 func pseudoUUID() (string, error) {
@@ -449,6 +451,8 @@ func pseudoUUID() (string, error) {
 }
 
 func skipTestIfNeeded(t *testing.T) {
+	t.Helper()
+
 	if len(envMerchantID) == 0 {
 		t.Skip("empty env connect.api.merchantId")
 	}

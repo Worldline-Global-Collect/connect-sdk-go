@@ -3,7 +3,7 @@
 
 package domain
 
-// DirectoryEntry represents class DirectoryEntry
+// DirectoryEntry represents class DirectoryEntry.
 type DirectoryEntry struct {
 	CountryNames *[]string `json:"countryNames,omitempty"`
 	IssuerID     *string   `json:"issuerId,omitempty"`
@@ -11,7 +11,7 @@ type DirectoryEntry struct {
 	IssuerName   *string   `json:"issuerName,omitempty"`
 }
 
-// NewDirectoryEntry constructs a new DirectoryEntry instance
+// NewDirectoryEntry constructs a new DirectoryEntry instance.
 func NewDirectoryEntry() *DirectoryEntry {
 	return &DirectoryEntry{}
 }

@@ -3,14 +3,14 @@
 
 package domain
 
-// NonSepaDirectDebitPaymentProduct705SpecificInput represents class NonSepaDirectDebitPaymentProduct705SpecificInput
+// NonSepaDirectDebitPaymentProduct705SpecificInput represents class NonSepaDirectDebitPaymentProduct705SpecificInput.
 type NonSepaDirectDebitPaymentProduct705SpecificInput struct {
 	AuthorisationID *string          `json:"authorisationId,omitempty"`
 	BankAccountBban *BankAccountBban `json:"bankAccountBban,omitempty"`
 	TransactionType *string          `json:"transactionType,omitempty"`
 }
 
-// NewNonSepaDirectDebitPaymentProduct705SpecificInput constructs a new NonSepaDirectDebitPaymentProduct705SpecificInput instance
+// NewNonSepaDirectDebitPaymentProduct705SpecificInput constructs a new NonSepaDirectDebitPaymentProduct705SpecificInput instance.
 func NewNonSepaDirectDebitPaymentProduct705SpecificInput() *NonSepaDirectDebitPaymentProduct705SpecificInput {
 	return &NonSepaDirectDebitPaymentProduct705SpecificInput{}
 }

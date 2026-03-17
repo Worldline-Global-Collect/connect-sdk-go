@@ -3,7 +3,7 @@
 
 package domain
 
-// BankDetailsResponse represents class BankDetailsResponse
+// BankDetailsResponse represents class BankDetailsResponse.
 type BankDetailsResponse struct {
 	BankAccountBban *BankAccountBban `json:"bankAccountBban,omitempty"`
 	BankAccountIban *BankAccountIban `json:"bankAccountIban,omitempty"`
@@ -11,7 +11,7 @@ type BankDetailsResponse struct {
 	Swift           *Swift           `json:"swift,omitempty"`
 }
 
-// NewBankDetailsResponse constructs a new BankDetailsResponse instance
+// NewBankDetailsResponse constructs a new BankDetailsResponse instance.
 func NewBankDetailsResponse() *BankDetailsResponse {
 	return &BankDetailsResponse{}
 }

@@ -3,13 +3,13 @@
 
 package domain
 
-// ApprovePaymentNonSepaDirectDebitPaymentMethodSpecificInput represents class ApprovePaymentNonSepaDirectDebitPaymentMethodSpecificInput
+// ApprovePaymentNonSepaDirectDebitPaymentMethodSpecificInput represents class ApprovePaymentNonSepaDirectDebitPaymentMethodSpecificInput.
 type ApprovePaymentNonSepaDirectDebitPaymentMethodSpecificInput struct {
 	DateCollect *string `json:"dateCollect,omitempty"`
 	Token       *string `json:"token,omitempty"`
 }
 
-// NewApprovePaymentNonSepaDirectDebitPaymentMethodSpecificInput constructs a new ApprovePaymentNonSepaDirectDebitPaymentMethodSpecificInput instance
+// NewApprovePaymentNonSepaDirectDebitPaymentMethodSpecificInput constructs a new ApprovePaymentNonSepaDirectDebitPaymentMethodSpecificInput instance.
 func NewApprovePaymentNonSepaDirectDebitPaymentMethodSpecificInput() *ApprovePaymentNonSepaDirectDebitPaymentMethodSpecificInput {
 	return &ApprovePaymentNonSepaDirectDebitPaymentMethodSpecificInput{}
 }

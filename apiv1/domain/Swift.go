@@ -3,7 +3,7 @@
 
 package domain
 
-// Swift represents class Swift
+// Swift represents class Swift.
 type Swift struct {
 	Bic           *string `json:"bic,omitempty"`
 	Category      *string `json:"category,omitempty"`
@@ -17,7 +17,7 @@ type Swift struct {
 	Services      *string `json:"services,omitempty"`
 }
 
-// NewSwift constructs a new Swift instance
+// NewSwift constructs a new Swift instance.
 func NewSwift() *Swift {
 	return &Swift{}
 }

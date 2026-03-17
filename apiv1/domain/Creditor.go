@@ -3,7 +3,7 @@
 
 package domain
 
-// Creditor represents class Creditor
+// Creditor represents class Creditor.
 type Creditor struct {
 	AdditionalAddressInfo *string `json:"additionalAddressInfo,omitempty"`
 	City                  *string `json:"city,omitempty"`
@@ -18,7 +18,7 @@ type Creditor struct {
 	Zip                   *string `json:"zip,omitempty"`
 }
 
-// NewCreditor constructs a new Creditor instance
+// NewCreditor constructs a new Creditor instance.
 func NewCreditor() *Creditor {
 	return &Creditor{}
 }

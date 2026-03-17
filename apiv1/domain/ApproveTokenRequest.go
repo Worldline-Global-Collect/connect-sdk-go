@@ -3,14 +3,14 @@
 
 package domain
 
-// ApproveTokenRequest represents class ApproveTokenRequest
+// ApproveTokenRequest represents class ApproveTokenRequest.
 type ApproveTokenRequest struct {
 	MandateSignatureDate  *string `json:"mandateSignatureDate,omitempty"`
 	MandateSignaturePlace *string `json:"mandateSignaturePlace,omitempty"`
 	MandateSigned         *bool   `json:"mandateSigned,omitempty"`
 }
 
-// NewApproveTokenRequest constructs a new ApproveTokenRequest instance
+// NewApproveTokenRequest constructs a new ApproveTokenRequest instance.
 func NewApproveTokenRequest() *ApproveTokenRequest {
 	return &ApproveTokenRequest{}
 }

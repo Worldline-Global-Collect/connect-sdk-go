@@ -3,12 +3,12 @@
 
 package domain
 
-// CompletePaymentCardPaymentMethodSpecificInput represents class CompletePaymentCardPaymentMethodSpecificInput
+// CompletePaymentCardPaymentMethodSpecificInput represents class CompletePaymentCardPaymentMethodSpecificInput.
 type CompletePaymentCardPaymentMethodSpecificInput struct {
 	Card *CardWithoutCvv `json:"card,omitempty"`
 }
 
-// NewCompletePaymentCardPaymentMethodSpecificInput constructs a new CompletePaymentCardPaymentMethodSpecificInput instance
+// NewCompletePaymentCardPaymentMethodSpecificInput constructs a new CompletePaymentCardPaymentMethodSpecificInput instance.
 func NewCompletePaymentCardPaymentMethodSpecificInput() *CompletePaymentCardPaymentMethodSpecificInput {
 	return &CompletePaymentCardPaymentMethodSpecificInput{}
 }

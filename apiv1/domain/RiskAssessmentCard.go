@@ -3,7 +3,7 @@
 
 package domain
 
-// RiskAssessmentCard represents class RiskAssessmentCard
+// RiskAssessmentCard represents class RiskAssessmentCard.
 type RiskAssessmentCard struct {
 	Card             *Card                   `json:"card,omitempty"`
 	FraudFields      *FraudFields            `json:"fraudFields,omitempty"`
@@ -12,7 +12,7 @@ type RiskAssessmentCard struct {
 	PaymentProductID *int32                  `json:"paymentProductId,omitempty"`
 }
 
-// NewRiskAssessmentCard constructs a new RiskAssessmentCard instance
+// NewRiskAssessmentCard constructs a new RiskAssessmentCard instance.
 func NewRiskAssessmentCard() *RiskAssessmentCard {
 	return &RiskAssessmentCard{}
 }

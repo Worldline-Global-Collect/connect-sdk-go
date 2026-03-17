@@ -17,12 +17,14 @@ func (o ruleMap) obfuscateValue(key, value string) string {
 // All returns an obfuscation rule that will replace all characters with *.
 func All() Rule {
 	obfuscator := valueObfuscatorWithAll()
+
 	return obfuscator.obfuscateValue
 }
 
 // FixedLength returns an obfuscation rule that will replace values with a fixed length string containing only *.
 func FixedLength(fixedLength int) Rule {
 	obfuscator := valueObfuscatorWithFixedLength(fixedLength)
+
 	return obfuscator.obfuscateValue
 }
 
@@ -30,6 +32,7 @@ func FixedLength(fixedLength int) Rule {
 // then replaces all other characters with *.
 func KeepingStartCount(count int) Rule {
 	obfuscator := valueObfuscatorWithKeepingStartCount(count)
+
 	return obfuscator.obfuscateValue
 }
 
@@ -37,5 +40,6 @@ func KeepingStartCount(count int) Rule {
 // then replaces all other characters with *.
 func KeepingEndCount(count int) Rule {
 	obfuscator := valueObfuscatorWithKeepingEndCount(count)
+
 	return obfuscator.obfuscateValue
 }

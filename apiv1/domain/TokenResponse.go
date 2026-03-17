@@ -3,7 +3,7 @@
 
 package domain
 
-// TokenResponse represents class TokenResponse
+// TokenResponse represents class TokenResponse.
 type TokenResponse struct {
 	Card               *TokenCard               `json:"card,omitempty"`
 	EWallet            *TokenEWallet            `json:"eWallet,omitempty"`
@@ -14,7 +14,7 @@ type TokenResponse struct {
 	SepaDirectDebit    *TokenSepaDirectDebit    `json:"sepaDirectDebit,omitempty"`
 }
 
-// NewTokenResponse constructs a new TokenResponse instance
+// NewTokenResponse constructs a new TokenResponse instance.
 func NewTokenResponse() *TokenResponse {
 	return &TokenResponse{}
 }

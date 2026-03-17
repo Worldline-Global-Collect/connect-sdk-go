@@ -3,13 +3,13 @@
 
 package domain
 
-// AuthenticationIndicator represents class AuthenticationIndicator
+// AuthenticationIndicator represents class AuthenticationIndicator.
 type AuthenticationIndicator struct {
 	Name  *string `json:"name,omitempty"`
 	Value *string `json:"value,omitempty"`
 }
 
-// NewAuthenticationIndicator constructs a new AuthenticationIndicator instance
+// NewAuthenticationIndicator constructs a new AuthenticationIndicator instance.
 func NewAuthenticationIndicator() *AuthenticationIndicator {
 	return &AuthenticationIndicator{}
 }

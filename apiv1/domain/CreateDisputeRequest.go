@@ -3,7 +3,7 @@
 
 package domain
 
-// CreateDisputeRequest represents class CreateDisputeRequest
+// CreateDisputeRequest represents class CreateDisputeRequest.
 type CreateDisputeRequest struct {
 	AmountOfMoney  *AmountOfMoney `json:"amountOfMoney,omitempty"`
 	ContactPerson  *string        `json:"contactPerson,omitempty"`
@@ -12,7 +12,7 @@ type CreateDisputeRequest struct {
 	RequestMessage *string        `json:"requestMessage,omitempty"`
 }
 
-// NewCreateDisputeRequest constructs a new CreateDisputeRequest instance
+// NewCreateDisputeRequest constructs a new CreateDisputeRequest instance.
 func NewCreateDisputeRequest() *CreateDisputeRequest {
 	return &CreateDisputeRequest{}
 }

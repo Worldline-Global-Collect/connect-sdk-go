@@ -3,7 +3,7 @@
 
 package domain
 
-// ThreeDSecureResults represents class ThreeDSecureResults
+// ThreeDSecureResults represents class ThreeDSecureResults.
 type ThreeDSecureResults struct {
 	AcsTransactionID             *string           `json:"acsTransactionId,omitempty"`
 	AppliedExemption             *string           `json:"appliedExemption,omitempty"`
@@ -20,7 +20,7 @@ type ThreeDSecureResults struct {
 	Xid                          *string           `json:"xid,omitempty"`
 }
 
-// NewThreeDSecureResults constructs a new ThreeDSecureResults instance
+// NewThreeDSecureResults constructs a new ThreeDSecureResults instance.
 func NewThreeDSecureResults() *ThreeDSecureResults {
 	return &ThreeDSecureResults{}
 }

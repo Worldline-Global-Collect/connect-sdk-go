@@ -3,13 +3,13 @@
 
 package domain
 
-// CreateMandateResponse represents class CreateMandateResponse
+// CreateMandateResponse represents class CreateMandateResponse.
 type CreateMandateResponse struct {
 	Mandate        *MandateResponse       `json:"mandate,omitempty"`
 	MerchantAction *MandateMerchantAction `json:"merchantAction,omitempty"`
 }
 
-// NewCreateMandateResponse constructs a new CreateMandateResponse instance
+// NewCreateMandateResponse constructs a new CreateMandateResponse instance.
 func NewCreateMandateResponse() *CreateMandateResponse {
 	return &CreateMandateResponse{}
 }

@@ -3,12 +3,12 @@
 
 package domain
 
-// PaymentProductNetworksResponse represents class PaymentProductNetworksResponse
+// PaymentProductNetworksResponse represents class PaymentProductNetworksResponse.
 type PaymentProductNetworksResponse struct {
 	Networks *[]string `json:"networks,omitempty"`
 }
 
-// NewPaymentProductNetworksResponse constructs a new PaymentProductNetworksResponse instance
+// NewPaymentProductNetworksResponse constructs a new PaymentProductNetworksResponse instance.
 func NewPaymentProductNetworksResponse() *PaymentProductNetworksResponse {
 	return &PaymentProductNetworksResponse{}
 }

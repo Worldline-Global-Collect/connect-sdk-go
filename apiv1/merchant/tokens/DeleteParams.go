@@ -5,14 +5,14 @@ package tokens
 
 import "github.com/Worldline-Global-Collect/connect-sdk-go/communicator/communication"
 
-// DeleteParams represents query parameters for Delete token
+// DeleteParams represents query parameters for Delete token.
 //
-// Documentation can be found at https://apireference.connect.worldline-solutions.com/s2sapi/v1/en_US/go/tokens/delete.html
+// Documentation can be found at https://apireference.connect.worldline-solutions.com/s2sapi/v1/en_US/go/tokens/delete.html.
 type DeleteParams struct {
 	MandateCancelDate *string
 }
 
-// ToRequestParameters converts the query to communication.RequestParams
+// ToRequestParameters converts the query to communication.RequestParams.
 func (params *DeleteParams) ToRequestParameters() communication.RequestParams {
 	reqParams := communication.RequestParams{}
 
@@ -24,7 +24,7 @@ func (params *DeleteParams) ToRequestParameters() communication.RequestParams {
 	return reqParams
 }
 
-// NewDeleteParams constructs a new DeleteParams instance
+// NewDeleteParams constructs a new DeleteParams instance.
 func NewDeleteParams() *DeleteParams {
 	return &DeleteParams{}
 }

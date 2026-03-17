@@ -3,14 +3,14 @@
 
 package domain
 
-// PaymentProductDisplayHints represents class PaymentProductDisplayHints
+// PaymentProductDisplayHints represents class PaymentProductDisplayHints.
 type PaymentProductDisplayHints struct {
 	DisplayOrder *int32  `json:"displayOrder,omitempty"`
 	Label        *string `json:"label,omitempty"`
 	Logo         *string `json:"logo,omitempty"`
 }
 
-// NewPaymentProductDisplayHints constructs a new PaymentProductDisplayHints instance
+// NewPaymentProductDisplayHints constructs a new PaymentProductDisplayHints instance.
 func NewPaymentProductDisplayHints() *PaymentProductDisplayHints {
 	return &PaymentProductDisplayHints{}
 }

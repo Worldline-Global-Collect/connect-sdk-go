@@ -3,7 +3,7 @@
 
 package domain
 
-// ValueMappingElement represents class ValueMappingElement
+// ValueMappingElement represents class ValueMappingElement.
 type ValueMappingElement struct {
 	DisplayElements *[]PaymentProductFieldDisplayElement `json:"displayElements,omitempty"`
 	// Deprecated: Use displayElements instead with ID 'displayName'
@@ -11,7 +11,7 @@ type ValueMappingElement struct {
 	Value           *string                              `json:"value,omitempty"`
 }
 
-// NewValueMappingElement constructs a new ValueMappingElement instance
+// NewValueMappingElement constructs a new ValueMappingElement instance.
 func NewValueMappingElement() *ValueMappingElement {
 	return &ValueMappingElement{}
 }

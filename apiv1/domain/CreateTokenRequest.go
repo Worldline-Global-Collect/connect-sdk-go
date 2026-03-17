@@ -3,7 +3,7 @@
 
 package domain
 
-// CreateTokenRequest represents class CreateTokenRequest
+// CreateTokenRequest represents class CreateTokenRequest.
 type CreateTokenRequest struct {
 	Card                   *TokenCard                           `json:"card,omitempty"`
 	EWallet                *TokenEWallet                        `json:"eWallet,omitempty"`
@@ -13,7 +13,7 @@ type CreateTokenRequest struct {
 	SepaDirectDebit        *TokenSepaDirectDebitWithoutCreditor `json:"sepaDirectDebit,omitempty"`
 }
 
-// NewCreateTokenRequest constructs a new CreateTokenRequest instance
+// NewCreateTokenRequest constructs a new CreateTokenRequest instance.
 func NewCreateTokenRequest() *CreateTokenRequest {
 	return &CreateTokenRequest{}
 }

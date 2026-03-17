@@ -3,7 +3,7 @@
 
 package domain
 
-// PaymentProductGroupResponse represents class PaymentProductGroupResponse
+// PaymentProductGroupResponse represents class PaymentProductGroupResponse.
 type PaymentProductGroupResponse struct {
 	AccountsOnFile           *[]AccountOnFile            `json:"accountsOnFile,omitempty"`
 	AllowsClickToPay         *bool                       `json:"allowsClickToPay,omitempty"`
@@ -15,7 +15,7 @@ type PaymentProductGroupResponse struct {
 	ID                       *string                     `json:"id,omitempty"`
 }
 
-// NewPaymentProductGroupResponse constructs a new PaymentProductGroupResponse instance
+// NewPaymentProductGroupResponse constructs a new PaymentProductGroupResponse instance.
 func NewPaymentProductGroupResponse() *PaymentProductGroupResponse {
 	return &PaymentProductGroupResponse{}
 }

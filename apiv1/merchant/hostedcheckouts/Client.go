@@ -4,6 +4,8 @@
 package hostedcheckouts
 
 import (
+	"errors"
+
 	"github.com/Worldline-Global-Collect/connect-sdk-go/apiv1/domain"
 	v1Errors "github.com/Worldline-Global-Collect/connect-sdk-go/apiv1/errors"
 	"github.com/Worldline-Global-Collect/connect-sdk-go/communicator"
@@ -15,9 +17,9 @@ type Client struct {
 	apiResource *communicator.APIResource
 }
 
-// Create represents the resource /{merchantId}/hostedcheckouts - Create hosted checkout
+// Create represents the resource /{merchantId}/hostedcheckouts - Create hosted checkout.
 //
-// Documentation can be found at https://apireference.connect.worldline-solutions.com/s2sapi/v1/en_US/go/hostedcheckouts/create.html
+// Documentation can be found at https://apireference.connect.worldline-solutions.com/s2sapi/v1/en_US/go/hostedcheckouts/create.html.
 //
 // Can return any of the following errors:
 //   * IdempotenceError if an idempotent request caused a conflict (HTTP status code 409)
@@ -41,11 +43,9 @@ func (c *Client) Create(body domain.CreateHostedCheckoutRequest, context *commun
 
 	postErr := c.apiResource.Communicator().Post(uri, clientHeaders, nil, body, context, &resultObject)
 	if postErr != nil {
-		responseError, isResponseError := postErr.(*commErrors.ResponseError)
-		if isResponseError {
-			var errorObject interface{}
-
-			errorObject = &domain.ErrorResponse{}
+		var responseError *commErrors.ResponseError
+		if errors.As(postErr, &responseError) {
+			errorObject := &domain.ErrorResponse{}
 			err = c.apiResource.Communicator().Marshaller().Unmarshal(responseError.Body(), errorObject)
 			if err != nil {
 				return resultObject, err
@@ -65,9 +65,9 @@ func (c *Client) Create(body domain.CreateHostedCheckoutRequest, context *commun
 	return resultObject, nil
 }
 
-// Get represents the resource /{merchantId}/hostedcheckouts/{hostedCheckoutId} - Get hosted checkout status
+// Get represents the resource /{merchantId}/hostedcheckouts/{hostedCheckoutId} - Get hosted checkout status.
 //
-// Documentation can be found at https://apireference.connect.worldline-solutions.com/s2sapi/v1/en_US/go/hostedcheckouts/get.html
+// Documentation can be found at https://apireference.connect.worldline-solutions.com/s2sapi/v1/en_US/go/hostedcheckouts/get.html.
 //
 // Can return any of the following errors:
 //   * IdempotenceError if an idempotent request caused a conflict (HTTP status code 409)
@@ -95,11 +95,9 @@ func (c *Client) Get(hostedCheckoutID string, context *communicator.CallContext)
 
 	getErr := c.apiResource.Communicator().Get(uri, clientHeaders, nil, context, &resultObject)
 	if getErr != nil {
-		responseError, isResponseError := getErr.(*commErrors.ResponseError)
-		if isResponseError {
-			var errorObject interface{}
-
-			errorObject = &domain.ErrorResponse{}
+		var responseError *commErrors.ResponseError
+		if errors.As(getErr, &responseError) {
+			errorObject := &domain.ErrorResponse{}
 			err = c.apiResource.Communicator().Marshaller().Unmarshal(responseError.Body(), errorObject)
 			if err != nil {
 				return resultObject, err
@@ -119,9 +117,9 @@ func (c *Client) Get(hostedCheckoutID string, context *communicator.CallContext)
 	return resultObject, nil
 }
 
-// Delete represents the resource /{merchantId}/hostedcheckouts/{hostedCheckoutId} - Delete hosted checkout
+// Delete represents the resource /{merchantId}/hostedcheckouts/{hostedCheckoutId} - Delete hosted checkout.
 //
-// Documentation can be found at https://apireference.connect.worldline-solutions.com/s2sapi/v1/en_US/go/hostedcheckouts/delete.html
+// Documentation can be found at https://apireference.connect.worldline-solutions.com/s2sapi/v1/en_US/go/hostedcheckouts/delete.html.
 //
 // Can return any of the following errors:
 //   * IdempotenceError if an idempotent request caused a conflict (HTTP status code 409)
@@ -148,11 +146,9 @@ func (c *Client) Delete(hostedCheckoutID string, context *communicator.CallConte
 	var resultObject map[string]interface{}
 	deleteErr := c.apiResource.Communicator().Delete(uri, clientHeaders, nil, context, &resultObject)
 	if deleteErr != nil {
-		responseError, isResponseError := deleteErr.(*commErrors.ResponseError)
-		if isResponseError {
-			var errorObject interface{}
-
-			errorObject = &domain.ErrorResponse{}
+		var responseError *commErrors.ResponseError
+		if errors.As(deleteErr, &responseError) {
+			errorObject := &domain.ErrorResponse{}
 			err = c.apiResource.Communicator().Marshaller().Unmarshal(responseError.Body(), errorObject)
 			if err != nil {
 				return err
@@ -172,9 +168,9 @@ func (c *Client) Delete(hostedCheckoutID string, context *communicator.CallConte
 	return nil
 }
 
-// NewClient constructs a new Hostedcheckouts client
+// NewClient constructs a new Hostedcheckouts client.
 //
-// parent is the communicator.APIResource on top of which we want to build the new Hostedcheckouts client
+// parent is the communicator.APIResource on top of which we want to build the new Hostedcheckouts client.
 func NewClient(parent *communicator.APIResource, pathContext map[string]string) (*Client, error) {
 	apiResource, err := communicator.NewAPIResourceWithParent(parent, pathContext)
 	if err != nil {

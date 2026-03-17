@@ -3,7 +3,7 @@
 
 package domain
 
-// Debtor represents class Debtor
+// Debtor represents class Debtor.
 type Debtor struct {
 	AdditionalAddressInfo *string `json:"additionalAddressInfo,omitempty"`
 	City                  *string `json:"city,omitempty"`
@@ -18,7 +18,7 @@ type Debtor struct {
 	Zip                   *string `json:"zip,omitempty"`
 }
 
-// NewDebtor constructs a new Debtor instance
+// NewDebtor constructs a new Debtor instance.
 func NewDebtor() *Debtor {
 	return &Debtor{}
 }

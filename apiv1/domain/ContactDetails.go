@@ -3,7 +3,7 @@
 
 package domain
 
-// ContactDetails represents class ContactDetails
+// ContactDetails represents class ContactDetails.
 type ContactDetails struct {
 	EmailAddress      *string `json:"emailAddress,omitempty"`
 	EmailMessageType  *string `json:"emailMessageType,omitempty"`
@@ -13,7 +13,7 @@ type ContactDetails struct {
 	WorkPhoneNumber   *string `json:"workPhoneNumber,omitempty"`
 }
 
-// NewContactDetails constructs a new ContactDetails instance
+// NewContactDetails constructs a new ContactDetails instance.
 func NewContactDetails() *ContactDetails {
 	return &ContactDetails{}
 }

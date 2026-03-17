@@ -3,12 +3,12 @@
 
 package domain
 
-// ThirdPartyData represents class ThirdPartyData
+// ThirdPartyData represents class ThirdPartyData.
 type ThirdPartyData struct {
 	PaymentProduct863 *PaymentProduct863ThirdPartyData `json:"paymentProduct863,omitempty"`
 }
 
-// NewThirdPartyData constructs a new ThirdPartyData instance
+// NewThirdPartyData constructs a new ThirdPartyData instance.
 func NewThirdPartyData() *ThirdPartyData {
 	return &ThirdPartyData{}
 }

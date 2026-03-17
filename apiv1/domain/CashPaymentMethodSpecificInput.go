@@ -3,8 +3,9 @@
 
 package domain
 
-// CashPaymentMethodSpecificInput represents class CashPaymentMethodSpecificInput
+// CashPaymentMethodSpecificInput represents class CashPaymentMethodSpecificInput.
 type CashPaymentMethodSpecificInput struct {
+	PaymentProduct1502SpecificInput *CashPaymentProduct1502SpecificInput `json:"paymentProduct1502SpecificInput,omitempty"`
 	// Deprecated: No replacement
 	PaymentProduct1503SpecificInput *CashPaymentProduct1503SpecificInput `json:"paymentProduct1503SpecificInput,omitempty"`
 	PaymentProduct1504SpecificInput *CashPaymentProduct1504SpecificInput `json:"paymentProduct1504SpecificInput,omitempty"`
@@ -14,11 +15,12 @@ type CashPaymentMethodSpecificInput struct {
 	PaymentProduct1522SpecificInput *CashPaymentProduct1522SpecificInput `json:"paymentProduct1522SpecificInput,omitempty"`
 	PaymentProduct1523SpecificInput *CashPaymentProduct1523SpecificInput `json:"paymentProduct1523SpecificInput,omitempty"`
 	PaymentProduct1524SpecificInput *CashPaymentProduct1524SpecificInput `json:"paymentProduct1524SpecificInput,omitempty"`
+	PaymentProduct1525SpecificInput *CashPaymentProduct1525SpecificInput `json:"paymentProduct1525SpecificInput,omitempty"`
 	PaymentProduct1526SpecificInput *CashPaymentProduct1526SpecificInput `json:"paymentProduct1526SpecificInput,omitempty"`
 	PaymentProductID                *int32                               `json:"paymentProductId,omitempty"`
 }
 
-// NewCashPaymentMethodSpecificInput constructs a new CashPaymentMethodSpecificInput instance
+// NewCashPaymentMethodSpecificInput constructs a new CashPaymentMethodSpecificInput instance.
 func NewCashPaymentMethodSpecificInput() *CashPaymentMethodSpecificInput {
 	return &CashPaymentMethodSpecificInput{}
 }

@@ -3,7 +3,7 @@
 
 package domain
 
-// SessionResponse represents class SessionResponse
+// SessionResponse represents class SessionResponse.
 type SessionResponse struct {
 	AssetURL        *string   `json:"assetUrl,omitempty"`
 	ClientAPIURL    *string   `json:"clientApiUrl,omitempty"`
@@ -13,7 +13,7 @@ type SessionResponse struct {
 	Region          *string   `json:"region,omitempty"`
 }
 
-// NewSessionResponse constructs a new SessionResponse instance
+// NewSessionResponse constructs a new SessionResponse instance.
 func NewSessionResponse() *SessionResponse {
 	return &SessionResponse{}
 }

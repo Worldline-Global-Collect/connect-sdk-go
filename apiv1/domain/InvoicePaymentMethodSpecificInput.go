@@ -3,13 +3,13 @@
 
 package domain
 
-// InvoicePaymentMethodSpecificInput represents class InvoicePaymentMethodSpecificInput
+// InvoicePaymentMethodSpecificInput represents class InvoicePaymentMethodSpecificInput.
 type InvoicePaymentMethodSpecificInput struct {
 	AdditionalReference *string `json:"additionalReference,omitempty"`
 	PaymentProductID    *int32  `json:"paymentProductId,omitempty"`
 }
 
-// NewInvoicePaymentMethodSpecificInput constructs a new InvoicePaymentMethodSpecificInput instance
+// NewInvoicePaymentMethodSpecificInput constructs a new InvoicePaymentMethodSpecificInput instance.
 func NewInvoicePaymentMethodSpecificInput() *InvoicePaymentMethodSpecificInput {
 	return &InvoicePaymentMethodSpecificInput{}
 }

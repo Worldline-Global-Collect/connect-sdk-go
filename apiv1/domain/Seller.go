@@ -3,7 +3,7 @@
 
 package domain
 
-// Seller represents class Seller
+// Seller represents class Seller.
 type Seller struct {
 	Address             *Address `json:"address,omitempty"`
 	ChannelCode         *string  `json:"channelCode,omitempty"`
@@ -19,7 +19,7 @@ type Seller struct {
 	Type                *string  `json:"type,omitempty"`
 }
 
-// NewSeller constructs a new Seller instance
+// NewSeller constructs a new Seller instance.
 func NewSeller() *Seller {
 	return &Seller{}
 }

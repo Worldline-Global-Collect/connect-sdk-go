@@ -3,12 +3,12 @@
 
 package domain
 
-// CustomerApprovePayment represents class CustomerApprovePayment
+// CustomerApprovePayment represents class CustomerApprovePayment.
 type CustomerApprovePayment struct {
 	AccountType *string `json:"accountType,omitempty"`
 }
 
-// NewCustomerApprovePayment constructs a new CustomerApprovePayment instance
+// NewCustomerApprovePayment constructs a new CustomerApprovePayment instance.
 func NewCustomerApprovePayment() *CustomerApprovePayment {
 	return &CustomerApprovePayment{}
 }

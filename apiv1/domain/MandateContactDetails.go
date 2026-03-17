@@ -3,12 +3,12 @@
 
 package domain
 
-// MandateContactDetails represents class MandateContactDetails
+// MandateContactDetails represents class MandateContactDetails.
 type MandateContactDetails struct {
 	EmailAddress *string `json:"emailAddress,omitempty"`
 }
 
-// NewMandateContactDetails constructs a new MandateContactDetails instance
+// NewMandateContactDetails constructs a new MandateContactDetails instance.
 func NewMandateContactDetails() *MandateContactDetails {
 	return &MandateContactDetails{}
 }

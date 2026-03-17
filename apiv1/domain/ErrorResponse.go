@@ -3,13 +3,13 @@
 
 package domain
 
-// ErrorResponse represents class ErrorResponse
+// ErrorResponse represents class ErrorResponse.
 type ErrorResponse struct {
 	ErrorID *string     `json:"errorId,omitempty"`
 	Errors  *[]APIError `json:"errors,omitempty"`
 }
 
-// NewErrorResponse constructs a new ErrorResponse instance
+// NewErrorResponse constructs a new ErrorResponse instance.
 func NewErrorResponse() *ErrorResponse {
 	return &ErrorResponse{}
 }

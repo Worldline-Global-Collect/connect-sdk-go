@@ -3,7 +3,7 @@
 
 package domain
 
-// MicrosoftFraudResults represents class MicrosoftFraudResults
+// MicrosoftFraudResults represents class MicrosoftFraudResults.
 type MicrosoftFraudResults struct {
 	ClauseName        *string   `json:"clauseName,omitempty"`
 	DeviceCountryCode *string   `json:"deviceCountryCode,omitempty"`
@@ -15,7 +15,7 @@ type MicrosoftFraudResults struct {
 	UserDeviceType    *string   `json:"userDeviceType,omitempty"`
 }
 
-// NewMicrosoftFraudResults constructs a new MicrosoftFraudResults instance
+// NewMicrosoftFraudResults constructs a new MicrosoftFraudResults instance.
 func NewMicrosoftFraudResults() *MicrosoftFraudResults {
 	return &MicrosoftFraudResults{}
 }

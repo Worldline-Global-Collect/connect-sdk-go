@@ -3,7 +3,7 @@
 
 package domain
 
-// CardPaymentMethodSpecificOutput represents class CardPaymentMethodSpecificOutput
+// CardPaymentMethodSpecificOutput represents class CardPaymentMethodSpecificOutput.
 type CardPaymentMethodSpecificOutput struct {
 	AuthorisationCode          *string              `json:"authorisationCode,omitempty"`
 	Card                       *CardEssentials      `json:"card,omitempty"`
@@ -18,7 +18,7 @@ type CardPaymentMethodSpecificOutput struct {
 	Token                      *string              `json:"token,omitempty"`
 }
 
-// NewCardPaymentMethodSpecificOutput constructs a new CardPaymentMethodSpecificOutput instance
+// NewCardPaymentMethodSpecificOutput constructs a new CardPaymentMethodSpecificOutput instance.
 func NewCardPaymentMethodSpecificOutput() *CardPaymentMethodSpecificOutput {
 	return &CardPaymentMethodSpecificOutput{}
 }

@@ -3,11 +3,11 @@
 
 package domain
 
-// EmptyValidator represents class EmptyValidator
+// EmptyValidator represents class EmptyValidator.
 type EmptyValidator struct {
 }
 
-// NewEmptyValidator constructs a new EmptyValidator instance
+// NewEmptyValidator constructs a new EmptyValidator instance.
 func NewEmptyValidator() *EmptyValidator {
 	return &EmptyValidator{}
 }

@@ -3,12 +3,12 @@
 
 package domain
 
-// Directory represents class Directory
+// Directory represents class Directory.
 type Directory struct {
 	Entries *[]DirectoryEntry `json:"entries,omitempty"`
 }
 
-// NewDirectory constructs a new Directory instance
+// NewDirectory constructs a new Directory instance.
 func NewDirectory() *Directory {
 	return &Directory{}
 }

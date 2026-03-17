@@ -9,9 +9,9 @@ import (
 	"github.com/Worldline-Global-Collect/connect-sdk-go/communicator/communication"
 )
 
-// FindParams represents query parameters for Find payouts
+// FindParams represents query parameters for Find payouts.
 //
-// Documentation can be found at https://apireference.connect.worldline-solutions.com/s2sapi/v1/en_US/go/payouts/find.html
+// Documentation can be found at https://apireference.connect.worldline-solutions.com/s2sapi/v1/en_US/go/payouts/find.html.
 type FindParams struct {
 	MerchantReference *string
 	MerchantOrderID   *int64
@@ -19,7 +19,7 @@ type FindParams struct {
 	Limit             *int32
 }
 
-// ToRequestParameters converts the query to communication.RequestParams
+// ToRequestParameters converts the query to communication.RequestParams.
 func (params *FindParams) ToRequestParameters() communication.RequestParams {
 	reqParams := communication.RequestParams{}
 
@@ -43,7 +43,7 @@ func (params *FindParams) ToRequestParameters() communication.RequestParams {
 	return reqParams
 }
 
-// NewFindParams constructs a new FindParams instance
+// NewFindParams constructs a new FindParams instance.
 func NewFindParams() *FindParams {
 	return &FindParams{}
 }

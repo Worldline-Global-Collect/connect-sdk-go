@@ -3,7 +3,7 @@
 
 package domain
 
-// APIError represents class APIError
+// APIError represents class APIError.
 type APIError struct {
 	Category       *string `json:"category,omitempty"`
 	Code           *string `json:"code,omitempty"`
@@ -14,7 +14,7 @@ type APIError struct {
 	RequestID      *string `json:"requestId,omitempty"`
 }
 
-// NewAPIError constructs a new APIError instance
+// NewAPIError constructs a new APIError instance.
 func NewAPIError() *APIError {
 	return &APIError{}
 }

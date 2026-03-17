@@ -3,13 +3,13 @@
 
 package domain
 
-// CapturePaymentOrder represents class CapturePaymentOrder
+// CapturePaymentOrder represents class CapturePaymentOrder.
 type CapturePaymentOrder struct {
 	AdditionalInput *CapturePaymentOrderAdditionalInput `json:"additionalInput,omitempty"`
 	References      *CapturePaymentOrderReferences      `json:"references,omitempty"`
 }
 
-// NewCapturePaymentOrder constructs a new CapturePaymentOrder instance
+// NewCapturePaymentOrder constructs a new CapturePaymentOrder instance.
 func NewCapturePaymentOrder() *CapturePaymentOrder {
 	return &CapturePaymentOrder{}
 }

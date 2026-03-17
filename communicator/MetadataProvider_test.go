@@ -23,8 +23,8 @@ func TestGetServerMetadataHeadersNoAdditionalHeaders(t *testing.T) {
 		t.Fatal("TestGetServerMetadataHeadersNoAdditionalHeaders : len != 1")
 	}
 
-	AssertServerMetaInfo("TestGetServerMetadataHeadersNoAdditionalHeaders",
-		t, metadataProvider, "Worldline", requestHeaders[0])
+	AssertServerMetaInfo(t, "TestGetServerMetadataHeadersNoAdditionalHeaders",
+		metadataProvider, "Worldline", requestHeaders[0])
 }
 
 func TestServerMetadataHeadersFull(t *testing.T) {
@@ -46,10 +46,10 @@ func TestServerMetadataHeadersFull(t *testing.T) {
 		t.Fatal("TestServerMetadataHeadersFull : len != 1")
 	}
 
-	AssertServerMetaInfo("TestServerMetadataHeadersFull",
-		t, metadataProvider, integrator, requestHeaders[0])
-	AssertShoppingCard("TestServerMetadataHeadersFull",
-		t, metadataProvider, shoppingCartExtension)
+	AssertServerMetaInfo(t, "TestServerMetadataHeadersFull",
+		metadataProvider, integrator, requestHeaders[0])
+	AssertShoppingCard(t, "TestServerMetadataHeadersFull",
+		metadataProvider, shoppingCartExtension)
 }
 
 func TestServerMetadataHeadersFullNewShoppingCartExtensionWithExtensionID(t *testing.T) {
@@ -71,10 +71,10 @@ func TestServerMetadataHeadersFullNewShoppingCartExtensionWithExtensionID(t *tes
 		t.Fatal("TestServerMetadataHeadersFull : len != 1")
 	}
 
-	AssertServerMetaInfo("TestServerMetadataHeadersFull",
-		t, metadataProvider, integrator, requestHeaders[0])
-	AssertShoppingCard("TestServerMetadataHeadersFull",
-		t, metadataProvider, shoppingCartExtension)
+	AssertServerMetaInfo(t, "TestServerMetadataHeadersFull",
+		metadataProvider, integrator, requestHeaders[0])
+	AssertShoppingCard(t, "TestServerMetadataHeadersFull",
+		metadataProvider, shoppingCartExtension)
 }
 
 func TestServerMetadataHeadersAdditionalHeaders(t *testing.T) {
@@ -125,7 +125,9 @@ func TestConstructorWithProhibitedHeaders(t *testing.T) {
 	}
 }
 
-func AssertServerMetaInfo(prefix string, t *testing.T, metadataProvider *MetadataProvider, integrator string, requestHeader communication.Header) {
+func AssertServerMetaInfo(t *testing.T, prefix string, metadataProvider *MetadataProvider, integrator string, requestHeader communication.Header) {
+	t.Helper()
+
 	if requestHeader.Name() != "X-GCS-ServerMetaInfo" {
 		t.Fatalf("[%s]AssertServerMetaInfo : %s != %s", prefix, requestHeader.Name(), "X-GCS-ServerMetaInfo")
 	}
@@ -162,7 +164,9 @@ func AssertServerMetaInfo(prefix string, t *testing.T, metadataProvider *Metadat
 	}
 }
 
-func AssertShoppingCard(prefix string, t *testing.T, metadataProvider *MetadataProvider, shoppingCard *domain.ShoppingCartExtension) {
+func AssertShoppingCard(t *testing.T, prefix string, metadataProvider *MetadataProvider, shoppingCard *domain.ShoppingCartExtension) {
+	t.Helper()
+
 	serverMetaInfo := metadataProvider.serverMetaInfo
 
 	if serverMetaInfo.ShoppingCartExtension.Creator != shoppingCard.Creator {

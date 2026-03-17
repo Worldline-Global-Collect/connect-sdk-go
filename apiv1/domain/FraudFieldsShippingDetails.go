@@ -3,7 +3,7 @@
 
 package domain
 
-// FraudFieldsShippingDetails represents class FraudFieldsShippingDetails
+// FraudFieldsShippingDetails represents class FraudFieldsShippingDetails.
 //
 // Deprecated: No replacement
 type FraudFieldsShippingDetails struct {
@@ -15,7 +15,7 @@ type FraudFieldsShippingDetails struct {
 	MethodType    *int32  `json:"methodType,omitempty"`
 }
 
-// NewFraudFieldsShippingDetails constructs a new FraudFieldsShippingDetails instance
+// NewFraudFieldsShippingDetails constructs a new FraudFieldsShippingDetails instance.
 func NewFraudFieldsShippingDetails() *FraudFieldsShippingDetails {
 	return &FraudFieldsShippingDetails{}
 }

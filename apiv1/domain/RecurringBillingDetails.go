@@ -3,12 +3,12 @@
 
 package domain
 
-// RecurringBillingDetails represents class RecurringBillingDetails
+// RecurringBillingDetails represents class RecurringBillingDetails.
 type RecurringBillingDetails struct {
 	Description *string `json:"description,omitempty"`
 }
 
-// NewRecurringBillingDetails constructs a new RecurringBillingDetails instance
+// NewRecurringBillingDetails constructs a new RecurringBillingDetails instance.
 func NewRecurringBillingDetails() *RecurringBillingDetails {
 	return &RecurringBillingDetails{}
 }

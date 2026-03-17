@@ -3,14 +3,14 @@
 
 package domain
 
-// LodgingCharge represents class LodgingCharge
+// LodgingCharge represents class LodgingCharge.
 type LodgingCharge struct {
 	ChargeAmount             *int64  `json:"chargeAmount,omitempty"`
 	ChargeAmountCurrencyCode *string `json:"chargeAmountCurrencyCode,omitempty"`
 	ChargeType               *string `json:"chargeType,omitempty"`
 }
 
-// NewLodgingCharge constructs a new LodgingCharge instance
+// NewLodgingCharge constructs a new LodgingCharge instance.
 func NewLodgingCharge() *LodgingCharge {
 	return &LodgingCharge{}
 }

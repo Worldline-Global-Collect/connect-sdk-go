@@ -3,13 +3,13 @@
 
 package domain
 
-// CustomerAccountRiskAssessment represents class CustomerAccountRiskAssessment
+// CustomerAccountRiskAssessment represents class CustomerAccountRiskAssessment.
 type CustomerAccountRiskAssessment struct {
 	HasForgottenPassword *bool `json:"hasForgottenPassword,omitempty"`
 	HasPassword          *bool `json:"hasPassword,omitempty"`
 }
 
-// NewCustomerAccountRiskAssessment constructs a new CustomerAccountRiskAssessment instance
+// NewCustomerAccountRiskAssessment constructs a new CustomerAccountRiskAssessment instance.
 func NewCustomerAccountRiskAssessment() *CustomerAccountRiskAssessment {
 	return &CustomerAccountRiskAssessment{}
 }

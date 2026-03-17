@@ -3,7 +3,7 @@
 
 package domain
 
-// PaymentProduct840SpecificOutput represents class PaymentProduct840SpecificOutput
+// PaymentProduct840SpecificOutput represents class PaymentProduct840SpecificOutput.
 type PaymentProduct840SpecificOutput struct {
 	BillingAddress        *Address                          `json:"billingAddress,omitempty"`
 	CustomerAccount       *PaymentProduct840CustomerAccount `json:"customerAccount,omitempty"`
@@ -11,7 +11,7 @@ type PaymentProduct840SpecificOutput struct {
 	ProtectionEligibility *ProtectionEligibility            `json:"protectionEligibility,omitempty"`
 }
 
-// NewPaymentProduct840SpecificOutput constructs a new PaymentProduct840SpecificOutput instance
+// NewPaymentProduct840SpecificOutput constructs a new PaymentProduct840SpecificOutput instance.
 func NewPaymentProduct840SpecificOutput() *PaymentProduct840SpecificOutput {
 	return &PaymentProduct840SpecificOutput{}
 }

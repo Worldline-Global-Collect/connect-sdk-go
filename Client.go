@@ -27,6 +27,7 @@ func (c *Client) WithClientMetaInfo(clientMetaInfo string) (*Client, error) {
 	if len(c.apiResource.ClientMetaInfo()) == 0 && len(clientMetaInfo) == 0 {
 		return c, nil
 	}
+
 	if len(clientMetaInfo) == 0 {
 		return newClient(c.apiResource.Communicator(), "")
 	}
@@ -67,18 +68,19 @@ func (c *Client) DisableLogging() {
 	c.apiResource.Communicator().DisableLogging()
 }
 
-// Close calls the internal closer of the communicator
+// Close calls the internal closer of the communicator.
 func (c *Client) Close() error {
 	return c.apiResource.Communicator().Close()
 }
 
-// V1 represents API v1
+// V1 represents API v1.
 func (c *Client) V1() *apiv1.Client {
 	client, _ := apiv1.NewClient(c.apiResource, nil)
+
 	return client
 }
 
-// NewClient creates a new Client with the given communicator
+// NewClient creates a new Client with the given communicator.
 func NewClient(communicator *communicator.Communicator) (*Client, error) {
 	return newClient(communicator, "")
 }

@@ -3,14 +3,14 @@
 
 package domain
 
-// MandateApproval represents class MandateApproval
+// MandateApproval represents class MandateApproval.
 type MandateApproval struct {
 	MandateSignatureDate  *string `json:"mandateSignatureDate,omitempty"`
 	MandateSignaturePlace *string `json:"mandateSignaturePlace,omitempty"`
 	MandateSigned         *bool   `json:"mandateSigned,omitempty"`
 }
 
-// NewMandateApproval constructs a new MandateApproval instance
+// NewMandateApproval constructs a new MandateApproval instance.
 func NewMandateApproval() *MandateApproval {
 	return &MandateApproval{}
 }

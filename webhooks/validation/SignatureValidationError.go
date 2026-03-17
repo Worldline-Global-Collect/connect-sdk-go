@@ -5,12 +5,12 @@ type SignatureValidationError struct {
 	message string
 }
 
-// Error implements the error interface
+// Error implements the error interface.
 func (sve SignatureValidationError) Error() string {
 	return sve.message
 }
 
-// NewSignatureValidationError creates a SignatureValidationError with the given message
+// NewSignatureValidationError creates a SignatureValidationError with the given message.
 func NewSignatureValidationError(message string) *SignatureValidationError {
 	return &SignatureValidationError{message}
 }

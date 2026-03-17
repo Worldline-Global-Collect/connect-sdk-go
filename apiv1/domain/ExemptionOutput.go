@@ -3,14 +3,14 @@
 
 package domain
 
-// ExemptionOutput represents class ExemptionOutput
+// ExemptionOutput represents class ExemptionOutput.
 type ExemptionOutput struct {
 	ExemptionRaised          *string `json:"exemptionRaised,omitempty"`
 	ExemptionRejectionReason *string `json:"exemptionRejectionReason,omitempty"`
 	ExemptionRequest         *string `json:"exemptionRequest,omitempty"`
 }
 
-// NewExemptionOutput constructs a new ExemptionOutput instance
+// NewExemptionOutput constructs a new ExemptionOutput instance.
 func NewExemptionOutput() *ExemptionOutput {
 	return &ExemptionOutput{}
 }

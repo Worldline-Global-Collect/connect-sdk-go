@@ -3,13 +3,13 @@
 
 package domain
 
-// EInvoicePaymentProduct9000SpecificInput represents class EInvoicePaymentProduct9000SpecificInput
+// EInvoicePaymentProduct9000SpecificInput represents class EInvoicePaymentProduct9000SpecificInput.
 type EInvoicePaymentProduct9000SpecificInput struct {
 	BankAccountIban *BankAccountIban `json:"bankAccountIban,omitempty"`
 	InstallmentID   *string          `json:"installmentId,omitempty"`
 }
 
-// NewEInvoicePaymentProduct9000SpecificInput constructs a new EInvoicePaymentProduct9000SpecificInput instance
+// NewEInvoicePaymentProduct9000SpecificInput constructs a new EInvoicePaymentProduct9000SpecificInput instance.
 func NewEInvoicePaymentProduct9000SpecificInput() *EInvoicePaymentProduct9000SpecificInput {
 	return &EInvoicePaymentProduct9000SpecificInput{}
 }

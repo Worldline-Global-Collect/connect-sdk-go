@@ -3,13 +3,13 @@
 
 package domain
 
-// BankDetailsRequest represents class BankDetailsRequest
+// BankDetailsRequest represents class BankDetailsRequest.
 type BankDetailsRequest struct {
 	BankAccountBban *BankAccountBban `json:"bankAccountBban,omitempty"`
 	BankAccountIban *BankAccountIban `json:"bankAccountIban,omitempty"`
 }
 
-// NewBankDetailsRequest constructs a new BankDetailsRequest instance
+// NewBankDetailsRequest constructs a new BankDetailsRequest instance.
 func NewBankDetailsRequest() *BankDetailsRequest {
 	return &BankDetailsRequest{}
 }

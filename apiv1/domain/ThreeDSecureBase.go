@@ -3,7 +3,7 @@
 
 package domain
 
-// ThreeDSecureBase represents class ThreeDSecureBase
+// ThreeDSecureBase represents class ThreeDSecureBase.
 type ThreeDSecureBase struct {
 	AuthenticationAmount  *AmountOfMoney    `json:"authenticationAmount,omitempty"`
 	AuthenticationFlow    *string           `json:"authenticationFlow,omitempty"`
@@ -16,7 +16,7 @@ type ThreeDSecureBase struct {
 	TransactionRiskLevel  *string           `json:"transactionRiskLevel,omitempty"`
 }
 
-// NewThreeDSecureBase constructs a new ThreeDSecureBase instance
+// NewThreeDSecureBase constructs a new ThreeDSecureBase instance.
 func NewThreeDSecureBase() *ThreeDSecureBase {
 	return &ThreeDSecureBase{}
 }

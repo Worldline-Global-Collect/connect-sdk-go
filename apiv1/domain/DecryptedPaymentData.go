@@ -3,7 +3,7 @@
 
 package domain
 
-// DecryptedPaymentData represents class DecryptedPaymentData
+// DecryptedPaymentData represents class DecryptedPaymentData.
 type DecryptedPaymentData struct {
 	// Deprecated: Use decryptedPaymentData.paymentMethod instead
 	AuthMethod     *string `json:"authMethod,omitempty"`
@@ -16,7 +16,7 @@ type DecryptedPaymentData struct {
 	PaymentMethod  *string `json:"paymentMethod,omitempty"`
 }
 
-// NewDecryptedPaymentData constructs a new DecryptedPaymentData instance
+// NewDecryptedPaymentData constructs a new DecryptedPaymentData instance.
 func NewDecryptedPaymentData() *DecryptedPaymentData {
 	return &DecryptedPaymentData{}
 }

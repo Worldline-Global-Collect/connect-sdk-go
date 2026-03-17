@@ -3,7 +3,7 @@
 
 package domain
 
-// RefundCustomer represents class RefundCustomer
+// RefundCustomer represents class RefundCustomer.
 type RefundCustomer struct {
 	Address            *AddressPersonal    `json:"address,omitempty"`
 	CompanyInformation *CompanyInformation `json:"companyInformation,omitempty"`
@@ -11,7 +11,7 @@ type RefundCustomer struct {
 	FiscalNumber       *string             `json:"fiscalNumber,omitempty"`
 }
 
-// NewRefundCustomer constructs a new RefundCustomer instance
+// NewRefundCustomer constructs a new RefundCustomer instance.
 func NewRefundCustomer() *RefundCustomer {
 	return &RefundCustomer{}
 }

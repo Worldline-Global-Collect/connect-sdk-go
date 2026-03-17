@@ -3,14 +3,14 @@
 
 package domain
 
-// CardEssentials represents class CardEssentials
+// CardEssentials represents class CardEssentials.
 type CardEssentials struct {
 	CardNumber     *string `json:"cardNumber,omitempty"`
 	CardholderName *string `json:"cardholderName,omitempty"`
 	ExpiryDate     *string `json:"expiryDate,omitempty"`
 }
 
-// NewCardEssentials constructs a new CardEssentials instance
+// NewCardEssentials constructs a new CardEssentials instance.
 func NewCardEssentials() *CardEssentials {
 	return &CardEssentials{}
 }

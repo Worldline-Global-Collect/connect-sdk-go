@@ -15,17 +15,17 @@ type APIResource struct {
 	pathContext    map[string]string
 }
 
-// Communicator returns the Communicator used by the resource
+// Communicator returns the Communicator used by the resource.
 func (ar APIResource) Communicator() *Communicator {
 	return ar.communicator
 }
 
-// ClientMetaInfo returns the ClientMetaInfo used by the resource
+// ClientMetaInfo returns the ClientMetaInfo used by the resource.
 func (ar APIResource) ClientMetaInfo() string {
 	return ar.clientMetaInfo
 }
 
-// ClientHeaders returns the client headers used by the resource
+// ClientHeaders returns the client headers used by the resource.
 func (ar APIResource) ClientHeaders() []communication.Header {
 	if len(ar.clientMetaInfo) != 0 {
 		header, _ := communication.NewHeader("X-GCS-ClientMetaInfo", ar.clientMetaInfo)
@@ -36,12 +36,12 @@ func (ar APIResource) ClientHeaders() []communication.Header {
 	return nil
 }
 
-// InstantiateURIWithContext instantiates the given URI with the path context
+// InstantiateURIWithContext instantiates the given URI with the path context.
 func (ar APIResource) InstantiateURIWithContext(uri string, pathContext map[string]string) (string, error) {
 	return ar.InstantiateURI(replaceAll(uri, pathContext))
 }
 
-// InstantiateURI instantiates the given uri with the path context of the resource
+// InstantiateURI instantiates the given uri with the path context of the resource.
 func (ar APIResource) InstantiateURI(uri string) (string, error) {
 	uri = replaceAll(uri, ar.pathContext)
 
@@ -59,13 +59,13 @@ func (ar APIResource) InstantiateURI(uri string) (string, error) {
 
 func replaceAll(uri string, pathContext map[string]string) string {
 	for key, value := range pathContext {
-		uri = strings.Replace(uri, "{"+key+"}", value, -1)
+		uri = strings.ReplaceAll(uri, "{"+key+"}", value)
 	}
 
 	return uri
 }
 
-// NewAPIResourceWithParent creates an APIResource with the given parent and pathContext
+// NewAPIResourceWithParent creates an APIResource with the given parent and pathContext.
 func NewAPIResourceWithParent(parent *APIResource, pathContext map[string]string) (*APIResource, error) {
 	if parent == nil {
 		return nil, errors.New("parent is required")
@@ -74,10 +74,11 @@ func NewAPIResourceWithParent(parent *APIResource, pathContext map[string]string
 	return &APIResource{parent, parent.communicator, parent.clientMetaInfo, pathContext}, nil
 }
 
-// NewAPIResource creates an APIResource with the given communicator, clientMetaInfo and pathContext
+// NewAPIResource creates an APIResource with the given communicator, clientMetaInfo and pathContext.
 func NewAPIResource(communicator *Communicator, clientMetaInfo string, pathContext map[string]string) (*APIResource, error) {
 	if communicator == nil {
 		return nil, errors.New("communicator is required")
 	}
+
 	return &APIResource{nil, communicator, clientMetaInfo, pathContext}, nil
 }

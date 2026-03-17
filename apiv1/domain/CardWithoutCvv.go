@@ -3,7 +3,7 @@
 
 package domain
 
-// CardWithoutCvv represents class CardWithoutCvv
+// CardWithoutCvv represents class CardWithoutCvv.
 type CardWithoutCvv struct {
 	CardNumber     *string `json:"cardNumber,omitempty"`
 	CardholderName *string `json:"cardholderName,omitempty"`
@@ -11,7 +11,7 @@ type CardWithoutCvv struct {
 	IssueNumber    *string `json:"issueNumber,omitempty"`
 }
 
-// NewCardWithoutCvv constructs a new CardWithoutCvv instance
+// NewCardWithoutCvv constructs a new CardWithoutCvv instance.
 func NewCardWithoutCvv() *CardWithoutCvv {
 	return &CardWithoutCvv{}
 }

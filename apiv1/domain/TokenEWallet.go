@@ -3,14 +3,14 @@
 
 package domain
 
-// TokenEWallet represents class TokenEWallet
+// TokenEWallet represents class TokenEWallet.
 type TokenEWallet struct {
 	Alias    *string           `json:"alias,omitempty"`
 	Customer *CustomerToken    `json:"customer,omitempty"`
 	Data     *TokenEWalletData `json:"data,omitempty"`
 }
 
-// NewTokenEWallet constructs a new TokenEWallet instance
+// NewTokenEWallet constructs a new TokenEWallet instance.
 func NewTokenEWallet() *TokenEWallet {
 	return &TokenEWallet{}
 }

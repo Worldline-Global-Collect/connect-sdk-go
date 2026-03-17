@@ -3,13 +3,13 @@
 
 package domain
 
-// CapturePaymentOrderAdditionalInput represents class CapturePaymentOrderAdditionalInput
+// CapturePaymentOrderAdditionalInput represents class CapturePaymentOrderAdditionalInput.
 type CapturePaymentOrderAdditionalInput struct {
 	AirlineData *AirlineData `json:"airlineData,omitempty"`
 	LodgingData *LodgingData `json:"lodgingData,omitempty"`
 }
 
-// NewCapturePaymentOrderAdditionalInput constructs a new CapturePaymentOrderAdditionalInput instance
+// NewCapturePaymentOrderAdditionalInput constructs a new CapturePaymentOrderAdditionalInput instance.
 func NewCapturePaymentOrderAdditionalInput() *CapturePaymentOrderAdditionalInput {
 	return &CapturePaymentOrderAdditionalInput{}
 }

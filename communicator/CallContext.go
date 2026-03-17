@@ -7,22 +7,22 @@ type CallContext struct {
 	IdempotenceRequestTimestamp *int64
 }
 
-// GetIdempotenceKey returns the idempotence key
+// GetIdempotenceKey returns the idempotence key.
 func (c *CallContext) GetIdempotenceKey() string {
 	return c.IdempotenceKey
 }
 
-// GetIdempotenceRequestTimestamp returns the idempotence timestamp
+// GetIdempotenceRequestTimestamp returns the idempotence timestamp.
 func (c *CallContext) GetIdempotenceRequestTimestamp() *int64 {
 	return c.IdempotenceRequestTimestamp
 }
 
-// SetIdempotenceRequestTimestamp sets the idempotence timestamp
+// SetIdempotenceRequestTimestamp sets the idempotence timestamp.
 func (c *CallContext) SetIdempotenceRequestTimestamp(timestamp *int64) {
 	c.IdempotenceRequestTimestamp = timestamp
 }
 
-// NewCallContext creates a CallContext using the given idempotenceKey
+// NewCallContext creates a CallContext using the given idempotenceKey.
 func NewCallContext(idempotenceKey string) *CallContext {
 	return &CallContext{idempotenceKey, nil}
 }

@@ -190,7 +190,7 @@ func TestMultipartFormDataUploadPostMultipartFormDataObjectWithBodyHandler(t *te
 	_ = multipart.AddFile("file", *file)
 	_ = multipart.AddValue("value", "Hello World")
 
-	err = comm.PostWithHandler("/post", nil, nil, *multipart, nil, func(headers []communication.Header, reader io.Reader) error {
+	err = comm.PostWithHandler("/post", nil, nil, *multipart, nil, func(_ []communication.Header, reader io.Reader) error {
 		response := HTTPBinResponse{}
 		marshaller := json.DefaultMarshaller()
 		err = marshaller.UnmarshalFromReader(reader, &response)
@@ -249,7 +249,7 @@ func TestMultipartFormDataUploadPostMultipartFormDataObjectPointerWithBodyHandle
 	_ = multipart.AddFile("file", *file)
 	_ = multipart.AddValue("value", "Hello World")
 
-	err = comm.PostWithHandler("/post", nil, nil, multipart, nil, func(headers []communication.Header, reader io.Reader) error {
+	err = comm.PostWithHandler("/post", nil, nil, multipart, nil, func(_ []communication.Header, reader io.Reader) error {
 		response := HTTPBinResponse{}
 		marshaller := json.DefaultMarshaller()
 		err = marshaller.UnmarshalFromReader(reader, &response)
@@ -308,7 +308,7 @@ func TestMultipartFormDataUploadPostMultipartFormDataRequestWithBodyHandler(t *t
 	_ = multipart.AddFile("file", *file)
 	_ = multipart.AddValue("value", "Hello World")
 
-	err = comm.PostWithHandler("/post", nil, nil, &MultipartFormDataObjectWrapper{multipart}, nil, func(headers []communication.Header, reader io.Reader) error {
+	err = comm.PostWithHandler("/post", nil, nil, &MultipartFormDataObjectWrapper{multipart}, nil, func(_ []communication.Header, reader io.Reader) error {
 		response := HTTPBinResponse{}
 		marshaller := json.DefaultMarshaller()
 		err = marshaller.UnmarshalFromReader(reader, &response)
@@ -520,7 +520,7 @@ func TestMultipartFormDataUploadPutMultipartFormDataObjectWithBodyHandler(t *tes
 	_ = multipart.AddFile("file", *file)
 	_ = multipart.AddValue("value", "Hello World")
 
-	err = comm.PutWithHandler("/put", nil, nil, *multipart, nil, func(headers []communication.Header, reader io.Reader) error {
+	err = comm.PutWithHandler("/put", nil, nil, *multipart, nil, func(_ []communication.Header, reader io.Reader) error {
 		response := HTTPBinResponse{}
 		marshaller := json.DefaultMarshaller()
 		err = marshaller.UnmarshalFromReader(reader, &response)
@@ -579,7 +579,7 @@ func TestMultipartFormDataUploadPutMultipartFormDataObjectPointerWithBodyHandler
 	_ = multipart.AddFile("file", *file)
 	_ = multipart.AddValue("value", "Hello World")
 
-	err = comm.PutWithHandler("/put", nil, nil, multipart, nil, func(headers []communication.Header, reader io.Reader) error {
+	err = comm.PutWithHandler("/put", nil, nil, multipart, nil, func(_ []communication.Header, reader io.Reader) error {
 		response := HTTPBinResponse{}
 		marshaller := json.DefaultMarshaller()
 		err = marshaller.UnmarshalFromReader(reader, &response)
@@ -638,7 +638,7 @@ func TestMultipartFormDataUploadPutMultipartFormDataRequestWithBodyHandler(t *te
 	_ = multipart.AddFile("file", *file)
 	_ = multipart.AddValue("value", "Hello World")
 
-	err = comm.PutWithHandler("/put", nil, nil, &MultipartFormDataObjectWrapper{multipart}, nil, func(headers []communication.Header, reader io.Reader) error {
+	err = comm.PutWithHandler("/put", nil, nil, &MultipartFormDataObjectWrapper{multipart}, nil, func(_ []communication.Header, reader io.Reader) error {
 		response := HTTPBinResponse{}
 		marshaller := json.DefaultMarshaller()
 		err = marshaller.UnmarshalFromReader(reader, &response)

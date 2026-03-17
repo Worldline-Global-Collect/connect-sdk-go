@@ -3,14 +3,14 @@
 
 package domain
 
-// ClickToPayConfiguration represents class ClickToPayConfiguration
+// ClickToPayConfiguration represents class ClickToPayConfiguration.
 type ClickToPayConfiguration struct {
 	DisplayHints *ClickToPayDisplayHints            `json:"displayHints,omitempty"`
 	Mastercard   *ClickToPayConfigurationMastercard `json:"mastercard,omitempty"`
 	Visa         *ClickToPayConfigurationVisa       `json:"visa,omitempty"`
 }
 
-// NewClickToPayConfiguration constructs a new ClickToPayConfiguration instance
+// NewClickToPayConfiguration constructs a new ClickToPayConfiguration instance.
 func NewClickToPayConfiguration() *ClickToPayConfiguration {
 	return &ClickToPayConfiguration{}
 }

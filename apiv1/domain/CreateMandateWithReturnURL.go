@@ -3,7 +3,7 @@
 
 package domain
 
-// CreateMandateWithReturnURL represents class CreateMandateWithReturnUrl
+// CreateMandateWithReturnURL represents class CreateMandateWithReturnUrl.
 type CreateMandateWithReturnURL struct {
 	Alias                  *string          `json:"alias,omitempty"`
 	Customer               *MandateCustomer `json:"customer,omitempty"`
@@ -15,7 +15,7 @@ type CreateMandateWithReturnURL struct {
 	UniqueMandateReference *string          `json:"uniqueMandateReference,omitempty"`
 }
 
-// NewCreateMandateWithReturnURL constructs a new CreateMandateWithReturnURL instance
+// NewCreateMandateWithReturnURL constructs a new CreateMandateWithReturnURL instance.
 func NewCreateMandateWithReturnURL() *CreateMandateWithReturnURL {
 	return &CreateMandateWithReturnURL{}
 }

@@ -3,7 +3,7 @@
 
 package domain
 
-// PaymentProduct302SpecificInput represents class PaymentProduct302SpecificInput
+// PaymentProduct302SpecificInput represents class PaymentProduct302SpecificInput.
 type PaymentProduct302SpecificInput struct {
 	AutomaticReloadBilling *AutomaticReloadBillingDetails `json:"automaticReloadBilling,omitempty"`
 	BillingAgreement       *string                        `json:"billingAgreement,omitempty"`
@@ -15,7 +15,7 @@ type PaymentProduct302SpecificInput struct {
 	TrialBilling           *RecurringBillingDetails       `json:"trialBilling,omitempty"`
 }
 
-// NewPaymentProduct302SpecificInput constructs a new PaymentProduct302SpecificInput instance
+// NewPaymentProduct302SpecificInput constructs a new PaymentProduct302SpecificInput instance.
 func NewPaymentProduct302SpecificInput() *PaymentProduct302SpecificInput {
 	return &PaymentProduct302SpecificInput{}
 }

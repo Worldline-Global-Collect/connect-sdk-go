@@ -8,23 +8,23 @@ type NotFoundError struct {
 	internalError error
 }
 
-// InternalError returns the internal error encountered
+// InternalError returns the internal error encountered.
 func (nfe NotFoundError) InternalError() error {
 	return nfe.internalError
 }
 
-// Error implements the error interface
+// Error implements the error interface.
 func (nfe NotFoundError) Error() string {
 	return nfe.String()
 }
 
-// String implements the Stringer interface
-// Format: 'errorMessage internalError'
+// String implements the Stringer interface.
+// Format: 'errorMessage internalError'.
 func (nfe NotFoundError) String() string {
 	return nfe.errorMessage + " " + nfe.internalError.Error()
 }
 
-// NewNotFoundErrorVerbose creates a NotFoundError with the given errorMessage and internalError
+// NewNotFoundErrorVerbose creates a NotFoundError with the given errorMessage and internalError.
 func NewNotFoundErrorVerbose(errorMessage string, internalError error) (*NotFoundError, error) {
 	return &NotFoundError{errorMessage, internalError}, nil
 }

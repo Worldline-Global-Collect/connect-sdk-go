@@ -3,7 +3,7 @@
 
 package domain
 
-// BankData represents class BankData
+// BankData represents class BankData.
 type BankData struct {
 	NewBankName              *string `json:"newBankName,omitempty"`
 	ReformattedAccountNumber *string `json:"reformattedAccountNumber,omitempty"`
@@ -11,7 +11,7 @@ type BankData struct {
 	ReformattedBranchCode    *string `json:"reformattedBranchCode,omitempty"`
 }
 
-// NewBankData constructs a new BankData instance
+// NewBankData constructs a new BankData instance.
 func NewBankData() *BankData {
 	return &BankData{}
 }

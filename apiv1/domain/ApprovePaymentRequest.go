@@ -3,7 +3,7 @@
 
 package domain
 
-// ApprovePaymentRequest represents class ApprovePaymentRequest
+// ApprovePaymentRequest represents class ApprovePaymentRequest.
 type ApprovePaymentRequest struct {
 	Amount                                    *int64                                                      `json:"amount,omitempty"`
 	DirectDebitPaymentMethodSpecificInput     *ApprovePaymentNonSepaDirectDebitPaymentMethodSpecificInput `json:"directDebitPaymentMethodSpecificInput,omitempty"`
@@ -11,7 +11,7 @@ type ApprovePaymentRequest struct {
 	SepaDirectDebitPaymentMethodSpecificInput *ApprovePaymentSepaDirectDebitPaymentMethodSpecificInput    `json:"sepaDirectDebitPaymentMethodSpecificInput,omitempty"`
 }
 
-// NewApprovePaymentRequest constructs a new ApprovePaymentRequest instance
+// NewApprovePaymentRequest constructs a new ApprovePaymentRequest instance.
 func NewApprovePaymentRequest() *ApprovePaymentRequest {
 	return &ApprovePaymentRequest{}
 }

@@ -3,7 +3,7 @@
 
 package domain
 
-// LineItem represents class LineItem
+// LineItem represents class LineItem.
 type LineItem struct {
 	AmountOfMoney                *AmountOfMoney                        `json:"amountOfMoney,omitempty"`
 	InvoiceData                  *LineItemInvoiceData                  `json:"invoiceData,omitempty"`
@@ -12,7 +12,7 @@ type LineItem struct {
 	OrderLineDetails             *OrderLineDetails                     `json:"orderLineDetails,omitempty"`
 }
 
-// NewLineItem constructs a new LineItem instance
+// NewLineItem constructs a new LineItem instance.
 func NewLineItem() *LineItem {
 	return &LineItem{}
 }

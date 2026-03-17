@@ -3,12 +3,12 @@
 
 package domain
 
-// ApprovePaymentMobilePaymentMethodSpecificOutput represents class ApprovePaymentMobilePaymentMethodSpecificOutput
+// ApprovePaymentMobilePaymentMethodSpecificOutput represents class ApprovePaymentMobilePaymentMethodSpecificOutput.
 type ApprovePaymentMobilePaymentMethodSpecificOutput struct {
 	VoidResponseID *string `json:"voidResponseId,omitempty"`
 }
 
-// NewApprovePaymentMobilePaymentMethodSpecificOutput constructs a new ApprovePaymentMobilePaymentMethodSpecificOutput instance
+// NewApprovePaymentMobilePaymentMethodSpecificOutput constructs a new ApprovePaymentMobilePaymentMethodSpecificOutput instance.
 func NewApprovePaymentMobilePaymentMethodSpecificOutput() *ApprovePaymentMobilePaymentMethodSpecificOutput {
 	return &ApprovePaymentMobilePaymentMethodSpecificOutput{}
 }

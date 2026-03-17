@@ -3,14 +3,14 @@
 
 package domain
 
-// PayoutRecipient represents class PayoutRecipient
+// PayoutRecipient represents class PayoutRecipient.
 type PayoutRecipient struct {
 	FirstName     *string `json:"firstName,omitempty"`
 	Surname       *string `json:"surname,omitempty"`
 	SurnamePrefix *string `json:"surnamePrefix,omitempty"`
 }
 
-// NewPayoutRecipient constructs a new PayoutRecipient instance
+// NewPayoutRecipient constructs a new PayoutRecipient instance.
 func NewPayoutRecipient() *PayoutRecipient {
 	return &PayoutRecipient{}
 }

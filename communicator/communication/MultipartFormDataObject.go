@@ -70,10 +70,11 @@ func (multipart *MultipartFormDataObject) containsParameter(parameterName string
 	if _, contains := multipart.files[parameterName]; contains {
 		return true
 	}
+
 	return false
 }
 
-// NewMultipartFormDataObject constructs a new MultipartFormDataObject
+// NewMultipartFormDataObject constructs a new MultipartFormDataObject.
 func NewMultipartFormDataObject() (*MultipartFormDataObject, error) {
 	boundary, err := PseudoUUID()
 	if err != nil {

@@ -3,7 +3,7 @@
 
 package domain
 
-// CustomerAccount represents class CustomerAccount
+// CustomerAccount represents class CustomerAccount.
 type CustomerAccount struct {
 	Authentication                *CustomerAccountAuthentication `json:"authentication,omitempty"`
 	ChangeDate                    *string                        `json:"changeDate,omitempty"`
@@ -19,7 +19,7 @@ type CustomerAccount struct {
 	PaymentActivity               *CustomerPaymentActivity       `json:"paymentActivity,omitempty"`
 }
 
-// NewCustomerAccount constructs a new CustomerAccount instance
+// NewCustomerAccount constructs a new CustomerAccount instance.
 func NewCustomerAccount() *CustomerAccount {
 	return &CustomerAccount{}
 }

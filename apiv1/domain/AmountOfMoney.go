@@ -3,13 +3,13 @@
 
 package domain
 
-// AmountOfMoney represents class AmountOfMoney
+// AmountOfMoney represents class AmountOfMoney.
 type AmountOfMoney struct {
 	Amount       *int64  `json:"amount,omitempty"`
 	CurrencyCode *string `json:"currencyCode,omitempty"`
 }
 
-// NewAmountOfMoney constructs a new AmountOfMoney instance
+// NewAmountOfMoney constructs a new AmountOfMoney instance.
 func NewAmountOfMoney() *AmountOfMoney {
 	return &AmountOfMoney{}
 }

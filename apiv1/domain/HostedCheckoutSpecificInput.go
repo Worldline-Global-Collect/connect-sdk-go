@@ -5,6 +5,7 @@ package domain
 
 // HostedCheckoutSpecificInput represents class HostedCheckoutSpecificInput.
 type HostedCheckoutSpecificInput struct {
+	AllowClickToPay       *bool                                `json:"allowClickToPay,omitempty"`
 	IsRecurring           *bool                                `json:"isRecurring,omitempty"`
 	Locale                *string                              `json:"locale,omitempty"`
 	PaymentProductFilters *PaymentProductFiltersHostedCheckout `json:"paymentProductFilters,omitempty"`

@@ -7,8 +7,8 @@ package domain
 type ClickToPayConfigurationVisa struct {
 	EncryptionKey  *string `json:"encryptionKey,omitempty"`
 	NModulus       *string `json:"nModulus,omitempty"`
-	SrcDpaID       *string `json:"srcDpaId,omitempty"`
 	SrcInitiatorID *string `json:"srcInitiatorId,omitempty"`
+	SrciDpaID      *string `json:"srciDpaId,omitempty"`
 }
 
 // NewClickToPayConfigurationVisa constructs a new ClickToPayConfigurationVisa instance.

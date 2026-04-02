@@ -8,6 +8,7 @@ type CardPaymentMethodSpecificInput struct {
 	AcquirerPromotionCode                  *string                               `json:"acquirerPromotionCode,omitempty"`
 	AuthorizationMode                      *string                               `json:"authorizationMode,omitempty"`
 	Card                                   *Card                                 `json:"card,omitempty"`
+	ClickToPay                             *ClickToPayInput                      `json:"clickToPay,omitempty"`
 	CustomerReference                      *string                               `json:"customerReference,omitempty"`
 	// Deprecated: Use threeDSecure.externalCardholderAuthenticationData instead
 	ExternalCardholderAuthenticationData   *ExternalCardholderAuthenticationData `json:"externalCardholderAuthenticationData,omitempty"`

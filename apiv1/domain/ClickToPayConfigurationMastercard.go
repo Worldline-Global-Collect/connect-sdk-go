@@ -5,8 +5,8 @@ package domain
 
 // ClickToPayConfigurationMastercard represents class ClickToPayConfigurationMastercard.
 type ClickToPayConfigurationMastercard struct {
-	SrcDpaID       *string `json:"srcDpaId,omitempty"`
 	SrcInitiatorID *string `json:"srcInitiatorId,omitempty"`
+	SrciDpaID      *string `json:"srciDpaId,omitempty"`
 }
 
 // NewClickToPayConfigurationMastercard constructs a new ClickToPayConfigurationMastercard instance.

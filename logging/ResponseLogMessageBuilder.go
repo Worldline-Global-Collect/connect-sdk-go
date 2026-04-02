@@ -150,7 +150,6 @@ func (rlm *ResponseLogMessageBuilder) BuildMessage() *ResponseLogMessage {
 		rlm.headers,
 		rlm.headersBuffer.String(),
 		rlm.bodyObfuscator,
-
 		rlm.headerObfuscator,
 	}
 }

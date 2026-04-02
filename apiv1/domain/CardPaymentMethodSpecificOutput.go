@@ -7,6 +7,7 @@ package domain
 type CardPaymentMethodSpecificOutput struct {
 	AuthorisationCode          *string              `json:"authorisationCode,omitempty"`
 	Card                       *CardEssentials      `json:"card,omitempty"`
+	ClickToPayUsed             *bool                `json:"clickToPayUsed,omitempty"`
 	FraudResults               *CardFraudResults    `json:"fraudResults,omitempty"`
 	InitialSchemeTransactionID *string              `json:"initialSchemeTransactionId,omitempty"`
 	NetworkTokenData           *NetworkTokenData    `json:"networkTokenData,omitempty"`

@@ -9,6 +9,7 @@ type PaymentProductResponse struct {
 	AcquirerCountry               *string                        `json:"acquirerCountry,omitempty"`
 	AllowsClickToPay              *bool                          `json:"allowsClickToPay,omitempty"`
 	AllowsInstallments            *bool                          `json:"allowsInstallments,omitempty"`
+	AllowsMultiplePartialCaptures *bool                          `json:"allowsMultiplePartialCaptures,omitempty"`
 	AllowsRecurring               *bool                          `json:"allowsRecurring,omitempty"`
 	AllowsTokenization            *bool                          `json:"allowsTokenization,omitempty"`
 	AuthenticationIndicator       *AuthenticationIndicator       `json:"authenticationIndicator,omitempty"`

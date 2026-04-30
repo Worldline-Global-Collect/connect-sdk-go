@@ -34,7 +34,7 @@ func getPlatformIdentifier() string {
 	return runtime.GOOS + " " + runtime.Version() + "(" + runtime.GOARCH + ")"
 }
 
-const sdkVersion = "4.6.0"
+const sdkVersion = "4.7.0"
 const sdkIdentifier = "GoServerSDK/v" + sdkVersion
 const serverMetaInfoHeader = "X-GCS-ServerMetaInfo"
 

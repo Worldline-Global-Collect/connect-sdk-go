@@ -7,6 +7,7 @@ package domain
 type CapturePaymentOrder struct {
 	AdditionalInput *CapturePaymentOrderAdditionalInput `json:"additionalInput,omitempty"`
 	References      *CapturePaymentOrderReferences      `json:"references,omitempty"`
+	Shipping        *Shipping                           `json:"shipping,omitempty"`
 }
 
 // NewCapturePaymentOrder constructs a new CapturePaymentOrder instance.

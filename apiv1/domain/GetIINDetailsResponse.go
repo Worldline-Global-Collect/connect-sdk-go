@@ -5,9 +5,11 @@ package domain
 
 // GetIINDetailsResponse represents class GetIINDetailsResponse.
 type GetIINDetailsResponse struct {
+	BinProductType     *string      `json:"binProductType,omitempty"`
 	CoBrands           *[]IINDetail `json:"coBrands,omitempty"`
 	CountryCode        *string      `json:"countryCode,omitempty"`
 	IsAllowedInContext *bool        `json:"isAllowedInContext,omitempty"`
+	IssuerName         *string      `json:"issuerName,omitempty"`
 	PaymentProductID   *int32       `json:"paymentProductId,omitempty"`
 }
 

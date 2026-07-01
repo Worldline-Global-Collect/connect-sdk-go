@@ -8,6 +8,7 @@ type MobilePaymentMethodSpecificInputHostedCheckout struct {
 	AuthorizationMode                      *string                                             `json:"authorizationMode,omitempty"`
 	CustomerReference                      *string                                             `json:"customerReference,omitempty"`
 	InitialSchemeTransactionID             *string                                             `json:"initialSchemeTransactionId,omitempty"`
+	OriginalTransactionLinkID              *string                                             `json:"originalTransactionLinkId,omitempty"`
 	PaymentProduct302SpecificInput         *MobilePaymentProduct302SpecificInputHostedCheckout `json:"paymentProduct302SpecificInput,omitempty"`
 	PaymentProduct320SpecificInput         *MobilePaymentProduct320SpecificInputHostedCheckout `json:"paymentProduct320SpecificInput,omitempty"`
 	PaymentProductID                       *int32                                              `json:"paymentProductId,omitempty"`

@@ -16,6 +16,7 @@ type CardPaymentMethodSpecificInput struct {
 	IsRecurring                            *bool                                 `json:"isRecurring,omitempty"`
 	MerchantInitiatedReasonIndicator       *string                               `json:"merchantInitiatedReasonIndicator,omitempty"`
 	NetworkTokenData                       *SchemeTokenData                      `json:"networkTokenData,omitempty"`
+	OriginalTransactionLinkID              *string                               `json:"originalTransactionLinkId,omitempty"`
 	PaymentProductID                       *int32                                `json:"paymentProductId,omitempty"`
 	Recurring                              *CardRecurrenceDetails                `json:"recurring,omitempty"`
 	// Deprecated: Use recurring.recurringPaymentSequenceIndicator instead

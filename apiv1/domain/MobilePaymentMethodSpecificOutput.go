@@ -9,11 +9,13 @@ type MobilePaymentMethodSpecificOutput struct {
 	FraudResults               *CardFraudResults    `json:"fraudResults,omitempty"`
 	InitialSchemeTransactionID *string              `json:"initialSchemeTransactionId,omitempty"`
 	Network                    *string              `json:"network,omitempty"`
+	OriginalTransactionLinkID  *string              `json:"originalTransactionLinkId,omitempty"`
 	PaymentData                *MobilePaymentData   `json:"paymentData,omitempty"`
 	PaymentProductID           *int32               `json:"paymentProductId,omitempty"`
 	SchemeTransactionID        *string              `json:"schemeTransactionId,omitempty"`
 	ThreeDSecureResults        *ThreeDSecureResults `json:"threeDSecureResults,omitempty"`
 	Token                      *string              `json:"token,omitempty"`
+	TransactionLinkID          *string              `json:"transactionLinkId,omitempty"`
 }
 
 // NewMobilePaymentMethodSpecificOutput constructs a new MobilePaymentMethodSpecificOutput instance.

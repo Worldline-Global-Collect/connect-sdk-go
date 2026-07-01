@@ -12,6 +12,7 @@ type MobilePaymentMethodSpecificInput struct {
 	InitialSchemeTransactionID             *string                               `json:"initialSchemeTransactionId,omitempty"`
 	IsRecurring                            *bool                                 `json:"isRecurring,omitempty"`
 	MerchantInitiatedReasonIndicator       *string                               `json:"merchantInitiatedReasonIndicator,omitempty"`
+	OriginalTransactionLinkID              *string                               `json:"originalTransactionLinkId,omitempty"`
 	PaymentProduct320SpecificInput         *MobilePaymentProduct320SpecificInput `json:"paymentProduct320SpecificInput,omitempty"`
 	PaymentProductID                       *int32                                `json:"paymentProductId,omitempty"`
 	Recurring                              *CardRecurrenceDetails                `json:"recurring,omitempty"`

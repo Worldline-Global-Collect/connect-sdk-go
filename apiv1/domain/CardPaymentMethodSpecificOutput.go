@@ -12,11 +12,13 @@ type CardPaymentMethodSpecificOutput struct {
 	InitialSchemeTransactionID *string              `json:"initialSchemeTransactionId,omitempty"`
 	NetworkTokenData           *NetworkTokenData    `json:"networkTokenData,omitempty"`
 	NetworkTokenUsed           *bool                `json:"networkTokenUsed,omitempty"`
+	OriginalTransactionLinkID  *string              `json:"originalTransactionLinkId,omitempty"`
 	PaymentAccountReference    *string              `json:"paymentAccountReference,omitempty"`
 	PaymentProductID           *int32               `json:"paymentProductId,omitempty"`
 	SchemeTransactionID        *string              `json:"schemeTransactionId,omitempty"`
 	ThreeDSecureResults        *ThreeDSecureResults `json:"threeDSecureResults,omitempty"`
 	Token                      *string              `json:"token,omitempty"`
+	TransactionLinkID          *string              `json:"transactionLinkId,omitempty"`
 }
 
 // NewCardPaymentMethodSpecificOutput constructs a new CardPaymentMethodSpecificOutput instance.

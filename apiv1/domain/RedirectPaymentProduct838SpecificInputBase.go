@@ -5,8 +5,8 @@ package domain
 
 // RedirectPaymentProduct838SpecificInputBase represents class RedirectPaymentProduct838SpecificInputBase.
 type RedirectPaymentProduct838SpecificInputBase struct {
-	InteroperabilityData  *string `json:"interoperabilityData,omitempty"`
-	InteroperabilityToken *string `json:"interoperabilityToken,omitempty"`
+	NetworkData         *string `json:"networkData,omitempty"`
+	NetworkSessionToken *string `json:"networkSessionToken,omitempty"`
 }
 
 // NewRedirectPaymentProduct838SpecificInputBase constructs a new RedirectPaymentProduct838SpecificInputBase instance.

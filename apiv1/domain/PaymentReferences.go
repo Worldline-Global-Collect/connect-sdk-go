@@ -6,6 +6,7 @@ package domain
 // PaymentReferences represents class PaymentReferences.
 type PaymentReferences struct {
 	MerchantCaptureReference *string `json:"merchantCaptureReference,omitempty"`
+	MerchantCustomerID       *string `json:"merchantCustomerId,omitempty"`
 	MerchantOrderID          *int64  `json:"merchantOrderId,omitempty"`
 	MerchantReference        *string `json:"merchantReference,omitempty"`
 	PaymentReference         *string `json:"paymentReference,omitempty"`
